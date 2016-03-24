@@ -1,7 +1,87 @@
 {% extends "./layout.html" %}
 
-{% set title = "This would be the title" %}
+{% set title = "Join the Journey!" %}
 
 {% block content %}
-  <h1>This is the Express app using HTML.</h1>
+
+<!-- .container is main centered wrapper -->
+
+  <header class="homeHero">
+
+    <div class="container">
+      <div class="row">
+        <nav class="navbar tweleve columns">
+          <div class="container">
+            <div class="one-third column u-pull-left">
+              <h4 class="wordmark">Traveling Children Project<h4>
+            </div><!-- /.one-third column -->
+            <div class="one-third column">
+              <ul class="navList u-pull-left">
+                <li class="navItem u-pull-left"><a href="#">Download</a></li>
+                <li class="navItem u-pull-left"><a href="#">Search</a></li>
+                <li class="navItem u-pull-left"><a href="#" disabled>Blog</a></li>
+                <li class="navItem u-pull-left"><a href="#">About</a></li>
+              </ul>
+            </div><!-- /.one-third column -->
+            <div class="one-third column u-pull-right">
+              <a class="button" href="#"><strong>Sign In</strong></a>
+              <a class="button button-wht" href="#"><strong>Sign Up</strong></a>
+            </div><!-- /.one-third column -->
+          </div><!-- /.container -->
+        </nav>
+      </div><!-- /.one-third column -->
+      </div><!-- /.row -->
+
+      <div class="container">
+        <div class="row">
+          <div class="one-half column left"></div>
+          <div class="one-half column right u-pull-right">
+            <img class="tcpCrestRight" src="images/tcp-crest-yllw.svg" alt="TCP Logo">
+            <p><strong>Welcome to the Traveling Children Project!</strong> Your passport to fun experiences!
+Join the journey and collect Travel Tokens that will reward you
+with fun prizes and great discounts to awesome destinations.</p>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.containter -->
+
+    </div><!-- /.containter -->
+
+  </header><!-- End HEADER -->
+
+    <section class="whtSection">
+      <div class="container">
+        <p>After Sign Up, here’s how to join the journey… online and offline  </p>
+        <div class="row">
+          <div class="one-half column left">1/2</div>
+          <div class="one-half column right">1/2</div>
+        </div><!-- /.row -->
+      </div><!-- /.containter -->
+    </section>
+
+    <section class="orgSection">
+      <div class="container">
+        <div class="row">
+          <div class="one-half column left">1/2</div>
+          <div class="one-half column right">1/2</div>
+        </div><!-- /.row -->
+      </div><!-- /.containter -->
+    </section>
+
+    <section class="whtSection">
+      <div class="container">
+        <div class="row">
+          <div class="tweleve columns">1 col</div>
+        </div><!-- /.row -->
+      </div><!-- /.containter -->
+    </section>
+
+    <footer class="brwnSection">
+      <div class="container">
+        <div class="row">
+          <div class="tweleve columns">1 col</div>
+        </div><!-- /.row -->
+      </div><!-- /.containter -->
+    </footer>
+
+
 {% endblock %}

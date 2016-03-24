@@ -1,3 +1,237 @@
+/*---------- FONTS ----------*/
+
+@font-face {
+  font-family: 'ProximaNova-Light';
+  src: url(/fonts/ProximaNova-Light.ttf);
+}
+
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: url(/fonts/ProximaNova-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url(/fonts/ProximaNova-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Simpson_Condensed_Heavy_BoldItalic';
+  src: url(/fonts/Simpson_Condensed_Heavy_BoldItalic.ttf);
+}
+
+body {
+  font-family: 'ProximaNova-Light', Helvetica, Arial, sans-serif;
+}
+
+strong, h6, .navItem {
+  font-family: 'ProximaNova-Bold', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+/*---------- PAGE ELEMENTS ----------*/
+
+.container {
+  max-width: 900px;
+  /*background-color: red;*/
+}
+
+nav {
+  position: fixed;
+  height: 8rem;
+  padding: 2rem;
+  /*background-color: red;*/
+}
+
+.navbar {
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 1.25rem;
+  letter-spacing: .0625rem;
+}
+
+.navbar ul {
+  text-transform: uppercase;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.navItem li {
+  
+}
+
+.navItem li, a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: .5rem;
+}
+
+li.navItem a:hover {
+  border-top: 5px;
+  border-top-color: #fff;
+  color: #ee6730;
+}
+
+.wordmark {
+  font-family: 'Simpson_Condensed_Heavy_BoldItalic', Times, serif;
+  color: #ee6730;
+  font-weight: 18rem;
+  letter-spacing: .0625rem;
+  /*float: left;*/
+}
+
+p {
+  color: #603813;
+  max-width: 50rem;
+}
+
+.tcpCrestRight {
+  margin-right: 0;
+  margin-top: 10rem;
+  height: 300px;;
+}
+
+/*---------- BUTTONS ----------*/
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #fff;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #fff;
+  border-color: #fff;
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #ee6730;
+  border-color: #ee6730; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #9e260e;
+  border-color: #9e260e; }
+  .button.button-wht,
+  button.button-wht,
+  input[type="submit"].button-wht,
+  input[type="reset"].button-wht,
+  input[type="button"].button-wht {
+    color: #9ddcf9;
+    background-color: #fff;
+    border-color: #fff; }
+  .button.button-wht:hover,
+  button.button-wht:hover,
+  input[type="submit"].button-wht:hover,
+  input[type="reset"].button-wht:hover,
+  input[type="button"].button-wht:hover,
+  .button.button-wht:focus,
+  button.button-wht:focus,
+  input[type="submit"].button-wht:focus,
+  input[type="reset"].button-wht:focus,
+  input[type="button"].button-wht:focus {
+    color: #FFF;
+    background-color: #9ddcf9;
+    border-color: #9ddcf9; }
+
+/*---------- SECTIONS ----------*/
+
+header {
+  width: 100%;
+  min-height: 300px;
+  margin: 0 auto;
+}
+
+.homeHero {
+  background: #9ccdf9 url("/images/fun-destination-1.png") no-repeat center -15rem;
+}
+
+section,
+footer, {
+  width: 100%;
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 20rem;
+}
+
+.centerDiv {
+  width: 900px;
+  margin: 0 auto;
+  /*background-color: #fff;*/
+}
+
+/*////////// SECTION COLORS //////////*/
+
+.bluSection {
+  background-color: #9ddcf9;
+}
+
+.whtSection {
+  background-color: #fff;
+}
+
+.orgSection {
+  background-color: #ee6730;
+}
+
+.brwnSection {
+  background-color: #3a2417;
+}
+
+.prplSection {
+  background-color: #b0a2cf;
+}
+
+.yllwSection {
+  background-color: #fee088;
+}
+
+.grnSection {
+  background-color: #95ce8a;
+}
+
+/*---------- MEDIA QUIERIES ----------*/
+
 /* Larger than mobile */
 @media (min-width: 400px) {}
 
