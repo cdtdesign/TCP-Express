@@ -114,28 +114,20 @@ nav {
   color: #fff;
   font-size: 1.25rem;
   letter-spacing: .0625rem;
+  z-index: 2000;
 }
 
-.navbar ul {
+.navItem {
   text-transform: uppercase;
-  list-style: none;
-  padding-left: 0;
-  margin-top: 0;
-}
-
-.navItem li {
-
-}
-
-.navItem li, a {
   text-decoration: none;
   color: #fff;
-  display: block;
   padding: .5rem;
+  margin: .5rem;
+  vertical-align: text-bottom;;
 }
 
-li.navItem a:hover {
-  border-top: 5px;
+a.navItem:hover {
+  border-top: 2px;
   border-top-color: #fff;
   color: #ee6730;
 }
@@ -143,8 +135,9 @@ li.navItem a:hover {
 .wordmark {
   font-family: 'Simpson_Condensed_Heavy_BoldItalic', Times, serif;
   color: #ee6730;
-  font-weight: 18rem;
+  font-weight: 16rem;
   letter-spacing: .0625rem;
+  margin-right: 1.5rem;
   /*float: left;*/
 }
 
@@ -155,8 +148,9 @@ p {
 }
 
 .tcpCrest {
-  margin-top: 10rem;
-  height: 300px;;
+  height: 300px;
+  padding-top: 10rem;
+  margin-left: 15%;
 }
 
 /*---------- BUTTONS ----------*/
