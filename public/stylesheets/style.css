@@ -103,15 +103,15 @@ strong, h6, .navItem {
 
 nav {
   position: fixed;
-  height: 8rem;
-  padding: 2rem;
+  /*height: 8rem;*/
+  /*padding: 2rem;*/
   /*background-color: red;*/
 }
 
 .navbar {
   height: 5rem;
   line-height: 5rem;
-  top: 0;
+  top: 1rem;
   left: 0;
   color: #fff;
   font-size: 1.25rem;
@@ -127,14 +127,26 @@ span.navbar {
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
-  padding: .5rem;
-  margin: .5rem;
+  padding-top: 2.375rem;
+  /*padding: 1.5rem;*/
+  margin: .75rem;
 }
 
 a.navItem:hover {
-  border-top: 2px;
-  border-top-color: #fff;
-  color: #ee6730;
+  border-top: 3px solid rgba(255,255,255,.3125);
+  color: #fff;
+}
+
+a.navItem:active {
+  border-top: 3px solid #fff;
+}
+
+/*a.navItem:visited {
+  border-top: 3px solid rgba(0,175,239,.125);
+}*/
+
+a.navItem.disabled, :visited {
+  color: rgba(255,255,255,.5);
 }
 
 .wordmark {
@@ -143,7 +155,20 @@ a.navItem:hover {
   font-weight: 16rem;
   letter-spacing: .0625rem;
   margin-right: 1.5rem;
-  /*float: left;*/
+  text-decoration: none;
+}
+
+h4.wordmark a {
+  text-decoration: none;
+  color: #ee6730;
+}
+
+h4.wordmark a:hover {
+  color: #603813;
+}
+
+h4.wordmark a:active {
+  color: 9e260e;
 }
 
 p {
