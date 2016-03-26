@@ -109,6 +109,8 @@ nav {
 }
 
 .navbar {
+  height: 5rem;
+  line-height: 5rem;
   top: 0;
   left: 0;
   color: #fff;
@@ -117,13 +119,16 @@ nav {
   z-index: 2000;
 }
 
+span.navbar {
+  vertical-align: middle;
+}
+
 .navItem {
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
   padding: .5rem;
   margin: .5rem;
-  vertical-align: text-bottom;;
 }
 
 a.navItem:hover {
