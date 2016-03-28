@@ -193,6 +193,7 @@ nav {
   font-size: 1.25rem;
   letter-spacing: .0625rem;
   z-index: 2000;
+  text-align: left;
 }
 
 span.navbar {
@@ -234,7 +235,7 @@ a.navItem:disabled {
   color: #ee6730;
   font-weight: 16rem;
   letter-spacing: .0625rem;
-  /*margin-right: .75rem;*/
+  margin-right: .75rem;
   text-decoration: none;
 }
 
