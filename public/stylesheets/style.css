@@ -78,6 +78,10 @@
   color: #ee6730;
 }
 
+.textYllw {
+  color: #fee088;
+}
+
 .textLtBrwn {
   color: #603813;
 }
@@ -151,7 +155,6 @@ div.one-half.column.left {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  /*text-align: center;*/
   color: #603813;
   margin-top: 0;
   margin-bottom: 0;
@@ -222,20 +225,12 @@ a.navItem:disabled {
   color: rgba(255,255,255,.5);
 }
 
-/*a.navItem:visited {
-  border-top: 3px solid rgba(0,175,239,.125);
-}*/
-
-/*a.navItem.disabled, :visited {
-  color: rgba(255,255,255,.5);
-}*/
-
 .wordmark {
   font-family: 'Simpson_Condensed_Heavy_BoldItalic', Times, serif;
   color: #ee6730;
   font-weight: 16rem;
   letter-spacing: .0625rem;
-  margin-right: .75rem;
+  margin-right: 1rem;
   text-decoration: none;
 }
 
