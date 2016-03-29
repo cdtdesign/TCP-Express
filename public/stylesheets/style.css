@@ -335,6 +335,33 @@ input[type="button"].button-primary:focus {
 
 /*---------- SECTIONS ----------*/
 
+.triangleWht {
+  width: 0;
+  height: 0;
+  border-top: 24px solid #fff;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  position: absolute;
+}
+
+.triangleOrg {
+  width: 0;
+  height: 0;
+  border-top: 24px solid #ee6730;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  position: absolute;
+}
+
+.triangleBlu {
+  width: 0;
+  height: 0;
+  border-top: 24px solid #9ddcf9;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  position: absolute;
+}
+
 header {
   width: 100%;
   min-height: 300px;
