@@ -164,6 +164,9 @@ p, small {
   color: #603813;
 }
 
+ul {
+  list-style: none; }
+
 body {
   font-family: 'proxima_novaregular', Helvetica, Arial, sans-serif;
 }
