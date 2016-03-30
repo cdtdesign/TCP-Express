@@ -126,6 +126,7 @@ i.fa-scissors {
 /*---------- PAGE ELEMENTS ----------*/
 
 .container {
+  text-align: center;
   max-width: 900px;
   /*padding: 2rem;*/
   /*background-color: red;*/
@@ -143,6 +144,15 @@ i.fa-scissors {
 .right {
   /*background-color: blue;*/
   text-align: left;
+  max-width: 450px;
+  min-height: 300px;
+  padding: 2rem;
+  margin: 0;
+}
+
+.center {
+  /*background-color: red;*/
+  text-align: center;
   max-width: 450px;
   min-height: 300px;
   padding: 2rem;
