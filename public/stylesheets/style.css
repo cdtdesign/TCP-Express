@@ -133,6 +133,7 @@ i.fa-scissors {
 
 .left {
   /*background-color: red;*/
+  text-align: left;
   max-width: 450px;
   min-height: 300px;
   padding: 2rem;
@@ -141,6 +142,7 @@ i.fa-scissors {
 
 .right {
   /*background-color: blue;*/
+  text-align: left;
   max-width: 450px;
   min-height: 300px;
   padding: 2rem;
@@ -158,7 +160,7 @@ div.one-half.column.left {
 }
 
 .row {
-  /*overflow: hidden;*/
+  text-align:center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -390,6 +392,7 @@ header {
   width: 900px;
   margin: 0 auto;
   text-align: center;
+  vertical-align: middle;
   /*background-color: #fff;*/
 }
 
