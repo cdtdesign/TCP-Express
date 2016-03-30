@@ -109,11 +109,18 @@
 i.fa-wifi {
   color: #9ddcf9;
   font-size: 25rem;
+  text-align: center;
 }
 
 i.fa-scissors {
   color: #fff;
   font-size: 25rem;
+}
+
+/*------------- UNSLIDER -------------*/
+
+.my-slider {
+  margin: 0 auto;
 }
 
 /*---------- PAGE ELEMENTS ----------*/
@@ -480,7 +487,13 @@ span.socialPinterest {
 /*---------- MEDIA QUIERIES ----------*/
 
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media (min-width: 400px) {
+
+  i.fa-wifi, .fa-scissors {
+    height: 50%;
+  }
+
+}
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {}
