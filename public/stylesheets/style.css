@@ -128,7 +128,7 @@ i.fa-scissors {
 .container {
   text-align: center;
   max-width: 900px;
-  /*background-color: red;*/
+  background-color: red;
 }
 
 .left {
@@ -293,7 +293,7 @@ a.navOrg:disabled {
   color: #ee6730;
   font-weight: 16rem;
   letter-spacing: .0625rem;
-  margin-right: 1rem;
+  /*margin-right: .25rem;*/
   text-decoration: none;
   height: 6rem;
   line-height: 6rem;
