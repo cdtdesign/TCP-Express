@@ -128,7 +128,7 @@ i.fa-scissors {
 .container {
   text-align: center;
   max-width: 900px;
-  background-color: red;
+  /*background-color: red;*/
 }
 
 .left {
