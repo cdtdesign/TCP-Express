@@ -590,14 +590,22 @@ span.socialPinterest {
     background: #9ddcf9 url("/images/fun-destination-1.png") no-repeat center 0rem;
   }
 
+  .tcpCrest {
+    height: 100%;
+    padding-top: 6rem;
+  }
+
+  i.fa-wifi, .fa-scissors {
+    font-size: 20rem;
+    height: 100%;
+  }
+
 }
 
 /* Larger than mobile */
 @media (min-width: 400px) {
 
-  i.fa-wifi, .fa-scissors {
-    height: 50%;
-  }
+
 
 }
 
