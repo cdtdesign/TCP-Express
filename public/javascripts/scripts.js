@@ -7,13 +7,13 @@ jQuery(document).ready(function ($) {
 	//
 	// // bounce in down .navbar
 	// $(window).scroll(function () {
-	// 	var animationName = 'animated bounceInDown';
-	// 	var animationend = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+		// var animationName = 'animated bounceInDown';
+		// var animationend = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 	//
 	// 		// set distance user needs to scroll before we start bounce in
 	// 		if ($(this).scrollTop() > 400) {
-	// 			$('.navwht').addClass(animationName).one(animationend, function() {
-	// 				$(this).removeClass(animationName);
+				// $('.navwht').addClass(animationName).one(animationend, function() {
+				// 	$(this).removeClass(animationName);
 	//
 	// 			});
 	// 		} else {
@@ -53,3 +53,31 @@ jQuery(document).ready(function ($) {
 //         });
 //     }
 // });
+
+// (function ($) {
+//   $(document).ready(function(){
+//
+//     // hide .navbar first
+//     $(".navwht").hide();
+//
+//     // fade in .navbar
+//     $(function () {
+//         $(window).scroll(function () {
+//
+// 					var animationName = 'animated bounceInDown';
+// 					var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+//
+//             // set distance user needs to scroll before we start animation
+//             if ($(this).scrollTop() > 400) {
+// 							$('.navwht').addClass(animationName).one(animationEnd, function() {
+// 								$(this).removeClass(animationName);
+//             } else {
+//                 $('.navwht').fadeOut();
+//             }
+//         });
+//     });
+//
+// });
+//
+// });
+//   }(jQuery));
