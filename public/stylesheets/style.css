@@ -234,8 +234,7 @@ nav {
   padding: 0;
   height: 7rem;
   line-height: 7rem;
-  border-bottom: 1pt;
-  border-style: solid;
+  border-bottom: 1pt solid;
   border-color: #e1e1e1;
   /*top: 1rem;*/
   left: 0;
