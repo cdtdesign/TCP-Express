@@ -3,18 +3,18 @@ jQuery(document).ready(function ($) {
 	$('.my-slider').unslider();
 
 	// hide .navbar first
-	$(".navwht").hide();
+	$('.navwht').hide();
 
-	// fade in .navbar
+	// bounce in .navwht
 	$(function () {
 			$(window).scroll(function () {
 
 					var animationName = 'animated bounceInDown';
 
-							 // set distance user needs to scroll before we start fadeIn
+					// set distance user needs to scroll before we start fadeIn
 					if ($(window).scrollTop() > 400) {
 							$('.navbar').fadeOut();
-							$(".navwht").show();
+							$('.navwht').show();
 							$('.navwht').fadeIn();
 							$('.navwht').addClass(animationName);
 					} else {
