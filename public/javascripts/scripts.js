@@ -3,6 +3,22 @@ jQuery(document).ready(function ($) {
 	$('.my-slider').unslider();
 
 	// hide .navbar first
+	$(".navwht").hide();
+
+	// fade in .navbar
+	$(function () {
+			$(window).scroll(function () {
+
+							 // set distance user needs to scroll before we start fadeIn
+					if ($(this).scrollTop() > 400) {
+							$('.navwht').fadeIn();
+					} else {
+							$('.navwht').fadeOut();
+					}
+			});
+	});
+
+	// hide .navbar first
 	// $(".navwht").hide();
 	//
 	// // bounce in down .navbar
@@ -23,27 +39,27 @@ jQuery(document).ready(function ($) {
 });
 
 
-(function ($) {
-  $(document).ready(function(){
-
-    // hide .navbar first
-    $(".navwht").hide();
-
-    // fade in .navbar
-    $(function () {
-        $(window).scroll(function () {
-
-                 // set distance user needs to scroll before we start fadeIn
-            if ($(this).scrollTop() > 400) {
-                $('.navwht').fadeIn();
-            } else {
-                $('.navwht').fadeOut();
-            }
-        });
-    });
-
-});
-  }(jQuery));
+// (function ($) {
+//   $(document).ready(function(){
+//
+//     // hide .navbar first
+//     $(".navwht").hide();
+//
+//     // fade in .navbar
+//     $(function () {
+//         $(window).scroll(function () {
+//
+//                  // set distance user needs to scroll before we start fadeIn
+//             if ($(this).scrollTop() > 400) {
+//                 $('.navwht').fadeIn();
+//             } else {
+//                 $('.navwht').fadeOut();
+//             }
+//         });
+//     });
+//
+// });
+//   }(jQuery));
 
 // $.fn.extend({
 //     animateCss: function ('bounceInDown') {
