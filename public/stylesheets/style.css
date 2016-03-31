@@ -311,7 +311,7 @@ h4.wordmark a {
 }
 
 h4.wordmark a:hover {
-  color: #f68a50;
+  /*color: #f68a50;*/
 }
 
 h4.wordmark a:active {
