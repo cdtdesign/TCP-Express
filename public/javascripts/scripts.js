@@ -9,10 +9,16 @@ jQuery(document).ready(function ($) {
 	$(function () {
 			$(window).scroll(function () {
 
+					var animationName = 'animated bounceInDown';
+					var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
 							 // set distance user needs to scroll before we start fadeIn
-					if ($(this).scrollTop() > 400) {
+					if ($(window).scrollTop() > 400) {
+							$(".navwht").show();
 							$('.navwht').fadeIn();
+							$('.navwht').addClass(animationName);
 					} else {
+							$('.navwht').removeClass(animationName);
 							$('.navwht').fadeOut();
 					}
 			});
@@ -30,8 +36,8 @@ jQuery(document).ready(function ($) {
 	// 		if ($(this).scrollTop() > 400) {
 				// $('.navwht').addClass(animationName).one(animationend, function() {
 				// 	$(this).removeClass(animationName);
-	//
-	// 			});
+				//
+				// });
 	// 		} else {
 	// 				$('.navwht').fadeOut();
 	// 		}
