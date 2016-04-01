@@ -186,12 +186,16 @@ div.one-half.column.left {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #603813;
+  color: #3a2417;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-p, small {
+p {
+  color: #3a2417;
+}
+
+small {
   color: #603813;
 }
 
