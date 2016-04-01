@@ -610,6 +610,10 @@ span.socialPinterest {
 
 @media (max-width: 500px) {
 
+  h6.thankyou {
+    padding-top: 5rem;
+  }
+
   nav {
     /*position: fixed;*/
     /*background-color: yellow;*/
