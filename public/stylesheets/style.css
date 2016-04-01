@@ -114,6 +114,7 @@ i.fa-wifi {
   color: #9ddcf9;
   font-size: 25rem;
   text-align: center;
+  vertical-align: middle;
 }
 
 i.fa-scissors {
@@ -128,6 +129,10 @@ i.fa-scissors {
 }
 
 /*---------- PAGE ELEMENTS ----------*/
+
+.mobile-hide{
+  visibility: hidden;
+}
 
 .container {
   text-align: center;
@@ -156,8 +161,6 @@ i.fa-scissors {
 .center {
   /*background-color: green;*/
   text-align: center;
-  /*max-width: 450px;*/
-  /*min-height: 300px;*/
   vertical-align: middle;
   padding: 2rem;
   margin: 0;
@@ -321,7 +324,6 @@ h4.wordmark a:active {
 .tcpCrest {
   height: 300px;
   padding-top: 6rem;
-  /*margin-left: 5%;*/
 }
 
 /*---------- BUTTONS ----------*/
@@ -608,18 +610,175 @@ span.socialPinterest {
 
 @media (max-width: 500px) {
 
+  nav {
+    /*position: fixed;*/
+    /*background-color: yellow;*/
+  }
+
+  .navbar {
+    padding: 0;
+    height: 5rem;
+    line-height: 5rem;
+    /*top: 1rem;*/
+    left: 0;
+    color: #fff;
+    font-size: 1.25rem;
+    letter-spacing: .05rem;
+    z-index: 2000;
+    text-align: left;
+  }
+
+  .navwht {
+    padding: 0;
+    height: 17rem;
+    line-height: 5rem;
+    border-bottom: 1pt solid;
+    border-color: #e1e1e1;
+    /*top: 1rem;*/
+    left: 0;
+    font-size: 1.1875rem;
+    letter-spacing: .02rem;
+    z-index: 2000;
+    text-align: left;
+    color: #ee6730;
+    background-color: rgba(255, 255, 255, 1);;
+  }
+
+  span.navbar {
+    vertical-align: middle;
+  }
+
+  .navItem {
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    margin: .3rem;
+  }
+
+  .navOrg {
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: #ee6730;
+    /*padding-top: 2.375rem;*/
+    margin: .25rem;
+  }
+
+  a.navItem:hover {
+    /*border-top: 3px solid rgba(255,255,255,.375);*/
+    color: #ee6730;
+  }
+
+  a.navItem:active {
+    /*border-top: 3px solid #fff;*/
+  }
+
+  a.navItem:disabled {
+    color: rgba(255,255,255,.5);
+  }
+
+  a.navOrg:hover {
+    /*border-top: 3px solid rgba(238,103,48,.1875);*/
+    color: #3a2417;
+  }
+
+  a.navOrg:active {
+    /*border-top: 3px solid #ee6730;*/
+  }
+
+  a.navOrg:disabled {
+    color: rgba(238,103,48,.5);
+  }
+
+  .wordmark {
+    font-family: 'Simpson_Condensed_Heavy_BoldItalic', Times, serif;
+    color: #ee6730;
+    width: 100%;
+    text-align: center;
+    font-size: 3.5rem;
+    letter-spacing: .05rem;
+    margin: 0 auto;
+    text-decoration: none;
+    /*height: 6rem;*/
+    /*line-height: 6rem;*/
+  }
+
+  h4.wordmark a {
+    text-decoration: none;
+    color: #ee6730;
+  }
+
+  h4.wordmark a:hover {
+    /*color: #f68a50;*/
+  }
+
+  h4.wordmark a:active {
+    color: #9e260e;
+  }
+
+  .left {
+    /*background-color: red;*/
+    text-align: left;
+    max-width: 450px;
+    min-height: 0px;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .right {
+    /*background-color: blue;*/
+    text-align: left;
+    max-width: 450px;
+    min-height: 0px;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .center {
+    /*background-color: green;*/
+    text-align: center;
+    vertical-align: middle;
+    padding: 2rem;
+    margin: 0;
+  }
+
   .homeHero {
-    background: #9ddcf9 url("/images/fun-destination-1.png") no-repeat center 0rem;
+    background: #9ddcf9 url("/images/fun-destination-1.png") no-repeat center -15rem;
+    margin: 0;
+    padding: 0;
   }
 
   .tcpCrest {
+    /*position: relative;*/
+    /*top: 15rem;*/
     height: 100%;
-    padding-top: 6rem;
+    padding-top: 11.25rem;
+    margin: 0;
+    text-align: center;
   }
 
-  i.fa-wifi, .fa-scissors {
+  i.fa-wifi {
     font-size: 20rem;
-    height: 100%;
+  }
+
+  i.fa-scissors {
+    font-size: 19rem;
+  }
+
+  .footItem {
+    line-height: 3rem;
+    font-family: 'proxima_novabold';
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    margin: .5rem;
+    font-size: 1.25rem;
+    letter-spacing: .0625rem;
+  }
+
+  small {
+    font-size: 1rem;
   }
 
 }
@@ -627,12 +786,197 @@ span.socialPinterest {
 /* Larger than mobile */
 @media (min-width: 400px) {
 
+}
+
+/* Tablet size */
+@media (min-width: 650px; max-width: 800px) {
+
 
 
 }
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (min-width: 550px; max-width: 900px) {
+
+  .container {
+    text-align: center;
+    max-width: 300px;
+    /*background-color: red;*/
+  }
+
+
+  nav {
+    /*position: fixed;*/
+    /*background-color: yellow;*/
+  }
+
+  .navbar {
+    padding: 0;
+    height: 5rem;
+    line-height: 5rem;
+    /*top: 1rem;*/
+    left: 0;
+    color: #fff;
+    font-size: 1.25rem;
+    letter-spacing: .05rem;
+    z-index: 2000;
+    text-align: left;
+  }
+
+  .navwht {
+    padding: 0;
+    height: 17rem;
+    line-height: 5rem;
+    border-bottom: 1pt solid;
+    border-color: #e1e1e1;
+    /*top: 1rem;*/
+    left: 0;
+    font-size: 1.1875rem;
+    letter-spacing: .02rem;
+    z-index: 2000;
+    text-align: left;
+    color: #ee6730;
+    background-color: rgba(255, 255, 255, 1);;
+  }
+
+  span.navbar {
+    vertical-align: middle;
+  }
+
+  .navItem {
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    margin: .3rem;
+  }
+
+  .navOrg {
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: #ee6730;
+    /*padding-top: 2.375rem;*/
+    margin: .25rem;
+  }
+
+  a.navItem:hover {
+    /*border-top: 3px solid rgba(255,255,255,.375);*/
+    color: #ee6730;
+  }
+
+  a.navItem:active {
+    /*border-top: 3px solid #fff;*/
+  }
+
+  a.navItem:disabled {
+    color: rgba(255,255,255,.5);
+  }
+
+  a.navOrg:hover {
+    /*border-top: 3px solid rgba(238,103,48,.1875);*/
+    color: #3a2417;
+  }
+
+  a.navOrg:active {
+    /*border-top: 3px solid #ee6730;*/
+  }
+
+  a.navOrg:disabled {
+    color: rgba(238,103,48,.5);
+  }
+
+  .wordmark {
+    font-family: 'Simpson_Condensed_Heavy_BoldItalic', Times, serif;
+    color: #ee6730;
+    width: 100%;
+    text-align: center;
+    font-size: 3.5rem;
+    letter-spacing: .05rem;
+    margin: 0 auto;
+    text-decoration: none;
+    /*height: 6rem;*/
+    /*line-height: 6rem;*/
+  }
+
+  h4.wordmark a {
+    text-decoration: none;
+    color: #ee6730;
+  }
+
+  h4.wordmark a:hover {
+    /*color: #f68a50;*/
+  }
+
+  h4.wordmark a:active {
+    color: #9e260e;
+  }
+
+  .left {
+    /*background-color: red;*/
+    text-align: left;
+    max-width: 100%;
+    min-height: 0px;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .right {
+    /*background-color: blue;*/
+    text-align: left;
+    max-width: 100%;
+    min-height: 0px;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .center {
+    /*background-color: green;*/
+    text-align: center;
+    vertical-align: middle;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .homeHero {
+    background: #9ddcf9 url("/images/fun-destination-1.png") no-repeat center -15rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tcpCrest {
+    /*position: relative;*/
+    /*top: 15rem;*/
+    height: 350%;
+    padding-top: 11.25rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  i.fa-wifi {
+    font-size: 20rem;
+  }
+
+  i.fa-scissors {
+    font-size: 19rem;
+  }
+
+  .footItem {
+    line-height: 3rem;
+    font-family: 'proxima_novabold';
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    margin: .5rem;
+    font-size: 1.25rem;
+    letter-spacing: .0625rem;
+  }
+
+  small {
+    font-size: 1rem;
+  }
+
+}
 
 /* Larger than tablet */
 @media (min-width: 750px) {}
