@@ -272,7 +272,7 @@ span.navbar {
 }
 
 a.navItem:hover {
-  border-top: 3px solid rgba(255,255,255,.375);
+  border-top: 3px solid rgba(255,255,255,.5);
   color: #fff;
 }
 
@@ -439,7 +439,7 @@ input[type="button"].button-primary:focus {
     input[type="button"]:focus {
       color: #ee6730;
       border-color: #ee6730;
-      background-color: rgba(238, 103, 48, 0.25);
+      background-color: rgba(238, 103, 48, 0.125);
       outline: 0; }
 
 /*---------- SECTIONS ----------*/
