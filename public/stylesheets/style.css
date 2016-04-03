@@ -94,6 +94,24 @@
   margin-bottom: 2rem;
 }
 
+.textOrg25 {
+  color: rgba(238,103,48,.25);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.textOrg50 {
+  color: rgba(238,103,48,.5);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.textOrg75 {
+  color: rgba(238,103,48,.75);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .textYllw {
   color: #fee088;
   margin-top: 2rem;
@@ -411,7 +429,7 @@ input[type="button"].button-primary:focus {
   input[type="submit"].button-wht,
   input[type="reset"].button-wht,
   input[type="button"].button-wht {
-    color: rgba(58,36,23,.25);
+    color: rgba(238,103,48,.5);
     background-color: #fff;
     border-color: #fff; }
   .button.button-wht:hover,
@@ -534,7 +552,7 @@ header {
 }
 
 .searchHero {
-  background: #fee088 url("/images/search-destination-1.png") no-repeat center -5rem;
+  background: #fee088 url("/images/search-destination-1.png") no-repeat center -15rem;
 }
 
 .searchImg {
