@@ -1,0 +1,46 @@
+{% extends "./layout.html" %}
+
+{% set title = "Welcome to the Journey!" %}
+
+{% block content %}
+
+<!-- .container is main centered wrapper -->
+
+  <header class="downloadHero">
+
+    {% include "./navbar.html" %}
+
+      <article class="container">
+        <div class="row">
+          <div class="one-half column u-pull-left center">
+            <img class="tcpCrest hvr-grow-rotate" src="images/tcp-crest-yllw.svg" alt="TCP Crest Logo">
+            <p><strong>You have arrived at Download Central!</strong><b> Find our FREE downloadable Journey Kit below.</br>
+              <i class="fa fa-angle-down textRev"></i>
+            </p>
+          </div><!-- /.column -->
+        </div><!-- /.row -->
+      </article><!-- /.containter -->
+
+  </header><!-- /HEADER -->
+
+  <section class="drkBrwnSection">
+    <article class="container">
+      <div class="row">
+        <div class="two-thirds column left">1/2</div>
+        <div class="one-third column right">1/2</div>
+      </div><!-- /.row -->
+    </article><!-- /.containter -->
+  </section>
+
+  <section class="whtSection">
+    <article class="container">
+      <div class="row">
+        <div class="one column">1 col</div>
+      </div><!-- /.row -->
+    </article><!-- /.containter -->
+  </section>
+
+
+    {% include "./footer.html" %}
+
+{% endblock %}
