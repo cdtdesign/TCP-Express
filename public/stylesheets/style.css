@@ -72,6 +72,8 @@
 
 .textRev {
   color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .textRev25 {
@@ -471,6 +473,7 @@ input[type="button"].button-primary:focus {
   border-left: 24px solid transparent;
   border-right: 24px solid transparent;
   position: absolute;
+  z-index: 1000;
 }
 
 .triangleOrg {
@@ -480,6 +483,7 @@ input[type="button"].button-primary:focus {
   border-left: 24px solid transparent;
   border-right: 24px solid transparent;
   position: absolute;
+  z-index: 1000;
 }
 
 .triangleBlu {
@@ -489,6 +493,7 @@ input[type="button"].button-primary:focus {
   border-left: 24px solid transparent;
   border-right: 24px solid transparent;
   position: absolute;
+  z-index: 1000;
 }
 
 .triangleYllw {
@@ -498,6 +503,7 @@ input[type="button"].button-primary:focus {
   border-left: 24px solid transparent;
   border-right: 24px solid transparent;
   position: absolute;
+  z-index: 1000;
 }
 
 .triangleGrn {
@@ -507,6 +513,7 @@ input[type="button"].button-primary:focus {
   border-left: 24px solid transparent;
   border-right: 24px solid transparent;
   position: absolute;
+  z-index: 1000;
 }
 
 header {
