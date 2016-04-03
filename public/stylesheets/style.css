@@ -74,6 +74,18 @@
   color: #fff;
 }
 
+.textRev25 {
+  color: rgba(255,255,255,.25);
+}
+
+.textRev50 {
+  color: rgba(255,255,255,.5);
+}
+
+.textRev75 {
+  color: rgba(255,255,255,.75);
+}
+
 .textOrg {
   color: #ee6730;
   margin-top: 2rem;
@@ -262,17 +274,12 @@ span.navbar {
   margin: .75rem;
 }
 
-.navOrg {
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: left;
-  color: #ee6730;
-  padding-top: 2.375rem;
-  margin: .75rem;
+a.navItem {
+  color: #fff;
 }
 
 a.navItem:hover {
-  border-top: 3px solid rgba(255,255,255,.5);
+  border-top: 3px solid rgba(255,255,255,.25);
   color: #fff;
 }
 
@@ -282,6 +289,19 @@ a.navItem:active {
 
 a.navItem:disabled {
   color: rgba(255,255,255,.5);
+}
+
+a.navItem:visited {
+  color: rgba(255,255,255,.5);
+}
+
+.navOrg {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: left;
+  color: #ee6730;
+  padding-top: 2.375rem;
+  margin: .75rem;
 }
 
 a.navOrg:hover {
@@ -389,7 +409,7 @@ input[type="button"].button-primary:focus {
   input[type="submit"].button-wht,
   input[type="reset"].button-wht,
   input[type="button"].button-wht {
-    color: #9ddcf9;
+    color: rgba(58,36,23,.25);
     background-color: #fff;
     border-color: #fff; }
   .button.button-wht:hover,
@@ -402,8 +422,8 @@ input[type="button"].button-primary:focus {
   input[type="submit"].button-wht:focus,
   input[type="reset"].button-wht:focus,
   input[type="button"].button-wht:focus {
-    color: #9ddcf9;
-    background-color: rgba(255,255,255,0.5);;
+    color: #fff;
+    background-color: rgba(255,255,255,0.5);
     border-color: rgba(255,255,255,0.5); }
     .button-outline,
     button-outline,
@@ -471,6 +491,24 @@ input[type="button"].button-primary:focus {
   position: absolute;
 }
 
+.triangleYllw {
+  width: 0;
+  height: 0;
+  border-top: 24px solid #fee088;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  position: absolute;
+}
+
+.triangleGrn {
+  width: 0;
+  height: 0;
+  border-top: 24px solid #95ce8a;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  position: absolute;
+}
+
 header {
   width: 100%;
   min-height: 300px;
@@ -485,7 +523,16 @@ header {
 }
 
 .downloadHero {
-  background: #95ce8a url("/images/active-destination-1.png") no-repeat center -15rem;
+  background: #95ce8a url("/images/active-destination-1.png") no-repeat center -1rem;
+}
+
+.searchHero {
+  background: #fee088 url("/images/search-destination-1.png") no-repeat center -5rem;
+}
+
+.searchImg {
+  background: #9ddcf9 url("/images/family-travelers-1.png") no-repeat center -8rem;
+  min-height: 600px;
 }
 
 .centerDiv {
@@ -632,7 +679,7 @@ span.socialPinterest {
     height: 5rem;
     line-height: 5rem;
     left: 0;
-    color: #fff;
+    /*color: #fff;*/
     font-size: 1.25rem;
     letter-spacing: .05rem;
     z-index: 2000;
@@ -651,7 +698,7 @@ span.socialPinterest {
     z-index: 2000;
     text-align: left;
     color: #ee6730;
-    background-color: rgba(255, 255, 255, 1);;
+    background-color: rgba(255, 255, 255, 1);
   }
 
   span.navbar {
@@ -667,6 +714,30 @@ span.socialPinterest {
     margin: .3rem;
   }
 
+  a.navItem {
+    color: #fff;
+  }
+
+  a.navItem:hover {
+    /*border-top: 3px solid rgba(255,255,255,.375);*/
+    border: none;
+    color: #3a2417;
+  }
+
+  a.navItem:active {
+    /*border-top: 3px solid #fff;*/
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  a.navItem:disabled {
+    color: rgba(255,255,255,.25);
+    border: none;
+  }
+
+  a.navItem:visited {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
   .navOrg {
     text-transform: uppercase;
     text-decoration: none;
@@ -674,22 +745,6 @@ span.socialPinterest {
     color: #ee6730;
     border: none;
     margin: .25rem;
-  }
-
-  a.navItem:hover {
-    /*border-top: 3px solid rgba(255,255,255,.375);*/
-    border: none;
-    color: #ee6730;
-  }
-
-  a.navItem:active {
-    /*border-top: 3px solid #fff;*/
-    border: none;
-  }
-
-  a.navItem:disabled {
-    color: rgba(255,255,255,.5);
-    border: none;
   }
 
   a.navOrg:hover {
@@ -701,10 +756,15 @@ span.socialPinterest {
   a.navOrg:active {
     /*border-top: 3px solid #ee6730;*/
     border: none;
+    color: #3a2417;
+  }
+
+  a.navOrg:visited {
+    color: rgba(238,103,48,.5);
   }
 
   a.navOrg:disabled {
-    color: rgba(238,103,48,.5);
+    color: rgba(238,103,48,.25);
   }
 
   .wordmark {
@@ -767,7 +827,7 @@ span.socialPinterest {
     /*position: relative;*/
     /*top: 15rem;*/
     height: 100%;
-    padding-top: 11.25rem;
+    padding-top: 15rem;
     margin: 0;
     text-align: center;
   }

@@ -1,0 +1,54 @@
+{% extends "./layout.html" %}
+
+{% set title = "Welcome to the Journey!" %}
+
+{% block content %}
+
+<!-- .container is main centered wrapper -->
+
+  <header class="searchHero">
+
+    {% include "./navbar.html" %}
+
+      <article class="container">
+        <div class="row">
+          <div class="one-half column u-pull-right center">
+            <img class="tcpCrest hvr-grow-rotate" src="images/tcp-crest-blu.svg" alt="TCP Crest Logo">
+            <p><strong>Great! You found the destination search!</strong></br>Now find information about your next journey, including location, pricing, age range, reviews and more. Just scroll down to begin your seek.</p>
+              <h2><i class="fa fa-angle-down textRev25"></i></h2>
+            </p>
+          </div><!-- /.column -->
+        </div><!-- /.row -->
+      </article><!-- /.containter -->
+
+  </header><!-- /HEADER -->
+
+  <section class="whtSection">
+    <article class="container">
+      <div class="row">
+        <div class="two-thirds column left">1/2</div>
+        <div class="one-third column right">1/2</div>
+      </div><!-- /.row -->
+    </article><!-- /.containter -->
+  </section>
+
+  <section class="orgSection">
+    <article class="container">
+      <div class="row">
+        <div class="one column">1 col</div>
+      </div><!-- /.row -->
+    </article><!-- /.containter -->
+  </section>
+
+  <section class="searchImg">
+    <article class="container">
+      <div class="row">
+        <div class="one column">1 col</div>
+      </div><!-- /.row -->
+    </article><!-- /.containter -->
+  </section>
+
+
+    {% include "./footer.html" %}
+
+{% endblock %}
