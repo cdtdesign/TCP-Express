@@ -142,6 +142,14 @@
   letter-spacing: .25rem;
 }
 
+.ls125 {
+  letter-spacing: .125rem;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
 i.fa-wifi {
   color: #9ddcf9;
   font-size: 25rem;
@@ -152,6 +160,32 @@ i.fa-wifi {
 i.fa-scissors {
   color: #fff;
   font-size: 25rem;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 90px;
+    background-color: #ee6730;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 3px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1000;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 /*------------- UNSLIDER -------------*/
