@@ -72,8 +72,6 @@
 
 .textRev {
   color: #fff;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .textRev25 {
@@ -162,31 +160,6 @@ i.fa-scissors {
   font-size: 25rem;
 }
 
-/* Tooltip container */
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-    visibility: hidden;
-    min-width: 90px;
-    background-color: #ee6730;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 3px;
-
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1000;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
 
 /*------------- UNSLIDER -------------*/
 
@@ -195,10 +168,6 @@ i.fa-scissors {
 }
 
 /*---------- PAGE ELEMENTS ----------*/
-
-.mobile-hide{
-  visibility: hidden;
-}
 
 .container {
   text-align: center;
@@ -724,6 +693,14 @@ span.socialPinterest {
 /*---------- MEDIA QUIERIES ----------*/
 
 @media (max-width: 500px) {
+
+  .mobile-hide {
+    visibility: hidden;
+  }
+
+  .mobile-wide {
+    width: 100%;
+  }
 
   h6.thankyou {
     padding-top: 5rem;
