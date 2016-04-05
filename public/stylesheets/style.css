@@ -303,7 +303,7 @@ a.navItem {
 }
 
 a.navItem:hover {
-  border-top: 3px solid rgba(255,255,255,.25);
+  border-top: 3px solid rgba(255,255,255,.375);
   color: #fff;
 }
 
