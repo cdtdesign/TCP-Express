@@ -9,6 +9,7 @@ var cons = require('consolidate');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var blog = require('./routes/blog');
+var footer = require('./routes/footer');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/journey-blog', blog);
+app.use('/', footer);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

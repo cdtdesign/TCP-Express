@@ -555,6 +555,11 @@ header {
   background: #95ce8a url("/images/active-destination-1.png") no-repeat center -1rem;
 }
 
+.downloadImg {
+  background: #b0a2cf url("/images/traveler-learning-1.png") no-repeat center -5rem;
+  min-height: 600px;
+}
+
 .searchHero {
   background: #fee088 url("/images/search-destination-1.png") no-repeat center -15rem;
 }
@@ -573,7 +578,7 @@ header {
   min-height: 600px;
 }
 
-.single {
+.single450 {
   max-width: 450px;
   border: 1px rgba(58,36,23,.25) solid;
   border-radius: 4px;
