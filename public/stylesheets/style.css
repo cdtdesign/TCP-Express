@@ -200,7 +200,7 @@ i.fa-scissors {
   text-align: center;
   vertical-align: middle;
   padding: 2rem;
-  margin: 0;
+  margin: auto;
 }
 
 div.one-half.column.right {
@@ -562,6 +562,27 @@ header {
 .searchImg {
   background: #9ddcf9 url("/images/family-travelers-1.png") no-repeat center -8rem;
   min-height: 600px;
+}
+
+.aboutHero {
+  background: #9ddcf9 url("/images/tcp-stripes.png") repeat center 0rem;
+}
+
+.aboutImg {
+  background: #fee088 url("/images/three-travelers-diverse.png") no-repeat center -8rem;
+  min-height: 600px;
+}
+
+.single {
+  max-width: 450px;
+  border: 1px rgba(58,36,23,.25) solid;
+  border-radius: 4px;
+  background-color:#fff;
+  margin-top:10rem;
+  margin-bottom: 10rem;
+  padding: 10rem;
+  padding-top: .5rem;
+  overflow: visible;
 }
 
 .centerDiv {
