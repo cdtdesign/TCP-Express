@@ -427,7 +427,7 @@ input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
   background-color: #3a2417;
-  border-color: #3a2417; }
+  border-color: #ee6730; }
   .button.button-wht,
   button.button-wht,
   input[type="submit"].button-wht,
