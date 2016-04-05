@@ -1,0 +1,42 @@
+{% extends "./layout.html" %}
+
+{% set title = "Welcome to the Journey!" %}
+
+{% block content %}
+
+<!-- .container is main centered wrapper -->
+
+  <header class="homeHero">
+
+    {% include "./navbar.html" %}
+
+      <article class="container">
+        <div class="row">
+          <div class="one-half column left">1/2</div>
+          <div class="one-half column right">1/2</div>
+        </div><!-- /.row -->
+      </article><!-- /.containter -->
+
+  </header><!-- /HEADER -->
+
+    <section class="orgSection">
+      <article class="container">
+        <div class="row">
+          <div class="one-half column left">1/2</div>
+          <div class="one-half column right">1/2</div>
+        </div><!-- /.row -->
+      </article><!-- /.containter -->
+    </section>
+
+    <section class="whtSection">
+      <article class="container">
+        <div class="row">
+          <div class="one column">1 col</div>
+        </div><!-- /.row -->
+      </article><!-- /.containter -->
+    </section>
+
+
+    {% include "./footer.html" %}
+
+{% endblock %}

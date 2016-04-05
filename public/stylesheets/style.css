@@ -148,6 +148,10 @@
   text-transform: uppercase;
 }
 
+.lower {
+  text-transform: lowercase;
+}
+
 i.fa-wifi {
   color: #9ddcf9;
   font-size: 25rem;
@@ -179,7 +183,7 @@ i.fa-scissors {
   /*background-color: red;*/
   float: left;
   text-align: left;
-  max-width: 450px;
+  /*max-width: 450px;*/
   min-height: 300px;
   padding: 2rem;
   margin: 0;
@@ -189,7 +193,7 @@ i.fa-scissors {
   /*background-color: blue;*/
   float: right;
   text-align: left;
-  max-width: 450px;
+  /*max-width: 450px;*/
   min-height: 300px;
   padding: 2rem;
   margin: 0;
@@ -486,6 +490,11 @@ input[type="button"].button-primary:focus {
       background-color: rgba(238, 103, 48, 0.125);
       outline: 0; }
 
+.tallBtn {
+  height:58px;
+  line-height:58px;
+}
+
 /*---------- SECTIONS ----------*/
 
 .triangleWht {
@@ -575,6 +584,11 @@ header {
 
 .aboutImg {
   background: #fee088 url("/images/three-travelers-diverse.png") no-repeat center -8rem;
+  min-height: 600px;
+}
+
+.sponsorshipHero {
+  background: #9ddcf9 url("/images/traveler-learning-2.png") repeat center -5rem;
   min-height: 600px;
 }
 
