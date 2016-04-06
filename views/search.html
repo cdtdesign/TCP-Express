@@ -122,25 +122,9 @@
           <form>
             <div class="row">
               <div class="six columns">
+
                 <input class="u-full-width" type="email" placeholder="Type Destination Name (only if known)" id="destinationName">
-              </div>
 
-              <div class="six columns">
-                <select class="u-full-width" id="destinationPricing">
-                  <option value="Option 1">Select Destination Pricing</option>
-                  <option value="Option 2">FREE!!!</option>
-                  <option value="Option 3">$5 – $10 per person</option>
-                  <option value="Option 4">$11 – $20 per person</option>
-                  <option value="Option 5">$21 – $30 per person</option>
-                  <option value="Option 6">$31 – $40 per person</option>
-                  <option value="Option 7">$41 – $50 per person</option>
-                  <option value="Option 8">$51+ per person</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="six columns">
                 <select class="u-full-width" id="destinationType">
                   <option value="Option 1">Select Destination Type</option>
                   <option value="Option 2">Active</option>
@@ -153,9 +137,24 @@
                   <option value="Option 9">Tasty</option>
                   <option value="Option 10">Technology</option>
                 </select>
-              </div>
+
+                <input class="u-full-width" type="email" placeholder="Type Destination Location (ex: Orlando, FL)" id="destinationLocation">
+
+              </div><!-- /.six.columns -->
 
               <div class="six columns">
+
+                <select class="u-full-width" id="destinationPricing">
+                  <option value="Option 1">Select Destination Pricing</option>
+                  <option value="Option 2">FREE!!!</option>
+                  <option value="Option 3">$5 – $10 per person</option>
+                  <option value="Option 4">$11 – $20 per person</option>
+                  <option value="Option 5">$21 – $30 per person</option>
+                  <option value="Option 6">$31 – $40 per person</option>
+                  <option value="Option 7">$41 – $50 per person</option>
+                  <option value="Option 8">$51+ per person</option>
+                </select>
+
                 <select class="u-full-width" id="destinationAge">
                   <option value="Option 1">Select Destination Age Range</option>
                   <option value="Option 2">Infant (birth – 1)</option>
@@ -165,24 +164,19 @@
                   <option value="Option 5">Adult (ages 18 – 64)</option>
                   <option value="Option 7">Senior (ages 65+)</option>
                 </select>
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="six columns">
-                <input class="u-full-width" type="email" placeholder="Type Destination Location (ex: Orlando, FL)" id="destinationLocation">
-              </div>
-
-              <div class="six columns">
                 <select class="u-full-width" id="destinationGender">
                   <option value="Option 1">Select Destination Gender</option>
                   <option value="Option 2">Female</option>
                   <option value="Option 3">Male</option>
                 </select>
-              </div>
-            </div>
 
-            <input class="button-brown tallBtn u-full-width" type="submit" value="SEARCH">
+              </div><!-- /.six.columns -->
+
+              <input class="button button-brown tallBtn" type="submit" value="SEARCH">
+
+            </div><!-- /.row -->
+
           </form>
         </div>
 
