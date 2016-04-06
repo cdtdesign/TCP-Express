@@ -740,6 +740,7 @@ span.socialPinterest {
 
 form {
   color: rgba(58,36,23,.5);
+  margin: 5px;
 }
 
 input[type="email"],
@@ -751,7 +752,7 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-  height: 38px;
+  height: 58px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
   border: 1px solid rgba(58,36,23,.25);
@@ -800,6 +801,194 @@ label > .label-body {
   display: inline-block;
   margin-left: .5rem;
   font-weight: normal; }
+
+/*---------- IMG OVERLAYS ----------*/
+
+/* ============================================================
+  GLOBAL
+============================================================ */
+.effects {
+  padding-left: 15px;
+}
+.effects .img450 {
+  position: relative;
+  float: left;
+  margin-bottom: 5px;
+  max-width: 450px;
+  overflow: hidden;
+}
+.effects .img300 {
+  position: relative;
+  float: left;
+  margin-bottom: 5px;
+  max-width: 300px;
+  overflow: hidden;
+  /*border: 3px #fff solid;*/
+}
+.effects .img450:nth-child(n) {
+  margin-right: 5px;
+}
+.effects .img450:first-child {
+  margin-left: -15px;
+}
+.effects .img450:last-child {
+  margin-right: 0;
+}
+.effects .img450 img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.effects .img300:nth-child(n) {
+  margin-right: 5px;
+}
+.effects .img300:first-child {
+  margin-left: -15px;
+}
+.effects .img300:last-child {
+  margin-right: 0;
+}
+.effects .img300 img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+a.close-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  /*width: 45px;
+  height: 45px;*/
+  font-size: 125%;
+  font-weight: 100;
+  color: #fff;
+  /*line-height: 45px;*/
+  text-align: center;
+  background-color: #000;
+  cursor: pointer;
+}
+a.close-overlay.hidden {
+  display: none;
+}
+
+a.expand {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  width: 90%;
+  /*height: 60px;*/
+  /*border: solid 5px #fff;
+  /*line-height: 50px;*/
+  text-align: center;
+  color: #fff;
+  font-weight: 100;
+  font-size: 125%;
+  /*border-radius: 30px;*/
+}
+
+/* ============================================================
+  EFFECT 6 - ICON BOUNCE IN
+============================================================ */
+#effect-6 .overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+#effect-6 .overlay a.expand {
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0 auto;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#effect-6 .img450.hover .overlay {
+  opacity: 1;
+}
+#effect-6 .img450.hover .overlay a.expand {
+  top: 25%;
+  margin-top: -30px;
+  opacity: 1;
+}
+
+#effect-6 .img300.hover .overlay {
+  opacity: 1;
+}
+#effect-6 .img300.hover .overlay a.expand {
+  top: 20%;
+  margin-top: -30px;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 520px) {
+  .effects .img450 {
+    width: 100%;
+  }
+  .effects .img450:nth-child(n) {
+    margin-right: 0;
+  }
+  .effects .img450:first-child {
+    margin-left: 0;
+  }
+  .effects .img450:nth-child(2n-1) {
+    margin-left: 0;
+  }
+  .effects .img450:nth-child(2n) {
+    margin-right: 0;
+  }
+  .effects .img450:last-child {
+    margin-right: 0;
+  }
+  .effects .img450 img {
+    margin: 0 auto;
+  }
+
+  .effects .img300 {
+    width: 100%;
+  }
+  .effects .img300:nth-child(n) {
+    margin-right: 0;
+  }
+  .effects .img300:first-child {
+    margin-left: 0;
+  }
+  .effects .img300:nth-child(2n-1) {
+    margin-left: 0;
+  }
+  .effects .img300:nth-child(2n) {
+    margin-right: 0;
+  }
+  .effects .img300:last-child {
+    margin-right: 0;
+  }
+  .effects .img300 img {
+    margin: 0 auto;
+  }
+
+
+}
 
 /*---------- HOVER CSS ----------*/
 

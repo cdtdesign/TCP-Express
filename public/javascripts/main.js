@@ -24,4 +24,70 @@ jQuery(document).ready(function ($) {
 					}
 			});
 	});
+
+// Image Overlay (Effect-6) .img450
+$(document).ready(function(){
+    if (Modernizr.touch) {
+        // show the close overlay button
+        $(".close-overlay").removeClass("hidden");
+        // handle the adding of hover class when clicked
+        $(".img450").click(function(e){
+            if (!$(this).hasClass("hover")) {
+                $(this).addClass("hover");
+            }
+        });
+        // handle the closing of the overlay
+        $(".close-overlay").click(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            if ($(this).closest(".img450").hasClass("hover")) {
+                $(this).closest(".img450").removeClass("hover");
+            }
+        });
+    } else {
+        // handle the mouseenter functionality
+        $(".img450").mouseenter(function(){
+            $(this).addClass("hover");
+        })
+        // handle the mouseleave functionality
+        .mouseleave(function(){
+            $(this).removeClass("hover");
+        });
+    }
+});
+
+// Image Overlay (Effect-6) .img300
+$(document).ready(function(){
+    if (Modernizr.touch) {
+        // show the close overlay button
+        $(".close-overlay").removeClass("hidden");
+        // handle the adding of hover class when clicked
+        $(".img300").click(function(e){
+            if (!$(this).hasClass("hover")) {
+                $(this).addClass("hover");
+            }
+        });
+        // handle the closing of the overlay
+        $(".close-overlay").click(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            if ($(this).closest(".img300").hasClass("hover")) {
+                $(this).closest(".img300").removeClass("hover");
+            }
+        });
+    } else {
+        // handle the mouseenter functionality
+        $(".img300").mouseenter(function(){
+            $(this).addClass("hover");
+        })
+        // handle the mouseleave functionality
+        .mouseleave(function(){
+            $(this).removeClass("hover");
+        });
+    }
+});
+
+
+
+
 });
