@@ -522,7 +522,7 @@ input[type="button"].button-primary:focus {
   line-height: 7rem;
   font-size: 1.5rem;
   font-weight: normal;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
   /*white-space: pre-wrap;*/
 }
 
@@ -616,13 +616,18 @@ header {
   background: #9ddcf9 url("/images/tcp-stripes.png") repeat center 0rem;
 }
 
-.aboutImg {
-  background: #fee088 url("/images/three-travelers-diverse.png") no-repeat center -8rem;
+.contactImg {
+  background: #95ce8a url("/images/search-destination-1.png") no-repeat center -15rem;
   min-height: 600px;
 }
 
 .sponsorshipHero {
   background: #9ddcf9 url("/images/traveler-learning-2.png") repeat center -5rem;
+  min-height: 600px;
+}
+
+.aboutImg {
+  background: #fee088 url("/images/three-travelers-diverse.png") no-repeat center -8rem;
   min-height: 600px;
 }
 
@@ -769,6 +774,20 @@ form {
   /*margin: 5px;*/
 }
 
+form.border input,
+form.border select,
+form.border textarea {
+  border: 1px solid rgba(58,36,23,.25);
+  color: rgba(58,36,23,.5);
+}
+
+form.border input:focus,
+form.border select:focus,
+form.border textarea:focus {
+  border: 1px solid rgba(157,220,249,.75);
+  color: rgba(58,36,23,.5);
+}
+
 input[type="email"],
 input[type="number"],
 input[type="search"],
@@ -778,9 +797,10 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-  height: 58px;
+  height: 55px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
+  color: rgba(58,36,23,.5);
   border: 0px solid rgba(58,36,23,.25);
   border-radius: 4px;
   box-shadow: none;
@@ -798,7 +818,7 @@ textarea {
      -moz-appearance: none;
           appearance: none; }
 textarea {
-  min-height: 65px;
+  min-height: 105px;
   padding-top: 6px;
   padding-bottom: 6px; }
 input[type="email"]:focus,
@@ -810,7 +830,8 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 0px solid rgba(58,36,23,.25);
+  color: rgba(58,36,23,.5);
+  border: 1px solid rgba(58,36,23,.5);
   outline: 0; }
 label,
 legend {
