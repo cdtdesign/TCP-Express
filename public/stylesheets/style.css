@@ -315,12 +315,17 @@ a.navItem:active {
   border-top: 3px solid #fff;
 }
 
+a.navItem:focus {
+  border-top: 3px solid #fff;
+}
+
 a.navItem:disabled {
   color: rgba(255,255,255,.5);
 }
 
 a.navItem:visited {
   color: rgba(255,255,255,.5);
+  border-top: 3px solid #fff;
 }
 
 .navOrg {
