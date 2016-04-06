@@ -513,8 +513,8 @@ input[type="button"].button-primary:focus {
       input[type="reset"].button-brown:focus,
       input[type="button"].button-brown:focus {
         color: #FFF;
-        background-color: #ee6730;
-        border-color: #3a2417; }
+        background-color: #603813;
+        border-color: #603813; }
 
 .button.tallBtn {
   width: 100%;
