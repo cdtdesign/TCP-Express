@@ -598,7 +598,7 @@ header {
 }
 
 .downloadImg {
-  background: #b0a2cf url("/images/traveler-learning-1.png") no-repeat center -5rem;
+  background: #d3c7e2 url("/images/traveler-learning-1.png") no-repeat center -5rem;
   min-height: 600px;
 }
 
@@ -612,8 +612,21 @@ header {
   min-height: 600px;
 }
 
-.aboutHero {
+.blogHero {
+  background: #d3c7e2 url("/images/reading-destination-2.png") no-repeat center -15rem;
+  min-height: 600px;
+}
+
+.bluStripes {
   background: #9ddcf9 url("/images/tcp-stripes.png") repeat center 0rem;
+}
+
+.yllwStripes {
+  background: #fee088 url("/images/tcp-stripes.png") repeat center 0rem;
+}
+
+.prplStripes {
+  background: #d3c7e2 url("/images/tcp-stripes.png") repeat center 0rem;
 }
 
 .contactImg {
