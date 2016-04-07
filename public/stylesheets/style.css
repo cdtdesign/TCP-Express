@@ -320,7 +320,7 @@ a.navItem:focus {
 }
 
 a.navItem:disabled {
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.25);
 }
 
 a.navItem:visited {
@@ -347,7 +347,7 @@ a.navOrg:active {
 }
 
 a.navOrg:disabled {
-  color: rgba(238,103,48,.5);
+  color: rgba(238,103,48,.25);
 }
 
 .wordmark {
