@@ -536,7 +536,7 @@ input[type="button"].button-primary:focus {
   font-size: 1.5rem;
   font-weight: normal;
   margin-bottom: 5rem;
-  /*white-space: pre-wrap;*/
+  white-space: normal;
 }
 
 .button.btn55 {
@@ -1116,15 +1116,15 @@ a.expand {
     width: 100%;
   }
 
-  .tallBtn {
+  .button.tallBtn {
     width: 100%;
-    height:8rem;
+    height: 8rem;
     line-height:1.5rem;
     font-size: 1.5rem;
     font-weight: normal;
     padding-top: 2rem;
     margin-bottom: 8rem;
-    white-space: pre-wrap;
+    white-space: normal;
   }
 
   nav {
