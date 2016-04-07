@@ -515,6 +515,19 @@ input[type="button"].button-primary:focus {
         color: #FFF;
         background-color: #603813;
         border-color: #603813; }
+      .button.button-facebook {
+        color: #FFF;
+        background-color: #3b5998;
+        height: 55px;
+        line-height: 55px;
+      }
+      .button.button-twitter {
+        color: #FFF;
+        background-color: #1da1f2;
+        height: 55px;
+        line-height: 55px;
+
+      }
 
 .button.tallBtn {
   width: 100%;
@@ -524,6 +537,12 @@ input[type="button"].button-primary:focus {
   font-weight: normal;
   margin-bottom: 5rem;
   /*white-space: pre-wrap;*/
+}
+
+.button.btn55 {
+  height: 55px;
+  font-weight: 700;
+  padding-bottom: 0;
 }
 
 /*---------- SECTIONS ----------*/
@@ -587,63 +606,6 @@ header {
   margin-bottom: 0rem;
 }
 
-.homeHero {
-  background: #9ddcf9 url("/images/fun-destination-1.png") no-repeat center -15rem;
-  min-height: 600px;
-}
-
-.downloadHero {
-  background: #95ce8a url("/images/active-destination-1.png") no-repeat center -1rem;
-  min-height: 600px;
-}
-
-.downloadImg {
-  background: #d3c7e2 url("/images/traveler-learning-1.png") no-repeat center -5rem;
-  min-height: 600px;
-}
-
-.searchHero {
-  background: #fee088 url("/images/search-destination-1.png") no-repeat center -15rem;
-  min-height: 600px;
-}
-
-.searchImg {
-  background: #9ddcf9 url("/images/family-travelers-1.png") no-repeat center -8rem;
-  min-height: 600px;
-}
-
-.blogHero {
-  background: #d3c7e2 url("/images/reading-destination-2.png") no-repeat center -15rem;
-  min-height: 600px;
-}
-
-.bluStripes {
-  background: #9ddcf9 url("/images/tcp-stripes.png") repeat center 0rem;
-}
-
-.yllwStripes {
-  background: #fee088 url("/images/tcp-stripes.png") repeat center 0rem;
-}
-
-.prplStripes {
-  background: #d3c7e2 url("/images/tcp-stripes.png") repeat center 0rem;
-}
-
-.contactImg {
-  background: #95ce8a url("/images/search-destination-1.png") no-repeat center -15rem;
-  min-height: 600px;
-}
-
-.sponsorshipHero {
-  background: #9ddcf9 url("/images/traveler-learning-2.png") repeat center -5rem;
-  min-height: 600px;
-}
-
-.aboutImg {
-  background: #fee088 url("/images/three-travelers-diverse.png") no-repeat center -8rem;
-  min-height: 600px;
-}
-
 .single450 {
   max-width: 450px;
   border: 1px rgba(58,36,23,.25) solid;
@@ -651,8 +613,9 @@ header {
   background-color:#fff;
   margin-top:10rem;
   margin-bottom: 10rem;
-  padding: 10rem;
+  padding: 5rem;
   padding-top: .5rem;
+  padding-bottom: 1rem;
   overflow: visible;
 }
 
@@ -661,10 +624,11 @@ header {
   border: 1px rgba(58,36,23,.25) solid;
   border-radius: 4px;
   background-color:#fff;
-  margin-top:10rem;
-  margin-bottom: 10rem;
-  padding: 10rem;
-  padding-top: .5rem;
+  margin-top:5rem;
+  margin-bottom: 5rem;
+  padding: 5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   overflow: visible;
 }
 
@@ -750,6 +714,65 @@ span.socialPinterest {
   line-height: 6rem;
 }
 
+/*////////// SECTION IMAGES //////////*/
+
+.homeHero {
+  background: #9ddcf9 url("/images/fun-destination-1.png") no-repeat center -15rem;
+  min-height: 600px;
+}
+
+.downloadHero {
+  background: #95ce8a url("/images/active-destination-1.png") no-repeat center -1rem;
+  min-height: 600px;
+}
+
+.downloadImg {
+  background: #d3c7e2 url("/images/traveler-learning-1.png") no-repeat center -5rem;
+  min-height: 600px;
+}
+
+.searchHero {
+  background: #fee088 url("/images/search-destination-1.png") no-repeat center -15rem;
+  min-height: 600px;
+}
+
+.searchImg {
+  background: #9ddcf9 url("/images/family-travelers-1.png") no-repeat center -8rem;
+  min-height: 600px;
+}
+
+.blogHero {
+  background: #d3c7e2 url("/images/reading-destination-2.png") no-repeat center -15rem;
+  min-height: 600px;
+}
+
+.bluStripes {
+  background: rgba(157,220,249,.875) url("/images/tcp-stripes.png") repeat center 0rem;
+}
+
+.yllwStripes {
+  background: #fee088 url("/images/tcp-stripes.png") repeat center 0rem;
+}
+
+.prplStripes {
+  background: #d3c7e2 url("/images/tcp-stripes.png") repeat center 0rem;
+}
+
+.contactImg {
+  background: #95ce8a url("/images/search-destination-1.png") no-repeat center -15rem;
+  min-height: 600px;
+}
+
+.sponsorshipHero {
+  background: #9ddcf9 url("/images/traveler-learning-2.png") repeat center -5rem;
+  min-height: 600px;
+}
+
+.aboutImg {
+  background: #fee088 url("/images/three-travelers-diverse.png") no-repeat center -8rem;
+  min-height: 600px;
+}
+
 /*////////// SECTION COLORS //////////*/
 
 .bluSection {
@@ -787,11 +810,19 @@ form {
   /*margin: 5px;*/
 }
 
+::-webkit-input-placeholder, /* Chrome/Opera/Safari */
+::-moz-placeholder, /* Firefox 19+ */
+:-ms-input-placeholder, /* IE 10+ */
+:-moz-placeholder { /* Firefox 18- */
+  color: rgba(58,36,23,.5);
+}
+
 form.border input,
 form.border select,
 form.border textarea {
   border: 1px solid rgba(58,36,23,.25);
   color: rgba(58,36,23,.5);
+  font-weight: lighter;
 }
 
 form.border input:focus,

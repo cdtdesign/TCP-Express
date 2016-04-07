@@ -1,8 +1,10 @@
 {% extends "./layout.html" %}
 {% block content %}
+
   {{ message }}
   {{ error.status }}
   <pre>
+    <img src="/images/tcp-404-page-not-found-grn.svg" style="max-width:400px;">
     {{ error.stack }}
   </pre>
 {% endblock %}

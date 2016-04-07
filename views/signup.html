@@ -1,0 +1,45 @@
+{% extends "./layout.html" %}
+
+{% set title = "Welcome to the Journey!" %}
+
+{% block content %}
+
+<!-- .container is main centered wrapper -->
+
+  <header>
+
+    {% include "./nonav.html" %}
+
+    <article class="container">
+      <div class="row">
+        <div class="single300 center">
+          <!-- <img class="tcpCrest hvr-grow-rotate" src="images/tcp-crest-yllw.svg" alt="TCP Crest Logo"> -->
+          <h4 class="wordmark">Traveling Children Project</h4>
+            <!-- <h6 class="textOrg">Sign In</h6> -->
+
+            <!-- CONTACT FORM -->
+            <form class="border">
+
+              <div class="row">
+                <div class="columns u-full-width">
+                  <a class="button button-facebook u-full-width" href="#">Sign Up with Facebook</a>
+                  <a class="button button-twitter u-full-width" href="#">Sign Up with Twitter</a>
+                  <hr>
+                  <input class="u-full-width" type="text" placeholder="Traveler's First Name" id="signinEmail">
+                  <input class="u-full-width" type="email" placeholder="Email" id="signinEmail">
+                  <input class="u-full-width" type="password" placeholder="Password" id="signinPassword">
+                  <input class="u-full-width" type="password" placeholder="Confirm" id="signinPasswordConfirm">
+                  <input class="button button-primary btn55 u-full-width" type="submit" value="Sign Up">
+                  <small>Already have an account? <a href="/signin">Sign In</a></small>
+                </div>
+              </div>
+
+            </form>
+
+        </div>
+      </div><!-- /.row -->
+    </article><!-- /.containter -->
+
+  </header><!-- /HEADER -->
+
+{% endblock %}
