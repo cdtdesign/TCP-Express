@@ -718,22 +718,22 @@ span.socialPinterest {
 
 .homeHero {
   background: #9ddcf9 url("/images/fun-destination-1.png") no-repeat center -15rem;
-  min-height: 600px;
+  min-height: 500px;
 }
 
 .downloadHero {
   background: #95ce8a url("/images/active-destination-1.png") no-repeat center -1rem;
-  min-height: 600px;
+  min-height: 500px;
 }
 
 .downloadImg {
   background: #d3c7e2 url("/images/traveler-learning-1.png") no-repeat center -5rem;
-  min-height: 600px;
+  min-height: 500px;
 }
 
 .searchHero {
   background: #fee088 url("/images/search-destination-1.png") no-repeat center -15rem;
-  min-height: 600px;
+  min-height: 500px;
 }
 
 .searchImg {
@@ -743,7 +743,7 @@ span.socialPinterest {
 
 .blogHero {
   background: #d3c7e2 url("/images/reading-destination-2.png") no-repeat center -15rem;
-  min-height: 600px;
+  min-height: 500px;
 }
 
 .bluStripes {
