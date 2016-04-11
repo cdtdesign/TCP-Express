@@ -230,6 +230,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #3a2417;
   margin-top: 0;
   margin-bottom: 0;
+  line-height: 1.25em;
 }
 
 p {
@@ -748,6 +749,7 @@ span.socialPinterest {
 
 .bluStripes {
   background: rgba(157,220,249,.875) url("/images/tcp-stripes.png") repeat center 0rem;
+  min-height: 300px;
 }
 
 .yllwStripes {
@@ -892,6 +894,69 @@ label > .label-body {
   display: inline-block;
   margin-left: .5rem;
   font-weight: normal; }
+
+/*---------- MASONRY GRID ----------*/
+
+.grid-item { width: 275px; }
+
+/*---------- JOURNEY BLOG ELEMENTS ----------*/
+
+.blogPost {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 275px;
+  /*max-width: 290px;*/
+  min-height: 500px;
+  background-color: #fee088;
+  margin: 20px 10px;
+  border-radius: 4px;
+}
+
+.blogTitle {
+  padding: 10px;
+  color: #ee6730;
+  font-size: 2rem;
+}
+
+.blogImg {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.blogTraveler {
+  padding: 20px;
+  text-align: left;
+}
+
+.blogDate {
+  font-style: italic;
+}
+
+.blogBody {
+  padding: 20px;
+  line-height: 2rem;
+}
+
+.blogFooter {
+  height: 50px;
+  padding: 10px;
+  margin: 5px;
+  text-align: left;
+  color: #ee6730;
+}
+
+/*---------- AD IMG DIVS ----------*/
+
+.img200 {
+  display: block;
+  margin: 5px;
+  padding: 0;
+  float: left;
+  height: auto;
+  max-width: 200px;
+}
 
 /*---------- IMG OVERLAYS ----------*/
 
