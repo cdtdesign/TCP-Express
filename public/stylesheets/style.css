@@ -895,21 +895,33 @@ label > .label-body {
   margin-left: .5rem;
   font-weight: normal; }
 
-/*---------- MASONRY GRID ----------*/
-
-.grid-item { width: 275px; }
-
 /*---------- JOURNEY BLOG ELEMENTS ----------*/
 
+.blogSection {
+  max-height: 950px;
+  overflow: auto;
+}
+
+.blogButton {
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  background-color: #3a2417;
+  color: #ee6730;
+  font-size: 5.875rem;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.blogButton i {
+  text-align: center;
+}
+
 .blogPost {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 275px;
-  /*max-width: 290px;*/
-  min-height: 500px;
-  background-color: #fee088;
-  margin: 20px 10px;
   border-radius: 4px;
+  color: #3a2417;
 }
 
 .blogTitle {
@@ -945,6 +957,29 @@ label > .label-body {
   margin: 5px;
   text-align: left;
   color: #ee6730;
+}
+
+/*---------- MASONRY GRID ----------*/
+
+.grid {
+  /*background: #EEE;*/
+  /*max-width: 1200px;*/
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-item {
+  padding: 10px 0px;
+  /*padding-bottom: 10px;*/
+  width: 275px;
+  min-height: 500px;
+  background-color: #fee088;
+  margin: 10px 10px;
+  float: left;
 }
 
 /*---------- AD IMG DIVS ----------*/
@@ -1167,6 +1202,27 @@ a.expand {
 .hvr-grow-rotate:hover, .hvr-grow-rotate:focus, .hvr-grow-rotate:active {
   -webkit-transform: scale(1.05) rotate(7deg);
   transform: scale(1.05) rotate(7deg);
+}
+
+/* Rotate */
+.hvr-rotate {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-rotate:hover, .hvr-rotate:focus, .hvr-rotate:active {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /*---------- MEDIA QUIERIES ----------*/
