@@ -25,9 +25,28 @@
                   <a class="button button-facebook u-full-width" href="#">Sign In with Facebook</a>
                   <a class="button button-twitter u-full-width" href="#">Sign In with Twitter</a>
                   <hr>
-                  <input class="u-full-width" type="email" placeholder="Email" id="signinEmail">
-                  <input class="u-full-width" type="password" placeholder="Password" id="signinPassword">
-                  <input class="button button-primary btn55 u-full-width" type="submit" value="Sign In">
+                  <input
+                    form="signupForm"
+                    class="u-full-width"
+                    type="text"
+                    placeholder="Traveler First Name ( child's name )"
+                    id="travelerName"
+                    value="{{ child_name }}"
+                    required>
+                  <input
+                    class="u-full-width"
+                    type="email"
+                    placeholder="Email"
+                    id="signinEmail">
+                  <input
+                    class="u-full-width"
+                    type="password"
+                    placeholder="Password"
+                    id="signinPassword">
+                  <input
+                    class="button button-primary btn55 u-full-width"
+                    type="submit"
+                    value="Sign In">
                   <small>Don't have an account? <a href="/signup">Sign Up</a> Forgot <a href="#">Password</a>?</small>
                 </div>
               </div>

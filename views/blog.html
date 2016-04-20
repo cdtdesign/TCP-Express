@@ -14,6 +14,7 @@
         <div class="row">
           <div class="one-half column left center">
             <img class="tcpCrest hvr-grow-rotate" src="images/tcp-crest-yllw.svg" alt="TCP Crest Logo">
+            <figcaption style="display:none;">Join the Journey! | Traveling Children Project</figcaption>
             <p><strong>Welcome Travelers to the Journey Blog!</strong></br>Here you can share your journey with other Travelers and also see where their travels have led them.</br> Create posts of your journeys to collect Travel Tokens for admission discounts and other great prizes!
             </p>
           </div>
@@ -52,8 +53,47 @@
               <figcaption style="text-align:left;"><small><span class="blogTraveler"><a href="#"><b>Traveling {{ travelers.traveler_name }}</b></a></span>| <span class="blogDate">{{  }}</span></small></figcaption>
               <p class="blogBody">
                 We needed a pumpkin and a day of family fun, since Monday was a day off from school, so we went to check out the Pumpkin Patch Farm. We ended the fun visit with a challenging maze, where we had to locate 12 creepy Halloween characters within the maze.
+                <small class="blogFooter" style="margin:0rem;"><em>#TravelingChristian #HappyTravels </em></small>
               </p>
-              <small class="blogFooter"><em>#TravelingChristian #HappyTravels </em></small>
+
+
+              <!-- blogPost footer -->
+              <hr class="bpDivider">
+              <div class="faBlogPost">
+                <div class="dropup bpDropup">
+                  <select class="dropMenu">
+                    <option class="share-button"><p>SHARE TO WEB:</p></option>
+                    <option class="share-with-facebook share-button">
+                      <a><i class="fa fa-facebook-square"></i> Facebook</a>
+                    </option>
+                    <option class="share-with-twitter share-button" data-sharing-url="{{ $twitter_url }}">
+                      <a><i class="fa fa-twitter"></i> Twitter</a>
+                    </option>
+                    <option class="share-with-pinterest share-button">
+                      <a><i class="fa fa-pinterest-square"></i> Pinterest</a>
+                    </option>
+                    <option class="share-with-tumblr share-button">
+                      <a><i class="fa fa-tumblr-square"></i> Tumblr</a>
+                    </option>
+                    <option class="share-with-envelope">
+                      <a href="#"><i class="fa fa-envelope-square"></i> Email</a>
+                    </option>
+                  </select>
+                </div></br>
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Share">
+                  <i class="fa fa-send"></i>
+                </a>
+                <a class="like-button" title="Like">
+                  <i class="fa fa-heart {{ }}"></i>
+                </a>
+                  <a href="#" title="Edit">
+                    <i class="fa fa-pencil journeyEditButton" data-toggle="modal" data-target="#journeyModal"></i>
+                  </a>
+                  <a href="/journeys/delete/{{ journey.uuid }}" title="Delete" class="postDeleteButton">
+                    <i class="fa fa-close"></i>
+                  </a>
+              </div>
+
             </div><!-- /.blogPost -->
 
           </div><!-- /.one .column -->

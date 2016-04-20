@@ -950,6 +950,7 @@ label > .label-body {
 
 .blogBody {
   padding: 20px;
+  padding-bottom: 0;
   line-height: 2rem;
 }
 
@@ -959,6 +960,67 @@ label > .label-body {
   margin: 5px;
   text-align: left;
   color: #ee6730;
+}
+
+/*---------- BLOG POST FOOTER ----------*/
+
+
+.bpDivider {
+  border-color: #fbd163;
+  margin-bottom: 15px;
+}
+
+/*---------- Journey Sharing List ----------*/
+
+.bpDropup {
+  display: inline-block;;
+}
+
+.dropMenu {
+  max-height: 35px;
+  min-width: 250px;
+}
+
+div.faBlogPost {
+  cursor: pointer;
+  text-align: right;
+  padding: 5px;
+}
+
+li a {
+  font-weight: normal;
+}
+
+li a:hover {
+  color: #ee6730;
+  background: none;
+}
+
+li:last-of-type {
+  padding-bottom: 15px;
+}
+
+div.faBlogPost i.fa {
+  color: #ffc233;
+  font-size: 1.5em;
+  text-align: right;
+  padding: 6px;
+}
+
+div.faBlogPost i.fa :hover {
+  color: #ee6730;
+}
+
+div.faBlogPost i.fa .liked {
+  color: #e64040;
+}
+
+div.faBlogPost i.fa :active {
+  color: #903612;
+}
+
+div.faBlogPost i.fa .fa-close {
+  font-size:1.875em;
 }
 
 /*---------- MASONRY GRID ----------*/
