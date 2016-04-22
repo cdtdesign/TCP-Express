@@ -972,18 +972,22 @@ label > .label-body {
 
 /*---------- Journey Sharing List ----------*/
 
-.bpDropup {
-  display: inline-block;;
+.share-button {
+  margin: 0;
 }
 
-.dropMenu {
-  max-height: 35px;
-  min-width: 250px;
+.bpDropup {
+  display: inline-block;
 }
+
+/*.dropMenu {
+  max-height: 175px;
+  min-width: 120px;
+}*/
 
 div.faBlogPost {
   cursor: pointer;
-  text-align: right;
+  text-align: left;
   padding: 5px;
 }
 
@@ -1003,7 +1007,7 @@ li:last-of-type {
 div.faBlogPost i.fa {
   color: #ffc233;
   font-size: 1.5em;
-  text-align: right;
+  text-align: left;
   padding: 6px;
 }
 
@@ -1023,11 +1027,77 @@ div.faBlogPost i.fa .fa-close {
   font-size:1.875em;
 }
 
+/* Dropup List Styles */
+
+div.bpDropup{
+    width: 120px;
+    height: 175px;
+    margin: 0px;
+    padding: 10px;
+    position: absolute;
+    /*top: -50px;*/
+    display: block;
+    background-color: rgba(255,255,255,0.875);
+    border-radius: 4px;
+}
+
+div.bpDropup > li {
+    list-style-type: none;
+    float: left;
+    display: block;
+    margin: 0px 10px;
+    position: relative;
+    padding: 10px;
+    width: 100px;
+}
+div.bpDropup > li ul {
+    position:absolute;
+    bottom: 100%;
+}
+div.bpDropup li:hover > ul {
+    display:block;
+}
+div.bpDropup > li:hover{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+}
+div.bpDropup li ul {
+    margin:0px;
+    padding:0px;
+    display:none;
+}
+div.bpDropup li ul li{
+    list-style-type:none;
+    margin:10px 0 0 0;
+}
+div.bpDropup li ul li a{
+    display:block;
+    padding:5px 10px;
+    color:#bdb49f;
+    text-decoration:none;
+ }
+div.bpDropup li ul li:hover a {
+    color:#b15815;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+div.bpDropup li span{
+    cursor:pointer;
+    margin:0px 10px;
+    font-weight:bold;
+}
+
+div.bpDropup {
+    margin-top: -200px;
+}
+
+
+
 /*---------- MASONRY GRID ----------*/
 
 .grid {
   /*background: #EEE;*/
-  /*max-width: 1200px;*/
+  max-width: 100%;
 }
 
 .grid:after {
@@ -1039,7 +1109,7 @@ div.faBlogPost i.fa .fa-close {
 .grid-item {
   padding: 10px 0px;
   /*padding-bottom: 10px;*/
-  width: 275px;
+  width: 285px;
   min-height: 600px;
   background-color: #fee088;
   margin: 15px 10px;

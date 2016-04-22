@@ -5,7 +5,6 @@
 {% block content %}
 
 <!-- .container is main centered wrapper -->
-
   <header class="blogHero">
 
     {% include "./navbar.html" %}
@@ -44,21 +43,22 @@
         <h5 class="textOrg" style="margin-top:50px;"><b>Where has TC taken you?</b> Click the button below to begin sharing your journey and collect Travel Tokens for admission discounts and other great prizes!</h5>
         <div class="blogButton hvr-rotate"><i class="fa fa-plus" aria-hidden="true"></i></div>
         <div class="row grid">
-          <!-- @foreach (journeys.items() as $journey) -->
+          {% for journey in journeys %}
           <div class="one column">
 
             <div class="blogPost grid-item" data-journey-uuid="{{ journey.uuid }}" id="{{ journey.uuid }}">
               <p class="blogTitle">TC Journey to {{ journey.title }}</p>
+              {% if journey.header_image_filename !== NULL %}
               <img src="images/tc-journey-disney-magic-kingdom.jpg" class="blogImg">
-              <figcaption style="text-align:left;"><small><span class="blogTraveler"><a href="#"><b>Traveling {{ travelers.traveler_name }}</b></a></span>| <span class="blogDate">{{  }}</span></small></figcaption>
-              <p class="blogBody">
-                We needed a pumpkin and a day of family fun, since Monday was a day off from school, so we went to check out the Pumpkin Patch Farm. We ended the fun visit with a challenging maze, where we had to locate 12 creepy Halloween characters within the maze.
+              <img src="images/{{ journey.header_image_filename }}" class="blogImg">
+              {% endif %}
+              <figcaption style="text-align:left;"><small><span class="blogTraveler"><a href="#"><b>Traveling {{ journey.traveler_name }}</b></a></span>| <span class="blogDate">{{ journey.date }}</span></small></figcaption>
+              <p class="blogBody">{{ journey.body }}
                 <small class="blogFooter" style="margin:0rem;"><em>#TravelingChristian #HappyTravels </em></small>
               </p>
 
-
               <!-- blogPost footer -->
-              <hr class="bpDivider">
+              <!-- <hr class="bpDivider">
               <div class="faBlogPost">
                 <div class="dropup bpDropup">
                   <select class="dropMenu">
@@ -66,7 +66,7 @@
                     <option class="share-with-facebook share-button">
                       <a><i class="fa fa-facebook-square"></i> Facebook</a>
                     </option>
-                    <option class="share-with-twitter share-button" data-sharing-url="{{ $twitter_url }}">
+                    <option class="share-with-twitter share-button" data-sharing-url="{{ twitter_url }}">
                       <a><i class="fa fa-twitter"></i> Twitter</a>
                     </option>
                     <option class="share-with-pinterest share-button">
@@ -92,12 +92,47 @@
                   <a href="/journeys/delete/{{ journey.uuid }}" title="Delete" class="postDeleteButton">
                     <i class="fa fa-close"></i>
                   </a>
-              </div>
+              </div> -->
+              <!-- /.faBlogPost -->
+
+              <div class="faBlogPost">
+              <hr class="bpDivider">
+              <div class="bpDropup">
+                <ul>
+                  <li class="share-with-facebook share-button">
+                    <a><i class="fa fa-facebook-square"></i> Facebook</a>
+                  </li>
+                  <li class="share-with-twitter share-button" data-sharing-url="{{ twitter_url }}">
+                    <a><i class="fa fa-twitter"></i> Twitter</a>
+                  </li>
+                  <li class="share-with-pinterest share-button">
+                    <a><i class="fa fa-pinterest-square"></i> Pinterest</a>
+                  </li>
+                  <li class="share-with-tumblr share-button">
+                    <a><i class="fa fa-tumblr-square"></i> Tumblr</a>
+                  </li>
+                  <li class="share-with-envelope">
+                    <a href="#"><i class="fa fa-envelope-square"></i> Email</a>
+                  </li>
+                </ul>
+              </div><!-- ./bpDropup -->
+
+                <a title="Share"><i class="fa fa-send"></i></a>
+                <a class="like-button" title="Like">
+                  <i class="fa fa-heart {{ }}"></i>
+                </a>
+                <a href="#" title="Edit">
+                  <i class="fa fa-pencil journeyEditButton" data-toggle="modal" data-target="#journeyModal"></i>
+                </a>
+                <a href="/journeys/delete/{{ journey.uuid }}" title="Delete" class="postDeleteButton">
+                  <i class="fa fa-close" style="font-size:2.875rem;"></i>
+                </a>
+              </div><!-- ./faBlogPost -->
 
             </div><!-- /.blogPost -->
 
           </div><!-- /.one .column -->
-
+        {% endfor %}
         </div><!-- /.row -->
       </article><!-- /.containter -->
     </section><!-- /.bluStripes -->
