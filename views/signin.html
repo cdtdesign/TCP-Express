@@ -18,29 +18,31 @@
             <!-- <h6 class="textOrg">Sign In</h6> -->
 
             <!-- CONTACT FORM -->
-            <form action="" class="border" id="signin" method="POST">
+            <form action="/auth/signin" class="border" id="signin" method="POST">
 
               <div class="row">
                 <div class="columns u-full-width">
                   <a class="button button-facebook u-full-width" href="#">Sign In with Facebook</a>
                   <a class="button button-twitter u-full-width" href="#">Sign In with Twitter</a>
                   <hr>
-                  <input
+                  <!-- <input
                     form="signupForm"
                     class="u-full-width"
                     type="text"
                     placeholder="Traveler First Name ( child's name )"
                     id="travelerName"
                     value="{{ child_name }}"
-                    required>
+                    required> -->
                   <input
                     class="u-full-width"
                     type="email"
+                    name="username"
                     placeholder="Email"
                     id="signinEmail">
                   <input
                     class="u-full-width"
                     type="password"
+                    name="password"
                     placeholder="Password"
                     id="signinPassword">
                   <input

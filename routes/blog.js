@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var database = require('../database');
+// var database = require('../database');
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
