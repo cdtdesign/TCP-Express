@@ -19,9 +19,11 @@
   "devDependencies": {
     "connect": "^3.4.1",
     "connect-flash": "^0.1.1",
+    "consolidate": "^0.14.0",
     "nodemon": "^1.9.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "req-flash": "0.0.2"
+    "req-flash": "0.0.2",
+    "swig": "^1.4.2"
   }
 }
