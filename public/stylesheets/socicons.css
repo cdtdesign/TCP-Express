@@ -65,7 +65,7 @@
     -moz-border-radius: 100px;
     border-radius: 100px;
     margin-right: 10px;
-    color: #ffffff;
+    color: #ffffff !important;
     background-color: none;
 }
 
@@ -80,31 +80,31 @@
 }
 
 .soc-facebook {
-    background-color: #3e5b98;
+    background-color: #3e5b98 !important;
 }
 .soc-facebook:before {
     content:'b';
 }
 .soc-twitter {
-    background-color: #4da7de;
+    background-color: #4da7de !important;
 }
 .soc-twitter:before {
     content:'a';
 }
 .soc-pinterest {
-    background-color: #c92619;
+    background-color: #c92619 !important;
 }
 .soc-pinterest:before {
     content:'d';
 }
 .soc-instagram {
-    background-color: #9c7c6e;
+    background-color: #9c7c6e !important;
 }
 .soc-instagram:before {
     content:'x';
 }
 .soc-vimeo {
-    background-color: #51b5e7;
+    background-color: #51b5e7 !important;
 }
 .soc-vimeo:before {
     content:'s';
