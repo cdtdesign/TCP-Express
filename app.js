@@ -10,19 +10,15 @@ var child_process = require("child_process");
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-var routes = require('./routes/index');
-var auth = require('./routes/auth');
-var blog = require('./routes/blog');
-var footer = require('./routes/footer');
-// var database = require('./database');
-
+var express = require('express');
 var app = express();
+var router = express.Router();
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/passport');
 
-var express = require('express');
-var router = express.Router();
+var db = require('./db');
+
 // var database = require('../database');
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
@@ -32,7 +28,19 @@ var connection = mysql.createConnection({
   database : 'Passport'
 });
 
-var db = require('./db/users');
+app.use(require('morgan')('combined'));
+app.use(require('serve-static')(__dirname + '/../../public'));
+app.use(require('cookie-parser')());
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+var routes = require('./routes/index');
+var auth = require('./routes/auth');
+var blog = require('./routes/blog');
+var footer = require('./routes/footer');
+// var database = require('./database');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -51,14 +59,6 @@ app.use('/', routes);
 app.use('/auth', auth);
 app.use('/journeyblog', blog);
 app.use('/', footer);
-
-app.use(require('serve-static')(__dirname + '/../../public'));
-app.use(require('cookie-parser')());
-app.use(require('body-parser').urlencoded({ extended: true }));
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(require('morgan')('combined'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -108,7 +108,6 @@ passport.use(new LocalStrategy(
       return cb(null, user);
     });
   }));
-
 
 // Configure Passport authenticated session persistence.
 //
