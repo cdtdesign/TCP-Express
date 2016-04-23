@@ -92,7 +92,7 @@ $(document).ready(function(){
 $('.grid').masonry({
   // options
   itemSelector: '.grid-item',
-  columnWidth: 275
+  columnWidth: 330
 });
 
 

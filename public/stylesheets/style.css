@@ -175,7 +175,7 @@ i.fa-scissors {
 
 .container {
   text-align: center;
-  max-width: 900px;
+  max-width: 1000px;
   /*background-color: red;*/
 }
 
@@ -1108,7 +1108,7 @@ div.bpDropup {
 .grid-item {
   padding: 10px 0px;
   /*padding-bottom: 10px;*/
-  width: 285px;
+  width: 300px;
   min-height: 600px;
   background-color: #fee088;
   margin: 15px 10px;
@@ -1126,7 +1126,7 @@ div.bpDropup {
   max-width: 200px;
 }
 
-/*---------- IMG OVERLAYS ----------*/
+/*---------- IMG OVERLAYS (SPONSOR ADS) ----------*/
 
 /* ============================================================
   GLOBAL
@@ -1420,7 +1420,7 @@ a.expand {
   .navItem {
     text-transform: uppercase;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
     color: #fff;
     border: none;
     margin: .3rem;
