@@ -22,6 +22,7 @@
     "connect-flash": "^0.1.1",
     "consolidate": "^0.14.0",
     "express-session": "^1.13.0",
+    "gulp": "^3.9.1",
     "mongoose": "^4.4.13",
     "morgan": "^1.6.1",
     "nodemon": "^1.9.1",
