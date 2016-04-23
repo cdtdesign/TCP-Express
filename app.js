@@ -11,13 +11,15 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var auth = require('./routes/auth');
 var blog = require('./routes/blog');
 var footer = require('./routes/footer');
 // var database = require('./database');
 
 var app = express();
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/passport');
 
 var express = require('express');
 var router = express.Router();
@@ -29,6 +31,8 @@ var connection = mysql.createConnection({
   password : process.env.TCP_DATABASE_PASSWORD,
   database : 'Passport'
 });
+
+var db = require('./db/users');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,19 +48,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
 app.use('/auth', auth);
 app.use('/journeyblog', blog);
 app.use('/', footer);
 
-app.use(express.static('public'));
-// app.use(flash());
-// app.use(express.cookieParser());
-// app.use(express.bodyParser());
-// app.use(express.session({ secret: 'keyboard cat' }));
+app.use(require('serve-static')(__dirname + '/../../public'));
+app.use(require('cookie-parser')());
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(app.router);
+app.use(require('morgan')('combined'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -89,71 +91,41 @@ app.use(function(err, req, res, next) {
   });
 });
 
-// Passport Config --- SIGNUP
-
-passport.use(new LocalStrategy({
-    // by default, local strategy uses username and password, we will override with email
-    usernameField : 'email',
-    passwordField : 'password',
-    passReqToCallback : true // allows us to pass back the entire request to the callback
-  }, function(req, email, password, done) {
-
-    // find a user whose email is the same as the forms email
-    // we are checking to see if the user trying to login already exists
-    connection.query("select * from travelers where email = '"+email+"'",function(err,rows){
-    console.log(rows);
-    console.log("above row object");
-    if (err)
-      return done(err);
-    if (rows.length) {
-      return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
-    } else {
-
-      // if there is no user with that email
-      // create the user
-      var newUserMysql = new Object();
-
-      newUserMysql.email    = email;
-      newUserMysql.password = password; // use the generateHash function in our user model
-
-      var insertQuery = "INSERT INTO travelers ( email, password ) values ('" + email +"','"+ password +"')";
-      console.log(insertQuery);
-        connection.query(insertQuery,function(err,rows){
-        newUserMysql.id = rows.insertId;
-
-        return done(null, newUserMysql);
-      });
-    }
-  });
-}));
-
-
 // Passport Config --- SIGNIN
 
-passport.use('local-login', new LocalStrategy({
-    // by default, local strategy uses username and password, we will override with email
-    usernameField : 'email',
-    passwordField : 'password',
-    passReqToCallback : true // allows us to pass back the entire request to the callback
-  }, function(req, email, password, done) { // callback with email and password from our form
-
-    console.log(email, password);
-
-    connection.query("SELECT * FROM travelers WHERE email = '" + email + "'",function(err,rows){
-    if (err)
-      return done(err);
-    if (!rows.length) {
-      return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
-    }
-
-    // if the user is found but the password is wrong
-    if (!( rows[0].password == password))
-      return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
-
-      // all is well, return successful user
-      return done(null, rows[0]);
+// Configure the local strategy for use by Passport.
+//
+// The local strategy require a `verify` function which receives the credentials
+// (`username` and `password`) submitted by the user.  The function must verify
+// that the password is correct and then invoke `cb` with a user object, which
+// will be set at `req.user` in route handlers after authentication.
+passport.use(new LocalStrategy(
+  function(username, password, cb) {
+    db.users.findByUsername(username, function(err, user) {
+      if (err) { return cb(err); }
+      if (!user) { return cb(null, false); }
+      if (user.password != password) { return cb(null, false); }
+      return cb(null, user);
     });
-  })
-);
+  }));
+
+
+// Configure Passport authenticated session persistence.
+//
+// In order to restore authentication state across HTTP requests, Passport needs
+// to serialize users into and deserialize users out of the session.  The
+// typical implementation of this is as simple as supplying the user ID when
+// serializing, and querying the user record by ID from the database when
+// deserializing.
+passport.serializeUser(function(user, cb) {
+  cb(null, user.id);
+});
+
+passport.deserializeUser(function(id, cb) {
+  db.users.findById(id, function (err, user) {
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+});
 
 module.exports = app;
