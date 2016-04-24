@@ -23,13 +23,12 @@ router.get('/signin',
     res.render('signin');
   });
 
-router.post('/signin', passport.authenticate('local', { failureRedirect: '/signin' }),
+router.post('/signin',
+  passport.authenticate('local', { failureRedirect: '/auth/signin' }),
   function(req, res) {
+    console.log('Redirect to root');
     res.redirect('/');
   });
-// router.post('/signin', function (req, res) {
-//   res.send('it\'s here.');
-// })
 
 router.get('/signout',
   function(req, res){

@@ -2,13 +2,15 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-// var flash = require('req-flash');
+// var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cons = require('consolidate');
 var child_process = require("child_process");
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+var Strategy = require('passport-local').Strategy;
+
+var flash = require('connect-flash');
+var cookieParser = require('cookie-parser');
 
 var express = require('express');
 var app = express();
@@ -30,11 +32,16 @@ var connection = mysql.createConnection({
 
 app.use(require('morgan')('combined'));
 app.use(require('serve-static')(__dirname + '/../../public'));
-app.use(require('cookie-parser')());
+app.use(cookieParser('secret'));
 app.use(require('body-parser').urlencoded({ extended: true }));
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true , cookie: { maxAge: 60000 }}));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
+// app.all('/', function (req, res) {
+//   req.flash('test', 'it works.');
+// });
 
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
@@ -99,7 +106,7 @@ app.use(function(err, req, res, next) {
 // (`username` and `password`) submitted by the user.  The function must verify
 // that the password is correct and then invoke `cb` with a user object, which
 // will be set at `req.user` in route handlers after authentication.
-passport.use(new LocalStrategy(
+passport.use(new Strategy(
   function(username, password, cb) {
     db.users.findByUsername(username, function(err, user) {
       if (err) { return cb(err); }
