@@ -1,10 +1,11 @@
 var gulp = require('gulp');
 var exec = require('child_process').exec;
+var nodemon = require('gulp-nodemon');
 
-gulp.task('serve', function () {
+gulp.task('default', function () {
   // Run Mongo
   exec('mongod');
 
   // Run Nodemon
-  exec('nodemon ./bin/www');
+  nodemon();
 });
