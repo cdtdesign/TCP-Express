@@ -258,6 +258,13 @@ a:hover {
   color: #ee6730;
 }
 
+.myPassportPic {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/*---------- NAVBAR ----------*/
+
 nav {
   position: fixed;
   /*background-color: yellow;*/

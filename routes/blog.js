@@ -30,4 +30,8 @@ router.get('/', function(req, res, next) {
   // connection.end();
 });
 
+app.get('/', function(req, res) {
+    res.sendfile(__dirname + '/navbar.html');
+});
+
 module.exports = router;
