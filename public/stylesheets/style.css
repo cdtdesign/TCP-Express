@@ -243,6 +243,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   color: #3a2417;
+  padding: 1.5rem;
 }
 
 ul {
@@ -391,8 +392,9 @@ h4.wordmark a:active {
 }
 
 .tcpCrest {
-  height: 300px;
+  max-height: 300px;
   padding-top: 6rem;
+  text-align: center;
 }
 
 /*---------- BUTTONS ----------*/
@@ -1377,12 +1379,53 @@ a.expand {
 
 @media (max-width: 500px) {
 
+  .row {
+    max-width: 1000px;
+    text-align: center;
+  }
+
+  .one-third {
+    min-width: 100% !important;
+  }
+
+  .one-third img {
+    min-width: 100% !important;
+  }
+
   .mobile-hide {
     visibility: hidden;
   }
 
   .mobile-wide {
     width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .single300 {
+    max-width: 300px;
+    border: 1px rgba(58,36,23,.25) solid;
+    border-radius: 4px;
+    background-color:#fff;
+    margin-top: 20rem !important;
+    margin-bottom: 5rem;
+    padding: 0rem !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    overflow: visible;
+  }
+
+  .single450 {
+    max-width: 450px;
+    border: 1px rgba(58,36,23,.25) solid;
+    border-radius: 4px;
+    background-color:#fff;
+    margin-top: 20rem !important;
+    margin-bottom: 10rem;
+    padding: 0rem !important;
+    padding-top: .125rem;
+    padding-bottom: 1rem;
+    overflow: visible;
   }
 
   .button.tallBtn {
@@ -1553,7 +1596,7 @@ a.expand {
   .tcpCrest {
     /*position: relative;*/
     /*top: 15rem;*/
-    height: 100%;
+    max-height: 90%;
     padding-top: 15rem;
     margin: 0;
     text-align: center;
