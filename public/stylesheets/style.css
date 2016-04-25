@@ -538,13 +538,14 @@ input[type="button"].button-primary:focus {
         background-color: #3b5998;
         height: 55px;
         line-height: 55px;
+        max-width: 95%;
       }
       .button.button-twitter {
         color: #FFF;
         background-color: #1da1f2;
         height: 55px;
         line-height: 55px;
-
+        max-width: 95%;
       }
 
 .button.tallBtn {
