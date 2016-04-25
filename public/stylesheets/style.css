@@ -829,6 +829,12 @@ form {
   /*margin: 5px;*/
 }
 
+input,
+textarea,
+select {
+  max-width: 95%;
+}
+
 ::-webkit-input-placeholder, /* Chrome/Opera/Safari */
 ::-moz-placeholder, /* Firefox 19+ */
 :-ms-input-placeholder, /* IE 10+ */
