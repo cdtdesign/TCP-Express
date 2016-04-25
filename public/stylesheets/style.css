@@ -220,7 +220,14 @@ div.one-half.column.left {
 .row {
   max-width: 1000px;
   text-align: center;
+  margin-left: 50px;
 }
+
+.row-wide {
+  max-width: 1000px;
+  text-align: center;
+}
+
 
 .columns {
   padding-top: 2rem;
@@ -1127,7 +1134,7 @@ div.bpDropup {
 
 .img200 {
   display: block;
-  margin: 0px 20px;
+  margin: 0px 20px 20px 20px;
   padding: 0;
   float: left;
   height: auto;
