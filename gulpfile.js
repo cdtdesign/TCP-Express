@@ -11,12 +11,12 @@ gulp.task('default', function () {
   nodemon();
 
   // Run Browser-Sync
-  browserSync.init([
-    "views/***",
-    "public/stylesheets/***"
-  ], {
-    proxy: 'localhost:9000',
-    open: true,
-    browser: "Google Chrome"
-  });
+  // browserSync.init([
+  //   "views/***",
+  //   "public/stylesheets/***"
+  // ], {
+  //   proxy: 'localhost:9000',
+  //   open: true,
+  //   browser: "Google Chrome"
+  // });
 });
