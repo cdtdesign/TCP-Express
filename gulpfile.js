@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var exec = require('child_process').exec;
 var nodemon = require('gulp-nodemon');
-var browserSync = require('browser-sync').create();
+// var browserSync = require('browser-sync').create();
 
 gulp.task('default', function () {
   // Run Mongo
