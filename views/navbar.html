@@ -13,18 +13,17 @@
             <a class="navItem" href="/about">About</a>
           </span>
         </div><!-- /.two-thirds column -->
-        <!-- SIGN-IN/UP -->
+        <!-- SIGN-IN/OUT -->
         <div class="one-third column">
-          <a class="button" href="/auth/signin" target="_blank"><strong>Sign In</strong></a>
-          <a class="button button-wht" href="/auth/signup" target="_blank"><strong>Sign Up</strong></a>
-        </div>
-        <!-- /.one-third column -->
-        <!-- SIGN-OUT -->
-        <!-- <div class="one-third column">
+          {% if user %}
           <a class="button" href="/auth/signout"><strong>Sign Out</strong></a>
-          <a class="" href="/mypassport" target="_blank"><strong><p>Traveling </br>{{ journey.traveler_name }}</p></strong></a>
+          <a class="" href="/mypassport"><strong><p>Traveling </br>{{ journey.traveler_name }}</p></strong></a>
           <img class="myPassportPic" src="/images/" + '{{ journey.selfie_filename }}'>
-        </div> -->
+          {% else %}
+          <a class="button" href="/auth/signin"><strong>Sign In</strong></a>
+          <a class="button button-wht" href="/auth/signup" target="_blank"><strong>Sign Up</strong></a>
+          {% endif %}
+        </div>
         <!-- /.one-third column -->
       </div><!-- /.container -->
     </nav>
@@ -46,10 +45,21 @@
             <a class="navOrg" href="/about">About</a>
           </strong></span>
         </div><!-- /.two-thirds column -->
-        <div class="one-third column">
+        <!-- SIGN-OUT -->
+        <div class="one-third column signout">
+          {% if user %}
+          <a class="button-outline" href="/auth/signout"><strong>Sign Out</strong></a>
+          <a class="" href="/mypassport"><strong><p>Traveling </br>{{ journey.traveler_name }}</p></strong></a>
+        </div>
+        <!-- /.one-third column -->
+        <!-- SIGN-IN/UP -->
+        <div class="one-third column signinup">
+          {% else %}
           <a class="button-outline" href="/auth/signin"><strong>Sign In</strong></a>
           <a class="button button-primary" href="/auth/signup" target="_blank"><strong>Sign Up</strong></a>
-        </div><!-- /.one-third column -->
+          {% endif %}
+        </div>
+        <!-- /.one-third column -->
       </div><!-- /.container -->
     </nav>
   </div><!-- /.row -->
