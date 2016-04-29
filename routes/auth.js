@@ -10,6 +10,17 @@ var connection = mysql.createConnection({
   database : 'Passport'
 });
 
+// Facebook auth
+router.get('/auth/facebook',
+  passport.authenticate('facebook'));
+
+router.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/signin' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+
 router.get('/',
   function(req, res) {
     res.render('index', { user: req.user });
