@@ -243,7 +243,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   color: #3a2417;
-  padding: 1.5rem;
 }
 
 ul {
@@ -1385,6 +1384,10 @@ a.expand {
 /*---------- MEDIA QUIERIES ----------*/
 
 @media (max-width: 500px) {
+
+  p {
+    padding: 1.5rem;
+  }
 
   .row {
     max-width: 1000px;
