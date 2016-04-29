@@ -8,6 +8,7 @@ var cons = require('consolidate');
 var child_process = require("child_process");
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
@@ -30,6 +31,19 @@ var connection = mysql.createConnection({
   database : 'Passport'
 });
 
+// Facebook Authentication Strategy
+passport.use(new FacebookStrategy({
+    clientID: process.env.FACEBOOK_KEY,
+    clientSecret: process.env.FACEBOOK_SECRET,
+    callbackURL: "http://travelingchildrenproject.com/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
+
 app.use(require('morgan')('combined'));
 app.use(require('serve-static')(__dirname + '/../../public'));
 app.use(cookieParser('secret'));
@@ -38,6 +52,17 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveU
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Facebook auth
+app.get('/auth/facebook',
+  passport.authenticate('facebook'));
+
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/signin' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 
 // app.all('/', function (req, res) {
 //   req.flash('test', 'it works.');
