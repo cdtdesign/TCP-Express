@@ -30,8 +30,8 @@
     "morgan": "^1.6.1",
     "nodemon": "^1.9.1",
     "passport": "^0.2.2",
+    "passport-facebook": "^2.1.0",
     "passport-local": "^1.0.0",
-    "passport-facebook": "^2.0.0",
     "req-flash": "0.0.2",
     "serve-static": "^1.10.2",
     "swig": "^1.4.2"
