@@ -63,6 +63,7 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://beta-express.travelingchildrenproject.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
+    console.log(profile);
     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
       return cb(err, user);
     });
