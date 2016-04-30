@@ -9,6 +9,7 @@ var child_process = require("child_process");
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
+var OAuth2Strategy = require('passport-oauth2').Strategy;
 
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
@@ -30,6 +31,23 @@ var connection = mysql.createConnection({
   password : process.env.TCP_DATABASE_PASSWORD,
   database : 'Passport'
 });
+
+// Oauth2 Authentication Strategy
+
+passport.use(new OAuth2Strategy({
+    authorizationURL: 'http://travelingchildrenproject.com/oauth2/authorize',
+    tokenURL: 'http://travelingchildrenproject.com/oauth2/token',
+    clientID: process.env.FACEBOOK_KEY,
+    clientSecret: process.env.FACEBOOK_SECRET,
+    callbackURL: "http://travelingchildrenproject.com/auth/oauth2/callback"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ exampleId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
+
 
 // Facebook Authentication Strategy
 passport.use(new FacebookStrategy({
