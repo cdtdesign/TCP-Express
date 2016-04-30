@@ -21,27 +21,27 @@ var router = express.Router();
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/passport');
 
-var userSchema = mongoose.Schema({
-  facebookId: Number,
-  email: String,
-  username: String,
-  password: String
-});
-
-userSchema.methods.findOrCreate = function (profile, cb){
-    var userObj = new this();
-    this.findOne({_id : profile.id},function(err,result){
-        if(!result){
-            userObj.username = profile.displayName;
-            //....
-            userObj.save(cb);
-        }else{
-            cb(err,result);
-        }
-    });
-};
-
-var User = mongoose.model('User', userSchema);
+// var userSchema = mongoose.Schema({
+//   facebookId: Number,
+//   email: String,
+//   username: String,
+//   password: String
+// });
+//
+// userSchema.methods.findOrCreate = function (profile, cb){
+//     var userObj = new this();
+//     this.findOne({_id : profile.id},function(err,result){
+//         if(!result){
+//             userObj.username = profile.displayName;
+//             //....
+//             userObj.save(cb);
+//         }else{
+//             cb(err,result);
+//         }
+//     });
+// };
+//
+// var User = mongoose.model('User', userSchema);
 
 var db = require('./db');
 
@@ -69,7 +69,6 @@ passport.use(new OAuth2Strategy({
     });
   }
 ));
-
 
 // Facebook Authentication Strategy
 passport.use(new FacebookStrategy({
