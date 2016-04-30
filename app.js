@@ -10,7 +10,7 @@ var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var OAuth2Strategy = require('passport-oauth2').Strategy;
-var findOrCreate = require('mongoose-findorcreate')
+var findOrCreate = require('mongoose-findorcreate');
 
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
