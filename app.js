@@ -21,7 +21,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/passport');
 
-var userSchema = mongoose.Schema('userSchema', {
+var userSchema = mongoose.Schema({
   facebookId: Number,
   email: String,
   username: String,
@@ -30,7 +30,7 @@ var userSchema = mongoose.Schema('userSchema', {
 
 var User = mongoose.model('User', userSchema);
 
-userSchema.statics.findOrCreate = function findOrCreate(profile, cb){
+userSchema.methods.findOrCreate = function findOrCreate(profile, cb){
     var userObj = new this();
     this.findOne({_id : profile.id},function(err,result){
         if(!result){
