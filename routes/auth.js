@@ -11,15 +11,15 @@ var connection = mysql.createConnection({
 });
 
 // Facebook auth
-router.get('/facebook',
-  passport.authenticate('facebook'));
+router.get('/facebook', passport.authenticate('facebook'));
 
-router.get('/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/signin' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
+router.get('/facebook/callback', function (req, res, next) {
+  passport.authenticate('facebook', {
+    successRedirect: '/',
+    failureRedirect: '/signin'
   });
+  redirect('/success');
+});
 
 router.get('/',
   function(req, res) {

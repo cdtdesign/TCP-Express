@@ -18,22 +18,35 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 
+// Bootstrap Middleware
+app.use(require('morgan')('combined'));
+app.use(require('serve-static')(__dirname + '/../../public'));
+app.use(cookieParser('secret'));
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true , cookie: { maxAge: 60000 }}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/passport');
 
 var userSchema = mongoose.Schema({
+  oauth2Id: String,
   facebookId: Number,
   email: String,
   username: String,
   password: String
 });
 
-userSchema.methods.findOrCreate = function (profile, cb){
+userSchema.methods.findOrCreate = function (profile, cb) {
+    console.log('findOrCreate was called from app.js at line 33');
+    console.log('Profile data:', profile);
     var userObj = new this();
-    this.findOne({_id : profile.id},function(err,result){
+    this.findOne({facebookId : profile.id},function(err,result){
         if(!result){
             userObj.username = profile.displayName;
-            //....
+            // ...
             userObj.save(cb);
         }else{
             cb(err,result);
@@ -55,7 +68,6 @@ var connection = mysql.createConnection({
 });
 
 // Oauth2 Authentication Strategy
-
 passport.use(new OAuth2Strategy({
     authorizationURL: 'http://beta-express.travelingchildrenproject.com/oauth2/authorize',
     tokenURL: 'http://beta-express.travelingchildrenproject.com/oauth2/token',
@@ -64,12 +76,11 @@ passport.use(new OAuth2Strategy({
     callbackURL: "http://beta-express.travelingchildrenproject.com/auth/oauth2/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ exampleId: profile.id }, function (err, user) {
+    User.findOrCreate({ oauth2Id: profile.id }, function (err, user) {
       return cb(err, user);
     });
   }
 ));
-
 
 // Facebook Authentication Strategy
 passport.use(new FacebookStrategy({
@@ -85,14 +96,23 @@ passport.use(new FacebookStrategy({
   }
 ));
 
-app.use(require('morgan')('combined'));
-app.use(require('serve-static')(__dirname + '/../../public'));
-app.use(cookieParser('secret'));
-app.use(require('body-parser').urlencoded({ extended: true }));
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true , cookie: { maxAge: 60000 }}));
-app.use(flash());
-app.use(passport.initialize());
-app.use(passport.session());
+// Configure Passport authenticated session persistence.
+//
+// In order to restore authentication state across HTTP requests, Passport needs
+// to serialize users into and deserialize users out of the session.  The
+// typical implementation of this is as simple as supplying the user ID when
+// serializing, and querying the user record by ID from the database when
+// deserializing.
+passport.serializeUser(function(user, cb) {
+  cb(null, user.id);
+});
+
+passport.deserializeUser(function(id, cb) {
+  db.users.findById(id, function (err, user) {
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+});
 
 // Facebook auth
 // app.get('/auth/facebook',
@@ -181,23 +201,5 @@ passport.use(new Strategy(
       return cb(null, user);
     });
   }));
-
-// Configure Passport authenticated session persistence.
-//
-// In order to restore authentication state across HTTP requests, Passport needs
-// to serialize users into and deserialize users out of the session.  The
-// typical implementation of this is as simple as supplying the user ID when
-// serializing, and querying the user record by ID from the database when
-// deserializing.
-passport.serializeUser(function(user, cb) {
-  cb(null, user.id);
-});
-
-passport.deserializeUser(function(id, cb) {
-  db.users.findById(id, function (err, user) {
-    if (err) { return cb(err); }
-    cb(null, user);
-  });
-});
 
 module.exports = app;
