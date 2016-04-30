@@ -10,6 +10,7 @@ var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var OAuth2Strategy = require('passport-oauth2').Strategy;
+var findOrCreate = require('mongoose-findorcreate')
 
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
@@ -21,27 +22,27 @@ var router = express.Router();
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/passport');
 
-// var userSchema = mongoose.Schema({
-//   facebookId: Number,
-//   email: String,
-//   username: String,
-//   password: String
-// });
-//
-// userSchema.methods.findOrCreate = function (profile, cb){
-//     var userObj = new this();
-//     this.findOne({_id : profile.id},function(err,result){
-//         if(!result){
-//             userObj.username = profile.displayName;
-//             //....
-//             userObj.save(cb);
-//         }else{
-//             cb(err,result);
-//         }
-//     });
-// };
-//
-// var User = mongoose.model('User', userSchema);
+var userSchema = mongoose.Schema({
+  facebookId: Number,
+  email: String,
+  username: String,
+  password: String
+});
+
+userSchema.methods.findOrCreate = function (profile, cb){
+    var userObj = new this();
+    this.findOne({_id : profile.id},function(err,result){
+        if(!result){
+            userObj.username = profile.displayName;
+            //....
+            userObj.save(cb);
+        }else{
+            cb(err,result);
+        }
+    });
+};
+
+var User = mongoose.model('User', userSchema);
 
 var db = require('./db');
 
@@ -92,21 +93,6 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveU
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-
-// Facebook auth
-// app.get('/auth/facebook',
-//   passport.authenticate('facebook'));
-//
-// app.get('/auth/facebook/callback',
-//   passport.authenticate('facebook', { failureRedirect: '/signin' }),
-//   function(req, res) {
-//     // Successful authentication, stredirect home.
-//     res.redirect('/');
-//   });
-
-// app.all('/', function (req, res) {
-//   req.flash('test', 'it works.');
-// });
 
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
