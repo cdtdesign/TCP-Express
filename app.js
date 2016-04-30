@@ -21,12 +21,27 @@ var router = express.Router();
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/passport');
 
-var User = mongoose.model('User', {
+var userSchema = mongoose.Schema('userSchema', {
   facebookId: Number,
   email: String,
   username: String,
   password: String
 });
+
+var User = mongoose.model('User', userSchema);
+
+userSchema.statics.findOrCreate = function findOrCreate(profile, cb){
+    var userObj = new this();
+    this.findOne({_id : profile.id},function(err,result){
+        if(!result){
+            userObj.username = profile.displayName;
+            //....
+            userObj.save(cb);
+        }else{
+            cb(err,result);
+        }
+    });
+};
 
 var db = require('./db');
 
