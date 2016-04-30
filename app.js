@@ -28,8 +28,6 @@ var userSchema = mongoose.Schema({
   password: String
 });
 
-var User = mongoose.model('User', userSchema);
-
 userSchema.methods.findOrCreate = function (profile, cb){
     var userObj = new this();
     this.findOne({_id : profile.id},function(err,result){
@@ -42,6 +40,8 @@ userSchema.methods.findOrCreate = function (profile, cb){
         }
     });
 };
+
+var User = mongoose.model('User', userSchema);
 
 var db = require('./db');
 
