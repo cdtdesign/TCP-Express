@@ -21,6 +21,13 @@ var router = express.Router();
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/passport');
 
+var User = mongoose.model('User', {
+  facebookId: Number,
+  email: String,
+  username: String,
+  password: String
+});
+
 var db = require('./db');
 
 // var database = require('../database');
