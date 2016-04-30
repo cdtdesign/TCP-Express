@@ -35,11 +35,11 @@ var connection = mysql.createConnection({
 // Oauth2 Authentication Strategy
 
 passport.use(new OAuth2Strategy({
-    authorizationURL: 'http://travelingchildrenproject.com/oauth2/authorize',
-    tokenURL: 'http://travelingchildrenproject.com/oauth2/token',
+    authorizationURL: 'http://beta-express.travelingchildrenproject.com/oauth2/authorize',
+    tokenURL: 'http://beta-express.travelingchildrenproject.com/oauth2/token',
     clientID: process.env.FACEBOOK_KEY,
     clientSecret: process.env.FACEBOOK_SECRET,
-    callbackURL: "http://travelingchildrenproject.com/auth/oauth2/callback"
+    callbackURL: "http://beta-express.travelingchildrenproject.com/auth/oauth2/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({ exampleId: profile.id }, function (err, user) {
@@ -53,7 +53,7 @@ passport.use(new OAuth2Strategy({
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_KEY,
     clientSecret: process.env.FACEBOOK_SECRET,
-    callbackURL: "http://travelingchildrenproject.com/auth/facebook/callback"
+    callbackURL: "http://beta-express.travelingchildrenproject.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
@@ -78,7 +78,7 @@ app.use(passport.session());
 // app.get('/auth/facebook/callback',
 //   passport.authenticate('facebook', { failureRedirect: '/signin' }),
 //   function(req, res) {
-//     // Successful authentication, redirect home.
+//     // Successful authentication, stredirect home.
 //     res.redirect('/');
 //   });
 
