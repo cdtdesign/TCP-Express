@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -10,6 +11,7 @@ var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var OAuth2Strategy = require('passport-oauth2').Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
 
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
@@ -23,7 +25,8 @@ app.use(require('morgan')('combined'));
 app.use(require('serve-static')(__dirname + '/../../public'));
 app.use(cookieParser('secret'));
 app.use(require('body-parser').urlencoded({ extended: true }));
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true , cookie: { maxAge: 60000 }}));
+// app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true , cookie: { maxAge: 60000 }}));
+app.use(session({ secret: 'anything' }));
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -32,6 +35,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/passport');
 
 var userSchema = mongoose.Schema({
+  _id: Number,
   oauth2Id: String,
   facebookId: Number,
   email: String,
@@ -98,8 +102,8 @@ passport.use(new FacebookStrategy({
 
 // Twitter Authentication Strategy
 passport.use(new TwitterStrategy({
-    consumerKey: TWITTER_CONSUMER_KEY,
-    consumerSecret: TWITTER_CONSUMER_SECRET,
+    consumerKey: process.env.TWITTER_CONSUMER_KEY,
+    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
     callbackURL: "http://beta-express.travelingchildrenproject.com/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, cb) {
@@ -113,8 +117,12 @@ app.get('/auth/twitter',
   passport.authenticate('twitter'));
 
 app.get('/auth/twitter/callback',
-  passport.authenticate('twitter', { failureRedirect: '/signin' }),
   function(req, res) {
+    passport.authenticate('twitter', {
+      successRedirect: '/',
+      failureRedirect: '/signin'
+    });
+
     // Successful authentication, redirect home.
     res.redirect('/');
   });

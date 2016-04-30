@@ -18,7 +18,7 @@ router.get('/facebook/callback', function (req, res, next) {
     successRedirect: '/',
     failureRedirect: '/signin'
   });
-  redirect('/success');
+  res.redirect('/');
 });
 
 router.get('/',
