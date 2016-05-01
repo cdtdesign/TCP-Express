@@ -1,5 +1,4 @@
 var express = require('express');
-var session = require('express-session');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -25,8 +24,8 @@ app.use(require('morgan')('combined'));
 app.use(require('serve-static')(__dirname + '/../../public'));
 app.use(cookieParser('secret'));
 app.use(require('body-parser').urlencoded({ extended: true }));
-// app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true , cookie: { maxAge: 60000 }}));
-app.use(session({ secret: 'anything' }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true , cookie: { maxAge: 60000 }}));
+// app.use(session({ secret: 'anything' }));
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -43,20 +42,36 @@ var userSchema = mongoose.Schema({
   password: String
 });
 
-userSchema.methods.findOrCreate = function (profile, cb) {
-    console.log('findOrCreate was called from app.js at line 33');
-    console.log('Profile data:', profile);
-    var userObj = new this();
-    this.findOne({facebookId : profile.id},function(err,result){
-        if(!result){
-            userObj.username = profile.displayName;
-            // ...
-            userObj.save(cb);
-        }else{
-            cb(err,result);
-        }
-    });
-};
+userSchema.method('findOrCreate', function (profile, cb) {
+  console.log('findOrCreate was called from app.js at line 33');
+  console.log('Profile data:', profile);
+  var userObj = new this();
+  this.findOne({facebookId : profile.id},function(err,result){
+    if(!result){
+      userObj.username = profile.displayName;
+      // ...
+      userObj.save(cb);
+    }else{
+      cb(err,result);
+    }
+  });
+});
+
+// userSchema Method
+// userSchema.methods.findOrCreate = function (profile, cb) {
+//     console.log('findOrCreate was called from app.js at line 33');
+//     console.log('Profile data:', profile);
+//     var userObj = new this();
+//     this.findOne({facebookId : profile.id},function(err,result){
+//         if(!result){
+//             userObj.username = profile.displayName;
+//             // ...
+//             userObj.save(cb);
+//         }else{
+//             cb(err,result);
+//         }
+//     });
+// };
 
 var User = mongoose.model('User', userSchema);
 
