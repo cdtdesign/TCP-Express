@@ -46,7 +46,8 @@ userSchema.method('findOrCreate', function (profile, cb) {
   console.log('findOrCreate was called from app.js at line 33');
   console.log('Profile data:', profile);
   var userObj = new this();
-  this.findOne({facebookId : profile.id},function(err,result){
+  this.db.model('User').findOne({facebookId : profile.id},
+    function(err,result){
     if(!result){
       userObj.username = profile.displayName;
       // ...
