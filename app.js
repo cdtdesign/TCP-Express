@@ -80,7 +80,7 @@ passport.use(new OAuth2Strategy({
     callbackURL: "http://beta-express.travelingchildrenproject.com/auth/oauth2/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ oauth2Id: profile.id }, function (err, user) {
+    db.users.findOrCreate({ oauth2Id: profile.id }, function (err, user) {
       return cb(err, user);
     });
   }
@@ -94,7 +94,7 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile);
-    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+    db.users.findOrCreate({ facebookId: profile.id }, function (err, user) {
       return cb(err, user);
     });
   }
@@ -107,7 +107,7 @@ passport.use(new TwitterStrategy({
     callbackURL: "http://beta-express.travelingchildrenproject.com/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, cb) {
-    User.findOrCreate({ twitterId: profile.id }, function (err, user) {
+    db.users.findOrCreate({ twitterId: profile.id }, function (err, user) {
       return cb(err, user);
     });
   }
