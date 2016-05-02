@@ -51,10 +51,10 @@ router.post('/signup', function(req, res, next) {
   // } else {
     // The passwords do match
     console.log(req.body);
-    connection.query('INSERT INTO travelers (email, password, first_name, last_name, traveler_name, traveler_gender, parent_gender) VALUES ("' + req.body.email + '", "' + req.body.password + '", "' + req.body.first_name + '", "' + req.body.last_name + '", "' + req.body.traveler_name + '", 3, 3)', function (err, results, fields) {
-      if (err) throw err;
-      console.log(results);
-    });
+    // connection.query('INSERT INTO travelers (email, password, first_name, last_name, traveler_name, traveler_gender, parent_gender) VALUES ("' + req.body.email + '", "' + req.body.password + '", "' + req.body.first_name + '", "' + req.body.last_name + '", "' + req.body.traveler_name + '", 3, 3)', function (err, results, fields) {
+    //   if (err) throw err;
+    //   console.log(results);
+    // });
   // }
   res.render('signup', {});
 });
