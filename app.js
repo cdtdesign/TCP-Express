@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 // var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer = require('multer'); // v1.0.5
+var upload = multer(); // for parsing multipart/form-data
 var cons = require('consolidate');
 var child_process = require("child_process");
 var passport = require('passport');
@@ -23,6 +25,7 @@ var router = express.Router();
 app.use(require('morgan')('combined'));
 app.use(require('serve-static')(__dirname + '/../../public'));
 app.use(cookieParser('secret'));
+app.use(bodyParser());
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true , cookie: { maxAge: 60000 }}));
 // app.use(session({ secret: 'anything' }));
