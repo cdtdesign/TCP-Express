@@ -119,7 +119,7 @@ app.get('/auth/twitter/callback',
     res.redirect('/');
   });
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 // Configure Passport authenticated session persistence.
 //
 // In order to restore authentication state across HTTP requests, Passport needs
