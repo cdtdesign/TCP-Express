@@ -57,7 +57,7 @@ router.post('/signup', function(req, res, next) {
       console.log(results);
     });
   // }
-  res.render('/', {});
+  res.render('/index', {});
 });
 
 router.get('/signout',
