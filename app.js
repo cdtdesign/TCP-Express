@@ -138,8 +138,8 @@ passport.deserializeUser(function(id, cb) {
   });
 });
 
-=======
->>>>>>> 55d8ed922b1cbed00e06bccdb8ea4d3aab1a1cae
+// =======
+// >>>>>>> 55d8ed922b1cbed00e06bccdb8ea4d3aab1a1cae
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
 var blog = require('./routes/blog');
