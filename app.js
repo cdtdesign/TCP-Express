@@ -1,3 +1,8 @@
+// Goal is to make sure Mongo is Node and Passport
+//
+// Then figure out whether to keep data
+// in MySQL or somehow get it into Mongo
+//
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -44,22 +49,6 @@ var userSchema = mongoose.Schema({
   username: String,
   password: String
 });
-
-// userSchema Method
-// userSchema.methods.findOrCreate = function (profile, cb) {
-//     console.log('findOrCreate was called from app.js at line 33');
-//     console.log('Profile data:', profile);
-//     var userObj = new this();
-//     this.findOne({facebookId : profile.id},function(err,result){
-//         if(!result){
-//             userObj.username = profile.displayName;
-//             // ...
-//             userObj.save(cb);
-//         }else{
-//             cb(err,result);
-//         }
-//     });
-// };
 
 var User = mongoose.model('User', userSchema);
 
@@ -147,21 +136,6 @@ passport.deserializeUser(function(id, cb) {
     cb(null, user);
   });
 });
-
-// Facebook auth
-// app.get('/auth/facebook',
-//   passport.authenticate('facebook'));
-//
-// app.get('/auth/facebook/callback',
-//   passport.authenticate('facebook', { failureRedirect: '/signin' }),
-//   function(req, res) {
-//     // Successful authentication, stredirect home.
-//     res.redirect('/');
-//   });
-
-// app.all('/', function (req, res) {
-//   req.flash('test', 'it works.');
-// });
 
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
