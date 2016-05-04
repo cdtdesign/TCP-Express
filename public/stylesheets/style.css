@@ -396,10 +396,12 @@ h4.wordmark a:active {
   text-align: center;
 }
 
+/*---------- GOOGLE PLACES ----------*/
+
 .GoogleImg {
   max-width: 15%;
   position: relative;
-  padding: 20px;
+  padding: 5rem;
   float: right;
 }
 
