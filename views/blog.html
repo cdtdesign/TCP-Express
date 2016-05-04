@@ -40,7 +40,7 @@
 
     <section class="bluStripes blogSection">
       <article class="container mobile-wide">
-        <h5 class="textOrg" style="margin-top:50px;padding:5px;"><b>Where has TC taken you?</b> Click the button below to begin sharing your journey and collect Travel Tokens for admission discounts and other great prizes!</h5>
+        <h5 class="textOrg" style="margin-top:50px;padding:5px;"><b>Where has TC taken you?</b> Click the button below to begin sharing your journey</br> and collect Travel Tokens for admission discounts and other great prizes!</h5>
         <div class="blogButton hvr-rotate"><i class="fa fa-plus" aria-hidden="true"></i></div>
         <div class="row-wide grid">
           {% for journey in journeys %}
@@ -52,9 +52,9 @@
               <!-- <img src="images/tc-journey-disney-magic-kingdom.jpg" class="blogImg"> -->
               <img src="images/{{ journey.header_image_filename }}" class="blogImg">
               {% endif %}
-              <figcaption style="text-align:left;"><small><span class="blogTraveler"><a href="#"><b>Traveling {{ journey.traveler_name }}</b></a></span>| <span class="blogDate">{{ journey.date }}</span></small></figcaption>
-              <p class="blogBody">{{ journey.body }}
-                <small class="blogFooter" style="margin:0rem;"><em>#TravelingChristian #HappyTravels </em></small>
+              <figcaption style="text-align:left;"><small><span class="blogTraveler"><a href="#"><b><em>Traveling {{ journey.traveler_name }}</em></b></a></span><span class="blogDate">{{ JSON.stringify(journey.date) }}</span></small></figcaption>
+              <p class="blogBody">{{ journey.body }} </br>
+                <small class="blogHash" style="margin:0rem;"><em>#TravelingChristian #HappyTravels </em></small>
               </p>
 
               <!-- blogPost footer -->

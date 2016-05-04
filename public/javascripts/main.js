@@ -88,7 +88,6 @@ $(document).ready(function(){
 });
 
 // Masonry grid
-
 $(window).on('load resize', function() {
 	return $('.grid').masonry({
 		itemSelector: '.grid-item',

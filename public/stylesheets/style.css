@@ -938,6 +938,7 @@ label > .label-body {
 
 .blogSection {
   max-height: 950px;
+  padding-left: 20px;
   overflow: auto;
 }
 
@@ -966,9 +967,14 @@ label > .label-body {
 }
 
 .blogTitle {
-  padding: 10px;
+  padding: 12px;
   color: #ee6730;
   font-size: 2.5rem;
+  line-height: 2.875rem;
+}
+
+p.blogTitle {
+  margin-bottom: 0;
 }
 
 .blogImg {
@@ -993,11 +999,12 @@ label > .label-body {
   line-height: 2rem;
 }
 
-.blogFooter {
-  height: 50px;
+.blogHash{
+  font-weight: 700;
+  letter-spacing: .03rem;
+  max-height: 50px;
   padding: 10px;
   margin: 5px;
-  text-align: left;
   color: #ee6730;
 }
 
@@ -1006,7 +1013,7 @@ label > .label-body {
 
 .bpDivider {
   border-color: #fbd163;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 /*---------- Journey Sharing List ----------*/
@@ -1025,6 +1032,7 @@ label > .label-body {
 }*/
 
 div.faBlogPost {
+  max-height: 150px;
   cursor: pointer;
   text-align: left;
   padding: 5px;
