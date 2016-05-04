@@ -406,7 +406,7 @@ h4.wordmark a:active {
 #map {
   height: 400px;
   clear: both;
-  border-radius; 4px;
+  border-radius: 4px;
 }
 
 /*---------- BUTTONS ----------*/
@@ -817,6 +817,7 @@ span.socialPinterest {
 
 .orgSection {
   background-color: #ee6730;
+  padding-bottom: 5rem;
 }
 
 .drkBrwnSection {

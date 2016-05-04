@@ -1,4 +1,4 @@
-// Goal is to make sure Mongo is Node and Passport
+// Goal is to make sure Mongo is connecting to Passport
 //
 // Then figure out whether to keep data
 // in MySQL or somehow get it into Mongo
