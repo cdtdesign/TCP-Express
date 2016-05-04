@@ -89,10 +89,12 @@ $(document).ready(function(){
 
 // Masonry grid
 
-$('.grid').masonry({
-  // options
-  itemSelector: '.grid-item',
-  columnWidth: 330
+$(window).on('load resize', function() {
+	return $('.grid').masonry({
+		itemSelector: '.grid-item',
+		columnWidth: 330
+	});
+
 });
 
 
