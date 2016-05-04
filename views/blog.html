@@ -49,7 +49,7 @@
             <div class="blogPost grid-item" data-journey-uuid="{{ journey.uuid }}" id="{{ journey.uuid }}">
               <p class="blogTitle">TC Journey to {{ journey.title }}</p>
               {% if journey.header_image_filename !== NULL %}
-              <img src="images/tc-journey-disney-magic-kingdom.jpg" class="blogImg">
+              <!-- <img src="images/tc-journey-disney-magic-kingdom.jpg" class="blogImg"> -->
               <img src="images/{{ journey.header_image_filename }}" class="blogImg">
               {% endif %}
               <figcaption style="text-align:left;"><small><span class="blogTraveler"><a href="#"><b>Traveling {{ journey.traveler_name }}</b></a></span>| <span class="blogDate">{{ journey.date }}</span></small></figcaption>
