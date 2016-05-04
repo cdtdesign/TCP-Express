@@ -403,6 +403,12 @@ h4.wordmark a:active {
   float: right;
 }
 
+#map {
+  height: 400px;
+  clear: both;
+  border-radius; 4px;
+}
+
 /*---------- BUTTONS ----------*/
 
 .button,
