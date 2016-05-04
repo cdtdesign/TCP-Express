@@ -27,6 +27,7 @@
     "express-session": "^1.13.0",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.0.6",
+    "mongodb": "^2.1.18",
     "mongoose": "^4.4.13",
     "mongoose-findorcreate": "^0.1.2",
     "morgan": "^1.6.1",

@@ -65,15 +65,20 @@ var connection = mysql.createConnection({
   database : 'Passport'
 });
 
+var MongoClient = require('mongodb').MongoClient;
 
-mongoose_db.on('error', function (err) {
+console.log('Connecting to MongoDB');
+// Connection URL
+var url = 'mongodb://localhost:27017/passport';
+
+// Use connect method to connect to the Server
+MongoClient.connect(url, function(err, db) {
   if (err) throw err;
-});
+  console.log("Connected correctly to server");
 
-mongoose_db.once('open', function() {
   passport.use(new Strategy(
     function(username, password, cb) {
-      db.users.findByUsername(username, function(err, user) {
+      db.collection('Users').findByUsername(username, function(err, user) {
         if (err) { return cb(err); }
         if (!user) { return cb(null, false); }
         if (user.password != password) { return cb(null, false); }
@@ -90,7 +95,7 @@ mongoose_db.once('open', function() {
       callbackURL: "http://beta-express.travelingchildrenproject.com/auth/oauth2/callback"
     },
     function(accessToken, refreshToken, profile, cb) {
-      db.users.findOrCreate({ oauth2Id: profile.id }, function (err, user) {
+      db.collection('Users').findOrCreate({ oauth2Id: profile.id }, function (err, user) {
         return cb(err, user);
       });
     }
@@ -104,7 +109,7 @@ mongoose_db.once('open', function() {
     },
     function(accessToken, refreshToken, profile, cb) {
       console.log(profile);
-      db.users.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      db.collection('Users').findOrCreate({ facebookId: profile.id }, function (err, user) {
         return cb(err, user);
       });
     }
@@ -117,7 +122,7 @@ mongoose_db.once('open', function() {
       callbackURL: "http://beta-express.travelingchildrenproject.com/auth/twitter/callback"
     },
     function(token, tokenSecret, profile, cb) {
-      db.users.findOrCreate({ twitterId: profile.id }, function (err, user) {
+      db.collection('Users').findOrCreate({ twitterId: profile.id }, function (err, user) {
         return cb(err, user);
       });
     }
@@ -128,11 +133,19 @@ mongoose_db.once('open', function() {
   });
 
   passport.deserializeUser(function(id, cb) {
-    db.users.findById(id, function (err, user) {
+    db.collection('Users').findById(id, function (err, user) {
       if (err) { return cb(err); }
       cb(null, user);
     });
   });
+  db.close();
+});
+
+mongoose_db.on('error', function (err) {
+  if (err) throw err;
+});
+
+mongoose_db.once('open', function() {
 
 });
 
