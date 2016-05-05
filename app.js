@@ -20,6 +20,11 @@ var errorHandler = require('errorhandler');
 var mongoose = require('mongoose');
 var passport = require('passport');
 
+var routes = require('./routes/index');
+var auth = require('./routes/auth');
+var blog = require('./routes/blog');
+var footer = require('./routes/footer');
+
 // Import models & passport config
 require('./models/user');
 require('./passport')(passport);
@@ -29,8 +34,6 @@ mongoose.connect('mongodb://localhost:27017/passport', function(err, res) {
   if(err) throw err;
   console.log('Successfully connected to Mongo');
 });
-
-
 
 // var mongoose = require('mongoose');
 // var mongoose_db = mongoose.connection;
@@ -45,12 +48,6 @@ var connection = mysql.createConnection({
   password : process.env.TCP_DATABASE_PASSWORD,
   database : 'Passport'
 });
-
-var routes = require('./routes/index');
-var auth = require('./routes/auth');
-var blog = require('./routes/blog');
-var footer = require('./routes/footer');
-// var database = require('./database');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
