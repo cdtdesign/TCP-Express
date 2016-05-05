@@ -280,11 +280,12 @@ span.navTraveler {
   font-size: 1.125rem;
   letter-spacing: normal;
   text-align: right;
+  text-transform: capitalize;
+  text-decoration: underline;
   vertical-align: middle;
   padding: 0 30;
   display: inline-block;
   vertical-align: middle;
-  text-transform: capitalize;
 }
 
 .myPassportPic {
