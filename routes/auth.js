@@ -40,13 +40,13 @@ router.get('/profile', function(req, res){
     res.render('profile');
   });
 
-router.get('/auth/twitter', passport.authenticate('twitter'));
-router.get('/auth/facebook', passport.authenticate('facebook'));
+router.get('/twitter', passport.authenticate('twitter'));
+router.get('/facebook', passport.authenticate('facebook'));
 
-router.get('/auth/twitter/callback', passport.authenticate('twitter',
+router.get('/twitter/callback', passport.authenticate('twitter',
   { successRedirect: '/', failureRedirect: '/signin' }
 ));
-router.get('/auth/facebook/callback', passport.authenticate('facebook',
+router.get('/facebook/callback', passport.authenticate('facebook',
   { successRedirect: '/', failureRedirect: '/signin' }
 ));
 
