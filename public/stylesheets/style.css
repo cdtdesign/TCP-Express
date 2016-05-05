@@ -283,6 +283,7 @@ span.navTraveler {
   padding: 0 30;
   display: inline-block;
   vertical-align: middle;
+  text-transform: capitalize;
 }
 
 .myPassportPic {
