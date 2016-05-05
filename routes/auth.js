@@ -44,10 +44,10 @@ router.get('/auth/twitter', passport.authenticate('twitter'));
 router.get('/auth/facebook', passport.authenticate('facebook'));
 
 router.get('/auth/twitter/callback', passport.authenticate('twitter',
-  { successRedirect: '/', failureRedirect: '/login' }
+  { successRedirect: '/', failureRedirect: '/signin' }
 ));
 router.get('/auth/facebook/callback', passport.authenticate('facebook',
-  { successRedirect: '/', failureRedirect: '/login' }
+  { successRedirect: '/', failureRedirect: '/signin' }
 ));
 
 module.exports = router;
