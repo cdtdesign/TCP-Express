@@ -277,6 +277,7 @@ span.navTraveler {
   max-width: 75px;
   max-height: 38px;
   line-height: 1.5rem;
+  font-size: .5rem;
   text-align: right;
   vertical-align: middle;
   padding: 0 30;
