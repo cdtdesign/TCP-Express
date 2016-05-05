@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
+// Local Strategy
+var LocalStrategy = require('passport-local').Strategy;
+
 // Twitter Strategy
 var TwitterStrategy = require('passport-twitter').Strategy;
 
@@ -20,6 +23,36 @@ module.exports = function(passport) {
 	passport.deserializeUser(function(obj, done) {
 		done(null, obj);
 	});
+
+// Local Strategy
+
+passport.use(new LocalStrategy({
+  passReqToCallback : true
+}, function(req, username, password, done) {
+    User.findOne({ username: username }, function (err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        // Create new user object if it does NOT exit
+  			var user = new User({
+  				provider_id: 0,
+  				provider: 'local',
+  				username: username,
+          name: req.body.first_name + " " + req.body.last_name,
+          email: req.body.email
+  			});
+  			//and store it in DB
+  			user.save(function(err) {
+  				if(err) throw err;
+  				return done(null, user);
+  			});
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
 
 	// Twitter Config
 	passport.use(new TwitterStrategy({

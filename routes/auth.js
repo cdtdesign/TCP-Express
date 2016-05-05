@@ -33,6 +33,7 @@ router.post('/signup', function(req, res, next) {
 
 router.get('/signout', function(req, res){
     req.logout();
+    req.session.destroy();
     res.redirect('/');
   });
 
