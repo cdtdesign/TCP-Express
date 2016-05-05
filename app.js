@@ -11,23 +11,30 @@ var bodyParser = require('body-parser');
 var cons = require('consolidate');
 var child_process = require("child_process");
 var cookieParser = require('cookie-parser');
-var express = require('express');
 var app = express();
 var router = express.Router();
+var session = require('express-session');
+var methodOverride = require('method-override');
+var errorHandler = require('errorhandler');
+
+var mongoose = require('mongoose');
+var passport = require('passport');
+
+// Import models & passport config
+require('./models/user');
+require('./passport')(passport);
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/passport', function(err, res) {
+  if(err) throw err;
+  console.log('Successfully connected to Mongo');
+});
+
 
 
 // var mongoose = require('mongoose');
 // var mongoose_db = mongoose.connection;
 // mongoose.connect('mongodb://localhost/passport');
-
-// var userSchema = mongoose.Schema({
-//   _id: Number,
-//   oauth2Id: String,
-//   facebookId: Number,
-//   email: String,
-//   username: String,
-//   password: String
-// });
 
 // var User = mongoose.model('User', userSchema);
 
@@ -57,6 +64,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({ secret: 'secret',
+  resave: true,
+  saveUninitialized: true}));
+app.use(methodOverride());
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', routes);
 app.use('/auth', auth);
@@ -71,6 +84,10 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+
+if ('development' == app.get('env')) {
+  app.use(errorHandler());
+}
 
 // development error handler
 // will print stacktrace

@@ -6,6 +6,18 @@ var connection = mysql.createConnection({
   database : 'Passport'
 });
 
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var UserSchema = new Schema({
+	name				: String,
+	provider_id : {type: String, unique: true},
+	photo			 : String,
+	createdAt	 : {type: Date, default: Date.now}
+});
+
+var User = mongoose.model('User', UserSchema);
+
 var records;
 connection.query('SELECT * FROM travelers', function (err, returned_records, fields) {
   if (err) throw err;
