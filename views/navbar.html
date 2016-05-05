@@ -49,7 +49,7 @@
         <div class="one-third column signout">
           {% if user %}
           <a class="button-outline signoutBtn" href="/auth/signout"><strong>Sign Out</strong></a>
-          <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>Sam{{ req.body.first_name }}</span></strong></a>
+          <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{ req.body.first_name }}</span></strong></a>
           <img class="myPassportPic" src="/images/" + '{{ req.body.photo }}'>
           <!-- <a class="button-outline inline" href="/auth/signout"><strong>Sign Out</strong></a>
           <a class="inline" href="/mypassport"><strong><p>Traveling </br>{{ journey.traveler_name }}</p></strong></a> -->
