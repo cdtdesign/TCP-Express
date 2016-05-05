@@ -27,9 +27,8 @@ router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
 
-router.post('/signup', function(req, res, next) {
-  res.render('signup');
-});
+router.post('/signup', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/auth/signin' });
+
 
 router.get('/signout', function(req, res){
     req.logout();
@@ -45,10 +44,10 @@ router.get('/twitter', passport.authenticate('twitter'));
 router.get('/facebook', passport.authenticate('facebook'));
 
 router.get('/twitter/callback', passport.authenticate('twitter',
-  { successRedirect: '/', failureRedirect: '/signin' }
+  { successRedirect: '/', failureRedirect: '/auth/signin' }
 ));
 router.get('/facebook/callback', passport.authenticate('facebook',
-  { successRedirect: '/', failureRedirect: '/signin' }
+  { successRedirect: '/', failureRedirect: '/auth/signin' }
 ));
 
 module.exports = router;

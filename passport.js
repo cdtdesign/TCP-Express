@@ -30,7 +30,7 @@ passport.use(new LocalStrategy({
   passReqToCallback : true
 }, function(req, username, password, done) {
     User.findOne({ username: username }, function (err, user) {
-      if (err) { return done(err); }
+      if (err) { throw(err); }
       if (!user) {
         // Create new user object if it does NOT exit
   			var user = new User({
