@@ -7,16 +7,19 @@ jQuery(document).ready(function ($) {
         var pyrmont = {lat: -33.867, lng: 151.195};
 
         map = new google.maps.Map(document.getElementById('map'), {
-          center: pyrmont,
+          center: Orlando,
           zoom: 15
         });
 
         infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
-          location: pyrmont,
+          name: Disney,
+          type: ['amusement_park'],
+          // opening_hours: ,
+          open_now: true,
+          location: Orlando,
           radius: 500,
-          type: ['store']
         }, callback);
       }
 

@@ -17,7 +17,7 @@
         <div class="one-third column">
           {% if user %}
           <a class="button signoutBtn" href="/auth/signout"><strong>Sign Out</strong></a>
-          <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>Sam{{ req.body.first_name }}</span></strong></a>
+          <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{ req.body.first_name }}</span></strong></a>
           <img class="myPassportPic" src="/images/" + '{{ req.body.photo }}'>
           {% else %}
           <a class="button" href="/auth/signin"><strong>Sign In</strong></a>
