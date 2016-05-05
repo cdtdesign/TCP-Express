@@ -52,7 +52,7 @@ module.exports = function(passport) {
 	passport.use(new FacebookStrategy({
 		clientID			: config.facebook.key,
 		clientSecret	: config.facebook.secret,
-		callbackURL	 : '/auth/facebook/callback',
+		callbackURL	 : 'http://beta-express.travelingchildrenproject.com/auth/facebook/callback',
 		profileFields : ['id', 'displayName', /*'provider',*/ 'photos']
 	}, function(accessToken, refreshToken, profile, done) {
 

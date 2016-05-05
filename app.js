@@ -61,9 +61,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'secret',
+app.use(session({
+  cookie: {
+    domain: '.travelingchildrenproject.com'
+  },
+  secret: 'secret',
   resave: true,
-  saveUninitialized: true}));
+  saveUninitialized: true
+}));
 app.use(methodOverride());
 app.use(passport.initialize());
 app.use(passport.session());
