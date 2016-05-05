@@ -58,7 +58,7 @@ passport.use(new LocalStrategy({
 	passport.use(new TwitterStrategy({
 		consumerKey		 : config.twitter.key,
 		consumerSecret	: config.twitter.secret,
-		callbackURL		 : '/auth/twitter/callback'
+		callbackURL		 : 'http://beta-express.travelingchildrenproject.com/auth/twitter/callback'
 	}, function(accessToken, refreshToken, profile, done) {
 
 		User.findOne({provider_id: profile.id}, function(err, user) {
