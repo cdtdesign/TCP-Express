@@ -266,6 +266,16 @@ a:hover {
   color: #ee6730;
 }
 
+.passportPic {
+  max-width: 150px;
+  max-height: 150px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  border-radius: 75px;
+  background-color: #ee6730;
+}
+
 /*---------- NAVBAR ----------*/
 
 .signoutBtn {
@@ -288,13 +298,13 @@ span.navTraveler {
   vertical-align: middle;
 }
 
-.myPassportPic {
-  max-width: 150px;
-  max-height: 150px;
+.travelerPic {
+  max-width: 50px;
+  max-height: 50px;
   display: inline-block;
   vertical-align: middle;
   margin: 5px;
-  border-radius: 75px;
+  border-radius: 25px;
   background-color: #ee6730;
 }
 
@@ -672,7 +682,7 @@ header {
   background-color: #fee088;
   margin-top: 10rem;
   margin-bottom: 10rem;
-  padding: 10rem;
+  padding: 6rem;
   /*padding-top: .5rem;
   padding-bottom: 1rem;*/
   overflow: visible;
