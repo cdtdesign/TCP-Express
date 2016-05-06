@@ -327,7 +327,7 @@ span.navTraveler {
   display: inline-block;
   vertical-align: middle;
   margin: 5px;
-  border-radius: 25px;
+  /*border-radius: 25px;*/
   background-color: #ee6730;
 }
 
