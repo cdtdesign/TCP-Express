@@ -252,7 +252,7 @@ body {
   font-family: 'proxima_novaregular', Helvetica, Arial, sans-serif;
 }
 
-strong, h6, .navItem {
+strong, .navItem {
   font-family: 'proxima_novabold', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
@@ -676,6 +676,7 @@ header {
   padding-top: .5rem;
   padding-bottom: 1rem;
   overflow: visible;
+  text-align: left;
 }
 
 .single450 {
