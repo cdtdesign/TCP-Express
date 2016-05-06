@@ -304,6 +304,10 @@ img.passportPic {
   width: 100%;
 }
 
+div.myPassport i.fa {
+  color: #ffc233;
+}
+
 /*---------- NAVBAR ----------*/
 
 .signoutBtn {
