@@ -308,6 +308,11 @@ div.myPassport i.fa {
   color: #ffc233;
 }
 
+div.myPassport i.fa:hover {
+  color: #ee6730;
+}
+
+
 /*---------- NAVBAR ----------*/
 
 .signoutBtn {
