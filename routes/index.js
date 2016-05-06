@@ -4,10 +4,7 @@ var passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log(req.user);
-  res.render('index', {
-    'user': req.user
-  });
+  res.render('index');
 });
 
 /* GET download page. */
