@@ -14,8 +14,15 @@
       <div class="row mobile-wide">
         <div class="single650 center">
           <img style="padding-top:1rem;" class="passportPic hvr-grow-rotate" src={{user.photo}} alt="Traveler Pic">
-            <h6 class="textOrg">My Passport Profile</h6>
-            <p><b>Traveling Children Project (TCP)</b> is a dynamic program that engages the imagination of children through learning and enrichment in a very hands-on manner. The program is designed to provide parents or educators with useful resources as they plan adventures for the family or classroom. TCP is a child’s passport to fun experiences, through downloadable interactive travel activities, as well as, an online community where Travelers can safely share their journeys as posts in the Journey Blog, where Travelers are rewarded with Travel Tokens. TCP can be utilized by both parents and educators whose young Travelers seek new adventures. Parents will find our Destination Search to be a handy resource for finding family-fun venue locations, pricing, age range, reviews and much more. While educators will find the TCP Journey Kit a fun travel activity to get their scholars working on their writing skills through reflection and journaling about their journeys in the included Passport Journal.</p>
+            <h6 class="large">My Passport Profile</h6>
+            <p><b>First Name: </b>{{ user.first_name }}</p>
+               <b>Last Name: </b>{{ user.last_name }}</p>
+               <b>Email: </b>c{{ user.email }}</p>
+               <b>Street </b>{{ user.street }}</p>
+               <b>City: </b>{{ user.city }}</p>
+               <b>State: </b>{{ user.state }}</p>
+               <b>Birthday: </b>{{ user.birthday }}</p>
+            </p>
         </div>
       </div><!-- /.row -->
     </article><!-- /.containter -->
