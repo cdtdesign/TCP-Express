@@ -324,7 +324,7 @@ div.myPassport i.fa:hover {
 .signoutBtn {
   float: right;
   vertical-align: middle;
-  margin: 0;
+  margin: 15px;
 }
 
 span.navTraveler {
