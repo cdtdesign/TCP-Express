@@ -47,19 +47,19 @@
     <nav class="navwht tweleve columns">
       <div class="container">
         <div class="two-thirds column">
+          {% if user %}
           <span>
             <h4 class="wordmark u-pull-left hvr-pop"><a href="#">Traveling Children Project</a></h4>
           </span>
           <span><strong>
             <a class="navOrg" href="/download">Download</a>
             <a class="navOrg" href="/search">Search</a>
-            <a class="navOrg" href="/journeyblog" disabled>Blog</a>
+            <a class="navOrg" href="/journeyblog">Blog</a>
             <a class="navOrg" href="/about">About</a>
           </strong></span>
         </div><!-- /.two-thirds column -->
         <!-- SIGN-OUT -->
         <div class="one-third column signout">
-          {% if user %}
           <a class="button-outline signoutBtn" href="/auth/signout"><strong>Sign Out</strong></a>
           <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.name}}</span></strong></a>
           <img class="travelerPic" src={{user.photo}}>
@@ -70,6 +70,18 @@
         <!-- SIGN-IN/UP -->
         <div class="one-third column signinup">
           {% else %}
+          <span>
+            <h4 class="wordmark u-pull-left hvr-pop"><a href="#">Traveling Children Project</a></h4>
+          </span>
+          <span><strong>
+            <a class="navOrg" href="/download">Download</a>
+            <a class="navOrg" href="/search">Search</a>
+            <a class="navOrg disabled" href="/journeyblog">Blog</a>
+            <a class="navOrg" href="/about">About</a>
+          </strong></span>
+        </div><!-- /.two-thirds column -->
+        <!-- SIGN-OUT -->
+        <div class="one-third column signout">
           <a class="button-outline" href="/auth/signin"><strong>Sign In</strong></a>
           <a class="button button-primary" href="/auth/signup" target="_blank"><strong>Sign Up</strong></a>
           {% endif %}

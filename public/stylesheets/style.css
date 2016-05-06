@@ -318,7 +318,7 @@ div.myPassport i.fa:hover {
 .disabled {
    pointer-events: none;
    cursor: default;
-   opacity: .5;
+   opacity: .375;
 }
 
 .signoutBtn {
