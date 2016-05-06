@@ -252,7 +252,7 @@ body {
   font-family: 'proxima_novaregular', Helvetica, Arial, sans-serif;
 }
 
-strong, h6 .navItem {
+strong, h6, .navItem {
   font-family: 'proxima_novabold', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
