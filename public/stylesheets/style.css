@@ -284,8 +284,8 @@ a:hover {
   text-align: left;
 }
 
-p.myPassport {
-  line-height: 25rem;
+b.myPassport {
+  line-height: 5rem;
 }
 
 .passportPic {
