@@ -315,6 +315,12 @@ div.myPassport i.fa:hover {
 
 /*---------- NAVBAR ----------*/
 
+.disabled {
+   pointer-events: none;
+   cursor: default;
+   opacity: .5;
+}
+
 .signoutBtn {
   float: right;
   margin: 20px;
@@ -407,9 +413,9 @@ a.navItem:focus {
   border-top: 3px solid #fff;
 }
 
-a.navItem:disabled {
+/*a.navItem:disabled {
   color: rgba(255,255,255,.25);
-}
+}*/
 
 a.navItem:visited {
   color: rgba(255,255,255,.5);
@@ -434,9 +440,9 @@ a.navOrg:active {
   border-top: 3px solid #ee6730;
 }
 
-a.navOrg:disabled {
+/*a.navOrg:disabled {
   color: rgba(238,103,48,.25);
-}
+}*/
 
 .wordmark {
   font-family: 'Simpson_Condensed_Heavy_BoldItalic', Times, serif;
@@ -1605,10 +1611,10 @@ a.expand {
     color: rgba(255, 255, 255, 0.75);
   }
 
-  a.navItem:disabled {
+  /*a.navItem:disabled {
     color: rgba(255,255,255,.25);
     border: none;
-  }
+  }*/
 
   a.navItem:visited {
     color: rgba(255, 255, 255, 0.5);
@@ -1639,9 +1645,9 @@ a.expand {
     color: rgba(238,103,48,.5);
   }
 
-  a.navOrg:disabled {
+  /*a.navOrg:disabled {
     color: rgba(238,103,48,.25);
-  }
+  }*/
 
   .wordmark {
     font-family: 'Simpson_Condensed_Heavy_BoldItalic', Times, serif;
