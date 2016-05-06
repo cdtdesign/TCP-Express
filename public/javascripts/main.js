@@ -106,4 +106,11 @@ ga('create', 'UA-77240174-1', 'auto');
 ga('send', 'pageview');
 
 
+// Removal of Facebook's #_=_
+if (window.location.hash && window.location.hash == '#_=_') {
+        window.location.hash = '';
+    }
+
+
+
 });
