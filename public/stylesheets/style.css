@@ -292,10 +292,8 @@ p.myPassport {
   max-height: 150px;
   display: inline-block;
   vertical-align: top;
-  /*margin: 5px;*/
-  border-radius: 175px;
-  /*background-color: #ee6730;*/
-  /*margin: 2rem;*/
+  border-radius: 150px;
+  background-color: #ee6730;
   float: right;
 }
 
