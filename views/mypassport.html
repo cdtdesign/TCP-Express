@@ -11,7 +11,7 @@
     {% include "./navbar.html" %}
 
     <article class="container">
-      <div class="row mobile-wide">
+      <div class="row mobile-wide" style="min-height:500px;">
         <div class="myPassport">
           <img class="passportPic" src={{user.photo}} alt="Traveler Pic">
             <h5 class="large textOrg">My Passport Profile</h5></br>
@@ -30,7 +30,7 @@
             <a href="#" title="Edit">
               <i class="fa fa-pencil passportEditButton" style="font-size:3rem;"></i>
             </a>
-            <a href="/journeys/delete/{{ journey.uuid }}" title="Delete" class="passportDeleteButton">
+            <a href="/mypassport/delete/{{ journey.uuid }}" title="Delete" class="passportDeleteButton">
               <i class="fa fa-close" style="font-size:3.875rem;"></i>
             </a>
         </div>
