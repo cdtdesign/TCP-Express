@@ -672,9 +672,9 @@ header {
   background-color: #fee088;
   margin-top: 10rem;
   margin-bottom: 10rem;
-  padding: 4rem;
-  padding-top: .5rem;
-  padding-bottom: 1rem;
+  padding: 10rem;
+  /*padding-top: .5rem;
+  padding-bottom: 1rem;*/
   overflow: visible;
   text-align: left;
 }
