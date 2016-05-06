@@ -288,7 +288,7 @@ b.myPassport {
   line-height: 5rem;
 }
 
-div.passportPic {
+.passportPic {
   max-width: 150px;
   max-height: 150px;
   display: inline-block;
