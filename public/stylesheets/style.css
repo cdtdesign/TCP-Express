@@ -306,6 +306,7 @@ img.passportPic {
 
 div.myPassport i.fa {
   color: #ffc233;
+  margin: 5px;
 }
 
 div.myPassport i.fa:hover {
