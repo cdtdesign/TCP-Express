@@ -289,12 +289,12 @@ span.navTraveler {
 }
 
 .myPassportPic {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 150px;
+  max-height: 150px;
   display: inline-block;
   vertical-align: middle;
   margin: 5px;
-  border-radius: 25px;
+  border-radius: 75px;
   background-color: #ee6730;
 }
 
@@ -666,6 +666,7 @@ header {
 
 .single650 {
   max-width: 650px;
+  max-height: 500px;
   border: 1px rgba(58,36,23,.25) solid;
   border-radius: 4px;
   background-color: #fee088;
