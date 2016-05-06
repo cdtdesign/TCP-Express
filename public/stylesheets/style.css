@@ -288,21 +288,20 @@ b.myPassport {
   line-height: 5rem;
 }
 
-.passportPic {
+div.passportPic {
   max-width: 150px;
   max-height: 150px;
   display: inline-block;
   vertical-align: top;
-
+  border: 10px;
+  border-color: rgba(255,255,255,.375);
   border-radius: 150px;
   background-color: #ee6730;
   float: right;
 }
 
-.passportPic img {
+img.passportPic {
   width: 100%;
-  border: 10px;
-  border-color: rgba(255,255,255,.375);
 }
 
 div.myPassport i.fa {
