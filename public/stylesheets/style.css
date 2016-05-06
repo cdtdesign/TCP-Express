@@ -283,6 +283,10 @@ a:hover {
   text-align: left;
 }
 
+p.myPassport {
+  line-height: 2rem;
+}
+
 .passportPic {
   max-width: 150px;
   max-height: 150px;
