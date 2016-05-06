@@ -24,6 +24,12 @@
                <b>Birthday: </b>{{ user.birthday }}</p>
             </p>
             <hr class="bpDivider">
+            <a href="#" title="Edit">
+              <i class="fa fa-pencil journeyEditButton" data-toggle="modal" data-target="#journeyModal"></i>
+            </a>
+            <a href="/journeys/delete/{{ journey.uuid }}" title="Delete" class="postDeleteButton">
+              <i class="fa fa-close" style="font-size:2.875rem;"></i>
+            </a>
         </div>
       </div><!-- /.row -->
     </article><!-- /.containter -->
