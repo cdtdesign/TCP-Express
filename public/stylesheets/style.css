@@ -274,8 +274,9 @@ a:hover {
   border: 1px rgba(58,36,23,.25) solid;
   border-radius: 4px;
   background-color: #fee088;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
+  margin: auto;
+  /*margin-top: 10rem;
+  margin-bottom: 10rem;*/
   padding: 6rem;
   /*padding-top: .5rem;
   padding-bottom: 1rem;*/
