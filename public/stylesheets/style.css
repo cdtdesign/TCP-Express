@@ -293,9 +293,9 @@ p.myPassport {
   display: inline-block;
   vertical-align: top;
   /*margin: 5px;*/
-  border-radius: 135px;
+  border-radius: 150px;
   background-color: #ee6730;
-  margin: 2rem;
+  /*margin: 2rem;*/
   float: right;
 }
 
