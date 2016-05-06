@@ -22,4 +22,9 @@ router.get('/about', function(req, res, next) {
   res.render('about');
 });
 
+/* GET mypassport. */
+router.get('/mypassport', function(req, res, next) {
+  res.render('mypassport');
+});
+
 module.exports = router;
