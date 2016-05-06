@@ -116,7 +116,6 @@
                   </li>
                 </ul>
               </div><!-- ./bpDropup -->
-              {% endfor %}
 
                 {% if user %}
                 <a title="Share"><i class="fa fa-send"></i></a>
@@ -134,12 +133,13 @@
                 <a class="like-button" title="Like">
                   <i class="fa fa-heart {{ }}"></i>
                 </a>
+                {% endif %}
               </div><!-- ./faBlogPost -->
 
             </div><!-- /.blogPost -->
 
           </div><!-- /.one .column -->
-
+        {% endfor %}
         </div><!-- /.row -->
       </article><!-- /.containter -->
     </section><!-- /.bluStripes -->
