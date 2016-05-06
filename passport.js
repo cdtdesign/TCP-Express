@@ -29,9 +29,11 @@ module.exports = function(passport) {
 passport.use(new LocalStrategy({
   passReqToCallback : true
 }, function(req, username, password, done) {
+		console.log('Using LocalStrategy')
     User.findOne({ username: username }, function (err, user) {
       if (err) { throw(err); }
       if (!user) {
+				console.log('Create user b/c it wanst found');
         // Create new user object if it does NOT exit
   			var user = new User({
   				provider_id: 0,
@@ -43,10 +45,12 @@ passport.use(new LocalStrategy({
   			//and store it in DB
   			user.save(function(err) {
   				if(err) throw err;
+					console.log('Saving the user')
   				return done(null, user);
   			});
       }
       if (!user.validPassword(password)) {
+				console.log('Invalid Password')
         return done(null, false, { message: 'Incorrect password.' });
       }
       return done(null, user);
