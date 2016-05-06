@@ -296,7 +296,8 @@ p.myPassport {
   border-radius: 100px;
   background-color: #ee6730;
   margin: 2rem;
-  float: right;
+  right: 0;
+  /*float: right;*/
 }
 
 img.passportPic {
