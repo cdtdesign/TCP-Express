@@ -289,7 +289,7 @@ a:hover {
   display: inline-block;
   vertical-align: middle;
   margin: 5px;
-  border-radius: 85px;
+  border-radius: 100px;
   background-color: #ee6730;
   margin: 2rem;
   float: right;
@@ -327,7 +327,7 @@ span.navTraveler {
   display: inline-block;
   vertical-align: middle;
   margin: 5px;
-  /*border-radius: 25px;*/
+  border-radius: 25px;
   background-color: #ee6730;
 }
 
