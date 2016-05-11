@@ -1557,6 +1557,16 @@ a.expand {
     /*background-color: yellow;*/
   }
 
+  .travelerPic {
+    max-width: 20px;
+    max-height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    border-radius: 25px;
+    background-color: #ee6730;
+  }
+
   .navbar {
     padding: 0;
     height: 5rem;
