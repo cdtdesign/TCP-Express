@@ -17,18 +17,22 @@ router.get('/', function(req, res, next) {
     console.log('The solution is: ', rows[0].solution);
   });
 
-  // connection.connect();
+  connection.connect(function {
 
-  var queryString = 'SELECT * FROM journeys JOIN travelers ON travelers.id = journeys.traveler';
-  connection.query(queryString, function(err, rows, fields) {
-    if (err) throw err;
-    console.log("Finished the query");
+    var queryString = 'SELECT * FROM journeys JOIN travelers ON travelers.id = journeys.traveler';
+    connection.query(queryString, function(err, rows, fields) {
+      if (err) throw err;
+      console.log("Finished the query");
 
-    res.render('blog', {
-      "journeys": rows
+      res.render('blog', {
+        "journeys": rows
+      });
     });
   });
-});
+
+  });
+
+
 
 // app.get('/', function(req, res) {
 //     res.sendfile(__dirname + '/navbar.html');
