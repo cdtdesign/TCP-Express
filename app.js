@@ -49,6 +49,8 @@ var connection = mysql.createConnection({
   database : 'Passport'
 });
 
+connection.connect();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', cons.swig)
@@ -117,5 +119,7 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+connection.end();
 
 module.exports = app;

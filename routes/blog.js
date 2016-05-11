@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
   database : 'Passport'
 });
 
-// connection.connect();
+connection.connect();
 
 /* GET blog page. */
 router.get('/', function(req, res, next) {
@@ -27,11 +27,12 @@ router.get('/', function(req, res, next) {
       "journeys": rows
     });
   });
-  // connection.end();
 });
 
 // app.get('/', function(req, res) {
 //     res.sendfile(__dirname + '/navbar.html');
 // });
+
+connection.end();
 
 module.exports = router;

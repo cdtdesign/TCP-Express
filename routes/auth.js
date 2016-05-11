@@ -11,6 +11,8 @@ var connection = mysql.createConnection({
   database : 'Passport'
 });
 
+connection.connect();
+
 router.get('/', function(req, res) {
     res.render('index');
   });
@@ -50,5 +52,7 @@ router.get('/twitter/callback', passport.authenticate('twitter',
 router.get('/facebook/callback', passport.authenticate('facebook',
   { successRedirect: '/', failureRedirect: '/auth/signin' }
 ));
+
+connection.end();
 
 module.exports = router;
