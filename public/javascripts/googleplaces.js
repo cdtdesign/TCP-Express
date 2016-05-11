@@ -72,6 +72,10 @@ jQuery(document).ready(function ($) {
         geocoder.geocode({'address': formData[2].value}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
             console.log('Geocoding is complete')
+            console.log(JSON.stringify(results));
+            // Get extra data
+            service = new google.maps.places.PlacesService();
+            service.getDetails({placeId: results[0].placeId})
             fulfill(results[0].geometry.location);
           } else {
             reject(status);
@@ -86,7 +90,7 @@ jQuery(document).ready(function ($) {
         service.textSearch(request, function (place, status) {
           console.log(status);
           if (status == google.maps.places.PlacesServiceStatus.OK) {
-            console.log(place);
+            console.log('First one', place);
             var marker = new google.maps.Marker({
               map: map,
               position: request.location
@@ -98,7 +102,7 @@ jQuery(document).ready(function ($) {
       service.textSearch(request, function (place, status) {
         console.log(status);
         if (status == google.maps.places.PlacesServiceStatus.OK) {
-          console.log(place);
+          console.log('Second one', place);
         }
       });
     }
