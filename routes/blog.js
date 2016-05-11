@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
   database : 'Passport'
 });
 
-connection.connect();
+// connection.connect();
 
 /* GET blog page. */
 router.get('/', function(req, res, next) {
@@ -33,6 +33,6 @@ router.get('/', function(req, res, next) {
 //     res.sendfile(__dirname + '/navbar.html');
 // });
 
-connection.end();
+// connection.end();
 
 module.exports = router;

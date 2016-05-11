@@ -74,8 +74,6 @@ jQuery(document).ready(function ($) {
             console.log('Geocoding is complete')
             console.log(JSON.stringify(results));
             // Get extra data
-            service = new google.maps.places.PlacesService();
-            service.getDetails({placeId: results[0].placeId})
             fulfill(results[0].geometry.location);
           } else {
             reject(status);
@@ -87,10 +85,19 @@ jQuery(document).ready(function ($) {
         request.radius = 50000;
         request.rankBy = google.maps.places.RankBy.DISTANCE;
         request.location = new google.maps.LatLng(lat, lng);
-        service.textSearch(request, function (place, status) {
+        service.textSearch(request, function (places, status) {
           console.log(status);
           if (status == google.maps.places.PlacesServiceStatus.OK) {
-            console.log('First one', place);
+            console.log(places);
+
+            for (var i=0; i<places.length; i++) {
+              console.log('place.place_id', places[i].place_id);
+              service.getDetails({placeId: places[i].place_id}, function (extraPlaceData, status) {
+                console.log('Got the extra details:', extraPlaceData.opening_hours);
+                console.log('Extra place data', JSON.stringify(extraPlaceData));
+              });
+            }
+
             var marker = new google.maps.Marker({
               map: map,
               position: request.location
@@ -102,7 +109,7 @@ jQuery(document).ready(function ($) {
       service.textSearch(request, function (place, status) {
         console.log(status);
         if (status == google.maps.places.PlacesServiceStatus.OK) {
-          console.log('Second one', place);
+          console.log(place);
         }
       });
     }
