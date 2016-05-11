@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
     console.log('The solution is: ', rows[0].solution);
   });
 
-  connection.connect();
+  // connection.connect();
 
   var queryString = 'SELECT * FROM journeys JOIN travelers ON travelers.id = journeys.traveler';
   connection.query(queryString, function(err, rows, fields) {
