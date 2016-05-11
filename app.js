@@ -23,6 +23,7 @@ var passport = require('passport');
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
 var blog = require('./routes/blog');
+var mypassport = require('./routes/mypassport');
 var footer = require('./routes/footer');
 
 // Import models & passport config
