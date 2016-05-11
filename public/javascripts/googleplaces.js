@@ -21,8 +21,11 @@ jQuery(document).ready(function ($) {
         navigator.geolocation.getCurrentPosition(function
           (position) {
             fulfill({lat: position.coords.latitude, lng: position.coords.longitude});
+        }, function (err) {
+          if (err) reject(err);
         });
       }).then(function (result) {
+        map.setCenter(result);
         createMarker(result);
       });
     } else {
