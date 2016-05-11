@@ -5,37 +5,38 @@ jQuery(document).ready(function ($) {
   var service;
 
   function initMap() {
-    var pyrmont = {lat: -33.867, lng: 151.195};
+    var orlando = {lat: 28.5383, lng: -81.3792};
 
     map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
-      zoom: 15
+      center: orlando,
+      zoom: 10
     });
 
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
-    service.nearbySearch({
-      location: pyrmont,
-      radius: 500,
-      type: ['store']
-    }, callback);
+
+    if ("geolocation" in navigator) {
+      /* geolocation is available */
+      new Promise(function (fulfill, reject) {
+        navigator.geolocation.getCurrentPosition(function
+          (position) {
+            fulfill({lat: position.coords.latitude, lng: position.coords.longitude});
+        });
+      }).then(function (result) {
+        createMarker(result);
+      });
+    } else {
+      /* geolocation IS NOT available */
+      createMarker(orlando);
+    }
   }
 
   initMap();
 
-  function callback(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
-    }
-  }
-
   function createMarker(place) {
-    var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
       map: map,
-      position: place.geometry.location
+      position: place
     });
 
     google.maps.event.addListener(marker, 'click', function() {
