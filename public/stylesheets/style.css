@@ -1245,7 +1245,7 @@ div.bpDropup {
   min-height: 600px;
   background-color: #fee088;
   margin: 15px 10px;
-  float: left;
+  /*float: left;*/
   border-radius: 5px;
   color: #3a2417;
 }
