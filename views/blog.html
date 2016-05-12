@@ -83,7 +83,7 @@
                 <a class="like-button" title="Like">
                   <i class="fa fa-heart {{ }}"></i>
                 </a>
-                <!-- {% if user == journey.uuid %} -->
+                {% if user == journey.uuid %}
                 <a href="#" title="Edit">
                   <i class="fa fa-pencil journeyEditButton" data-toggle="modal" data-target="#journeyModal"></i>
                 </a>
@@ -91,8 +91,9 @@
                   <i class="fa fa-close" style="font-size:2.875rem;"></i>
                 </a>
                 <!-- {% else %} -->
+                {% endif %}
               </div><!-- ./faBlogPost -->
-              <!-- {% endif %} -->
+
 
             </div><!-- /.blogPost -->
 
