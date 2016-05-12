@@ -1232,11 +1232,11 @@ div.bpDropup {
   max-width: 100%;
 }
 
-.grid:after {
+/*.grid:after {
   content: '';
   display: block;
   clear: both;
-}
+}*/
 
 .grid-post {
   padding: 10px 0px;
