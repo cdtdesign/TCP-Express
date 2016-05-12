@@ -97,7 +97,7 @@ jQuery(document).ready(function ($) {
             for (var i=0; i<places.length; i++) {
               var image;
               if (places[i].photos != undefined) {
-                image = '<img src="' + places[i].photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150}) + '" alt="place photo">';
+                image = '<div id="placePhoto"><img src="' + places[i].photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '" alt="place photo"></div>';
               } else {
                 image = '';
               }
@@ -112,13 +112,13 @@ jQuery(document).ready(function ($) {
               if (places[i].rating != undefined) {
                 rating = '<p>';
                 for (var r=0; r <= Math.floor(places[i].rating); r++) {
-                  rating += '<i class="fa fa-star" aria-hidden="true"></i>';
+                  rating += '<i class="fa fa-star" id="rateStar" aria-hidden="true"></i>';
                 }
                 rating += '</p>';
               } else {
                 rating = '';
               }
-              $('#searchResults').append('<li>' + image + '<h4>' + places[i].name + '</h4><p>' + places[i].formatted_address + '</p>' + hours + rating + '</li>');
+              $('#searchResults').append('<li class="grid-search">' + image + '<h5>' + places[i].name + '</h5><p>' + places[i].formatted_address + '</p>' + hours + rating + '</li>');
             }
 
 

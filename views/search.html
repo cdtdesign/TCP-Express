@@ -114,12 +114,14 @@
   <section class="orgSection">
     <article class="container">
       <h5 class="textYllw hvr-bounce-in">Search here for your destination. Make only selections that apply. </h5>
-      <div class="row mobile-wide">
+      <div class="row-wide mobile-wide">
 
         <!-- DESTINATION SEARCH FORM -->
         <div class="column u-full-width">
           <form id="destinationSearch">
+            <div id="map"></div>
             <div class="row-wide mobile-wide">
+
               <div class="six columns">
 
                 <input class="u-full-width" type="text" placeholder="Enter Destination Name (if known)" name="destinationName">
@@ -182,10 +184,10 @@
                   <option value="All">Pricing doesn't matter</option>
                   <!-- <option value="Option 2">FREE!!!</option> -->
                   <option value="0">$ – cheap</option>
-                  <option value="1">$$ – moderate</option>
-                  <option value="2">$$$ – fanciful</option>
-                  <option value="3">$$$$ – expensive</option>
-                  <option value="4">$$$$$ – extravagant</option>
+                  <option value="1">$$ – not too much</option>
+                  <option value="2">$$$ – a little more</option>
+                  <option value="3">$$$$ – pretty fancy</option>
+                  <option value="4">$$$$$ – not cheap</option>
                 </select>
 
                 <!-- <select class="u-full-width" id="destinationAge">
@@ -206,14 +208,13 @@
 
               </div><!-- /.six.columns -->
 
-              <input class="button button-brown tallBtn" type="submit" value="SEARCH">
+              <input class="button button-brown tallBtn u-full-width" type="submit" value="SEARCH">
 
             </div><!-- /.row -->
 
           </form>
         </div>
-        <div id="map"></div>
-        <ul class="" id="searchResults"></ul>
+        <ul id="searchResults"></ul>
       </div><!-- /.row -->
     </article><!-- /.container -->
 
