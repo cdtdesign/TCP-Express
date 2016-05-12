@@ -103,8 +103,8 @@ jQuery(document).ready(function ($) {
               }
               var hours;
               if (places[i].opening_hours != undefined) {
-                var open_message = (places[i].opening_hours.open_now) ? 'Now open!' : 'Sorry, now closed.';
-                hours = '<p>' + open_message + '</p>';
+                var openMessage = (places[i].opening_hours.open_now) ? 'Now open!' : 'Sorry, now closed.';
+                hours = '<h6 class="openMessage">' + openMessage + '</h6>';
               } else {
                 hours = '';
               }

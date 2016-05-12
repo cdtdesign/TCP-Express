@@ -1282,6 +1282,10 @@ div.bpDropup {
 
 }
 
+.openMessage {
+  text-align: left;
+}
+
 #searchResults li {
   padding: 15px;
 }
