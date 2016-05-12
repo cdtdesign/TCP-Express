@@ -1241,7 +1241,7 @@ div.bpDropup {
 .grid-post {
   padding: 10px 0px;
   /*padding-bottom: 10px;*/
-  width: 330px;
+  width: 300px;
   min-height: 600px;
   background-color: #fee088;
   margin: 15px 10px;
@@ -1286,7 +1286,11 @@ div.bpDropup {
   padding: 15px;
 }
 
-#searchResults p, h5 {
+#searchResults h5 {
+  text-align: left;
+}
+
+#searchResults p {
   text-align: left;
 }
 
