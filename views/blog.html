@@ -44,7 +44,7 @@
         <div class="blogButton hvr-rotate"><i class="fa fa-plus" aria-hidden="true"></i></div>
         <div class="row-wide grid">
           {% for journey in journeys %}
-          <div class="one column">
+          <!-- <div class="one column"> -->
 
             <div class="grid-post" data-journey-uuid="{{ journey.uuid }}" id="{{ journey.uuid }}">
               <p class="blogTitle">TC Journey to {{ journey.title }}</p>
@@ -93,7 +93,8 @@
 
             </div><!-- /.blogPost -->
 
-          </div><!-- /.one .column -->
+          <!-- </div> -->
+          <!-- /.one .column -->
         {% endfor %}
         </div><!-- /.row -->
       </article><!-- /.containter -->
