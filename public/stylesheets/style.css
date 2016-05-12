@@ -1230,6 +1230,8 @@ div.bpDropup {
 .grid {
   /*background: #EEE;*/
   max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .grid:after {
