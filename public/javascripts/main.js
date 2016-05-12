@@ -88,13 +88,13 @@ $(document).ready(function(){
 });
 
 // Masonry grid
-$(window).on('load resize', function() {
-	return $('.grid').masonry({
-		itemSelector: '.grid-item',
-		columnWidth: 330
-	});
-
-});
+// $(window).on('load resize', function() {
+// 	return $('.grid').masonry({
+// 		itemSelector: '.grid-item',
+// 		columnWidth: 330
+// 	});
+//
+// });
 
 // Google Analytics
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

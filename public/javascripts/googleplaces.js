@@ -75,7 +75,7 @@ jQuery(document).ready(function ($) {
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode({'address': formData[2].value}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
-            console.log('Geocoding is complete')
+            console.log('Geocoding is complete');
             console.log(JSON.stringify(results));
             // Get extra data
             fulfill(results[0].geometry.location);
@@ -95,12 +95,40 @@ jQuery(document).ready(function ($) {
             console.log(places);
 
             for (var i=0; i<places.length; i++) {
-              console.log('place.place_id', places[i].place_id);
-              service.getDetails({placeId: places[i].place_id}, function (extraPlaceData, status) {
-                console.log('Got the extra details:', extraPlaceData.opening_hours);
-                console.log('Extra place data', JSON.stringify(extraPlaceData));
-              });
+              var image;
+              if (places[i].photos != undefined) {
+                image = '<img src="' + places[i].photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150}) + '" alt="place photo">';
+              } else {
+                image = '';
+              }
+              var hours;
+              if (places[i].opening_hours != undefined) {
+                var open_message = (places[i].opening_hours.open_now) ? 'Now open!' : 'Sorry, now closed.';
+                hours = '<p>' + open_message + '</p>';
+              } else {
+                hours = '';
+              }
+              var rating;
+              if (places[i].rating != undefined) {
+                rating = '<p>';
+                for (var r=0; r <= Math.floor(places[i].rating); r++) {
+                  rating += '<i class="fa fa-star" aria-hidden="true"></i>';
+                }
+                rating += '</p>';
+              } else {
+                rating = '';
+              }
+              $('#searchResults').append('<li>' + image + '<h4>' + places[i].name + '</h4><p>' + places[i].formatted_address + '</p>' + hours + rating + '</li>');
             }
+
+
+            // for (var i=0; i<places.length; i++) {
+            //   console.log('place.place_id', places[i].place_id);
+            //   service.getDetails({placeId: places[i].place_id}, function (extraPlaceData, status) {
+            //     console.log('Got the extra details:', extraPlaceData.opening_hours);
+            //     console.log('Extra place data', JSON.stringify(extraPlaceData));
+            //   });
+            // }
 
             var marker = new google.maps.Marker({
               map: map,

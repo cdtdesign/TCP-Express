@@ -29,6 +29,15 @@ router.get('/', function(req, res, next) {
   });
 });
 
+// Masonry grid
+$(window).on('load resize', function() {
+	return $('.grid').masonry({
+		itemSelector: '.grid-item',
+		columnWidth: 330
+	});
+
+});
+
 // app.get('/', function(req, res) {
 //     res.sendfile(__dirname + '/navbar.html');
 // });
