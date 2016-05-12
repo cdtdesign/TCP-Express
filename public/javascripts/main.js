@@ -91,7 +91,7 @@ $(document).ready(function(){
 $(window).on('load resize', function() {
 	return $('.grid').masonry({
 		itemSelector: '.grid-post',
-		columnWidth: 275
+		columnWidth: 300
 	});
 
 });
