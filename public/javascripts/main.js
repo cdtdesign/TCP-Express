@@ -90,7 +90,7 @@ $(document).ready(function(){
 // Masonry grid
 $(window).on('load resize', function() {
 	return $('.grid').masonry({
-		itemSelector: '.grid-post',
+		itemSelector: '.grid-item',
 		columnWidth: 330
 	});
 
