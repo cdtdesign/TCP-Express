@@ -99,7 +99,7 @@ $(window).on('load resize', function() {
 $(window).on('load resize', function() {
 	return $('.grid').masonry({
 		itemSelector: '.grid-search',
-		columnWidth: 50%
+		columnWidth: 400
 	});
 
 });
