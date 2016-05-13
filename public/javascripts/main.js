@@ -89,17 +89,19 @@ $(document).ready(function(){
 
 // Masonry grid
 $(window).on('load resize', function() {
-	return $('.grid').masonry({
+	return $('.journeys-grid').masonry({
 		itemSelector: '.grid-post',
-		columnWidth: 300
+		columnWidth: 300,
+		gutter: 30
 	});
 
 });
 
 $(window).on('load resize', function() {
-	return $('.grid').masonry({
+	return $('.search-grid').masonry({
 		itemSelector: '.grid-search',
-		columnWidth: 400
+		columnWidth: 400,
+		gutter: 30
 	});
 
 });
