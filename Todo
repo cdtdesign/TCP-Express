@@ -1,6 +1,12 @@
+Production:
 - Refactor all of the duplicated MySQL connection setups
 - Validate all forms
 - Try to split app.js into separate files if applicable
 - Figure out how to flash message; Namely for the password confirmation at the Sign Up page
 - Hash passwords in Travelers table
 – Allow users to change their info in their passport (profile)
+
+Development:
+— Clean up MySQL
+— Google Places list and markers
+— Local PassportJS strategy

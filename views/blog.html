@@ -52,7 +52,9 @@
               <!-- <img src="images/tc-journey-disney-magic-kingdom.jpg" class="blogImg"> -->
               <img src="images/{{ journey.header_image_filename }}" class="blogImg">
               {% endif %}
-              <figcaption style="text-align:left;"><small><span class="blogTraveler"><a href="#"><b><em>Traveling {{ journey.traveler_name }}</em></b></a></span><span class="blogDate">{{ JSON.stringify(journey.date) }}</span></small></figcaption>
+              <figcaption style="text-align:left;"><small><span class="blogTraveler"><a href="#"><b><em>Traveling {{ journey.traveler_name }}</em></b></a></span>
+                <span class="blogDate">{{ journey.friendlyDate }}</span>
+              </small></figcaption>
               <p class="blogBody">{{ journey.body }} </br>
                 <small class="blogHash" style="margin:0rem;"><em>#TravelingChristian #HappyTravels </em></small>
               </p>
@@ -83,7 +85,7 @@
                 <a class="like-button" title="Like">
                   <i class="fa fa-heart {{ }}"></i>
                 </a>
-                {% if user == journey.uuid%}
+                {% if user == journey.uuid %}
                 <a href="#" title="Edit">
                   <i class="fa fa-pencil journeyEditButton" data-toggle="modal" data-target="#journeyModal"></i>
                 </a>
