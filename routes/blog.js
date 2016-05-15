@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
   database : 'Passport'
 });
 
-// connection.connect();
+connection.connect();
 
 /* GET blog page. */
 router.get('/', function(req, res, next) {
@@ -18,21 +18,22 @@ router.get('/', function(req, res, next) {
     console.log('The solution is: ', rows[0].solution);
   });
 
-  var queryString = 'SELECT * FROM journeys JOIN travelers ON travelers.id = journeys.traveler';
-  connection.query(queryString, function(err, rows, fields) {
-    if (err) throw err;
-    console.log("Finished the query");
+  new Promise (function (fulfill, reject) {
+    var queryString = 'SELECT * FROM journeys JOIN travelers ON travelers.id = journeys.traveler';
+    connection.query(queryString, function(err, rows, fields) {
+      if (err) throw err;
+      console.log("Finished the query");
 
-    res.render('blog', {
-      "journeys": rows
+      res.render('blog', {
+        "journeys": rows
+      });
+
     });
+
+  }).then (function () {
+      connection.end();
   });
-});
 
-// app.get('/', function(req, res) {
-//     res.sendfile(__dirname + '/navbar.html');
-// });
-
-// connection.end();
+  });
 
 module.exports = router;
