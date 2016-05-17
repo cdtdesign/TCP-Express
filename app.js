@@ -36,22 +36,6 @@ mongoose.connect('mongodb://localhost:27017/passport', function(err, res) {
   console.log('Successfully connected to Mongo');
 });
 
-// var mongoose = require('mongoose');
-// var mongoose_db = mongoose.connection;
-// mongoose.connect('mongodb://localhost/passport');
-
-// var User = mongoose.model('User', userSchema);
-
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'tcp',
-  password : process.env.TCP_DATABASE_PASSWORD,
-  database : 'Passport'
-});
-
-connection.connect();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', cons.swig)
@@ -66,7 +50,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   cookie: {
-    domain: '.travelingchildrenproject.com'
+    domain: (app.get('env') === 'development') ? 'localhost' : '.travelingchildrenproject.com',
   },
   secret: 'secret',
   resave: true,
@@ -120,7 +104,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
-connection.end();
 
 module.exports = app;

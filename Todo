@@ -7,6 +7,8 @@ Production:
 – Allow users to change their info in their passport (profile)
 
 Development:
+— Local PassportJS strategy
 — Clean up MySQL
 — Google Places list and markers
-— Local PassportJS strategy
+- How to get FB & Twitter Travelers into the 'travelers' Collection?
+- Connect Mongo DB to mypassport.html

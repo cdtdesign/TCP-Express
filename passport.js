@@ -29,30 +29,35 @@ module.exports = function(passport) {
 passport.use(new LocalStrategy({
   passReqToCallback : true
 }, function(req, username, password, done) {
-		console.log('Using LocalStrategy')
+		console.log('Using LocalStrategy');
     User.findOne({ username: username }, function (err, user) {
+			console.log('user:', user);
       if (err) { throw(err); }
       if (!user) {
-				console.log('Create user b/c it wanst found');
         // Create new user object if it does NOT exit
-  			var user = new User({
+				console.log('Create user b/c it wanst found');
+  			var newUser = new User({
   				provider_id: 0,
   				provider: 'local',
+					password: password,
   				username: username,
-          name: req.body.first_name + " " + req.body.last_name,
-          email: req.body.email
+          name: req.body.first_name + " " + req.body.last_name
+          // email: req.body.email
   			});
+				console.log('Made the user — Now to save it');
   			//and store it in DB
-  			user.save(function(err) {
+  			newUser.save(function(err) {
   				if(err) throw err;
-					console.log('Saving the user')
-  				return done(null, user);
+					console.log('Saving the user');
   			});
+				return done(null, newUser);
+				console.log('Should have saved the user');
       }
       if (!user.validPassword(password)) {
-				console.log('Invalid Password')
+				console.log('Invalid Password');
         return done(null, false, { message: 'Incorrect password.' });
       }
+			console.log('Successfully authenticated');
       return done(null, user);
     });
   }
@@ -71,16 +76,16 @@ passport.use(new LocalStrategy({
 			if(!err && user!= null) return done(null, user);
 
 			// Create new user object if it does NOT exit
-			var user = new User({
+			var newUser = new User({
 				provider_id	: profile.id,
 				provider		 : profile.provider,
 				name				 : profile.displayName,
 				photo				: profile.photos[0].value
 			});
 			//and store it in DB
-			user.save(function(err) {
+			newUser.save(function(err) {
 				if(err) throw err;
-				done(null, user);
+				done(null, newUser);
 			});
 		});
 	}));
@@ -97,15 +102,15 @@ passport.use(new LocalStrategy({
 			if(err) throw(err);
 			if(!err && user!= null) return done(null, user);
 
-			var user = new User({
+			var newUser = new User({
 				provider_id	: profile.id,
 				provider		 : profile.provider,
 				name				 : profile.displayName,
 				photo				: profile.photos[0].value
 			});
-			user.save(function(err) {
+			newUser.save(function(err) {
 				if(err) throw err;
-				done(null, user);
+				done(null, newUser);
 			});
 		});
 	}));

@@ -1,11 +1,21 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var UserSchema = new Schema({
+var userSchema = new Schema({
+  username				: String,
 	name				: String,
-	provider_id : {type: String, unique: true},
+	provider_id : {type: String},
 	photo			 : String,
+  password : String,
 	createdAt	 : {type: Date, default: Date.now}
 });
 
-var User = mongoose.model('User', UserSchema);
+userSchema.methods.validPassword = function (password) {
+  if (password === this.password) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+var User = mongoose.model('User', userSchema, 'users');

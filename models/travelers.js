@@ -26,3 +26,4 @@ var travelerSchema = new Schema({
 });
 
 var Traveler = mongoose.model('Traveler', travelerSchema, 'travelers');
+// module.exports = mongoose.model('Traveler', travelerSchema, 'travelers');
