@@ -48,9 +48,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Get the current domain
+var currentDomain;
+if ((app.get('env') === 'development')) {
+  currentDomain = 'localhost';
+} else {
+  currentDomain = '.travelingchildrenproject.com';
+}
 app.use(session({
   cookie: {
-    domain: (app.get('env') === 'development') ? 'localhost' : '.travelingchildrenproject.com',
+    domain: currentDomain,
   },
   secret: 'secret',
   resave: true,
