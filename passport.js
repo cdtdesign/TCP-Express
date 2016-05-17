@@ -41,8 +41,10 @@ passport.use(new LocalStrategy({
   				provider: 'local',
 					password: password,
   				username: username,
-          name: req.body.first_name + " " + req.body.last_name
-          // email: req.body.email
+					first_name: req.body.first_name,
+					last_name: req.body.last_name,
+					traveler_name: req.body.traveler_name,
+          email: req.body.username
   			});
 				console.log('Made the user — Now to save it');
   			//and store it in DB

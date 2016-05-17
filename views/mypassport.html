@@ -13,14 +13,17 @@
     <article class="container">
       <div class="row mobile-wide" style="min-height:500px;">
         <div class="myPassport">
-          <img class="passportPic" src={{user.photo}} alt="Traveler Pic">
+          {% if user.photo %}
+            <img class="passportPic" src={{user.photo}} alt="Traveler Pic">
+          {% endif %}
             <h5 class="large textOrg">My Passport Profile</h5></br>
             <p><b>First Name: </b>{{ user.first_name }}</br>
                <b>Last Name: </b>{{ user.last_name }}</br>
                <b>Email: </b>{{ user.email }}</br>
-               <b>Street </b>{{ user.street }}</br>
-               <b>City: </b>{{ user.city }}</br>
-               <b>State: </b>{{ user.state }}</br>
+                 <b>Street: </b>{{ user.address.street }}</br>
+                 <b>City: </b>{{ user.address.city }}</br>
+                 <b>State: </b>{{ user.address.state }}</br>
+                 <b>Phone: </b>{{ user.address.phone }}</br>
                <b>Birthday: </b>{{ user.birthday }}</br>
             </p><b>Child's First Name: </b></br>
                 <b>Child's Birthday: </b></br>
@@ -30,7 +33,7 @@
             <a href="#" title="Edit Passport">
               <i class="fa fa-pencil passportEditButton" style="font-size:3rem;"></i>
             </a>
-            <a href="/mypassport/delete/{{ journey.uuid }}" title="Delete Passport!!" class="passportDeleteButton">
+            <a href="/mypassport/delete/{{ user.passport_id }}" title="Delete Passport!!" class="passportDeleteButton">
               <i class="fa fa-close" style="font-size:3.875rem;"></i>
             </a>
         </div>

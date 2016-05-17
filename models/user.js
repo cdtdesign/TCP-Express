@@ -7,6 +7,10 @@ var userSchema = new Schema({
 	provider_id : {type: String},
 	photo			 : String,
   password : String,
+  first_name : String,
+  last_name : String,
+  traveler_name : String,
+  email : String,
 	createdAt	 : {type: Date, default: Date.now}
 });
 
@@ -18,4 +22,4 @@ userSchema.methods.validPassword = function (password) {
   }
 };
 
-var User = mongoose.model('User', userSchema, 'users');
+var User = mongoose.model('User', userSchema, 'travelers');

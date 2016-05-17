@@ -1,14 +1,11 @@
-Production:
-- Refactor all of the duplicated MySQL connection setups
+— Google Places list and markers
+- Google Places PriceLevel fallback for when there are no results
 - Validate all forms
-- Try to split app.js into separate files if applicable
 - Figure out how to flash message; Namely for the password confirmation at the Sign Up page
 - Hash passwords in Travelers table
 – Allow users to change their info in their passport (profile)
 
-Development:
-— Local PassportJS strategy
-— Clean up MySQL
-— Google Places list and markers
-- How to get FB & Twitter Travelers into the 'travelers' Collection?
-- Connect Mongo DB to mypassport.html
+
+Other Stuff:
+- Journey blog social sharing
+- Journey blog likes

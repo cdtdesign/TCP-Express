@@ -17,7 +17,7 @@
         <!-- SIGN-IN/OUT -->
         <div class="one-third column">
           <a class="button signoutBtn" href="/auth/signout"><strong>Sign Out</strong></a>
-          <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.name}}</span></strong></a>
+          <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.traveler_name}}</span></strong></a>
           <img class="travelerPic" src={{user.photo}}>
           {% else %}
           <span>
@@ -61,7 +61,7 @@
         <!-- SIGN-OUT -->
         <div class="one-third column signout">
           <a class="button-outline signoutBtn" href="/auth/signout"><strong>Sign Out</strong></a>
-          <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.name}}</span></strong></a>
+          <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.traveler_name}}</span></strong></a>
           <img class="travelerPic" src={{user.photo}}>
           <!-- <a class="button-outline inline" href="/auth/signout"><strong>Sign Out</strong></a>
           <a class="inline" href="/mypassport"><strong><p>Traveling </br>{{ journey.traveler_name }}</p></strong></a> -->
