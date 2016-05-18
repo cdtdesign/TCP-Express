@@ -104,7 +104,6 @@ passport.use(new LocalStrategy({
 			var newUser = new User({
 				provider_id	: profile.id,
 				provider		 : profile.provider,
-				first_name : profile.first_name,
 				name				 : profile.displayName,
 				photo				: profile.photos[0].value
 			});
