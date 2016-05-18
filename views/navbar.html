@@ -3,7 +3,7 @@
     <nav class="navbar tweleve columns">
       <div class="container">
         <div class="two-thirds column">
-          {% if user %}
+        {% if user %}
           <span>
             <h4 class="wordmark u-pull-left animated rubberBand hvr-pop"><a href="/">Traveling Children Project</a></h4>
           </span>
@@ -25,7 +25,7 @@
           <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.name}}</span></strong></a>
           {% endif %}
           <img class="travelerPic" src={{user.photo}}>
-          {% else %}
+        {% else %}
           <span>
             <h4 class="wordmark u-pull-left animated rubberBand hvr-pop"><a href="/">Traveling Children Project</a></h4>
           </span>
@@ -40,7 +40,7 @@
         <div class="one-third column">
           <a class="button" href="/auth/signin"><strong>Sign In</strong></a>
           <a class="button button-wht" href="/auth/signup" target="_blank"><strong>Sign Up</strong></a>
-          {% endif %}
+        {% endif %}
         </div>
         <!-- /.one-third column -->
       </div><!-- /.container -->
