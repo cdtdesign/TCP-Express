@@ -1,6 +1,5 @@
-— Google Places list and markers
-- Google Places PriceLevel fallback for when there are no results
 - Google Places getDetails info into view
+- Google Places PriceLevel fallback for when there are no results
 – Allow users to change their info in their passport (profile)
 
 Other Stuff:
