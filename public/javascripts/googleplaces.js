@@ -36,18 +36,18 @@ jQuery(document).ready(function ($) {
 
   initMap();
 
-  function createMarker(place) {
-    var marker = new google.maps.Marker({
-      map: map,
-      position: place
-    });
-
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(place.name);
-      infowindow.open(map, this);
-    });
-  }
-
+  // function createMarker(place) {
+  //   var marker = new google.maps.Marker({
+  //     map: map,
+  //     position: place
+  //   });
+  //
+  //   google.maps.event.addListener(marker, 'click', function() {
+  //     infowindow.setContent(place.name);
+  //     infowindow.open(map, this);
+  //   });
+  // }
+  // 
   $('#destinationSearch').submit(function (e) {
     e.preventDefault();
 
@@ -95,6 +95,18 @@ jQuery(document).ready(function ($) {
             console.log(places);
 
             for (var i=0; i<places.length; i++) {
+              // Add markers for each result
+              var marker = new google.maps.Marker({
+                map: map,
+                position: places[i].geometry.location
+              });
+
+              google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent('<b class="infoWindowContent">' + places[i].name + '</b>');
+                infowindow.open(map, marker);
+              });
+
+              // Add to the search results list
               var image;
               if (places[i].photos != undefined) {
                 image = '<div id="placePhoto"><img src="' + places[i].photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '" alt="place photo"></div>';
@@ -130,10 +142,7 @@ jQuery(document).ready(function ($) {
             //   });
             // }
 
-            var marker = new google.maps.Marker({
-              map: map,
-              position: request.location
-            });
+
           }
         });
       });

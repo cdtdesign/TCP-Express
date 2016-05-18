@@ -17,7 +17,11 @@
         <!-- SIGN-IN/OUT -->
         <div class="one-third column">
           <a class="button signoutBtn" href="/auth/signout"><strong>Sign Out</strong></a>
+          {% if user.traveler_name %}
           <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.traveler_name}}</span></strong></a>
+          {% else %}
+          <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.first_name}}</span></strong></a>
+          {% endif %}
           <img class="travelerPic" src={{user.photo}}>
           {% else %}
           <span>

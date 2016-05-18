@@ -20,6 +20,7 @@ var auth = require('./routes/auth');
 var blog = require('./routes/blog');
 var mypassport = require('./routes/mypassport');
 var footer = require('./routes/footer');
+var flash = require('connect-flash');
 
 // Import models & passport config
 require('./models/user');
@@ -59,6 +60,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
+app.use(flash());
 app.use(methodOverride());
 app.use(passport.initialize());
 app.use(passport.session());

@@ -29,13 +29,10 @@ module.exports = function(passport) {
 passport.use(new LocalStrategy({
   passReqToCallback : true
 }, function(req, username, password, done) {
-		console.log('Using LocalStrategy');
     User.findOne({ username: username }, function (err, user) {
-			console.log('user:', user);
       if (err) { throw(err); }
-      if (!user) {
+      if (!user && req.route.path == '/signup') {
         // Create new user object if it does NOT exit
-				console.log('Create user b/c it wanst found');
   			var newUser = new User({
   				provider_id: 0,
   				provider: 'local',
@@ -46,21 +43,21 @@ passport.use(new LocalStrategy({
 					traveler_name: req.body.traveler_name,
           email: req.body.username
   			});
-				console.log('Made the user — Now to save it');
   			//and store it in DB
   			newUser.save(function(err) {
   				if(err) throw err;
-					console.log('Saving the user');
   			});
 				return done(null, newUser);
-				console.log('Should have saved the user');
       }
-      if (!user.validPassword(password)) {
-				console.log('Invalid Password');
+      if (user && !user.validPassword(password)) {
         return done(null, false, { message: 'Incorrect password.' });
       }
-			console.log('Successfully authenticated');
-      return done(null, user);
+			if (user) {
+				return done(null, user);
+			}
+			console.log('user:', user);
+			console.log('typeof user:', typeof user);
+			return done(null, false,  { message: 'You don\'t have an account.' });
     });
   }
 ));

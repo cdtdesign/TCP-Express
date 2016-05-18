@@ -2,18 +2,21 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var passport = require('passport');
+var flash = require('connect-flash');
 
 router.get('/', function(req, res) {
-    res.render('index');
-  });
+  res.render('index');
+});
 
-router.get('/signin', function(req, res){
-  res.render('signin');
+router.get('/signin', function(req, res) {
+  console.log('flash(\'error\'):', flash('error'));
+  res.render('signin', {message: req.flash('error')});
 });
 
 router.post('/signin', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/auth/signin'
+  failureRedirect: '/auth/signin',
+  failureFlash: true
 }));
 
 router.get('/signup', function(req, res, next) {

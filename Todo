@@ -1,11 +1,11 @@
 — Google Places list and markers
 - Google Places PriceLevel fallback for when there are no results
-- Validate all forms
-- Figure out how to flash message; Namely for the password confirmation at the Sign Up page
-- Hash passwords in Travelers table
+- Google Places getDetails info into view
 – Allow users to change their info in their passport (profile)
-
 
 Other Stuff:
 - Journey blog social sharing
 - Journey blog likes
+- Profile pic aspect ratio
+- Hash passwords in Travelers table
+- Validate all forms
