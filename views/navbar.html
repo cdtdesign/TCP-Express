@@ -21,8 +21,6 @@
           <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.traveler_name}}</span></strong></a>
           {% else %}
           <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.first_name}}</span></strong></a>
-          {% elseif %}
-          <a class="" href="/mypassport"><strong><span class="navTraveler">Traveling</br>{{user.name}}</span></strong></a>
           {% endif %}
           <img class="travelerPic" src={{user.photo}}>
         {% else %}
