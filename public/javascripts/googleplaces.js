@@ -47,7 +47,7 @@ jQuery(document).ready(function ($) {
   //     infowindow.open(map, this);
   //   });
   // }
-  // 
+  //
   $('#destinationSearch').submit(function (e) {
     e.preventDefault();
 
@@ -100,10 +100,11 @@ jQuery(document).ready(function ($) {
                 map: map,
                 position: places[i].geometry.location
               });
+              marker.content = '<b class="infoWindowContent">' + places[i].name + '</b>';
 
               google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent('<b class="infoWindowContent">' + places[i].name + '</b>');
-                infowindow.open(map, marker);
+                infowindow.setContent(this.content);
+                infowindow.open(this.getMap(), this);
               });
 
               // Add to the search results list
