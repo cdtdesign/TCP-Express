@@ -1,6 +1,8 @@
+X Mirror data from local DB to server DB
+– Create/Update/Delete Journey Posts and Passport Profile:
+  Allow users to change their info in their passport (profile)
 - Google Places getDetails info into view
 - Google Places PriceLevel fallback for when there are no results
-– Allow users to change their info in their passport (profile)
 
 Other Stuff:
 - Journey blog social sharing

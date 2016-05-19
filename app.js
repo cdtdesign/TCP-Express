@@ -18,6 +18,7 @@ var passport = require('passport');
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
 var blog = require('./routes/blog');
+var journey = require('./routes/journey');
 var mypassport = require('./routes/mypassport');
 var footer = require('./routes/footer');
 var flash = require('connect-flash');
@@ -73,6 +74,7 @@ app.use(function (req, res, next) {
 app.use('/', routes);
 app.use('/auth', auth);
 app.use('/journeyblog', blog);
+app.use('/journey', journey);
 app.use('/mypassport', mypassport);
 app.use('/', footer);
 
