@@ -1,0 +1,94 @@
+{% extends "./layout.html" %}
+
+{% set title = "Shop Traveling Children Project!" %}
+
+{% block content %}
+
+<!-- .container is main centered wrapper -->
+
+  <header class="prplStripes">
+
+    {% include "./navbar.html" %}
+
+    <article class="container">
+      <div class="row mobile-wide">
+        <div class="single950 center">
+          <!-- <img class="bannerPic" src="/images/reading-destination-1.jpg" alt="Journey through books!"> -->
+          <div class="tcpBanner">
+            <img style="padding-top:1rem;" class="tcpBannerCrest " src="images/tcp-crest-yllw.svg" alt="TCP Crest Logo">
+            <figcaption style="display:none;">Join the journey! Traveling Children Project</figcaption>
+          </div>
+            <h6 class="textOrg">Welcome to the Travel Shop!</h6>
+            <hr style="width:90%;">
+
+            <a href="https://www.etsy.com/listing/286821523/tcp-journey-kit-downloadable-childrens?" target="_blank">
+            <table>
+          		<thead><tr><th>TCP Journey Kit Delivered</th></tr></thead>
+          		<tbody>
+          		<tr><td><img src="images/etsy/journeyKit1.jpg" alt="TCP " border=1 height=200 width=200></td></tr>
+          		<tr><td>$10</td></tr>
+          		</tbody>
+          	</table></a>
+
+            <a href="https://www.etsy.com/listing/286774301/tcp-journey-kit-childrens-travel?" target="_blank">
+            <table>
+          		<thead><tr><th>TCP Journey Kit Download</th></thead><tbody>
+          		<tr><td><img src="images/etsy/journeyKit2.jpg" alt="TCP " border=1 height=200 width=200></td></tr>
+          		<tr><td>$2</td></tr>
+          		</tbody>
+          	</table></a>
+
+            <a href="https://www.etsy.com/listing/280891916/smile?" target="_blank">
+            <table>
+          		<thead><tr><th>TCP Smile T-shirt</th></tr></thead>
+          		<tbody>
+          		<tr><td><img src="images/etsy/smileTshirts_blu.jpg" alt="TCP " border=1 height=200 width=200></td></tr>
+          		<tr><td>$25</td></tr>
+          		</tbody>
+          	</table></a>
+
+            <a href="https://www.etsy.com/listing/280892646/tcp-sticker?" target="_blank">
+            <table>
+          		<thead><tr><th>TCP Sticker</th></tr></thead>
+          		<tbody>
+          		<tr><td><img src="images/etsy/Sticker_TCP_Crest_yllw.jpg" alt="TCP " border=1 height=200 width=200></td></tr>
+          		<tr><td>$3</td></tr>
+          		</tbody>
+          	</table></a>
+
+            <!-- <script type='text/javascript' src='https://www.etsy.com/assets/js/etsy_mini_shop.js'></script><script type='text/javascript'>new Etsy.Mini(12749660,'gallery',4,1,0,'https://www.etsy.com');</script> -->
+            <hr>
+            <!-- <table>
+          		<thead>
+          		<tr>
+          			<th>TCP Sticker</th>
+          			<th>TCP Smile T-shirt</th>
+          			<th>TCP Journey Kit Downloadable</th>
+          			<th>TCP Journey Kit Delivered</th>
+          		</tr>
+          		</thead>
+          		<tbody>
+          		<tr>
+          			<td><img src="images/etsy/journeyKit1.jpg" alt="TCP " border=1 height=200 width=200></td>
+          			<td><img src="images/etsy/journeyKit2.jpg" alt="TCP " border=1 height=200 width=200></td>
+          			<td><img src="images/etsy/smileTshirts_blu.jpg" alt="TCP " border=1 height=200 width=200></td>
+          			<td><img src="images/etsy/Sticker_TCP_Crest_yllw.jpg" alt="TCP " border=1 height=200 width=200></td>
+          		</tr>
+          		<tr>
+          		  <td>$3</td>
+          		  <td>$25</td>
+          		  <td>$2</td>
+          		  <td>$10</td>
+          		</tr>
+          		</tbody>
+          	</table> -->
+
+        </div>
+      </div><!-- /.row -->
+    </article><!-- /.containter -->
+
+  </header><!-- /HEADER -->
+
+    {% include "./footer.html" %}
+
+{% endblock %}

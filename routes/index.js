@@ -23,4 +23,14 @@ router.get('/about', function(req, res, next) {
   res.render('about');
 });
 
+/* GET travelshop page. */
+router.get('/shop', function(req, res, next) {
+  res.render('travelshop');
+});
+
+/* GET explore page. */
+router.get('/explore', function(req, res, next) {
+  res.render('explore');
+});
+
 module.exports = router;
