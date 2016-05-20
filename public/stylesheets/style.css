@@ -1384,7 +1384,7 @@ th {
 
 td {
   border: 1px solid #ccc;
-  text-align: center;
+  text-align: right;
   margin: 0;
   padding: 0;
   overflow: hidden;
