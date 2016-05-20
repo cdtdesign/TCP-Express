@@ -22,23 +22,6 @@
 
   </header><!-- /HEADER -->
 
-  <!-- Journey Creation and Editing Modal -->
-  <section id="journeyForm">
-    <form method="POST" action="/journey/create" enctype="multipart/form-data">
-    </form>
-    <h4>TC Journey to...</h4>
-    <input form="journey-form" class="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required>
-    <label for="date">When did this journey happen?</label>
-    <input form="journey-form" id="date" type="date" name="date" class="form-control" autocomplete="on" autocomplete="off" required>
-    <label for="body">What did you do there?</label>
-    <textarea form="journey-form" id="body" rows="10" name="body" class="form-control" placeholder="Body..." autocomplete="off" required></textarea>
-    <label for="tags">Choose some tags to help others easily find this journey.</label>
-    <input form="journey-form" id="tags" type="text" name="tags" class="form-control" value="#HappyTravels #TravelingChristian" placeholder="#One #Two #Red #Blue" autocomplete="off" required>
-    <label for="photo">Is there a photo you took while you were there?</label>
-    <input form="journey-form" id="photo" type="file" name="header_image" class="input-group" accept="image/*">
-    <input form="journey-form" style="font-size:1.5em;border-radius:6px;" type="submit" class="btn btn-warning journeyUpdateButton" value="Create">
-  </section>
-
     <section class="whtSection">
       <article class="container">
         <h6 class="textDrkBrwn25 center">A FEW WORDS FROM OUR SPONSORS</h6>
@@ -58,7 +41,7 @@
     <section class="bluStripes blogSection">
       <article class="container mobile-wide">
         <h5 class="textOrg" style="margin-top:50px;padding:5px;"><b>Where has TC taken you?</b> Click the button below to begin sharing your journey</br> and collect Travel Tokens for admission discounts and other great prizes!</h5>
-        <div class="blogButton hvr-rotate" data-toggle="modal" data-target="#journeyModal"><i class="fa fa-plus" aria-hidden="true"></i></div>
+        <div id="addJourneyButton" class="blogButton hvr-rotate" data-toggle="modal" data-target="#journeyModal"><i class="fa fa-plus" aria-hidden="true"></i></div>
         <div class="row-wide journeys-grid">
           {% for journey in journeys %}
           <!-- <div class="one column"> -->
@@ -78,7 +61,7 @@
 
               <div class="faBlogPost">
               <hr class="bpDivider">
-              <div class="bpDropup">
+              <!-- <div class="bpDropup">
                 <ul>
                   <li class="share-with-facebook share-button">
                     <a><i class="fa fa-facebook-square"></i> Facebook</a>
@@ -96,7 +79,8 @@
                     <a href="#"><i class="fa fa-envelope-square"></i> Email</a>
                   </li>
                 </ul>
-              </div><!-- ./bpDropup -->
+              </div> -->
+              <!-- ./bpDropup -->
 
                 <a title="Share"><i class="fa fa-send"></i></a>
                 <a class="like-button" title="Like">

@@ -5,8 +5,10 @@ X Mirror data from local DB to server DB
 - Google Places PriceLevel fallback for when there are no results
 
 Other Stuff:
+- Show/Hide social menu in Journey Blog post
 - Journey blog social sharing
 - Journey blog likes
 - Profile pic aspect ratio
 - Hash passwords in Travelers table
 - Validate all forms
+- Disable Journey Blog link in navbar securely and properly.

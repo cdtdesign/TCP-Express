@@ -118,12 +118,31 @@ ga('send', 'pageview');
 
 // Removal of Facebook's #_=_
 if (window.location.hash && window.location.hash == '#_=_') {
-        window.location.hash = '';
-    }
+  window.location.hash = '';
+}
 
-// Modals
-$('.modal').modal();
+$("#addJourneyButton").click(function(){
+	var SM = new SimpleModal({
+		"btn_ok": "Confirm button",
+		overlayClick: true,
+		overlayOpacity: .875,
+		overlayColor: '#9DDCF9'
+	});
+  SM.addButton("Action button", "btn primary", function(){
+    alert("Add your code");
+    this.hide();
+  });
+  SM.addButton("Cancel", "btn");
+  SM.show({
+    "model":"modal",
+    "title":"TC Journey to...",
+    "contents":'<form class="journeyForm" form="journey-form" method="POST" action="/journey/create"><h4>TC Journey to...</h4><input class="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required><label for="date">When did this journey happen?</label><input id="date" type="date" name="date" class="form-control" autocomplete="on" autocomplete="off" required><label for="body">What did you do there?</label><textarea id="body" rows="10" name="body" class="form-control" placeholder="Body..." autocomplete="off" required></textarea><label for="tags">Choose some tags to help others easily find this journey.</label><input id="tags" type="text" name="tags" class="form-control" value="#HappyTravels #TravelingChristian" placeholder="#One #Two #Red #Blue" autocomplete="off" required><label for="photo">Is there a photo you took while you were there?</label><input id="photo" type="file" name="header_image" class="input-group" accept="image/*"></form>',
+		"footer":'<input type="submit" class="button button-primary journeyUpdateButton" value="Create"> <input type="button" class="button-outline journeyCancelButton" value="Cancel">'
+  });
+});
 
-
+$('.journeyCancelButton').click(function () {
+	$('.simple-modal').hide();
+});
 
 });

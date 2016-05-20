@@ -1,5 +1,9 @@
 jQuery(document).ready(function ($) {
 
+  $('#destinationSearch').submit(function (e) {
+    $('#searchResults').empty();
+  });
+
   var map;
   var infowindow;
   var service;

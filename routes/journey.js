@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var Journey = require('../models/journey');
 
 /* GET journey */
 router.post('/create', function(req, res, next) {
   var newJourney = new Journey({
     traveler_id: req.body._id,
-    traveler_name: req.body.traveler_name,
+    traveler_name: req.user.traveler_name,
     title: req.body.title,
     date: req.body.date,
     body: req.body.body,

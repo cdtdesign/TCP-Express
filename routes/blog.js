@@ -5,7 +5,7 @@ var moment = require('moment');
 
 /* GET blog page. */
 router.get('/', function(req, res, next) {
-  Journey.find({}, function (err, journeys) {
+  Journey.find({}).sort('-created_at').exec(function (err, journeys) {
     if (err) throw err;
 
     for (var i=0; i<journeys.length; i++) {

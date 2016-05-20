@@ -1135,119 +1135,21 @@ label > .label-body {
 
     /*---------- ADD JOURNEY FORM ----------*/
 
-  section#journeyForm {
-    display: none;
-  }
+  .journeyForm {
+
+    }
 
   /*---------- ADD JOURNEY MODAL ----------*/
-  #journeyModal {
-    background-color: rgba(157,220,249,.9375) !important;
-    z-index: 2000 !important;
-  }
 
-  #journeyModal .modal-content {
-    box-shadow: none !important;
+  .simple-modal {
     background-color: #fee088;
+    box-shadow: none;
   }
 
-  #journeyModal .close {
-    height: 65px !important;
-    letter-spacing: 0.5px !important;
-    line-height: 75% !important;
-  }
-  #journeyModal .close span {
-    display: inline-block !important;
-    height: 35px !important;
-  }
-  #journeyModal .modal-header h4 {
-    float: left !important;
-    letter-spacing: 0.35px !important;
-    width: 50% !important;
-  }
-  #journeyModal .modal-header input {
-    background: none !important;
-    border: none !important;
-    /*float: left !important;*/
-    padding-left: 0;
-    padding-right: 0;
-    line-height: 435% !important;
-    text-indent: 25px !important;
-    width: 50% !important;
-  }
-  #journeyModal .modal-body,
-  #journeyModal .modal-footer {
-    padding: 0 2.5% !important;
-  }
-  #journeyModal .modal-body label,
-  #journeyModal .modal-footer label {
-    color: #444 !important;
-    font-weight: 500 !important;
-    margin-top: 3.5% !important;
-    margin-left: 5% !important;
-  }
-  #journeyModal .modal-body input,
-  #journeyModal .modal-footer input {
-    background-color: white !important;
-    padding: 0 !important;
-  }
-  #journeyModal .modal-body input:first-of-type,
-  #journeyModal .modal-footer input:first-of-type {
-    margin-top: 0 !important;
-  }
-  #journeyModal .modal-body input[type="file"],
-  #journeyModal .modal-footer input[type="file"] {
-    background-color: transparent !important;
-    line-height: 100% !important;
-    margin-left: 2.5% !important;
-    margin-bottom: 5% !important;
-    text-indent: 0 !important;
-  }
-  #journeyModal .modal-body input[type="submit"],
-  #journeyModal .modal-footer input[type="submit"] {
-    background-color: transparent !important;
-    font-size: 1.15em !important;
-    margin: 5% 2.5% !important;
-    outline: none !important;
-    padding: 1% 2.5% !important;
-    text-indent: 0 !important;
-    transition: all 175ms !important;
-  }
-  #journeyModal .modal-body input[type="submit"]:hover, #journeyModal .modal-body input[type="submit"]:focus,
-  #journeyModal .modal-footer input[type="submit"]:hover,
-  #journeyModal .modal-footer input[type="submit"]:focus {
-    background-color: #ee6730 !important;
-    color: white !important;
-  }
-  #journeyModal .modal-body input[type="submit"]:active,
-  #journeyModal .modal-footer input[type="submit"]:active {
-    background-color: #773418 !important;
-    color: grey !important;
-  }
-  #journeyModal .modal-body textarea,
-  #journeyModal .modal-footer textarea {
-    padding-top: 15px !important;
-  }
-  #journeyModal input {
-    color: #ee6730 !important;
-  }
-  #journeyModal textarea {
-    resize: vertical !important;
-  }
-  #journeyModal input, #journeyModal textarea {
-    text-indent: 15px !important;
-  }
-  #journeyModal ::-webkit-input-placeholder {
-    color: #ee6730 !important;
-  }
-  #journeyModal :-moz-placeholder {
-    color: #ee6730 !important;
-  }
-  #journeyModal ::-moz-placeholder {
-    color: #ee6730 !important;
-  }
-  #journeyModal :-ms-input-placeholder {
-    color: #ee6730 !important;
-  }
+  /*#simple-modal-overlay {*/
+    /*background: rgba(255,255,255,0.875) !important;*/
+    /*opacity: 1;*/
+  /*}*/
 
   .journeyCreateButton {
     border-radius: 100%;
@@ -1468,7 +1370,7 @@ table {
   border-collapse: collapse;
   display: inline;
 }
-/* Zebra striping */
+
 tr:nth-of-type(odd) {
   background: #eee;
 }
@@ -1477,26 +1379,34 @@ th {
   color: #ee6730;
   font-weight: bold;
   width: 100%;
+  margin: 0;
 }
-td, th {
-  /*padding: 6px;*/
+th {
   border: 1px solid #ccc;
   text-align: center;
-  margin: auto;
+  margin: 0;
+  padding: 12px;
+}
+
+td {
+  border: 1px solid #ccc;
+  text-align: center;
+  margin: 0;
+  padding: 0;
   max-width: 200px;
   max-height: 200px;
 }
 
-td img {
-  max-width: 200px;
-  max-height: 200px;
+.tdImg {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 tbody tr:nth-child(even)  td {
   background-color: #fff;
   color: #95ce8a;
   text-align: right;
-  padding: 1%;
 }
 
 /*---------- TABLES MEDIA QUERY ----------*/
@@ -1538,6 +1448,8 @@ only screen and (max-width: 760px),
 		white-space: nowrap;
 	}
 
+}
+
 /*---------- MASONRY GRID ----------*/
 
 .grid {
@@ -1555,7 +1467,6 @@ only screen and (max-width: 760px),
   padding: 10px 0px;
   /*padding-bottom: 10px;*/
   width: 300px;
-  min-height: 500px;
   background-color: #fee088;
   margin: 15px;
   /*float: left;*/
