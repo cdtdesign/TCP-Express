@@ -21,7 +21,7 @@
             <a href="/mypassport"><strong><span class="navTraveler">Traveling<br>{{user.traveler_name}}</span></strong></a>
             {% elseif user.first_name %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveling<br>{{user.first_name}}</span></strong></a>
-            {% else user %}
+            {% else user.passport_id %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveler</span></strong></a>
             {% endif %}
           <img class="travelerPic" src={{user.photo}}>
@@ -71,7 +71,7 @@
             <a href="/mypassport"><strong><span class="navTraveler">Traveling<br>{{user.traveler_name}}</span></strong></a>
             {% elseif user.first_name %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveling<br>{{user.first_name}}</span></strong></a>
-            {% else user %}
+            {% else user.passport_id %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveler</span></strong></a>
             {% endif %}
           <img class="travelerPic" src={{user.photo}}>
