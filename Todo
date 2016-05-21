@@ -1,3 +1,8 @@
+Bugs:
+- Any signin has access to Edit/Delete on Journey posts :(
+
+
+Features to complete:
 X Mirror data from local DB to server DB
 X Create Journey NOT working!!!
 X Create/Update/Delete Journey Posts

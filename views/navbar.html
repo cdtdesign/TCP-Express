@@ -17,13 +17,13 @@
         <!-- SIGN-IN/OUT -->
         <div class="one-third column">
           <a class="button signoutBtn" href="/auth/signout"><strong>Sign Out</strong></a>
-          {% if user.traveler_name %}
+            {% if user.traveler_name %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveling<br>{{user.traveler_name}}</span></strong></a>
-          {% elseif user.first_name %}
+            {% elseif user.first_name %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveling<br>{{user.first_name}}</span></strong></a>
-          {% else %}
+            {% else user %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveler</span></strong></a>
-          {% endif %}
+            {% endif %}
           <img class="travelerPic" src={{user.photo}}>
         {% else %}
           <span>
@@ -67,13 +67,13 @@
         <!-- SIGN-OUT -->
         <div class="one-third column signout">
           <a class="button-outline signoutBtn" href="/auth/signout"><strong>Sign Out</strong></a>
-          {% if user.traveler_name %}
+            {% if user.traveler_name %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveling<br>{{user.traveler_name}}</span></strong></a>
-          {% elseif user.first_name %}
+            {% elseif user.first_name %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveling<br>{{user.first_name}}</span></strong></a>
-          {% else %}
+            {% else user %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveler</span></strong></a>
-          {% endif %}
+            {% endif %}
           <img class="travelerPic" src={{user.photo}}>
         </div>
         <!-- /.one-third column -->
