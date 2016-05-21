@@ -289,7 +289,7 @@ b.myPassport {
 
 .passportPic {
   max-width: 150px;
-  max-height: 150px;
+  min-height: 150px;
   display: inline-block;
   vertical-align: top;
   border: 8px solid #E8C874;
@@ -342,7 +342,7 @@ span.navTraveler {
 }
 
 .travelerPic {
-  max-width: 50px;
+  min-width: 50px;
   max-height: 50px;
   display: inline-block;
   vertical-align: middle;
