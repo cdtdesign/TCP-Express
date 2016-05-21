@@ -12,7 +12,7 @@ var journeySchema = new Schema({
 		type: String,
 		default: randomstring.generate()
 	},
-  traveler_id: String,
+  passport_id: String,
   traveler_name: String,
   title: String,
   date: Date,

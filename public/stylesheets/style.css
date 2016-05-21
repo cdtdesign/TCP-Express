@@ -1162,7 +1162,6 @@ label > .label-body {
 /*---------- JOURNEY BLOG ELEMENTS ----------*/
 
 .blogSection {
-  max-height: 950px;
   padding-left: 20px;
   overflow: auto;
 }

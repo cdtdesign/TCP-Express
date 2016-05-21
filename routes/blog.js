@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
       journeys[i].friendlyDate = moment(journeys[i].date).fromNow()
     }
 
+    console.log('journeys:', JSON.stringify(journeys));
     res.render('blog', {
       "journeys": journeys
     });

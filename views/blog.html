@@ -41,7 +41,7 @@
     <section class="bluStripes blogSection">
       <article class="container mobile-wide">
         <h5 class="textOrg" style="margin-top:50px;padding:5px;"><b>Where has TC taken you?</b> Click the button below to begin sharing your journey</br> and collect Travel Tokens for admission discounts and other great prizes!</h5>
-        <div id="addJourneyButton" class="blogButton hvr-rotate" data-toggle="modal" data-target="#journeyModal"><i class="fa fa-plus" aria-hidden="true"></i></div>
+        <div id="addJourneyButton" class="blogButton hvr-rotate"><i class="fa fa-plus" aria-hidden="true"></i></div>
         <div class="row-wide journeys-grid">
           {% for journey in journeys %}
           <!-- <div class="one column"> -->
@@ -86,16 +86,15 @@
                 <a class="like-button" title="Like">
                   <i class="fa fa-heart {{ }}"></i>
                 </a>
-                {% if user == journey.uuid %}
+                {% if user.passport_id == journey.passport_id %}
                 <a href="#" title="Edit">
-                  <i class="fa fa-pencil journeyEditButton" data-toggle="modal" data-target="#journeyModal"></i>
+                  <i class="fa fa-pencil journeyEditButton" data-journey-id="{{ String(journey._id) }}"></i>
                 </a>
-                <a href="/journeys/delete/{{ journey.uuid }}" title="Delete" class="postDeleteButton">
-                  <i class="fa fa-close" style="font-size:2.875rem;"></i>
+                <a title="Delete">
+                  <i class="fa fa-close journeyDeleteButton" style="font-size:2.875rem;" data-journey-id="{{ String(journey._id) }}"></i>
                 </a>
-              {% else %}
+                {% endif %}
               </div><!-- ./faBlogPost -->
-              {% endif %}
             </div><!-- /.blogPost -->
 
           <!-- </div> -->
