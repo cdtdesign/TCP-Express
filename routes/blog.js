@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     for (var i=0; i<journeys.length; i++) {
       journeys[i].friendlyDate = moment(journeys[i].date).fromNow()
     }
-
+    console.log('req.user.passport_id', req.user.passport_id);
     console.log('journeys:', JSON.stringify(journeys));
     res.render('blog', {
       "journeys": journeys

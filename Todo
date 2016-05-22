@@ -1,5 +1,6 @@
 Bugs:
 - Any signin not using traveler_name or first_name (basically using the "elseif" part of conditional) has access to Edit/Delete on Journey posts :(
+- Sponsor add text/logo not responsive
 
 Features to complete:
 X Mirror data from local DB to server DB
