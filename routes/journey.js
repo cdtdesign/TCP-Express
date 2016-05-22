@@ -1,16 +1,45 @@
 var express = require('express');
 var router = express.Router();
 var Journey = require('../models/journey');
+var multer = require('multer');
+// var crypto = require('crypto');
+// var mime = require('node-mime');
+// var upload = multer({ dest: '/Users/Christina/Sites/TCP-Express/public/images/journey-images' });
+
+// var storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, '/Users/Christina/Sites/TCP-Express/public/images/journey-images')
+//   },
+//   filename: function (req, file, cb) {
+//     crypto.pseudoRandomBytes(16, function (err, raw) {
+//       cb(null, raw.toString('hex') + Date.now() + '.' + mime.extension(file.mimetype));
+//     });
+//   }
+// });
+// var upload = multer({ storage: storage });
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '/Users/Christina/Sites/TCP-Express/public/images/journey-images')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now())
+  }
+})
+
+var upload = multer({ storage: storage })
+
 
 /* GET journey */
-router.post('/create', function(req, res, next) {
+router.post('/create', upload.single('header_image'), function(req, res, next) {
+  console.log('req.file:', JSON.stringify(req.file));
   var newJourney = new Journey({
     passport_id: req.user.passport_id,
     traveler_name: req.user.traveler_name,
     title: req.body.title,
     date: req.body.date,
     body: req.body.body,
-    header_image_filename: req.body.header_image,
+    header_image_filename: req.file.filename,
     tags: req.body.tags
   });
   newJourney.save(function (err) {

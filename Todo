@@ -1,6 +1,7 @@
 Bugs:
-- Any signin not using traveler_name or first_name (basically using the "elseif" part of conditional) has access to Edit/Delete on Journey posts :(
+X Any signin not using traveler_name or first_name (basically using the "elseif" part of conditional) has access to Edit/Delete on Journey posts :(
 - Sponsor add text/logo not responsive
+- Missing extensions on journey header_image
 
 Features to complete:
 X Mirror data from local DB to server DB
@@ -20,3 +21,4 @@ Other Stuff:
 - Hash passwords in Travelers table
 - Validate all forms
 - Disable Journey Blog link in navbar securely and properly.
+- Delete header_image when Journey post is deleted

@@ -1,5 +1,4 @@
-jQuery(document).ready(function ($) {
-
+$(document).ready(function () {
 	$('.my-slider').unslider();
 
 	// hide .navbar first
@@ -132,7 +131,7 @@ $("#addJourneyButton").click(function(){
     "model":"modal",
     "title":"Add New Journey Post",
     "contents":'\
-				<form class="journeyForm" id="journey-form" method="POST" action="/journey/create"></form> \
+				<form class="journeyForm" id="journey-form" method="POST" action="/journey/create" enctype="multipart/form-data"></form> \
 				<h4>TC Journey to...</h4> \
 				<input form="journey-form" class="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required> \
 				<label for="date">When did this journey happen?</label> \
@@ -201,10 +200,6 @@ $(".journeyDeleteButton").click(function (e) {
 			}
 		}
 	});
-});
-
-$('.journeyCancelButton').click(function () {
-	$('.simple-modal').hide();
 });
 
 });
