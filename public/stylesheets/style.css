@@ -1,3 +1,19 @@
+/*---------- MODALS ----------*/
+
+.modalBkgnd {
+  background-color: rgba(157, 220, 249, 0.875);;
+}
+
+.modal--show .modal-inner {
+  top: 150px;
+  background-color: #fee088;
+}
+
+.footer {
+  border-top: 1px solid #ffc233;
+  background-color: #fee088;
+}
+
 /*---------- FONTS & SUCH ----------*/
 
 @font-face {

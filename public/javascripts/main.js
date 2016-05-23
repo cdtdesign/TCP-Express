@@ -120,35 +120,85 @@ if (window.location.hash && window.location.hash == '#_=_') {
   window.location.hash = '';
 }
 
-$("#addJourneyButton").click(function(){
-	var SM = new SimpleModal({
-		"btn_ok": "Confirm button",
-		overlayClick: true,
-		overlayOpacity: .875,
-		overlayColor: '#9DDCF9'
-	});
-  SM.show({
-    "model":"modal",
-    "title":"Add New Journey Post",
-    "contents":'\
-				<form class="journeyForm" id="journey-form" method="POST" action="/journey/create" enctype="multipart/form-data"></form> \
-				<h4>TC Journey to...</h4> \
-				<input form="journey-form" class="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required> \
-				<label for="date">When did this journey happen?</label> \
-				<input form="journey-form" id="date" type="date" name="date" class="form-control" autocomplete="on" autocomplete="off" required> \
-				<label for="body">What did you do there?</label> \
-				<textarea form="journey-form" id="body" rows="10" name="body" class="form-control" placeholder="Body..." autocomplete="off" required></textarea> \
-				<label for="tags">Choose some tags to help others easily find this journey.</label> \
-				<input form="journey-form" id="tags" type="text" name="tags" class="form-control" value="#HappyTravels #TravelingChristian" placeholder="#One #Two #Red #Blue" autocomplete="off" required> \
-				<label for="photo">Is there a photo you took while you were there?</label> \
-				<input form="journey-form" id="photo" type="file" name="header_image" class="input-group" accept="image/*">',
-		"footer":'\
-			<input form="journey-form" type="submit" class="button button-primary journeyUpdateButton" value="Create"> \
-			<input form="journey-form" type="button" class="button-outline journeyCancelButton" value="Cancel">'
-  });
-});
+// $("#addJourneyButton").click(function(){
+// 	var SM = new SimpleModal({
+// 		"btn_ok": "Confirm button",
+// 		overlayClick: true,
+// 		overlayOpacity: .875,
+// 		overlayColor: '#9DDCF9'
+// 	});
+//   SM.show({
+//     "model":"modal",
+//     "title":"Add New Journey Post",
+//     "contents":'\
+// 				<form class="journeyForm" id="journey-form" method="POST" action="/journey/create" enctype="multipart/form-data"></form> \
+// 				<h4>TC Journey to...</h4> \
+// 				<input form="journey-form" class="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required> \
+// 				<label for="date">When did this journey happen?</label> \
+// 				<input form="journey-form" id="date" type="date" name="date" class="form-control" autocomplete="on" autocomplete="off" required> \
+// 				<label for="body">What did you do there?</label> \
+// 				<textarea form="journey-form" id="body" rows="10" name="body" class="form-control" placeholder="Body..." autocomplete="off" required></textarea> \
+// 				<label for="tags">Choose some tags to help others easily find this journey.</label> \
+// 				<input form="journey-form" id="tags" type="text" name="tags" class="form-control" value="#HappyTravels #TravelingChristian" placeholder="#One #Two #Red #Blue" autocomplete="off" required> \
+// 				<label for="photo">Is there a photo you took while you were there?</label> \
+// 				<input form="journey-form" id="photo" type="file" name="header_image" class="input-group" accept="image/*">',
+// 		"footer":'\
+// 			<input form="journey-form" type="submit" class="button button-primary journeyUpdateButton" value="Create"> \
+// 			<input form="journey-form" type="button" class="button-outline journeyCancelButton" value="Cancel">'
+//   });
+// });
 
-$(".journeyEditButton").click(function (e) {
+// $(".journeyEditButton").click(function (e) {
+	// $.ajax({
+	// 	url: '/journey/get/' + $(e.target).data('journey-id'),
+	// 	success: function (response) {
+	// 		console.log('We should have journey data.');
+	// 		console.log('response:', response);
+	//
+	// 		// Format the date for the journey
+	// 		var date = new Date(response.journey.date);
+	// 		var journeyDate = ("0" + date.getFullYear()).slice(-4) + '-' + ("0" + date.getMonth()).slice(-2) + '-' + ("0" + date.getDate()).slice(-2);
+	//
+// 			// Show the modal with the returned form data
+// 			var SM = new SimpleModal({
+// 				"btn_ok": "Confirm button",
+// 				overlayClick: true,
+// 				overlayOpacity: .875,
+// 				overlayColor: '#9DDCF9'
+// 			});
+// 			SM.addButton("Confirm", "btn primary", function(){
+// 					alert("Action confirm modal");
+// 					this.hide();
+// 			});
+// 			// Aggiunge Bottone annulla
+// 			SM.addButton("Cancel", "btn");
+// 			SM.show({
+// 				"model":"modal",
+// 				"title":"Edit Journey Post",
+// 				"contents":'\
+// 					<form class="journeyForm" id="journey-form" method="POST" action="/journey/edit" enctype="multipart/form-data"></form> \
+// 						<h4>TC Journey to...</h4> \
+// 						<input form="journey-form" type="hidden" name="journeyId" value="' + $(e.target).data('journey-id') + '"> \
+// 						<input form="journey-form" value="' + response.journey.title + '" class="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required> \
+// 						<label for="date">When did this journey happen?</label> \
+// 						<input form="journey-form" value="' + journeyDate + '" id="date" type="date" name="date" class="form-control" autocomplete="on" autocomplete="off" required> \
+// 						<label for="body">What did you do there?</label> \
+// 						<textarea form="journey-form" id="body" rows="10" name="body" class="form-control" placeholder="Body..." autocomplete="off" required>' + response.journey.body + '</textarea> \
+// 						<label for="tags">Choose some tags to help others easily find this journey.</label> \
+// 						<input value="' + response.journey.tags.toString() + '" form="journey-form" id="tags" type="text" name="tags" class="form-control" value="#HappyTravels #TravelingChristian" placeholder="#One #Two #Red #Blue" autocomplete="off" required> \
+// 						<label for="photo">Is there a photo you took while you were there?</label> \
+// 						<input form="journey-form" id="photo" type="file" name="header_image" class="input-group" accept="image/*">',
+// 				"footer":'\
+// 					<input form="journey-form" type="submit" class="button button-primary journeyUpdateButton" value="Update"> \
+// 					<input form="journey-form" type="button" class="button-outline journeyCancelButton" value="Cancel">'
+// 			});
+// 		}
+// 	});
+// });
+
+// https://github.com/drublic/css-modal/blob/master/README.md#events
+$(document).on('cssmodal:show', function (event) {
+	$('.journey-create-button').val('Update');
 	$.ajax({
 		url: '/journey/get/' + $(e.target).data('journey-id'),
 		success: function (response) {
@@ -158,34 +208,6 @@ $(".journeyEditButton").click(function (e) {
 			// Format the date for the journey
 			var date = new Date(response.journey.date);
 			var journeyDate = ("0" + date.getFullYear()).slice(-4) + '-' + ("0" + date.getMonth()).slice(-2) + '-' + ("0" + date.getDate()).slice(-2);
-
-			// Show the modal with the returned form data
-			var SM = new SimpleModal({
-				"btn_ok": "Confirm button",
-				overlayClick: true,
-				overlayOpacity: .875,
-				overlayColor: '#9DDCF9'
-			});
-			SM.show({
-				"model":"modal",
-				"title":"Edit Journey Post",
-				"contents":'\
-					<form class="journeyForm" id="journey-form" method="POST" action="/journey/edit"></form> \
-						<h4>TC Journey to...</h4> \
-						<input form="journey-form" type="hidden" name="journeyId" value="' + $(e.target).data('journey-id') + '"> \
-						<input form="journey-form" value="' + response.journey.title + '" class="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required> \
-						<label for="date">When did this journey happen?</label> \
-						<input form="journey-form" value="' + journeyDate + '" id="date" type="date" name="date" class="form-control" autocomplete="on" autocomplete="off" required> \
-						<label for="body">What did you do there?</label> \
-						<textarea form="journey-form" id="body" rows="10" name="body" class="form-control" placeholder="Body..." autocomplete="off" required>' + response.journey.body + '</textarea> \
-						<label for="tags">Choose some tags to help others easily find this journey.</label> \
-						<input value="' + response.journey.tags.toString() + '" form="journey-form" id="tags" type="text" name="tags" class="form-control" value="#HappyTravels #TravelingChristian" placeholder="#One #Two #Red #Blue" autocomplete="off" required> \
-						<label for="photo">Is there a photo you took while you were there?</label> \
-						<input form="journey-form" id="photo" type="file" name="header_image" class="input-group" accept="image/*">',
-				"footer":'\
-					<input form="journey-form" type="submit" class="button button-primary journeyUpdateButton" value="Update"> \
-					<input form="journey-form" type="button" class="button-outline journeyCancelButton" value="Cancel">'
-			});
 		}
 	});
 });

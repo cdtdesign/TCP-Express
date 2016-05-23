@@ -22,6 +22,33 @@
 
   </header><!-- /HEADER -->
 
+  <section class="modal--show modalBkgnd" id="modal-text" tabindex="-1" role="dialog"
+    aria-labelledby="modal-label" aria-hidden="true">
+
+    <div class="modal modal-inner">
+      <h4 id="modal-label">TC Journey to...</h4>
+      <div class="modal-content">
+        <form class="journeyForm" id="journey-form" method="POST" action="/journey/create" enctype="multipart/form-data"></form>
+        <input form="journey-form" class="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required>
+        <label for="date">When did this journey happen?</label>
+        <input form="journey-form" id="date" type="date" name="date" class="form-control" autocomplete="on" autocomplete="off" required>
+        <label for="body">What did you do there?</label>
+        <textarea form="journey-form" id="body" rows="10" name="body" class="form-control" placeholder="Body..." autocomplete="off" required></textarea>
+        <label for="tags">Choose some tags to help others easily find this journey.</label>
+        <input form="journey-form" id="tags" type="text" name="tags" class="form-control" value="#HappyTravels #TravelingChristian" placeholder="#One #Two #Red #Blue" autocomplete="off" required>
+        <label for="photo">Is there a photo you took while you were there?</label>
+        <input form="journey-form" id="photo" type="file" name="header_image" class="input-group" accept="image/*">
+      </div>
+      <footer>
+        <input form="journey-form" type="submit" class="button button-primary journey-create-button" value="Create">
+        <a href="#!" class="button-outline" data-close="Close" data-dismiss="modal">Cancel</a>
+      </footer>
+    </div>
+
+    <!-- <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
+        data-dismiss="modal">?</a> -->
+    </section>
+
     <section class="whtSection">
       <article class="container">
         <h6 class="textDrkBrwn25 center">A FEW WORDS FROM OUR SPONSORS</h6>
@@ -86,7 +113,7 @@
                   <i class="fa fa-heart {{ }}"></i>
                 </a>
                 {% if user.passport_id == journey.passport_id %}
-                <a href="#" title="Edit">
+                <a href="#modal-text" title="Edit">
                   <i class="fa fa-pencil journeyEditButton" data-journey-id="{{ String(journey._id) }}"></i>
                 </a>
                 <a title="Delete">

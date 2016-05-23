@@ -294,7 +294,7 @@ var SimpleModal = new Class({
     */
     _injectAllButtons: function(){
       this.buttons.each( function(e, i){
-        e.inject( $("simple-modal").getElement(".simple-modal-footer") );
+        e.inject( $(".simple-modal-footer") );
       });
 		return;
     },

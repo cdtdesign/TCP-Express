@@ -55,11 +55,12 @@ router.get('/get/:journey_id', function (req, res, next) {
   });
 });
 
-router.post('/edit', function (req, res, next) {
+router.post('/edit', upload.single('header_image'), function (req, res, next) {
   Journey.findOneAndUpdate({_id: req.body.journeyId}, {$set: {
     title: req.body.title,
     date: req.body.date,
     body: req.body.body,
+    header_image_filename: req.file.filename,
     tags: req.body.tags
   }}, function (err) {
     if (err) throw err;
