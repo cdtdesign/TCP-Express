@@ -4,14 +4,37 @@
   background-color: rgba(157, 220, 249, 0.875);;
 }
 
-.modal--show .modal-inner {
-  top: 150px;
-  background-color: #fee088;
+.modal--show {
+  z-index: 2000;
 }
 
-.footer {
+.modal--show .modal-inner {
+  top: 120px;
+  background-color: #fee088;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.modal--show .modal-content {
+  border-bottom: 0;
+}
+
+.modal--show .modal-inner h4 {
+  padding: 20px;
+}
+
+.modal--show footer {
   border-top: 1px solid #ffc233;
   background-color: #fee088;
+  padding-top: 20px;
+}
+
+.modal--show a {
+
+}
+
+.modal--show input, textarea {
+  width: 100%;
 }
 
 /*---------- FONTS & SUCH ----------*/
@@ -1092,6 +1115,7 @@ input[type="email"],
 input[type="number"],
 input[type="search"],
 input[type="text"],
+input[type="date"],
 input[type="tel"],
 input[type="url"],
 input[type="password"],

@@ -2,13 +2,14 @@ Bugs:
 X Any signin not using traveler_name or first_name (basically using the "elseif" part of conditional) has access to Edit/Delete on Journey posts :(
 - Sponsor add text/logo not responsive
 - Missing extensions on journey header_image
+- Date in Journey blog post update mismatch
 
 Features to complete:
 X Mirror data from local DB to server DB
 X Create Journey NOT working!!!
 X Create/Update/Delete Journey Posts
 X Journey header image on Create/Update of Journey posts
-- Click modal & overlay to dismiss
+X Click modal & overlay to dismiss
 - Create/Update/Delete Passport Profile: Allow users to change their info in their passport (profile)
 - Google Places getDetails info into view
 - Google Places PriceLevel fallback for when there are no results

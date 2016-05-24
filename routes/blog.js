@@ -5,18 +5,22 @@ var moment = require('moment');
 
 /* GET blog page. */
 router.get('/', function(req, res, next) {
-  Journey.find({}).sort('-created_at').exec(function (err, journeys) {
-    if (err) throw err;
+  if (req.user) {
+    Journey.find({}).sort('-created_at').exec(function (err, journeys) {
+      if (err) throw err;
 
-    for (var i=0; i<journeys.length; i++) {
-      journeys[i].friendlyDate = moment(journeys[i].date).fromNow()
-    }
-    console.log('req.user.passport_id', req.user.passport_id);
-    console.log('journeys:', JSON.stringify(journeys));
-    res.render('blog', {
-      "journeys": journeys
+      for (var i=0; i<journeys.length; i++) {
+        journeys[i].friendlyDate = moment(journeys[i].date).fromNow()
+      }
+      console.log('req.user.passport_id', req.user.passport_id);
+      console.log('journeys:', JSON.stringify(journeys));
+      res.render('blog', {
+        "journeys": journeys
+      });
     });
-  });
+  } else {
+    res.redirect('/');
+  }
 });
 
 module.exports = router;

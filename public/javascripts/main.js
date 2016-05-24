@@ -197,19 +197,39 @@ if (window.location.hash && window.location.hash == '#_=_') {
 // });
 
 // https://github.com/drublic/css-modal/blob/master/README.md#events
-$(document).on('cssmodal:show', function (event) {
-	$('.journey-create-button').val('Update');
-	$.ajax({
-		url: '/journey/get/' + $(e.target).data('journey-id'),
-		success: function (response) {
-			console.log('We should have journey data.');
-			console.log('response:', response);
+$(document).on('cssmodal:show', function (e) {
+	var currentUrlSplit = window.location.href.split('/');
+	var action = window.location.href.split('#')[window.location.href.split('#').length - 1];
+	if (action == "update") {
+		var journeyId = currentUrlSplit[currentUrlSplit.length - 1].split('#')[0];
+		$('#journey-form').attr('action', '/journey/edit')
+		$('.journey-create-button').text('Update');
+		$('input[name="journeyId"]').val(journeyId);
 
-			// Format the date for the journey
-			var date = new Date(response.journey.date);
-			var journeyDate = ("0" + date.getFullYear()).slice(-4) + '-' + ("0" + date.getMonth()).slice(-2) + '-' + ("0" + date.getDate()).slice(-2);
-		}
-	});
+		$.ajax({
+			url: '/journey/get/' + journeyId,
+			success: function (response) {
+				console.log('We should have journey data.');
+				console.log('response:', response);
+
+				// Format the date for the journey
+				console.log('response:', response);
+				var date = new Date(response.journey.date);
+				var journeyDate = ("0" + date.getFullYear()).slice(-4) + '-' + ("0" + date.getMonth()).slice(-2) + '-' + ("0" + date.getDate()).slice(-2);
+
+				console.log('date:', date);
+				console.log('journeyDate:', journeyDate);
+				$('#journey-title').val(response.journey.title);
+				$('#date').val(journeyDate);
+				$('#body').val(response.journey.body);
+				$('#tags').val(response.journey.tags);
+			}
+		});
+	} else if (action == "create") {
+		document.forms[0].reset();
+		$('#journey-form').attr('action', '/journey/create')
+		$('.journey-create-button').text('Create');
+	}
 });
 
 $(".journeyDeleteButton").click(function (e) {

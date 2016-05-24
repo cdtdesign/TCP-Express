@@ -182,7 +182,7 @@
 				}
 
 				// Polyfill to prevent the default behavior of events
-				event.preventDefault = event.preventDefault || function () {
+				event.k = event.preventDefault || function () {
 					event.returnValue = false;
 				};
 

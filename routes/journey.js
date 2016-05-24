@@ -51,7 +51,10 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
 router.get('/get/:journey_id', function (req, res, next) {
   Journey.find({_id: req.params.journey_id}, function (err, journey) {
     if (err) throw err;
-    res.json({'journey': journey[0]});
+    res.json({
+      'journey': journey[0],
+      'date': journey[0].date.toString()
+    });
   });
 });
 
@@ -60,7 +63,7 @@ router.post('/edit', upload.single('header_image'), function (req, res, next) {
     title: req.body.title,
     date: req.body.date,
     body: req.body.body,
-    header_image_filename: req.file.filename,
+    header_image_filename: (req.file) ? req.file.filename : "",
     tags: req.body.tags
   }}, function (err) {
     if (err) throw err;

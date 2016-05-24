@@ -29,7 +29,8 @@
       <h4 id="modal-label">TC Journey to...</h4>
       <div class="modal-content">
         <form class="journeyForm" id="journey-form" method="POST" action="/journey/create" enctype="multipart/form-data"></form>
-        <input form="journey-form" class="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required>
+        <input form="journey-form" type="hidden" name="journeyId">
+        <input form="journey-form" id="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required>
         <label for="date">When did this journey happen?</label>
         <input form="journey-form" id="date" type="date" name="date" class="form-control" autocomplete="on" autocomplete="off" required>
         <label for="body">What did you do there?</label>
@@ -40,7 +41,7 @@
         <input form="journey-form" id="photo" type="file" name="header_image" class="input-group" accept="image/*">
       </div>
       <footer>
-        <input form="journey-form" type="submit" class="button button-primary journey-create-button" value="Create">
+        <button form="journey-form" type="submit" class="button button-primary journey-create-button">Create</button>
         <a href="#!" class="button-outline" data-close="Close" data-dismiss="modal">Cancel</a>
       </footer>
     </div>
@@ -68,7 +69,7 @@
     <section class="bluStripes blogSection">
       <article class="container mobile-wide">
         <h5 class="textOrg" style="margin-top:50px;padding:5px;"><b>Where has TC taken you?</b> Click the button below to begin sharing your journey</br> and collect Travel Tokens for admission discounts and other great prizes!</h5>
-        <div id="addJourneyButton" class="blogButton hvr-rotate"><i class="fa fa-plus" aria-hidden="true"></i></div>
+        <a href="#modal-text/#create" id="addJourneyButton" class="blogButton hvr-rotate"><i class="fa fa-plus" aria-hidden="true"></i></a>
         <div class="row-wide journeys-grid">
           {% for journey in journeys %}
           <!-- <div class="one column"> -->
@@ -113,8 +114,8 @@
                   <i class="fa fa-heart {{ }}"></i>
                 </a>
                 {% if user.passport_id == journey.passport_id %}
-                <a href="#modal-text" title="Edit">
-                  <i class="fa fa-pencil journeyEditButton" data-journey-id="{{ String(journey._id) }}"></i>
+                <a href="#modal-text/{{ String(journey._id) }}#update" title="Edit">
+                  <i class="fa fa-pencil journeyEditButton"></i>
                 </a>
                 <a title="Delete">
                   <i class="fa fa-close journeyDeleteButton" style="font-size:2.875rem;" data-journey-id="{{ String(journey._id) }}"></i>
