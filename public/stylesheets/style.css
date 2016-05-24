@@ -758,14 +758,14 @@ input[type="button"].button-primary:focus {
         background-color: #3b5998;
         height: 55px;
         line-height: 55px;
-        max-width: 95%;
+        /*max-width: 95%;*/
       }
       .button.button-twitter {
         color: #FFF;
         background-color: #1da1f2;
         height: 55px;
         line-height: 55px;
-        max-width: 95%;
+        /*max-width: 95%;*/
       }
 
 .button.tallBtn {
@@ -1793,7 +1793,7 @@ a.expand {
   }
 
   .one-third img {
-    min-width: 100% !important;
+    /*min-width: 100% !important;*/
   }
 
   .mobile-hide {
@@ -1813,7 +1813,7 @@ a.expand {
     background-color:#fff;
     margin-top: 20rem !important;
     margin-bottom: 5rem;
-    padding: 0rem !important;
+    padding: 1rem !important;
     padding-top: 1rem;
     padding-bottom: 1rem;
     overflow: visible;
@@ -1832,6 +1832,20 @@ a.expand {
     overflow: visible;
   }
 
+  .single950 {
+    max-width: 950px;
+    border: 1px rgba(58,36,23,.25) solid;
+    border-radius: 4px;
+    background-color:#fff;
+    margin: 0;
+    margin-top: 20rem !important;
+    margin-bottom: 10rem;
+    padding: 0;
+    /*padding-top: .5rem;*/
+    padding-bottom: 1rem;
+    overflow: visible;
+  }
+
   .button.tallBtn {
     width: 100%;
     height: 8rem;
@@ -1846,16 +1860,6 @@ a.expand {
   nav {
     /*position: fixed;*/
     /*background-color: yellow;*/
-  }
-
-  .travelerPic {
-    max-width: 30px;
-    max-height: 30px;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 5px;
-    border-radius: 25px;
-    background-color: #ee6730;
   }
 
   .navbar {
