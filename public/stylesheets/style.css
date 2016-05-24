@@ -308,7 +308,8 @@ a:hover {
 
 .myPassport {
   max-width: 650px;
-  max-height: 500px;
+  min-height: 500px;
+  overflow: scroll;
   border: 1px rgba(58,36,23,.25) solid;
   border-radius: 4px;
   background-color: #fee088;
@@ -1804,6 +1805,23 @@ a.expand {
     width: 100%;
     margin: 0 !important;
     padding: 0 !important;
+  }
+
+  .myPassport {
+    max-width: 650px;
+    min-height: 500px;
+    overflow: scroll;
+    border: 1px rgba(58,36,23,.25) solid;
+    border-radius: 4px;
+    background-color: #fee088;
+    margin: auto;
+    margin-top: 20rem !important;
+    margin-bottom: 8rem;
+    padding: 6rem;
+    /*padding-top: .5rem;
+    padding-bottom: 1rem;*/
+    overflow: visible;
+    text-align: left;
   }
 
   .single300 {
