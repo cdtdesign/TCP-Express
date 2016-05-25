@@ -1,12 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var appRootPath = require('app-root-path');
 
 var userSchema = new Schema({
   username				: String,
 	name				: String,
 	provider_id : {type: String},
-	photo			 : appRootPath + String,
+	photo			 : String,
   password : String,
   first_name : String,
   last_name : String,
