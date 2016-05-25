@@ -24,14 +24,13 @@
             {% else %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveler</span></strong></a>
             {% endif %}
-          {% if user.photo && user.profile_id != 0 %}
+          {% if user.photo && user.profile_id != "0" %}
             <img class="travelerPic" src="{{user.photo}}">
           {% elseif user.photo %}
             <img class="travelerPic" src="/images/profile-images/{{user.photo}}">
           {% else %}
             <img class="travelerPic" src="/images/profile-images/avatar.jpg">
           {% endif %}
-          
         {% else %}
           <span>
             <h4 class="wordmark u-pull-left animated rubberBand hvr-pop"><a href="/">Traveling Children Project</a></h4>
