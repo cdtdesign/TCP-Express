@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var appRootPath = require('app-root-path');
 
 var travelerSchema = new Schema({
   passport_id: String,
@@ -13,7 +12,7 @@ var travelerSchema = new Schema({
   parent_gender: String,
   traveler_birthday: Date,
   parent_birthday: Date,
-  photo: appRootPath + String,
+  photo: String,
   street: String,
   city: String,
   state: String,
