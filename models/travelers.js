@@ -12,7 +12,7 @@ var travelerSchema = new Schema({
   parent_gender: String,
   traveler_birthday: Date,
   parent_birthday: Date,
-  photo: '/images/profile-images/'String,
+  photo: String,
   street: String,
   city: String,
   state: String,
@@ -24,7 +24,6 @@ var travelerSchema = new Schema({
   created_at: String,
   updated_at: String
 });
-
 
 var Traveler = mongoose.model('Traveler', travelerSchema, 'travelers');
 // module.exports = mongoose.model('Traveler', travelerSchema, 'travelers');
