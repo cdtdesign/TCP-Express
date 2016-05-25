@@ -38,7 +38,6 @@ passport.use(new LocalStrategy({
   				provider: 'local',
 					password: password,
   				username: username,
-					photo: '/images/profile-images/' + ,
 					first_name: req.body.first_name,
 					last_name: req.body.last_name,
 					traveler_name: req.body.traveler_name,
