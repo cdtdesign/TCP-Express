@@ -5,8 +5,9 @@ X Missing extensions on journey header_image
 - Date in Journey blog post update mismatch
 X Change directory header_image and profile pics save to
 X header_image doesn't write to Staging because of absolute path on line 23 of journey.js, it needs to change dynamically
-- Create avatar.jpg and place in 'profile-images'
-- Remove 'Passports' link in footer
+X Create avatar.jpg and place in 'profile-images'
+X Remove 'Passports' link in footer
+X Remove 'More Details' in Google Places search results.
 
 
 Features to complete:
@@ -16,7 +17,7 @@ X Create/Update/Delete Journey Posts
 X Journey header image on Create/Update of Journey posts
 X Click modal & overlay to dismiss
 - Create/Update/Delete Passport Profile: Allow users to change their info in their passport (profile)
-- Google Places getDetails info into view
+- Google Places getDetails 'More Details' info into view
 - Google Places PriceLevel fallback for when there are no results
 
 Other Stuff:

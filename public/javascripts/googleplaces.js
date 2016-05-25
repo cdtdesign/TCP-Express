@@ -135,7 +135,7 @@ jQuery(document).ready(function ($) {
               } else {
                 rating = '';
               }
-              $('#searchResults').append('<li class="grid-search">' + image + '<h5>' + places[i].name + '</h5><p>' + places[i].formatted_address + '</p>' + hours + rating + '<p class="moreDetails">More Details</p></li>');
+              $('#searchResults').append('<li class="grid-search">' + image + '<h5>' + places[i].name + '</h5><p>' + places[i].formatted_address + '</p>' + hours + rating + '<p class="moreDetails"></p></li>');
             }
 
 
