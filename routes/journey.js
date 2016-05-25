@@ -21,14 +21,14 @@ var appRootPath = require('app-root-path');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, appRootPath + '/public/images/journey-images')
+        cb(null, appRootPath + '/public/images/journey-images');
     },
     filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now())
+        cb(null, file.fieldname + '-' + Date.now());
   }
-})
+});
 
-var upload = multer({ storage: storage })
+var upload = multer({ storage: storage });
 
 
 /* GET journey */
@@ -54,7 +54,7 @@ router.get('/get/:journey_id', function (req, res, next) {
     if (err) throw err;
     res.json({
       'journey': journey[0],
-      'date': new Date(journey[0].date).toString()
+      'date': journey[0].date.toString()
     });
   });
 });
@@ -64,11 +64,24 @@ router.post('/edit', upload.single('header_image'), function (req, res, next) {
     title: req.body.title,
     date: req.body.date,
     body: req.body.body,
-    header_image_filename: (req.file) ? req.file.filename : "",
     tags: req.body.tags
   }}, function (err) {
     if (err) throw err;
-    res.redirect ('/journeyblog');
+    console.log('req.file:', req.file);
+    if (req.file) {
+      console.log('Should have updated the file');
+      // We have an image
+      Journey.findOneAndUpdate({_id: req.body.journeyId}, {$set: {
+        header_image_filename: req.file.filename
+      }}, function (err) {
+        if (err) throw err;
+        console.log('Must have updated the image');
+        res.redirect ('/journeyblog');
+      });
+    } else {
+      console.log('Didn\'t try to update the image');
+      res.redirect ('/journeyblog');
+    }
   });
 });
 

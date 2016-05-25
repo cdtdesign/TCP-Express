@@ -5,6 +5,9 @@ X Missing extensions on journey header_image
 - Date in Journey blog post update mismatch
 X Change directory header_image and profile pics save to
 X header_image doesn't write to Staging because of absolute path on line 23 of journey.js, it needs to change dynamically
+- Create avatar.jpg and place in 'profile-images'
+- Remove 'Passports' link in footer
+
 
 Features to complete:
 X Mirror data from local DB to server DB

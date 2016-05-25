@@ -23,3 +23,5 @@ userSchema.methods.validPassword = function (password) {
 };
 
 var User = mongoose.model('User', userSchema, 'travelers');
+
+module.exports = User;
