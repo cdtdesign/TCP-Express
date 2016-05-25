@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Journey = require('../models/journey');
 var multer = require('multer');
+var appRootPath = require('app-root-path');
 // var crypto = require('crypto');
 // var mime = require('node-mime');
 // var upload = multer({ dest: '/Users/Christina/Sites/TCP-Express/public/images/journey-images' });
@@ -20,7 +21,7 @@ var multer = require('multer');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '/Users/Christina/Sites/TCP-Express/public/images/journey-images')
+        cb(null, appRootPath + '/public/images/journey-images')
     },
     filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now())
@@ -53,7 +54,7 @@ router.get('/get/:journey_id', function (req, res, next) {
     if (err) throw err;
     res.json({
       'journey': journey[0],
-      'date': journey[0].date.toString()
+      'date': new Date(journey[0].date).toString()
     });
   });
 });

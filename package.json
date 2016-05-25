@@ -16,6 +16,7 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "app-root-path": "^1.0.0",
     "browser-sync": "^2.12.3",
     "connect": "^3.4.1",
     "connect-ensure-login": "^0.1.1",

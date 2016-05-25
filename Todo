@@ -1,7 +1,7 @@
 Bugs:
 X Any signin not using traveler_name or first_name (basically using the "elseif" part of conditional) has access to Edit/Delete on Journey posts :(
 - Sponsor add text/logo not responsive
-- Missing extensions on journey header_image
+X Missing extensions on journey header_image
 - Date in Journey blog post update mismatch
 - Change directory header_image and profile pics save to
 - header_image doesn't write to Staging because of absolute path on line 23 of journey.js, it needs to change dynamically
