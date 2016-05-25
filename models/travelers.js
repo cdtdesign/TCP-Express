@@ -12,7 +12,7 @@ var travelerSchema = new Schema({
   parent_gender: String,
   traveler_birthday: Date,
   parent_birthday: Date,
-  photo: '/images/profile-images/' + String,
+  photo: '/images/profile-images/'String,
   street: String,
   city: String,
   state: String,
