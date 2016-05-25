@@ -13,8 +13,12 @@
     <article class="container">
       <div class="row mobile-wide" style="min-height:500px;">
         <div class="myPassport">
-          {% if user.photo %}
-            <img class="passportPic" src={{user.photo}} alt="Traveler Pic">
+            {% if user.photo and user.provider_id == "0" %}
+            <img class="passportPic" src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
+            {% elseif user.photo and user.provider_id != "0" %}
+            <img class="passportPic" src="{{user.photo}}" alt="Traveler Pic">
+            {% else %}
+            <img class="passportPic" src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
           {% endif %}
             <h5 class="large textOrg">My Passport Profile</h5></br>
             <p><b>First Name: </b>{{ user.first_name }}</br>
