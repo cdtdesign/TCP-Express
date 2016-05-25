@@ -26,7 +26,7 @@
             {% endif %}
           {% if user.photo and user.provider_id == "0" %}
             <img class="travelerPic" src="/images/profile-images/{{user.photo}}">
-          {% elif user.photo and user.provider_id != "0" %}
+          {% elseif user.photo and user.provider_id != "0" %}
             <img class="travelerPic" src="{{user.photo}}">
           {% else %}
             <img class="travelerPic" src="/images/profile-images/avatar.jpg">
