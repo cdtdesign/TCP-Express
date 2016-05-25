@@ -24,9 +24,7 @@
             {% else %}
             <a href="/mypassport"><strong><span class="navTraveler">Traveler</span></strong></a>
             {% endif %}
-          {% if user.profile_id != "0" %}
-            <img class="travelerPic" src="{{user.photo}}">
-          {% elseif user.profile_id === "0" %}
+          {% if user.photo %}
             <img class="travelerPic" src="/images/profile-images/{{user.photo}}">
           {% else %}
             <img class="travelerPic" src="/images/profile-images/avatar.jpg">
