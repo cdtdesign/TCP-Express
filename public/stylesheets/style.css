@@ -382,11 +382,10 @@ span.navTraveler {
 }
 
 .travelerPic {
-  min-width: 50px;
-  max-height: 50px;
+  width: 15%;
+  margin-left: 5px;
   display: inline-block;
   vertical-align: middle;
-  margin: 5px;
   border-radius: 25px;
   background-color: #ee6730;
 }
