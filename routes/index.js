@@ -13,6 +13,11 @@ router.get('/download', function(req, res, next) {
   res.render('download');
 });
 
+/* GET Journey Kit */
+router.get('/download/JourneyKit', function(req, res, next) {
+  res.download(__dirname + '/../public/pdfs/TCP_PIY_JourneyKit.pdf');
+});
+
 /* GET search page. */
 router.get('/search', function(req, res, next) {
   res.render('search');
