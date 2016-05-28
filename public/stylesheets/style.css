@@ -342,6 +342,32 @@ img.passportPic {
   width: 100%;
 }
 
+.travelers {
+
+}
+
+.travelerInfo {
+  float: left;
+  width: 45%;
+  margin: 2.5%;
+  position: relative;
+}
+
+.travelerInfo img {
+  width: 25%;
+  border-radius: 100rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.travelerInfo span {
+  width: 70%;
+  display: block;
+  float: right;
+}
+
 div.myPassport i.fa {
   color: #ffc233;
   margin: 3px;
@@ -349,6 +375,13 @@ div.myPassport i.fa {
 
 div.myPassport i.fa:hover {
   color: #ee6730;
+}
+
+.passportFooter {
+  margin-top: 40%;
+  clear: both;
+  position: relative;
+  top: 30px;
 }
 
 
@@ -1219,6 +1252,7 @@ label > .label-body {
   margin-bottom: 20px;
   padding-bottom: 2px;
   padding-left: 1px;
+  outline: none;
 }
 
 .blogButton a {
@@ -1278,6 +1312,7 @@ p.blogTitle {
 .bpDivider {
   border-color: #fbd163;
   margin-bottom: 5px;
+  clear: both;
 }
 
 /*---------- Journey Sharing List ----------*/
