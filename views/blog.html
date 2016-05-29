@@ -22,13 +22,22 @@
 
   </header><!-- /HEADER -->
 
+  <!-- Add Journey Modal -->
   <section class="modal--show modalBkgnd" id="modal-text" tabindex="-1" role="dialog"
     aria-labelledby="modal-label" aria-hidden="true">
 
     <div class="modal modal-inner">
-      <h4 id="modal-label">TC Journey to...</h4>
       <div class="modal-content">
         <form class="journeyForm" id="journey-form" method="POST" action="/journey/create" enctype="multipart/form-data"></form>
+        <label for="current_traveler">Which traveler went on this journey?
+        </label>
+        <select id="current_traveler">
+          <option>{{ user.first_name }}</option>
+          {% for traveler in user.travelers %}
+            <option>{{ traveler.name }}</option>
+          {% endfor %}
+        </select>
+        <label for="journey-title">TC Journey to...</label>
         <input form="journey-form" type="hidden" name="journeyId">
         <input form="journey-form" id="journey-title" type="text" name="title" placeholder="Enter Journey Post Title…" autocomplete="off" required>
         <label for="date">When did this journey happen?</label>

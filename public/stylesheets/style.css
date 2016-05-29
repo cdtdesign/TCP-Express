@@ -6,17 +6,22 @@
 
 .modal--show {
   z-index: 2000;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .modal--show .modal-inner {
-  top: 120px;
+  top: 5%;
+  margin-bottom: 5%;
   background-color: #fee088;
   border-radius: 4px;
   box-shadow: none;
+  max-height: inherit;
 }
 
 .modal--show .modal-content {
   border-bottom: 0;
+  max-height: inherit;
 }
 
 .modal--show .modal-inner h4 {
@@ -308,7 +313,6 @@ a:hover {
 
 .myPassport {
   max-width: 650px;
-  min-height: 500px;
   overflow: scroll;
   border: 1px rgba(58,36,23,.25) solid;
   border-radius: 4px;
@@ -378,7 +382,6 @@ div.myPassport i.fa:hover {
 }
 
 .passportFooter {
-  margin-top: 40%;
   clear: both;
   position: relative;
   top: 30px;
@@ -1155,6 +1158,7 @@ input[type="password"],
 textarea,
 select {
   height: 55px;
+  width: 100%;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
   color: rgba(58,36,23,.5);
@@ -1183,6 +1187,7 @@ input[type="number"]:focus,
 input[type="search"]:focus,
 input[type="text"]:focus,
 input[type="tel"]:focus,
+input[type="date"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
