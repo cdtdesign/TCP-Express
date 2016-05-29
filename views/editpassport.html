@@ -1,0 +1,69 @@
+{% extends "./layout.html" %}
+
+{% set title = "Edit Passport Profile" %}
+
+{% block content %}
+
+<!-- .container is main centered wrapper -->
+
+  <header>
+
+    {% include "./navbar.html" %}
+
+    <article class="container">
+      <div class="myPassport editPassport row mobile-wide" style="min-height:500px;">
+        <div class="six columns">
+            {% if user.photo and user.provider_id == "0" %}
+              <img class="passportPic" src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
+            {% elseif user.photo and user.provider_id != "0" %}
+              <img class="passportPic" src="{{user.photo}}" alt="Traveler Pic">
+            {% else %}
+              <img class="passportPic" src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
+            {% endif %}
+            <h5 class="large textOrg">Edit Passport Profile</h5></br>
+            <p><b>First Name: </b>{{ user.first_name }}</br>
+               <b>Last Name: </b>{{ user.last_name }}</br>
+               <b>Email: </b>{{ user.email }}</br>
+                 <b>Street: </b>{{ user.address.street }}</br>
+                 <b>City: </b>{{ user.address.city }}</br>
+                 <b>State: </b>{{ user.address.state }}</br>
+                 <b>Phone: </b>{{ user.address.phone }}</br>
+               <b>Birthday: </b>{{ user.birthday }}</br>
+            </p>
+        </div>
+        <div class="six columns travelerColumn">
+          <div class="travelers">
+            {% for traveler in user.travelers %}
+            <p class="travelerInfo">
+              <span><b>First Name: </b>{{ traveler.name }}</span>
+              <span><b>Birthday: </b>12-27-1995</span>
+              <span><b>Gender: </b>{{ traveler.gender }}</span>
+              {% if user.photo and user.provider_id == "0" %}
+                <img src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
+              {% elseif user.photo and user.provider_id != "0" %}
+                <img src="{{user.photo}}" alt="Traveler Pic">
+              {% else %}
+                <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
+              {% endif %}
+            </p>
+            {% endfor %}
+          </div>
+      </div><!-- /.row -->
+      <div class="passportFooter">
+        <hr class="bpDivider">
+        <a href="#" title="Edit Passport">
+          <i class="fa fa-pencil passportEditButton" style="font-size:3rem;"></i>
+        </a>
+        <a href="/mypassport/delete/{{ user.passport_id }}" title="Delete Passport!!" class="passportDeleteButton">
+          <i class="fa fa-close" style="font-size:3.875rem;"></i>
+        </a>
+      </div>
+    </article><!-- /.containter -->
+
+  </header><!-- /HEADER -->
+
+
+
+    {% include "./footer.html" %}
+
+{% endblock %}

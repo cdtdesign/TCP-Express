@@ -28,6 +28,10 @@ Other Stuff:
 - Journey blog social sharing
 - Journey blog likes
 X Profile pic aspect ratio
+- Move signoutBtn in navbar to the right
+- In Edit Passport Profile link edit button to route
+- Add a search filter to the travelers column in Edit Passport Profile.
+- Checkout Facebook's profile pic for the larger resolution image
 - Hash passwords in Travelers table (bcrypt)
 - Validate all forms
 X Disable Journey Blog link in navbar securely and properly.

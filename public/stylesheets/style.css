@@ -312,7 +312,7 @@ a:hover {
 /*---------- MY PASSPORT PROFILE ----------*/
 
 .myPassport {
-  max-width: 650px;
+  width: 65%;
   overflow: scroll;
   border: 1px rgba(58,36,23,.25) solid;
   border-radius: 4px;
@@ -325,6 +325,43 @@ a:hover {
   padding-bottom: 1rem;*/
   overflow: visible;
   text-align: left;
+}
+
+.editPassport {
+  padding: 0;
+  width: 100%;
+}
+
+.editPassport .passportPic {
+  right: -10%;
+  position: absolute;
+}
+
+.editPassport .columns {
+  padding: 60px;
+  position: relative;
+}
+
+.editPassport .travelerInfo span {
+  width: 75%;
+}
+
+.editPassport .travelerInfo img {
+  width: 20%;
+}
+
+.editPassport .travelerInfo {
+  width: 100%;
+}
+
+.editPassport .passportFooter {
+  padding: 0px 60px 60px;
+  top: 0;
+}
+
+.travelerColumn {
+  max-height: 521px;
+  overflow-y: scroll;
 }
 
 b.myPassport {

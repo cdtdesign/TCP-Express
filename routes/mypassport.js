@@ -7,6 +7,11 @@ router.get('/', function(req, res, next) {
   res.render('mypassport');
 });
 
+/* GET editpassport page. */
+router.get('/edit', function(req, res, next) {
+  res.render('editpassport');
+});
+
 router.get('/delete', function(req, res, next) {
   User.remove({_id: req.user._id}, function (err) {
     if (err) throw err;
