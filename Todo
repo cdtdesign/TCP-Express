@@ -15,7 +15,8 @@ X Create Journey NOT working!!!
 X Create/Update/Delete Journey Posts
 X Journey header image on Create/Update of Journey posts
 X Click modal & overlay to dismiss
-- Creating select on the children in the Journey modal
+X Creating select on the children in the Journey modal
+- Create Ajax call for uploading profile images in a separate form
 - Create/Update/Delete Passport Profile: Allow users to change their info in their passport (profile)
 - Create multiple fields for child names (Child 1, Child 2 and have an + button to dynamically add more Child fields)
 - Incorporate blacklisted words so that inappropriate posts are flagged and/or filtered out.
@@ -37,3 +38,4 @@ X Profile pic aspect ratio
 X Disable Journey Blog link in navbar securely and properly.
 - Mark header_image as deleted when Journey post is deleted
 - Find solution to sync remote & local database
+- Find library for Passport profile images

@@ -332,11 +332,6 @@ a:hover {
   width: 100%;
 }
 
-.editPassport .passportPic {
-  right: -10%;
-  position: absolute;
-}
-
 .editPassport .columns {
   padding: 60px;
   position: relative;
@@ -360,12 +355,32 @@ a:hover {
 }
 
 .travelerColumn {
-  max-height: 521px;
-  overflow-y: scroll;
+  /*height: 50%;*/
+  overflow-y: auto;
 }
 
 b.myPassport {
   line-height: 5rem;
+}
+
+.passportPicDiv {
+  position: absolute;
+  right: -10%;
+  width: 150px;
+}
+
+.passportPicDiv a {
+  margin-top: 5%;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.passportPicDiv .passportPic {
+  float: none;
+  box-sizing: border-box;
+  max-width: 150px;
+  min-height: 150px;
 }
 
 .passportPic {
@@ -383,8 +398,38 @@ img.passportPic {
   width: 100%;
 }
 
-.travelers {
+[name="profile_img_upload"] {
+  display: none;
+}
 
+.editPassportProfile input[type="text"],
+.editPassportProfile input[type="email"],
+.editPassportProfile input[type="tel"] {
+  padding: 1% 2.5%;
+}
+
+.editPassportProfile input[name="address_city"] {
+  width: 50%;
+  display: inline;
+  margin-right: 1.5%;
+}
+.editPassportProfile input[name="address_state"] {
+  width: 15%;
+  display: inline;
+  margin-right: 1%;
+}
+.editPassportProfile input[name="address_zip"] {
+  width: 30%;
+  display: inline;
+}
+.editPassportProfile input[name="address_tel"] {
+  width: 48.5%;
+  display: inline;
+  margin-right: 1.5%;
+}
+.editPassportProfile input[name="birthday"] {
+  width: 48.5%;
+  display: inline;
 }
 
 .travelerInfo {
@@ -1194,9 +1239,8 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-  height: 55px;
   width: 100%;
-  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  padding:8% 2.5%;
   background-color: #fff;
   color: rgba(58,36,23,.5);
   border: 0px solid rgba(58,36,23,.25);
@@ -1247,6 +1291,10 @@ label > .label-body {
   display: inline-block;
   margin-left: .5rem;
   font-weight: normal; }
+
+input[type="date"] {
+  padding: 2.2%;
+}
 
     /*---------- ADD JOURNEY FORM ----------*/
 

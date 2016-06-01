@@ -13,6 +13,7 @@
     <article class="container">
       <div class="myPassport editPassport row mobile-wide" style="min-height:500px;">
         <div class="six columns">
+          <div class="passportPicDiv">
             {% if user.photo and user.provider_id == "0" %}
               <img class="passportPic" src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
             {% elseif user.photo and user.provider_id != "0" %}
@@ -20,16 +21,22 @@
             {% else %}
               <img class="passportPic" src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
             {% endif %}
+            <a>Change Profile Image</a>
+          </div>
             <h5 class="large textOrg">Edit Passport Profile</h5></br>
-            <p><b>First Name: </b>{{ user.first_name }}</br>
-               <b>Last Name: </b>{{ user.last_name }}</br>
-               <b>Email: </b>{{ user.email }}</br>
-                 <b>Street: </b>{{ user.address.street }}</br>
-                 <b>City: </b>{{ user.address.city }}</br>
-                 <b>State: </b>{{ user.address.state }}</br>
-                 <b>Phone: </b>{{ user.address.phone }}</br>
-               <b>Birthday: </b>{{ user.birthday }}</br>
-            </p>
+            <form class="editPassportProfile">
+              <label>Parent / Guardian / Educator: </label>
+              <input placeholder="First Name" type="text" name="first_name">
+              <input placeholder="Last Name" type="text" name="last_name">
+              <input placeholder="Email" type="email" name="email">
+              <input placeholder="Phone" type="tel" name="address_tel">
+              <input placeholder="Birthday" type="date" name="birthday">
+              <input placeholder="Street Address" type="text" name="address_street">
+              <input placeholder="City" type="text" name="address_city">
+              <input placeholder="ST" type="text" name="address_state">
+              <input placeholder="Zip" type="text" name="address_zip">
+              <input type="file" name="profile_img_upload">
+            </form>
         </div>
         <div class="six columns travelerColumn">
           <div class="travelers">
@@ -51,12 +58,10 @@
       </div><!-- /.row -->
       <div class="passportFooter">
         <hr class="bpDivider">
-        <a href="#" title="Edit Passport">
-          <i class="fa fa-pencil passportEditButton" style="font-size:3rem;"></i>
-        </a>
-        <a href="/mypassport/delete/{{ user.passport_id }}" title="Delete Passport!!" class="passportDeleteButton">
-          <i class="fa fa-close" style="font-size:3.875rem;"></i>
-        </a>
+        <footer>
+          <button form="passport-profile-form" type="submit" class="button button-primary profile-update-button">Update</button>
+          <a href="#!" class="button-outline" data-close="Close" data-dismiss="modal">Cancel</a>
+        </footer>
       </div>
     </article><!-- /.containter -->
 
