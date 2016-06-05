@@ -848,6 +848,7 @@ input[type="button"].button-primary:focus {
     input[type="button"]:focus {
       color: #ee6730;
       border-color: #ee6730;
+      box-sizing: border-box;
       background-color: rgba(238, 103, 48, 0.125);
       outline: 0; }
       .button.button-brown,
@@ -856,6 +857,8 @@ input[type="button"].button-primary:focus {
       input[type="reset"].button-brown,
       input[type="button"].button-brown {
         color: #FFF;
+        line-height: 0;
+        padding: 0;
         background-color: #3a2417;
         border-color: #3a2417; }
       .button.button-brown:hover,
@@ -874,32 +877,31 @@ input[type="button"].button-primary:focus {
       .button.button-facebook {
         color: #FFF;
         background-color: #3b5998;
-        height: 55px;
+        height: 5%;
         line-height: 55px;
         /*max-width: 95%;*/
       }
       .button.button-twitter {
         color: #FFF;
         background-color: #1da1f2;
-        height: 55px;
+        height: 5%;
         line-height: 55px;
         /*max-width: 95%;*/
       }
 
 .button.tallBtn {
   width: 100%;
-  height: 7rem;
-  line-height: 7rem;
+  height: 2.5%;
+  line-height: 0;
   font-size: 1.5rem;
   font-weight: normal;
-  /*margin-bottom: 2rem;*/
   white-space: normal;
 }
 
 .button.btn55 {
-  height: 55px;
+  height: 2%;
+  line-height: 55px;
   font-weight: 700;
-  padding-bottom: 0;
 }
 
 /*---------- SECTIONS ----------*/
@@ -1194,7 +1196,7 @@ span.socialPinterest {
   background-color: #95ce8a;
 }
 
-/*---------- FORMS ----------*/
+/*---------- ALL FORMS ----------*/
 
 form {
   color: rgba(58,36,23,.5);
@@ -1204,7 +1206,7 @@ form {
 input,
 textarea,
 select {
-  /*max-width: 95%;*/
+  padding: 4% 2.5% !important;
 }
 
 ::-webkit-input-placeholder, /* Chrome/Opera/Safari */
@@ -1240,7 +1242,7 @@ input[type="password"],
 textarea,
 select {
   width: 100%;
-  padding:8% 2.5%;
+  padding:8% 2.5% !important;
   background-color: #fff;
   color: rgba(58,36,23,.5);
   border: 0px solid rgba(58,36,23,.25);
@@ -1295,7 +1297,6 @@ label > .label-body {
 input[type="date"] {
   padding: 2.2%;
 }
-
     /*---------- ADD JOURNEY FORM ----------*/
 
   .journeyForm {
@@ -1304,10 +1305,6 @@ input[type="date"] {
 
   /*---------- ADD JOURNEY MODAL ----------*/
 
-  .simple-modal {
-    background-color: #fee088;
-    box-shadow: none;
-  }
 
   /*#simple-modal-overlay {*/
     /*background: rgba(255,255,255,0.875) !important;*/
