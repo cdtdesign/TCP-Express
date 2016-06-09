@@ -79,33 +79,34 @@
     margin:0 !important;
 }
 
-.soc-facebook {
+.socicon-facebook {
     background-color: #3e5b98 !important;
 }
-.soc-facebook:before {
-    content:'b';
+.socicon-facebook:before {
+    content: "\e041";
 }
-.soc-twitter {
+.socicon-twitter {
     background-color: #4da7de !important;
 }
-.soc-twitter:before {
-    content:'a';
+.socicon-twitter:before {
+    content: "\e040";
 }
-.soc-pinterest {
+.socicon-pinterest {
     background-color: #c92619 !important;
 }
-.soc-pinterest:before {
-    content:'d';
+.socicon-pinterest:before {
+    content: "\e043";
 }
-.soc-instagram {
-    background-color: #9c7c6e !important;
+.socicon-instagram {
+    /*background-color: #9c7c6e !important;*/
+    background: -webkit-radial-gradient(75px 100px, #ffda75 18%,#ff3a49 43%,#ff3a49 50%,#e518a1 70%,#6634e1 100%) !important;
 }
-.soc-instagram:before {
-    content:'x';
+.socicon-instagram:before {
+    content: "\e057";
 }
-.soc-vimeo {
+.socicon-vimeo {
     background-color: #51b5e7 !important;
 }
-.soc-vimeo:before {
-    content:'s';
+.socicon-vimeo:before {
+    content: "\e052";
 }
