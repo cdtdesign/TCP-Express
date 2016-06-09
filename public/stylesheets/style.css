@@ -402,36 +402,6 @@ img.passportPic {
   display: none;
 }
 
-.editPassportProfile input[type="text"],
-.editPassportProfile input[type="email"],
-.editPassportProfile input[type="tel"] {
-  padding: 1% 2.5%;
-}
-
-.editPassportProfile input[name="address_city"] {
-  width: 50%;
-  display: inline;
-  margin-right: 1.5%;
-}
-.editPassportProfile input[name="address_state"] {
-  width: 15%;
-  display: inline;
-  margin-right: 1%;
-}
-.editPassportProfile input[name="address_zip"] {
-  width: 30%;
-  display: inline;
-}
-.editPassportProfile input[name="address_tel"] {
-  width: 48.5%;
-  display: inline;
-  margin-right: 1.5%;
-}
-.editPassportProfile input[name="birthday"] {
-  width: 48.5%;
-  display: inline;
-}
-
 .travelerInfo {
   float: left;
   width: 45%;
@@ -1206,7 +1176,7 @@ form {
 input,
 textarea,
 select {
-  padding: 4% 2.5% !important;
+  padding: 4% 2.5%;
 }
 
 ::-webkit-input-placeholder, /* Chrome/Opera/Safari */
@@ -1242,7 +1212,7 @@ input[type="password"],
 textarea,
 select {
   width: 100%;
-  padding:8% 2.5% !important;
+  padding:8% 2.5%;
   background-color: #fff;
   color: rgba(58,36,23,.5);
   border: 0px solid rgba(58,36,23,.25);
@@ -1295,7 +1265,67 @@ label > .label-body {
   font-weight: normal; }
 
 input[type="date"] {
-  padding: 2.2%;
+  padding: 2.22% 2.5%;
+}
+
+.travelers [type="text"] {
+  width: 50%;
+  float: right;
+}
+
+.travelers [type="date"] {
+  width: 20%;
+  float: right;
+  margin-left: 2.5%;
+}
+
+.travelers select {
+  width: 20%;
+  float: right;
+  margin: 0 0 0 2.5%;
+}
+
+.travelers a {
+    margin-top: 5%;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.editPassport .travelers span {
+  width: 10%;
+  display: block;
+  float: right;
+}
+
+[form="editPassportProfile"][type="text"],
+[form="editPassportProfile"][type="email"],
+[form="editPassportProfile"][type="tel"] {
+  padding: 1% 2.5%;
+}
+
+[form="editPassportProfile"][name="address_city"] {
+  width: 50%;
+  display: inline;
+  margin-right: 1.5%;
+}
+[form="editPassportProfile"][name="address_state"] {
+  width: 15%;
+  display: inline;
+  margin-right: 1%;
+}
+[form="editPassportProfile"][name="address_zip"] {
+  width: 30%;
+  display: inline;
+}
+[form="editPassportProfile"][name="address_tel"] {
+  width: 41.5%;
+  display: inline;
+  margin-right: 1.5%;
+}
+[form="editPassportProfile"][name="birthday"] {
+  width: 45%;
+  display: inline;
 }
     /*---------- ADD JOURNEY FORM ----------*/
 

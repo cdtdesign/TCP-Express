@@ -4,7 +4,14 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
   username				: String,
 	name				: String,
-	provider_id : {type: String},
+  address : {
+    street : String,
+    city : String,
+    state : String,
+    zip : String,
+    phone : String
+  },
+	provider_id : String,
 	photo			 : String,
   password : String,
   first_name : String,

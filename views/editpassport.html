@@ -24,27 +24,33 @@
             <a>Change Profile Image</a>
           </div>
             <h5 class="large textOrg">Edit Passport Profile</h5></br>
-            <form class="editPassportProfile">
-              <label>Parent / Guardian / Educator: </label>
-              <input placeholder="First Name" type="text" name="first_name">
-              <input placeholder="Last Name" type="text" name="last_name">
-              <input placeholder="Email" type="email" name="email">
-              <input placeholder="Phone" type="tel" name="address_tel">
-              <input placeholder="Birthday" type="date" name="birthday">
-              <input placeholder="Street Address" type="text" name="address_street">
-              <input placeholder="City" type="text" name="address_city">
-              <input placeholder="ST" type="text" name="address_state">
-              <input placeholder="Zip" type="text" name="address_zip">
-              <input type="file" name="profile_img_upload">
-            </form>
+            <form id="editPassportProfile" class="editPassportProfile"></form>
+            <label>Parent / Guardian / Educator: </label>
+            <input value="{{ user.first_name }}" form="editPassportProfile" placeholder="First Name" type="text" name="first_name">
+            <input value="{{ user.last_name }}" form="editPassportProfile" placeholder="Last Name" type="text" name="last_name">
+            <select form="editPassportProfile" name="parent_gender">
+              <option value="Female" {% if traveler.parent_gender == 'Female' %}selected{% endif %}>Female</option>
+              <option value="Male" {% if traveler.parent_gender == 'Male' %}selected{% endif %}>Male</option>
+            </select>
+            <input value="{{ user.email }}" form="editPassportProfile" placeholder="Email" type="email" name="email">
+            <input value="{{ user.address.phone }}" form="editPassportProfile" placeholder="Phone" type="tel" name="address_tel">
+            <span>DOB: </span><input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday">
+            <input value="{{ user.address.street }}" form="editPassportProfile" placeholder="Street Address" type="text" name="address_street">
+            <input value="{{ user.address.city }}" form="editPassportProfile" placeholder="City" type="text" name="address_city">
+            <input value="{{ user.address.state }}" form="editPassportProfile" placeholder="ST" type="text" name="address_state">
+            <input value="{{ user.address.zip }}" form="editPassportProfile" placeholder="Zip" type="text" name="address_zip">
+            <input form="editPassportProfile" type="file" name="profile_img_upload">
         </div>
         <div class="six columns travelerColumn">
           <div class="travelers">
             {% for traveler in user.travelers %}
             <p class="travelerInfo">
-              <span><b>First Name: </b>{{ traveler.name }}</span>
-              <span><b>Birthday: </b>12-27-1995</span>
-              <span><b>Gender: </b>{{ traveler.gender }}</span>
+              <select form="editPassportProfile" name="gender">
+                <option value="Female" {% if traveler.gender == 'Female' %}selected{% endif %}>Female</option>
+                <option value="Male" {% if traveler.gender == 'Male' %}selected{% endif %}>Male</option>
+              </select>
+              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="first_name">
+              <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday"><span>DOB: </span>
               {% if user.photo and user.provider_id == "0" %}
                 <img src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
               {% elseif user.photo and user.provider_id != "0" %}
@@ -52,6 +58,7 @@
               {% else %}
                 <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
               {% endif %}
+              <a>Change</a>
             </p>
             {% endfor %}
           </div>
