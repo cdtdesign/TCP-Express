@@ -284,7 +284,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25em;
 }
 
-p {
+p, label {
   color: #3a2417;
 }
 
@@ -339,10 +339,6 @@ a:hover {
 
 .editPassport .travelerInfo span {
   width: 75%;
-}
-
-.editPassport .travelerInfo img {
-  width: 20%;
 }
 
 .editPassport .travelerInfo {
@@ -412,7 +408,6 @@ img.passportPic {
 .travelerInfo img {
   width: 25%;
   border-radius: 100rem;
-  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
@@ -422,11 +417,19 @@ img.passportPic {
   width: 70%;
   display: block;
   float: right;
+  color: #3a2417;
+}
+
+.travelerInfo i {
+  font-size: 5rem;
+  float: right;
+  clear: both;
 }
 
 div.myPassport i.fa {
   color: #ffc233;
-  margin: 3px;
+  margin-left: 5px;
+  margin-top: -1.5%;
 }
 
 div.myPassport i.fa:hover {
@@ -437,6 +440,22 @@ div.myPassport i.fa:hover {
   clear: both;
   position: relative;
   top: 30px;
+}
+
+.travelerInfo {
+  position: relative;
+}
+
+.travelerInfo div {
+  width: 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.travelers img {
+  width: 100%;
+  border-radius: 100rem;
 }
 
 
@@ -1286,7 +1305,7 @@ input[type="date"] {
 }
 
 .travelers a {
-    margin-top: 5%;
+    line-height: 125%;
     display: block;
     text-align: center;
     cursor: pointer;

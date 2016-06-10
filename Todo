@@ -16,13 +16,13 @@ X Create/Update/Delete Journey Posts
 X Journey header image on Create/Update of Journey posts
 X Click modal & overlay to dismiss
 X Creating select on the children in the Journey modal
-- Passport Profile birthday has no value because it's not formatted like the one for journeys
+X Passport Profile birthday has no value because it's not formatted like the one for journeys
 - Create Ajax call for uploading profile images in a separate form
 - Create/Update/Delete Passport Profile: Allow users to change their info in their passport (profile)
 - Create multiple fields for child names (Child 1, Child 2 and have an + button to dynamically add more Child fields)
-- Incorporate blacklisted words so that inappropriate posts are flagged and/or filtered out.
+- Incorporate BLACKLISTED words so that inappropriate posts are flagged and/or filtered out in Journey Blog posts
 - Google Places getDetails 'More Details' info into view
-- Google Places show marker once your location is found
+- Google Places show marker once your location is found --->
 - Google Places PriceLevel fallback for when there are no results
 
 Other Stuff:
@@ -37,6 +37,7 @@ X Profile pic aspect ratio
 - Checkout Facebook's profile pic for the larger resolution image
 - Hash passwords in Travelers table (bcrypt)
 - Validate all forms
+- Secure with https: https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
 X Disable Journey Blog link in navbar securely and properly.
 - Mark header_image as deleted when Journey post is deleted
 - Find solution to sync remote & local database

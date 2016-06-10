@@ -34,7 +34,7 @@
             </select>
             <input value="{{ user.email }}" form="editPassportProfile" placeholder="Email" type="email" name="email">
             <input value="{{ user.address.phone }}" form="editPassportProfile" placeholder="Phone" type="tel" name="address_tel">
-            <span>DOB: </span><input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday">
+            <span>DOB: </span><input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday" value="{{ user.parent_birthday | dateFormat }}">
             <input value="{{ user.address.street }}" form="editPassportProfile" placeholder="Street Address" type="text" name="address_street">
             <input value="{{ user.address.city }}" form="editPassportProfile" placeholder="City" type="text" name="address_city">
             <input value="{{ user.address.state }}" form="editPassportProfile" placeholder="ST" type="text" name="address_state">
@@ -44,22 +44,25 @@
         <div class="six columns travelerColumn">
           <div class="travelers">
             {% for traveler in user.travelers %}
-            <p class="travelerInfo">
+            <div class="travelerInfo">
+              <div>
+                {% if user.photo and user.provider_id == "0" %}
+                  <img src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
+                {% elseif user.photo and user.provider_id != "0" %}
+                  <img src="{{user.photo}}" alt="Traveler Pic">
+                {% else %}
+                  <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
+                {% endif %}
+                <a>Change</a>
+              </div>
               <select form="editPassportProfile" name="gender">
                 <option value="Female" {% if traveler.gender == 'Female' %}selected{% endif %}>Female</option>
                 <option value="Male" {% if traveler.gender == 'Male' %}selected{% endif %}>Male</option>
               </select>
               <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="first_name">
-              <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday"><span>DOB: </span>
-              {% if user.photo and user.provider_id == "0" %}
-                <img src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
-              {% elseif user.photo and user.provider_id != "0" %}
-                <img src="{{user.photo}}" alt="Traveler Pic">
-              {% else %}
-                <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
-              {% endif %}
-              <a>Change</a>
-            </p>
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
+            </div>
             {% endfor %}
           </div>
       </div><!-- /.row -->
