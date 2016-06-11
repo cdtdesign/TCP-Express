@@ -39,7 +39,7 @@
             <input value="{{ user.address.city }}" form="editPassportProfile" placeholder="City" type="text" name="address_city">
             <input value="{{ user.address.state }}" form="editPassportProfile" placeholder="ST" type="text" name="address_state">
             <input value="{{ user.address.zip }}" form="editPassportProfile" placeholder="Zip" type="text" name="address_zip">
-            <input form="editPassportProfile" type="file" name="profile_img_upload">
+            <input form="editPassportProfile" type="file" name="profile_img_upload-{{traveler.id}}">
         </div>
         <div class="six columns travelerColumn">
           <div class="travelers">
@@ -60,8 +60,9 @@
                 <option value="Male" {% if traveler.gender == 'Male' %}selected{% endif %}>Male</option>
               </select>
               <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="first_name">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
               <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
+              <input form="editPassportProfile" type="file" name="profile_img_upload_{{}}">
             </div>
             {% endfor %}
           </div>
@@ -69,8 +70,8 @@
       <div class="passportFooter">
         <hr class="bpDivider">
         <footer>
-          <button form="passport-profile-form" type="submit" class="button button-primary profile-update-button">Update</button>
-          <a href="#!" class="button-outline" data-close="Close" data-dismiss="modal">Cancel</a>
+          <button form="editPassportProfile" type="submit" class="button button-primary profile-update-button">Update</button>
+          <a href="/mypassport" class="button-outline">Cancel</a>
         </footer>
       </div>
     </article><!-- /.containter -->

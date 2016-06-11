@@ -37,6 +37,27 @@ $(document).ready(function () {
 			cell3.innerHTML = "{{ user.traveler_gender }}";
 	}
 
+// Minus Traveler from Passport Profile
+function attachTravelerMinusButton() {
+	$('.deleteTravelerButton').click(function (e) {
+		if (confirm('Are you sure you want to delete this traveler?')) {
+			$(e.currentTarget).parent().hide();
+		}
+	});
+}
+attachTravelerMinusButton();
+
+// Add Traveler to Passport Profile
+function attachTravelerAdditionButton() {
+	$('.addTravelerButton').click(function (e) {
+		var emptyTraveler = $(e.currentTarget).closest('.travelerInfo').clone();
+		$(e.currentTarget).parent().after(emptyTraveler);
+		emptyTraveler.children('input').val("");
+		attachTravelerAdditionButton();
+		attachTravelerMinusButton();
+	});
+}
+attachTravelerAdditionButton();
 
 // Image Overlay (Effect-6) .img450
 $(document).ready(function(){

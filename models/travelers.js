@@ -11,6 +11,7 @@ var travelerSchema = new Schema({
   parent_birthday: Date,
   photo: String,
   travelers: [{
+    id: String,
     name: String,
     birthday: Date,
     gender: String,
