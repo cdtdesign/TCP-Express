@@ -881,7 +881,7 @@ input[type="button"].button-primary:focus {
       input[type="reset"].button-brown,
       input[type="button"].button-brown {
         color: #FFF;
-        line-height: 0;
+        /*line-height: 55px;*/
         padding: 0;
         background-color: #3a2417;
         border-color: #3a2417; }
