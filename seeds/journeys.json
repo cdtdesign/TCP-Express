@@ -2,90 +2,60 @@
     "passport_id": "98a775b0-b008-11e5-9eb0-0401921b3901",
     "title": "Pumpkin Patch Farm",
     "traveler_name": "Christian",
-    "date": {
-        "$date": "2015-10-24T04:00:00.000Z"
-    },
+    "date": "2015-10-24T04:00:00.000Z",
     "body": "We needed a pumpkin and a day of family fun, since Monday was a day off from school, so we went to check out the Pumpkin Patch Farm. Here, we all rode the hayride, while Christian had fun on the jumping pillow, a horse ride and their 40-foot zipline. Ende",
     "tags": "#HappyTravels #TravelingChristian",
     "description_filename": "54ccde28defe22d5957e9e4b5396ca95.html",
     "header_image_filename": "3aa39decc5a01363489991f174176f31.jpg",
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    }
+    "created_at": "2015-12-31T21:51:07.000Z",
+    "updated_at": "2015-12-31T21:51:07.000Z"
 }, {
     "passport_id": "98f70ab5-b008-11e5-9eb0-0401921b3906",
     "title": "a Fun Amusement Park",
     "traveler_name": "Laura",
-    "date": {
-        "$date": "2015-10-30T04:00:00.000Z"
-    },
+    "date": "2015-10-30T04:00:00.000Z",
     "body": "Had an awesome day of fun riding so many great rides, eating yummy cotton candy and goofing off with my family. Can't wait to go back!!",
     "tags": "#HappyTravels #TravelingChristian",
     "description_filename": "d8729bab3cf051b24dc885078328bf14.html",
     "header_image_filename": "a69bf6fe0634f36f89eb67cb9799b9d3.jpg",
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    }
+    "created_at": "2015-12-31T21:51:07.000Z",
+    "updated_at": "2015-12-31T21:51:07.000Z"
 }, {
     "passport_id": "98f72823-b008-11e5-9eb0-0401921b3902",
     "title": "the World of Harry Potter",
     "traveler_name": "Alexander",
-    "date": {
-        "$date": "2015-11-07T05:00:00.000Z"
-    },
+    "date": "2015-11-07T05:00:00.000Z",
     "body": "Journeyed to Hogwarts School of Witchcraft and Wizardry in the third book of Harry Potter and the Prisoner of Azkaban. Looking forward to see what happens on my next journey in Harry Potter and the Goblet of Fire.",
     "tags": "#HappyTravels #TravelingChristian",
     "description_filename": "a95dfd10fd868e1a3bc0866bcae2af0e.html",
     "header_image_filename": "1d9951fd4d1670b79cdc11baad6287a5.jpg",
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    }
+    "created_at": "2015-12-31T21:51:07.000Z",
+    "updated_at": "2015-12-31T21:51:07.000Z"
 }, {
     "passport_id": "98f78a3e-b008-11e5-9eb0-0401921b3905",
     "title": "Orlando Science Center",
     "traveler_name": "Johnny",
-    "date": {
-        "$date": "2015-11-08T05:00:00.000Z"
-    },
+    "date": "2015-11-08T05:00:00.000Z",
     "body": "Great time at the science center today! Can't wait to go back! Saw a friend there and we had a great time.",
     "tags": "#HappyTravels #TravelingChristian",
     "description_filename": "d6885d80cba10c5e7bc0243f58593698.html",
     "header_image_filename": "7bea2690b6bac3b753dfb390564cfecf.jpg",
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    }
+    "created_at": "2015-12-31T21:51:07.000Z",
+    "updated_at": "2015-12-31T21:51:07.000Z"
 }, {
     "passport_id": "98f78cec-b008-11e5-9eb0-0401921b3907",
     "title": "ZOOmAir Zipline",
     "traveler_name": "Prismarine",
-    "date": {
-        "$date": "2015-11-09T05:00:00.000Z"
-    },
+    "date": "2015-11-09T05:00:00.000Z",
     "body": "Fun time zipping along the ziplines of ZOOmAir at the Central Florida Zoo!",
     "tags": "#HappyTravels #TravelingChristian",
     "description_filename": "03249c153cde5133960d0fa3338cb975.html",
     "header_image_filename": "67df8deca3d117e681ae5ca4e7fca747.jpg",
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    }
+    "created_at": "2015-12-31T21:51:07.000Z",
+    "updated_at": "2015-12-31T21:51:07.000Z"
 }]
