@@ -39,12 +39,12 @@
             <input value="{{ user.address.city }}" form="editPassportProfile" placeholder="City" type="text" name="address_city">
             <input value="{{ user.address.state }}" form="editPassportProfile" placeholder="ST" type="text" name="address_state">
             <input value="{{ user.address.zip }}" form="editPassportProfile" placeholder="Zip" type="text" name="address_zip">
-            <input form="editPassportProfile" type="file" name="profile_img_upload-{{traveler.id}}">
+            <input form="editPassportProfile" type="file" name="profile_img_upload">
         </div>
         <div class="six columns travelerColumn">
           <div class="travelers">
             {% for traveler in user.travelers %}
-            <div class="travelerInfo">
+            <div class="travelerEdit">
               <div>
                 {% if user.photo and user.provider_id == "0" %}
                   <img src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
@@ -62,11 +62,11 @@
               <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="first_name">
               <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
               <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
-              <input form="editPassportProfile" type="file" name="profile_img_upload_{{}}">
+              <input form="editPassportProfile" type="file" name="profile_img_upload">
             </div>
             {% endfor %}
             {% if ! user.travelers %}
-            <div class="travelerInfo">
+            <div class="travelerEdit">
               <div>
                   <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
                 <a>Change</a>
@@ -78,7 +78,7 @@
               <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="first_name">
               <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
               <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
-              <input form="editPassportProfile" type="file" name="profile_img_upload_{{}}">
+              <input form="editPassportProfile" type="file" name="profile_img_upload">
             </div>
             {% endif %}
           </div>

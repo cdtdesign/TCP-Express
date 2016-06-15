@@ -33,10 +33,7 @@
             </p>
             <div class="travelers">
               {% for traveler in user.travelers %}
-              <p class="travelerInfo">
-                <span><b>First Name: </b>{{ traveler.name }}</span>
-                <span><b>Birthday: </b>12-27-1995</span>
-                <span><b>Gender: </b>{{ traveler.gender }}</span>
+              <div class="traveler">
                 {% if user.photo and user.provider_id == "0" %}
                   <img src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
                 {% elseif user.photo and user.provider_id != "0" %}
@@ -44,7 +41,12 @@
                 {% else %}
                   <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
                 {% endif %}
-              </p>
+                <p>
+                  <span><b>First Name: </b>{{ traveler.name }}</span></br>
+                  <span><b>Birthday: </b>12-27-1995</span></br>
+                  <span><b>Gender: </b>{{ traveler.gender }}</span></br>
+                </p>
+            </div><!-- /.travler -->
               {% endfor %}
             </div>
             <div class="passportFooter">
