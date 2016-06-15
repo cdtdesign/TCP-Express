@@ -75,9 +75,7 @@
         "city": "New York",
         "state": "34",
         "zip": 10038,
-        "phone": {
-            "$numberLong": "16315528189"
-        }
+        "phone": "16315528189"
     }
 }, {
     "passport_id": "98a7847a-b008-11e5-9eb0-0401921b3903",
