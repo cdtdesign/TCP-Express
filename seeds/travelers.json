@@ -7,67 +7,45 @@
     "first_name": "Christina",
     "last_name": "Thorpe-Rogers",
     "parent_gender": "2",
-    "parent_birthday": {
-        "$date": "1974-08-31T04:00:00.000Z"
-    },
+    "parent_birthday": "1974-08-31T04:00:00.000Z",
     "travelers": [{
         "name": "Christian",
-        "birthday": {
-            "$date": "2016-08-31T04:00:00.000Z"
-        },
+        "birthday": "2016-08-31T04:00:00.000Z",
         "gender": "Male"
     }, {
         "name": "Alexander",
-        "birthday": {
-            "$date": "1995-12-27T04:00:00.000Z"
-        },
+        "birthday": "1995-12-27T04:00:00.000Z",
         "gender": "Male"
     }, {
         "name": "Pogonip",
-        "birthday": {
-            "$date": "1998-12-05T04:00:00.000Z"
-        },
+        "birthday": "1998-12-05T04:00:00.000Z",
         "gender": "Male"
     }, {
         "name": "Jocalyn",
-        "birthday": {
-            "$date": "2001-10-30T04:00:00.000Z"
-        },
+        "birthday": "2001-10-30T04:00:00.000Z",
         "gender": "Female"
     }, {
         "name": "Christian",
-        "birthday": {
-            "$date": "2016-08-31T04:00:00.000Z"
-        },
+        "birthday": "2016-08-31T04:00:00.000Z",
         "gender": "Male"
     }, {
         "name": "Alexander",
-        "birthday": {
-            "$date": "1995-12-27T04:00:00.000Z"
-        },
+        "birthday": "1995-12-27T04:00:00.000Z",
         "gender": "Male"
     }, {
         "name": "Pogonip",
-        "birthday": {
-            "$date": "1998-12-05T04:00:00.000Z"
-        },
+        "birthday": "1998-12-05T04:00:00.000Z",
         "gender": "Male"
     }, {
         "name": "Jocalyn",
-        "birthday": {
-            "$date": "2001-10-30T04:00:00.000Z"
-        },
+        "birthday": "2001-10-30T04:00:00.000Z",
         "gender": "Female"
     }],
     "photo": "e41bdefe3035f4a5e2f95ce1c5ffe03e.jpg",
     "suspended": false,
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    },
-    "updated_at": {
-        "$date": "2016-02-28T05:51:31.000Z"
-    },
+    "created_at": "2015-12-31T21:51:06.000Z",
+    "updated_at": "2016-02-28T05:51:31.000Z",
     "address": {
         "street": "537 Hearthglen Blvd",
         "city": "Winter Garden",
@@ -85,19 +63,13 @@
     "traveler_name": "Alex",
     "traveler_gender": "1",
     "parent_gender": "1",
-    "traveler_birthday": {
-        "$date": "1995-12-27T05:00:00.000Z"
-    },
+    "traveler_birthday": "1995-12-27T05:00:00.000Z",
     "parent_birthday": null,
     "photo": null,
     "suspended": false,
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    },
+    "created_at": "2015-12-31T21:51:06.000Z",
+    "updated_at": "2015-12-31T21:51:06.000Z",
     "address": {
         "street": "8 Spruce Street",
         "city": "New York",
@@ -122,12 +94,8 @@
     "photo": null,
     "suspended": false,
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    }
+    "created_at": "2015-12-31T21:51:06.000Z",
+    "updated_at": "2015-12-31T21:51:06.000Z"
 }, {
     "passport_id": "98a7b133-b008-11e5-9eb0-0401921b3904",
     "username": "pat@cdtdesign.com",
@@ -143,12 +111,8 @@
     "photo": null,
     "suspended": false,
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    }
+    "created_at": "2015-12-31T21:51:06.000Z",
+    "updated_at": "2015-12-31T21:51:06.000Z"
 }, {
     "passport_id": "98a7b291-b008-11e5-9eb0-0401921b3905",
     "username": "johnny@me.com",
@@ -159,19 +123,13 @@
     "traveler_name": "James",
     "traveler_gender": "1",
     "parent_gender": "1",
-    "traveler_birthday": {
-        "$date": "2006-01-03T05:00:00.000Z"
-    },
+    "traveler_birthday": "2006-01-03T05:00:00.000Z",
     "parent_birthday": null,
     "photo": null,
     "suspended": false,
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    }
+    "created_at": "2015-12-31T21:51:06.000Z",
+    "updated_at": "2015-12-31T21:51:06.000Z"
 }, {
     "passport_id": "98a7b3a7-b008-11e5-9eb0-0401921b3906",
     "username": "lucy@yahoo.com",
@@ -182,19 +140,13 @@
     "traveler_name": "Suzy",
     "traveler_gender": "2",
     "parent_gender": "2",
-    "traveler_birthday": {
-        "$date": "2006-05-09T04:00:00.000Z"
-    },
+    "traveler_birthday": "2006-05-09T04:00:00.000Z",
     "parent_birthday": null,
     "photo": null,
     "suspended": false,
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:06.000Z"
-    }
+    "created_at": "2015-12-31T21:51:06.000Z",
+    "updated_at": "2015-12-31T21:51:06.000Z"
 }, {
     "passport_id": "98a7b4b0-b008-11e5-9eb0-0401921b3907",
     "username": "laura@me.com",
@@ -205,19 +157,13 @@
     "traveler_name": "Prismarine",
     "traveler_gender": "2",
     "parent_gender": "2",
-    "traveler_birthday": {
-        "$date": "1974-08-31T04:00:00.000Z"
-    },
+    "traveler_birthday": "1974-08-31T04:00:00.000Z",
     "parent_birthday": null,
     "photo": null,
     "suspended": false,
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    }
+    "created_at": "2015-12-31T21:51:07.000Z",
+    "updated_at": "2015-12-31T21:51:07.000Z"
 }, {
     "passport_id": "98a7b5ad-b008-11e5-9eb0-0401921b3908",
     "username": "tom@me.com",
@@ -228,19 +174,13 @@
     "traveler_name": "Tommy",
     "traveler_gender": "1",
     "parent_gender": "1",
-    "traveler_birthday": {
-        "$date": "2006-01-03T05:00:00.000Z"
-    },
+    "traveler_birthday": "2006-01-03T05:00:00.000Z",
     "parent_birthday": null,
     "photo": null,
     "suspended": false,
     "deleted_at": null,
-    "created_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    },
-    "updated_at": {
-        "$date": "2015-12-31T21:51:07.000Z"
-    }
+    "created_at": "2015-12-31T21:51:07.000Z",
+    "updated_at": "2015-12-31T21:51:07.000Z"
 }, {
     "passport_id": "2063814c-c063-11e5-9eb0-0401921b3909",
     "username": "pamelap902@gmail.com",
@@ -251,19 +191,13 @@
     "traveler_name": "Angie",
     "traveler_gender": "2",
     "parent_gender": "2",
-    "traveler_birthday": {
-        "$date": "2016-01-21T05:00:00.000Z"
-    },
+    "traveler_birthday": "2016-01-21T05:00:00.000Z",
     "parent_birthday": null,
     "photo": null,
     "suspended": false,
     "deleted_at": null,
-    "created_at": {
-        "$date": "2016-01-21T17:19:28.000Z"
-    },
-    "updated_at": {
-        "$date": "2016-01-21T17:19:28.000Z"
-    },
+    "created_at": "2016-01-21T17:19:28.000Z",
+    "updated_at": "2016-01-21T17:19:28.000Z",
     "address": {
         "street": "921 Hunters Creek Drive, Apt. 101",
         "city": "Deland",
@@ -281,19 +215,13 @@
     "traveler_name": "Emma",
     "traveler_gender": "2",
     "parent_gender": "1",
-    "traveler_birthday": {
-        "$date": "1982-12-09T05:00:00.000Z"
-    },
+    "traveler_birthday": "1982-12-09T05:00:00.000Z",
     "parent_birthday": null,
     "photo": null,
     "suspended": false,
     "deleted_at": null,
-    "created_at": {
-        "$date": "2016-01-24T18:34:13.000Z"
-    },
-    "updated_at": {
-        "$date": "2016-01-24T18:34:13.000Z"
-    },
+    "created_at": "2016-01-24T18:34:13.000Z",
+    "updated_at": "2016-01-24T18:34:13.000Z",
     "address": {
         "street": "1234 Sesame Street",
         "city": "New York",
@@ -344,18 +272,14 @@
     "last_name": "Little",
     "traveler_name": "Chris",
     "email": "jlittle@me.com",
-    "createdAt": {
-        "$date": "2016-05-17T22:23:45.008Z"
-    },
+    "createdAt": "2016-05-17T22:23:45.008Z",
     "__v": 0
 }, {
     "provider_id": "548608344",
     "passport_id": "2063814c-c063-11e5-9eb0-0401921b3914",
     "name": "Christian Patrick",
     "photo": "https://pbs.twimg.com/profile_images/508368874124087298/ernV2Msh_normal.png",
-    "createdAt": {
-        "$date": "2016-05-22T02:05:21.200Z"
-    },
+    "createdAt": "2016-05-22T02:05:21.200Z",
     "__v": 0
 }, {
     "provider_id": "0",
@@ -365,9 +289,7 @@
     "last_name": "Cicconi",
     "traveler_name": "Mad",
     "email": "madonna@me.com",
-    "createdAt": {
-        "$date": "2016-05-25T16:10:19.934Z"
-    },
+    "createdAt": "2016-05-25T16:10:19.934Z",
     "__v": 0
 }, {
     "provider_id": "0",
@@ -377,8 +299,6 @@
     "last_name": "Black",
     "traveler_name": "Max",
     "email": "max@me.com",
-    "createdAt": {
-        "$date": "2016-05-25T23:16:54.597Z"
-    },
+    "createdAt": "2016-05-25T23:16:54.597Z",
     "__v": 0
 }]
