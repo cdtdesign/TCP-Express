@@ -320,11 +320,15 @@ a:hover {
   margin: auto;
   margin-top: 10rem;
   margin-bottom: 8rem;
-  padding: 6rem 0rem 6rem 6rem;
+  padding: 0rem 0rem 0rem 0rem;
   /*padding-top: .5rem;
   padding-bottom: 1rem;*/
   overflow: visible;
   text-align: left;
+}
+
+.profiler {
+  padding: 6rem;
 }
 
 .travelers img {
@@ -356,7 +360,7 @@ a:hover {
 }
 
 .editPassport .passportFooter {
-  padding: 0px 0px 60px 0px;
+  padding: 0px 0px 60px 60px;
   top: 0;
 }
 
@@ -472,10 +476,19 @@ div.myPassport i.fa:hover {
   color: #ee6730;
 }
 
+.myPassport .passportFooter {
+  padding: 0px 0px 60px 0px;
+  top: 0;
+}
+
 .passportFooter {
   clear: both;
   position: relative;
-  top: 30px;
+  /*top: 30px;*/
+}
+
+.passportFooter a i.fa.fa-pencil {
+  margin-left: 5rem;
 }
 
 .travelerEdit {
@@ -494,6 +507,7 @@ div.myPassport i.fa:hover {
   overflow-y: scroll;
   overflow-x: hidden;
   padding-right: 8%;
+  padding-left: 8%;
 }
 
 .travelers div:last-of-type {
@@ -1509,7 +1523,7 @@ p.blogTitle {
 
 .bpDivider {
   border-color: #fbd163;
-  margin-bottom: 5px;
+  /*margin-bottom: 5px;*/
   clear: both;
 }
 
