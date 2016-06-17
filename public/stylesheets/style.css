@@ -506,7 +506,7 @@ div.myPassport i.fa:hover {
 
 .travelers {
   max-height: 600px;
-  overflow-y: scroll;
+  overflow-y:auto;
   overflow-x: hidden;
   padding-top: 5%;
   padding-right: 8%;
