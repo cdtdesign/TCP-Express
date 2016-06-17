@@ -468,6 +468,7 @@ div.myPassport i.fa {
   color: #ffc233;
   margin-left: 5px;
   margin-top: -1.5%;
+  padding-top: 2rem;
 }
 
 div.myPassport i.fa:hover {
@@ -483,10 +484,6 @@ div.myPassport i.fa:hover {
   clear: both;
   position: relative;
   /*top: 30px;*/
-}
-
-.passportFooter .bpDivider {
-  margin-top: 0;
 }
 
 .passportFooter a i.fa.fa-pencil {
@@ -1527,9 +1524,11 @@ p.blogTitle {
 
 .bpDivider {
   border-color: #fbd163;
-  /*margin-bottom: 5px;*/
+  margin-bottom: 5px;
+  margin-top: 0;
   clear: both;
 }
+
 
 /*---------- Journey Sharing List ----------*/
 
