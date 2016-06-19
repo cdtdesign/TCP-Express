@@ -18,6 +18,11 @@ router.get('/download/JourneyKit', function(req, res, next) {
   res.download(__dirname + '/../public/pdfs/TCP_PIY_JourneyKit.pdf');
 });
 
+/* GET Gamer Face Masks */
+router.get('/download/GamerFaceMasks', function(req, res, next) {
+  res.download(__dirname + '/../public/pdfs/GamerFaceMasks');
+});
+
 /* GET search page. */
 router.get('/search', function(req, res, next) {
   res.render('search');
