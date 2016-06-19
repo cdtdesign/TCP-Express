@@ -20,7 +20,7 @@ router.get('/download/JourneyKit', function(req, res, next) {
 
 /* GET Gamer Face Masks */
 router.get('/download/GamerFaceMasks', function(req, res, next) {
-  res.download(__dirname + '/../public/pdfs/GamerFaceMasks');
+  res.download(__dirname + '/../public/pdfs/GamerFaceMasks.pdf');
 });
 
 /* GET search page. */
