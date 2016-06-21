@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require ('../models/user');
 var swig = require('swig');
+var prettyjson = require('prettyjson');
 
 /* GET mypassport page. */
 router.get('/', function(req, res, next) {
@@ -15,6 +16,37 @@ router.get('/edit', function(req, res, next) {
     return ("0" + date.getFullYear()).slice(-4) + '-' + ("0" + date.getMonth()).slice(-2) + '-' + ("0" + date.getDate()).slice(-2);
   });
   res.render('editpassport');
+});
+
+/* POST editpassport page */
+router.post('/edit', function(req, res) {
+  console.log(prettyjson.render(req.body));
+
+  User.find({_id: req.user._id}, function (err, user) {
+    if (err) throw err;
+    var user = user[0];
+
+    // Extract the data from the form
+    // and save it in the database
+    user.first_name = req.body.first_name;
+    user.parent_gender = req.body.parent_gender;
+    user.email = req.body.email;
+    user.address_tel = req.body.address_tel;
+    user.birthday = req.body.birthday;
+    user.address_street = req.body.address_street;
+    user.address_city = req.body.address_city;
+    user.address_state = req.body.address_state;
+    user.address_zip = req.body.address_zip;
+    user.profile_img_upload = req.body.profile_img_upload;
+
+    // Travlers info
+    
+
+    user.save(function () {
+      res.redirect('/mypassport/edit');
+    });
+  });
+
 });
 
 router.get('/delete', function(req, res, next) {

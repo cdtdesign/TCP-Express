@@ -24,7 +24,7 @@
             <a>Change Profile Image</a>
           </div>
             <h5 class="large textOrg">Edit Passport Profile</h5></br>
-            <form id="editPassportProfile" class="editPassportProfile"></form>
+            <form id="editPassportProfile" class="editPassportProfile" method="post"></form>
             <label>Parent / Guardian / Educator: </label>
             <input value="{{ user.first_name }}" form="editPassportProfile" placeholder="First Name" type="text" name="first_name">
             <input value="{{ user.last_name }}" form="editPassportProfile" placeholder="Last Name" type="text" name="last_name">
@@ -55,14 +55,14 @@
                 {% endif %}
                 <a>Change</a>
               </div>
-              <select form="editPassportProfile" name="gender">
+              <select form="editPassportProfile" name="gender:{{traveler.passport_id}}">
                 <option value="Female" {% if traveler.gender == 'Female' %}selected{% endif %}>Female</option>
                 <option value="Male" {% if traveler.gender == 'Male' %}selected{% endif %}>Male</option>
               </select>
-              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="first_name">
+              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="first_name:{{traveler.passport_id}}">
               <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
-              <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
-              <input form="editPassportProfile" type="file" name="profile_img_upload">
+              <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday:{{traveler.passport_id}}" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
+              <input form="editPassportProfile" type="file" name="profile_img_upload:{{traveler.passport_id}}">
             </div>
             {% endfor %}
             {% if ! user.travelers %}
