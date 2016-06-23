@@ -59,7 +59,7 @@
                 <option value="Female" {% if traveler.gender == 'Female' %}selected{% endif %}>Female</option>
                 <option value="Male" {% if traveler.gender == 'Male' %}selected{% endif %}>Male</option>
               </select>
-              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="first_name:{{traveler.passport_id}}">
+              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="name:{{traveler.passport_id}}">
               <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
               <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday:{{traveler.passport_id}}" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
               <input form="editPassportProfile" type="file" name="profile_img_upload:{{traveler.passport_id}}">

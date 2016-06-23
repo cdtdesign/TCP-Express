@@ -39,8 +39,15 @@ router.post('/edit', function(req, res) {
     user.address_zip = req.body.address_zip;
     user.profile_img_upload = req.body.profile_img_upload;
 
-    // Travlers info
-    
+    console.log(JSON.stringify(user));
+
+    // Travelers info
+    for (var i = 0; i < req.user.travelers.length; i++) {
+      var traveler = req.user.travelers[i];
+      user.travelers[i].name = req.body["name:" + traveler.passport_id];
+      user.travelers[i].gender = req.body["gender:" + traveler.passport_id];
+      user.travelers[i].birthday = req.body["birthday:" + traveler.passport_id];
+    }
 
     user.save(function () {
       res.redirect('/mypassport/edit');

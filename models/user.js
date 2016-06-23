@@ -16,7 +16,13 @@ var userSchema = new Schema({
   password : String,
   first_name : String,
   last_name : String,
-  traveler_name : String,
+  travelers :[{
+    passport_id : String,
+    name : String,
+    gender : String,
+    birthday : Date,
+    photo : String,
+  }],
   email : String,
 	createdAt	 : {type: Date, default: Date.now}
 });

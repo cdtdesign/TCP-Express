@@ -14,15 +14,15 @@ var config = require('./config');
 
 module.exports = function(passport) {
 
-	// Serialize user
-	passport.serializeUser(function(user, done) {
-		done(null, user);
-	});
+// Serialize user
+passport.serializeUser(function(user, done) {
+	done(null, user);
+});
 
-	// Deserialize user object
-	passport.deserializeUser(function(obj, done) {
-		done(null, obj);
-	});
+// Deserialize user object
+passport.deserializeUser(function(obj, done) {
+	done(null, obj);
+});
 
 // Local Strategy
 

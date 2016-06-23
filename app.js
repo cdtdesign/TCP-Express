@@ -14,6 +14,7 @@ var errorHandler = require('errorhandler');
 
 var mongoose = require('mongoose');
 var passport = require('passport');
+var User = require ('./models/user');
 
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
@@ -67,8 +68,21 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(function (req, res, next) {
-  app.locals.user = req.user;
-  next();
+  console.log('req.user:', JSON.stringify(req.user));
+  if (req.user) {
+    User.find({_id: req.user._id}, function (err, user) {
+      if (err) throw err;
+      var user = user[0];
+
+      req.login(user, function (err) {
+        if (err) throw err;
+        app.locals.user = user;
+        next();
+      });
+    });
+  } else {
+    next();
+  }
 });
 
 app.use('/', routes);
