@@ -180,7 +180,7 @@ $(document).on('cssmodal:show', function (e) {
 				// Format the date for the journey
 				console.log('response:', response);
 				var date = new Date(response.journey.date);
-				var journeyDate = ("0" + date.getFullYear()).slice(-4) + '-' + ("0" + date.getMonth()).slice(-2) + '-' + ("0" + date.getDate()).slice(-2);
+				var journeyDate = date.getFullYear() + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + ("0" + (date.getDate() + 1)).slice(-2);
 
 				console.log('date:', date);
 				console.log('journeyDate:', journeyDate);

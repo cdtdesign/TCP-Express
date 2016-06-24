@@ -68,21 +68,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(function (req, res, next) {
-  console.log('req.user:', JSON.stringify(req.user));
-  if (req.user) {
-    User.find({_id: req.user._id}, function (err, user) {
-      if (err) throw err;
-      var user = user[0];
-
-      req.login(user, function (err) {
-        if (err) throw err;
-        app.locals.user = user;
-        next();
-      });
-    });
-  } else {
-    next();
-  }
+  app.locals.user = req.user;
+  next();
 });
 
 app.use('/', routes);

@@ -13,15 +13,14 @@ router.get('/', function(req, res, next) {
 router.get('/edit', function(req, res, next) {
   swig.setFilter('dateFormat', function (input) {
     var date = new Date(input);
-    return ("0" + date.getFullYear()).slice(-4) + '-' + ("0" + date.getMonth()).slice(-2) + '-' + ("0" + date.getDate()).slice(-2);
+    console.log('input:', input);
+    return date.getFullYear() + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + ("0" + (date.getDate() + 1)).slice(-2);
   });
   res.render('editpassport');
 });
 
 /* POST editpassport page */
 router.post('/edit', function(req, res) {
-  console.log(prettyjson.render(req.body));
-
   User.find({_id: req.user._id}, function (err, user) {
     if (err) throw err;
     var user = user[0];
@@ -32,14 +31,12 @@ router.post('/edit', function(req, res) {
     user.parent_gender = req.body.parent_gender;
     user.email = req.body.email;
     user.address_tel = req.body.address_tel;
-    user.birthday = req.body.birthday;
+    user.parent_birthday = req.body.birthday;
     user.address_street = req.body.address_street;
     user.address_city = req.body.address_city;
     user.address_state = req.body.address_state;
     user.address_zip = req.body.address_zip;
     user.profile_img_upload = req.body.profile_img_upload;
-
-    console.log(JSON.stringify(user));
 
     // Travelers info
     for (var i = 0; i < req.user.travelers.length; i++) {
@@ -50,7 +47,16 @@ router.post('/edit', function(req, res) {
     }
 
     user.save(function () {
-      res.redirect('/mypassport/edit');
+      User.find({_id: req.user._id}, function (err, user) {
+        if (err) throw err;
+        var user = user[0];
+
+        req.login(user, function (err) {
+          if (err) throw err;
+          res.locals.user = user;
+          res.redirect('/mypassport/edit');
+        });
+      });
     });
   });
 
