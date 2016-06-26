@@ -30,7 +30,7 @@
                    <b>State: </b>{{ user.address.state }}</br>
                    <b>Zip: </b>{{ user.address.zip }}</br>
                    <b>Phone: </b>{{ user.address.phone }}</br>
-                 <b>Birthday: </b>{{ user.birthday }}</br>
+                   <b>Birthday: </b>{{ user.parent_birthday | friendlyDate }}</br>
               </p>
             </div><!-- ./profiler -->
             <div class="travelers">
@@ -45,7 +45,7 @@
                 {% endif %}
                 <p>
                   <span><b>First Name: </b>{{ traveler.name }}</span></br>
-                  <span><b>Birthday: </b>12-27-1995</span></br>
+                  <span><b>Birthday: </b>{{ traveler.birthday | friendlyDate }}</span></br>
                   <span><b>Gender: </b>{{ traveler.gender }}</span></br>
                 </p>
             </div><!-- /.travler -->

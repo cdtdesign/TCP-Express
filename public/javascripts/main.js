@@ -160,6 +160,10 @@ $('.passportPicDiv a').click(function () {
 	$('[name="profile_img_upload"]').click();
 });
 
+$('.travelerEdit a').click(function (e) {
+	$(e.target).parents('.travelerEdit').children('[type="file"]').click();
+});
+
 // https://github.com/drublic/css-modal/blob/master/README.md#events
 $(document).on('cssmodal:show', function (e) {
 	var currentUrlSplit = window.location.href.split('/');

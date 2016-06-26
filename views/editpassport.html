@@ -24,7 +24,7 @@
             <a>Change Profile Image</a>
           </div>
             <h5 class="large textOrg">Edit Passport Profile</h5></br>
-            <form id="editPassportProfile" class="editPassportProfile" method="post"></form>
+            <form id="editPassportProfile" class="editPassportProfile" method="post" enctype="multipart/form-data"></form>
             <label>Parent / Guardian / Educator: </label>
             <input value="{{ user.first_name }}" form="editPassportProfile" placeholder="First Name" type="text" name="first_name">
             <input value="{{ user.last_name }}" form="editPassportProfile" placeholder="Last Name" type="text" name="last_name">

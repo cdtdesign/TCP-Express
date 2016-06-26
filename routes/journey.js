@@ -3,6 +3,7 @@ var router = express.Router();
 var Journey = require('../models/journey');
 var multer = require('multer');
 var appRootPath = require('app-root-path');
+
 // var crypto = require('crypto');
 // var mime = require('node-mime');
 // var upload = multer({ dest: '/Users/Christina/Sites/TCP-Express/public/images/journey-images' });

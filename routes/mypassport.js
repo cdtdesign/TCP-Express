@@ -3,9 +3,38 @@ var router = express.Router();
 var User = require ('../models/user');
 var swig = require('swig');
 var prettyjson = require('prettyjson');
+var multer = require('multer');
+var appRootPath = require('app-root-path');
+var mime = require('mime-types');
+var uuid = require('node-uuid');
+
+/* Multer to change profile images */
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    var splitFilename = file.fieldname.split(':');
+    var saveDirectory;
+    if (splitFilename.length == 1) {
+      // Assume it's a profile image
+      saveDirectory = '/public/images/profile-images/';
+    } else {
+      // It's a traveler image
+      saveDirectory = '/public/images/traveler-images/';
+    }
+    cb(null, appRootPath + saveDirectory);
+  },
+  filename: function (req, file, cb) {
+    cb(null, uuid.v1() + '.' + mime.extension(file.mimetype));
+  }
+});
+
+var upload = multer({ storage: storage });
 
 /* GET mypassport page. */
 router.get('/', function(req, res, next) {
+  swig.setFilter('friendlyDate', function (input) {
+    var date = new Date(input);
+    return ("0" + (date.getMonth() + 1)).slice(-2) + '-' + ("0" + (date.getDate() + 1)).slice(-2) + '-' + date.getFullYear();
+  });
   res.render('mypassport');
 });
 
@@ -13,14 +42,14 @@ router.get('/', function(req, res, next) {
 router.get('/edit', function(req, res, next) {
   swig.setFilter('dateFormat', function (input) {
     var date = new Date(input);
-    console.log('input:', input);
     return date.getFullYear() + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + ("0" + (date.getDate() + 1)).slice(-2);
   });
   res.render('editpassport');
 });
 
 /* POST editpassport page */
-router.post('/edit', function(req, res) {
+router.post('/edit', upload.any(), function(req, res) {
+  console.log(prettyjson.render(req.files));
   User.find({_id: req.user._id}, function (err, user) {
     if (err) throw err;
     var user = user[0];
