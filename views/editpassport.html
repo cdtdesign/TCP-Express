@@ -46,10 +46,8 @@
             {% for traveler in user.travelers %}
             <div class="travelerEdit">
               <div>
-                {% if user.photo and user.provider_id == "0" %}
-                  <img src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
-                {% elseif user.photo and user.provider_id != "0" %}
-                  <img src="{{user.photo}}" alt="Traveler Pic">
+                {% if traveler.photo %}
+                  <img src="/images/traveler-images/{{traveler.photo}}" alt="Traveler Pic">
                 {% else %}
                   <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
                 {% endif %}

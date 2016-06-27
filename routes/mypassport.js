@@ -8,6 +8,8 @@ var appRootPath = require('app-root-path');
 var mime = require('mime-types');
 var uuid = require('node-uuid');
 
+var travelerImageFilenames = {};
+
 /* Multer to change profile images */
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -23,7 +25,16 @@ var storage = multer.diskStorage({
     cb(null, appRootPath + saveDirectory);
   },
   filename: function (req, file, cb) {
-    cb(null, uuid.v1() + '.' + mime.extension(file.mimetype));
+    var profilePhotoFilename = uuid.v1() + '.' + mime.extension(file.mimetype);
+
+    var splitFilename = file.fieldname.split(':');
+    if (splitFilename.length > 1) {
+      // It's a travelers' photo; Remember the
+      // filename for this traveler for
+      // later insertion to the database
+      travelerImageFilenames[splitFilename[1]] = profilePhotoFilename;
+    }
+    cb(null, profilePhotoFilename);
   }
 });
 
@@ -73,6 +84,7 @@ router.post('/edit', upload.any(), function(req, res) {
       user.travelers[i].name = req.body["name:" + traveler.passport_id];
       user.travelers[i].gender = req.body["gender:" + traveler.passport_id];
       user.travelers[i].birthday = req.body["birthday:" + traveler.passport_id];
+      user.travelers[i].photo = travelerImageFilenames[traveler.passport_id];
     }
 
     user.save(function () {
