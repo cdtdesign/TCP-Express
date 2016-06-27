@@ -8,6 +8,7 @@ var appRootPath = require('app-root-path');
 var mime = require('mime-types');
 var uuid = require('node-uuid');
 
+var parentImageFilename;
 var travelerImageFilenames = {};
 
 /* Multer to change profile images */
@@ -15,12 +16,12 @@ var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     var splitFilename = file.fieldname.split(':');
     var saveDirectory;
-    if (splitFilename.length == 1) {
-      // Assume it's a profile image
-      saveDirectory = '/public/images/profile-images/';
-    } else {
+    if (splitFilename.length == 2) {
       // It's a traveler image
       saveDirectory = '/public/images/traveler-images/';
+    } else {
+      // Assume it's a profile image
+      saveDirectory = '/public/images/profile-images/';
     }
     cb(null, appRootPath + saveDirectory);
   },
@@ -28,11 +29,15 @@ var storage = multer.diskStorage({
     var profilePhotoFilename = uuid.v1() + '.' + mime.extension(file.mimetype);
 
     var splitFilename = file.fieldname.split(':');
-    if (splitFilename.length > 1) {
+    if (splitFilename.length == 2) {
       // It's a travelers' photo; Remember the
       // filename for this traveler for
       // later insertion to the database
       travelerImageFilenames[splitFilename[1]] = profilePhotoFilename;
+    } else {
+      // It's a parent, so we'll save
+      // their filename for later
+      parentImageFilename = profilePhotoFilename;
     }
     cb(null, profilePhotoFilename);
   }
@@ -76,7 +81,9 @@ router.post('/edit', upload.any(), function(req, res) {
     user.address_city = req.body.address_city;
     user.address_state = req.body.address_state;
     user.address_zip = req.body.address_zip;
-    user.profile_img_upload = req.body.profile_img_upload;
+    if (parentImageFilename) {
+      user.photo = parentImageFilename;
+    }
 
     // Travelers info
     for (var i = 0; i < req.user.travelers.length; i++) {

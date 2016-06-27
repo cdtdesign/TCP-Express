@@ -15,11 +15,11 @@
         <div class="six columns">
           <div class="passportPicDiv">
             {% if user.photo and user.provider_id == "0" %}
-              <img class="passportPic" src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
+              <img class="passportPic" src="/images/profile-images/{{user.photo}}" alt="Parent Pic">
             {% elseif user.photo and user.provider_id != "0" %}
-              <img class="passportPic" src="{{user.photo}}" alt="Traveler Pic">
+              <img class="passportPic" src="{{user.photo}}" alt="Parent Pic">
             {% else %}
-              <img class="passportPic" src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
+              <img class="passportPic" src="/images/profile-images/avatar.jpg" alt="Parent Pic">
             {% endif %}
             <a>Change Profile Image</a>
           </div>
