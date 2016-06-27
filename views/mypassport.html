@@ -33,7 +33,6 @@
                    <b>Birthday: </b>{{ user.parent_birthday | friendlyDate }}</br>
               </p>
             </div><!-- ./profiler -->
-            {% if  user.travelers %}
             <div class="travelers">
               {% for traveler in user.travelers %}
               <div class="traveler">
@@ -50,7 +49,6 @@
             </div><!-- /.travler -->
               {% endfor %}
             </div>
-            {% else %}
             <div class="passportFooter">
               <hr class="bpDivider">
               <a href="#" title="Edit Passport">
@@ -60,7 +58,6 @@
                 <i class="fa fa-close" style="font-size:3.875rem;"></i>
               </a>
             </div>
-            {% endif %}
         </div>
       </div><!-- /.row -->
     </article><!-- /.containter -->
