@@ -33,6 +33,7 @@
                    <b>Birthday: </b>{{ user.parent_birthday | friendlyDate }}</br>
               </p>
             </div><!-- ./profiler -->
+            {% if  user.travelers %}
             <div class="travelers">
               {% for traveler in user.travelers %}
               <div class="traveler">
@@ -49,7 +50,7 @@
             </div><!-- /.travler -->
               {% endfor %}
             </div>
-            {% if ! user.travelers %}
+            {% else %}
             <div class="passportFooter">
               <hr class="bpDivider">
               <a href="#" title="Edit Passport">
