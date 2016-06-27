@@ -17,7 +17,7 @@ X Journey header image on Create/Update of Journey posts
 X Click modal & overlay to dismiss
 X Creating select on the children in the Journey modal
 X Passport Profile birthday has no value because it's not formatted like the one for journeys
-- On Sign In, add traveler select option (like on Journey Blog posts)
+- On Sign In, add traveler select option (like on Journey Blog posts)???
 - Create Ajax call for uploading profile images
 X Create/Update/Delete Passport Profile: Allow users to change their info in their passport (profile)
 X Create multiple fields for child names (Child 1, Child 2 and have an + button to dynamically add more Child fields)
