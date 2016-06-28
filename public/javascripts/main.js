@@ -24,40 +24,16 @@ $(document).ready(function () {
 			});
 	});
 
-	// Dynamically add rows to travelerTable in Passport Profile
-	function addCellsFunction() {
-	    var table = document.getElementById("#travelerTable");
-	    var row = table.insertRow(0);
-	    var cell1 = row.insertCell(0);
-	    var cell2 = row.insertCell(1);
-			// var i = 2;
-			// var n = ++i;
-	    cell1.innerHTML = "{{ user.traveler_name }}";
-	    cell2.innerHTML = "{{ user.traveler_birthday }}";
-			cell3.innerHTML = "{{ user.traveler_gender }}";
-	}
-
-// Minus Traveler from Passport Profile
-function attachTravelerMinusButton() {
-	$('.deleteTravelerButton').click(function (e) {
-		if (confirm('Are you sure you want to delete this traveler?')) {
-			$(e.currentTarget).parent().hide();
-		}
-	});
-}
-attachTravelerMinusButton();
-
-// Add Traveler to Passport Profile
-function attachTravelerAdditionButton() {
-	$('.addTravelerButton').click(function (e) {
-		var emptyTraveler = $(e.currentTarget).closest('.travelerInfo').clone();
-		$(e.currentTarget).parent().after(emptyTraveler);
-		emptyTraveler.children('input').val("");
-		attachTravelerAdditionButton();
-		attachTravelerMinusButton();
-	});
-}
-attachTravelerAdditionButton();
+// Dynamically add rows to travelerTable in Passport Profile
+	// function addCellsFunction() {
+  //   var table = document.getElementById("#travelerTable");
+  //   var row = table.insertRow(0);
+  //   var cell1 = row.insertCell(0);
+  //   var cell2 = row.insertCell(1);
+  //   cell1.innerHTML = "{{ user.traveler_name }}";
+  //   cell2.innerHTML = "{{ user.traveler_birthday }}";
+	// 	cell3.innerHTML = "{{ user.traveler_gender }}";
+	// }
 
 // Image Overlay (Effect-6) .img450
 $(document).ready(function(){
@@ -154,15 +130,6 @@ ga('send', 'pageview');
 if (window.location.hash && window.location.hash == '#_=_') {
   window.location.hash = '';
 }
-
-// Choose Profile Image link
-$('.passportPicDiv a').click(function () {
-	$('[name="profile_img_upload"]').click();
-});
-
-$('.travelerEdit a').click(function (e) {
-	$(e.target).parents('.travelerEdit').children('[type="file"]').click();
-});
 
 // https://github.com/drublic/css-modal/blob/master/README.md#events
 $(document).on('cssmodal:show', function (e) {

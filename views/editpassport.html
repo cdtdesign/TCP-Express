@@ -64,7 +64,6 @@
               <input form="editPassportProfile" type="file" name="profile_img_upload:{{traveler.passport_id}}">
             </div>
             {% endfor %}
-            {% if ! user.travelers %}
             <div class="travelerEdit">
               <div>
                   <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
@@ -79,7 +78,6 @@
               <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
               <input form="editPassportProfile" type="file" name="profile_img_upload">
             </div>
-            {% endif %}
           </div>
       </div><!-- /.row -->
       <div class="passportFooter">
@@ -97,4 +95,8 @@
 
     {% include "./footer.html" %}
 
+{% endblock %}
+
+{% block extra_scripts %}
+  <script src="/javascripts/editpassportprofile.js"></script>
 {% endblock %}
