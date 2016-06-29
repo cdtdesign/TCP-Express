@@ -196,6 +196,10 @@
   text-transform: lowercase;
 }
 
+.iconOrg {
+  color: #ee6730;
+}
+
 i.fa-wifi {
   color: #9ddcf9;
   font-size: 25rem;
@@ -1566,7 +1570,7 @@ li a:hover {
 }
 
 li:last-of-type {
-  padding-bottom: 15px;
+  /*padding-bottom: 15px;*/
 }
 
 div.faBlogPost i.fa {
