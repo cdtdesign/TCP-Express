@@ -540,12 +540,55 @@ div.myPassport i.fa:hover {
     overflow: hidden;
 }
 
+/*------------- TOOLTIPS -------------*/
+
+a.tooltips {
+  position: relative;
+  display: inline;
+}
+a.tooltips span {
+  position: absolute;
+  width:150px;
+  color: #FFFFFF;
+  background: #58B8E8;
+  height: 30px;
+  line-height: 35px;
+  text-align: center;
+  visibility: hidden;
+  border-radius: 5px;
+  opacity: 1;
+}
+a.tooltips span:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -8px;
+  width: 0; height: 0;
+  border-bottom: 8px solid #58B8E8;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+a:hover.tooltips span {
+  visibility: visible;
+  opacity: 1;
+  top: 50px;
+  left: 50%;
+  margin-left: -75px;
+  z-index: 2000;
+  font-size: .75rem;
+}
+
 /*---------- NAVBAR ----------*/
 
 .disabled {
-   pointer-events: none;
+   /*pointer-events: none;*/
    cursor: default;
    opacity: .5;
+}
+
+a.navItem.tooltips.disabled {
+  border-top: 0px;
 }
 
 .signoutBtn {
@@ -640,10 +683,6 @@ a.navItem:focus {
   border-top: 3px solid #fff;
 }
 
-/*a.navItem:disabled {
-  color: rgba(255,255,255,.25);
-}*/
-
 a.navItem:visited {
   color: rgba(255,255,255,.5);
   border-top: 3px solid #fff;
@@ -666,10 +705,6 @@ a.navOrg:hover {
 a.navOrg:active {
   border-top: 3px solid #ee6730;
 }
-
-/*a.navOrg:disabled {
-  color: rgba(238,103,48,.25);
-}*/
 
 .wordmark {
   font-family: 'Simpson_Condensed_Heavy_BoldItalic', Times, serif;
@@ -2192,11 +2227,6 @@ a.expand {
     color: rgba(255, 255, 255, 0.75);
   }
 
-  /*a.navItem:disabled {
-    color: rgba(255,255,255,.25);
-    border: none;
-  }*/
-
   a.navItem:visited {
     color: rgba(255, 255, 255, 0.5);
   }
@@ -2225,10 +2255,6 @@ a.expand {
   a.navOrg:visited {
     color: rgba(238,103,48,.5);
   }
-
-  /*a.navOrg:disabled {
-    color: rgba(238,103,48,.25);
-  }*/
 
   .wordmark {
     font-family: 'Simpson_Condensed_Heavy_BoldItalic', Times, serif;
