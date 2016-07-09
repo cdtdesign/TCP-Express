@@ -556,7 +556,6 @@ a.tooltips span {
   text-align: center;
   visibility: hidden;
   border-radius: 5px;
-  opacity: 1;
 }
 a.tooltips span:after {
   content: '';
@@ -584,10 +583,19 @@ a:hover.tooltips span {
 .disabled {
    /*pointer-events: none;*/
    cursor: default;
-   opacity: .5;
+   /*opacity: .5;*/
+}
+
+i.transparent {
+  opacity: .5;
+  font-style: normal;
 }
 
 a.navItem.tooltips.disabled {
+  border-top: 0px;
+}
+
+a.navOrg.tooltips.disabled {
   border-top: 0px;
 }
 
