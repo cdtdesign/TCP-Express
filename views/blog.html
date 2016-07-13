@@ -14,9 +14,9 @@
           <div class="one-half column left center">
             <img class="tcpCrest hvr-grow-rotate" src="images/tcp-crest-yllw.svg" alt="TCP Crest Logo">
             <figcaption style="display:none;">Join the Journey! | Traveling Children Project</figcaption>
-            <p><strong>Welcome Travelers to the Journey Blog!</strong></br>Here you can share your journey with other Travelers and also see where their travels have led them.</br> Create posts of your journeys to collect Travel Tokens!
+            <p><strong>Welcome Travelers to the Journey Blog!</strong><br>Here you can share your journey with other Travelers and also see where their travels have led them.<br> Create posts of your journeys to collect Travel Tokens!
             </p>
-            <!-- <p><strong>Welcome Travelers to the Journey Blog!</strong></br>Here you can share your journey with other Travelers and also see where their travels have led them.</br> Create posts of your journeys to collect Travel Tokens for admission discounts and other great prizes!
+            <!-- <p><strong>Welcome Travelers to the Journey Blog!</strong><br>Here you can share your journey with other Travelers and also see where their travels have led them.<br> Create posts of your journeys to collect Travel Tokens for admission discounts and other great prizes!
             </p> -->
           </div>
         </div><!-- /.row -->
@@ -80,7 +80,7 @@
 
     <section class="bluStripes blogSection">
       <article class="container mobile-wide">
-        <h5 class="textOrg" style="margin-top:50px;padding:5px;"><b>Where has TC taken you?</b> Click the button below to begin sharing your journey</br> and collect Travel Tokens for admission discounts and other great prizes!</h5>
+        <h5 class="textOrg" style="margin-top:50px;padding:5px;"><b>Where has TC taken you?</b> Click the button below to begin sharing your journey<br> and collect Travel Tokens for admission discounts and other great prizes!</h5>
         <a href="#modal-text/#create" id="addJourneyButton" class="blogButton hvr-rotate"><i class="fa fa-plus" aria-hidden="true"></i></a>
         <div class="row-wide journeys-grid">
           {% for journey in journeys %}
@@ -94,36 +94,31 @@
               <figcaption style="text-align:left;"><small><span class="blogTraveler"><a href="#"><b><em>Traveling {{ journey.traveler_name }}</em></b></a></span>
                 <span class="blogDate">{{ journey.friendlyDate }}</span>
               </small></figcaption>
-              <p class="blogBody">{{ journey.body }} </br>
+              <p class="blogBody">{{ journey.body }} <br>
                 <small class="blogHash" style="margin:0rem;"><em>{{journey.tags}}</em></small>
               </p>
 
               <div class="faBlogPost">
               <hr class="bpDivider">
-              <!-- <div class="bpDropup">
-                <ul>
-                  <li class="share-with-facebook share-button">
-                    <a><i class="fa fa-facebook-square"></i> Facebook</a>
-                  </li>
-                  <li class="share-with-twitter share-button" data-sharing-url="{{ twitter_url }}">
-                    <a><i class="fa fa-twitter"></i> Twitter</a>
-                  </li>
-                  <li class="share-with-pinterest share-button">
-                    <a><i class="fa fa-pinterest-square"></i> Pinterest</a>
-                  </li>
-                  <li class="share-with-tumblr share-button">
-                    <a><i class="fa fa-tumblr-square"></i> Tumblr</a>
-                  </li>
-                  <li class="share-with-envelope">
-                    <a href="#"><i class="fa fa-envelope-square"></i> Email</a>
-                  </li>
-                </ul>
-              </div> -->
-              <!-- ./bpDropup -->
-
-                <a title="Share"><i class="fa fa-send"></i></a>
+              <span title="Share" class="share">
+                <i class="fa fa-send"></i>
+                <div class="bpDropup">
+                  <ul>
+                    <li class="share-with-facebook share-button">
+                      <a><i class="fa fa-facebook-square"></i> Facebook</a></li>
+                    <li class="share-with-twitter share-button" data-sharing-url="{{ twitter_url }}">
+                      <a><i class="fa fa-twitter"></i> Twitter</a></li>
+                    <li class="share-with-pinterest share-button">
+                      <a><i class="fa fa-pinterest-square"></i> Pinterest</a></li>
+                    <li class="share-with-tumblr share-button">
+                      <a><i class="fa fa-tumblr-square"></i> Tumblr</a></li>
+                    <li class="share-with-envelope">
+                      <a><i class="fa fa-envelope-square"></i> Email</a></li>
+                  </ul>
+                </div>
+              </span>
                 <a class="like-button" title="Like">
-                  <i class="fa fa-heart {{ }}"></i>
+                  <i class="fa fa-heart"></i>
                 </a>
                 {% if user.passport_id == journey.passport_id %}
                 <a href="#modal-text/{{ String(journey._id) }}#update" title="Edit">
