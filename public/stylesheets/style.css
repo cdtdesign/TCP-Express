@@ -1470,7 +1470,7 @@ input[type="date"] {
   display: inline;
   margin-right: 1.5%;
 }
-[form="editPassportProfile"][name="birthday"] {
+[form="editPassportProfile"][name="parent_birthday"] {
   width: 46.75%;
   display: inline;
 }

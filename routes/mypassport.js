@@ -65,7 +65,7 @@ router.get('/edit', function(req, res, next) {
 
 /* POST editpassport page */
 router.post('/edit', upload.any(), function(req, res) {
-  console.log(prettyjson.render(req.files));
+  console.log(JSON.stringify(req.body));
   User.find({_id: req.user._id}, function (err, user) {
     if (err) throw err;
     var user = user[0];
@@ -76,7 +76,7 @@ router.post('/edit', upload.any(), function(req, res) {
     user.parent_gender = req.body.parent_gender;
     user.email = req.body.email;
     user.address_tel = req.body.address_tel;
-    user.parent_birthday = req.body.birthday;
+    user.parent_birthday = req.body.parent_birthday;
     user.address_street = req.body.address_street;
     user.address_city = req.body.address_city;
     user.address_state = req.body.address_state;

@@ -34,7 +34,7 @@
             </select>
             <input value="{{ user.email }}" form="editPassportProfile" placeholder="Email" type="email" name="email">
             <input value="{{ user.address.phone }}" form="editPassportProfile" placeholder="Phone" type="tel" name="address_tel">
-            <span>DOB: </span><input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday" value="{{ user.parent_birthday | dateFormat }}">
+            <span>DOB: </span><input form="editPassportProfile" placeholder="Birthday" type="date" name="parent_birthday" value="{{ user.parent_birthday | dateFormat }}">
             <input value="{{ user.address.street }}" form="editPassportProfile" placeholder="Street Address" type="text" name="address_street">
             <input value="{{ user.address.city }}" form="editPassportProfile" placeholder="City" type="text" name="address_city">
             <input value="{{ user.address.state }}" form="editPassportProfile" placeholder="ST" type="text" name="address_state">
@@ -73,7 +73,7 @@
                 <option value="Female" {% if traveler.gender == 'Female' %}selected{% endif %}>Female</option>
                 <option value="Male" {% if traveler.gender == 'Male' %}selected{% endif %}>Male</option>
               </select>
-              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="first_name">
+              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="name">
               <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
               <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
               <input form="editPassportProfile" type="file" name="profile_img_upload">

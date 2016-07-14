@@ -17,19 +17,20 @@ X Journey header image on Create/Update of Journey posts
 X Click modal & overlay to dismiss
 X Creating select on the children in the Journey modal
 X Passport Profile birthday has no value because it's not formatted like the one for journeys
-- On Sign In, add traveler select option (like on Journey Blog posts)???
-- Create Ajax call for uploading profile images
+X On Sign In, add traveler select option (like on Journey Blog posts)???
+X Create Ajax call for uploading profile images
 X Create/Update/Delete Passport Profile: Allow users to change their info in their passport (profile)
 X Create multiple fields for child names (Child 1, Child 2 and have an + button to dynamically add more Child fields)
 - Incorporate BLACKLISTED words so that inappropriate posts are flagged and/or filtered out in Journey Blog posts
 - Google Places getDetails 'More Details' info into view
-- Google Places show marker once your location is found --->
+- !!!Google Places show marker once your location is found --->
 - Google Places PriceLevel fallback for when there are no results
 
 Other Stuff:
 X NPM Install PrettyJSON !!!
 X Show/Hide social menu in Journey Blog post
-- Journey blog social sharing
+- Correct commas being added to username in My Profile when changing parent's DOB
+- !!!Journey blog social sharing
 - Journey blog likes
 - Profile pic aspect ratio
 X Move signoutBtn in navbar to the right
