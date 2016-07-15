@@ -29,17 +29,17 @@ X Create multiple fields for child names (Child 1, Child 2 and have an + button 
 Other Stuff:
 X NPM Install PrettyJSON !!!
 X Show/Hide social menu in Journey Blog post
-- Correct commas being added to username in My Profile when changing parent's DOB
+X Correct commas being added to username in My Profile when changing parent's DOB
 - !!!Journey blog social sharing
 - Journey blog likes
 - Profile pic aspect ratio
 X Move signoutBtn in navbar to the right
 - In Edit Passport Profile link edit button to route
-- Add a search filter to the travelers column in Edit Passport Profile.
+- Add a search filter to the travelers column in Edit Passport Profile???
 - Checkout Facebook's profile pic for the larger resolution image
 X Hash passwords in Travelers table (bcrypt)
 - Validate all forms
-- Secure with https: https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
+- Secure with https (SSL certificate): https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
 X Disable Journey Blog link in navbar securely and properly.
 - Mark header_image as deleted when Journey post is deleted
 - Find solution to sync remote & local database

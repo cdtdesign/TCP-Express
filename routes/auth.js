@@ -40,7 +40,7 @@ router.get('/profile', function(req, res){
   });
 
 router.get('/twitter', passport.authenticate('twitter'));
-router.get('/facebook', passport.authenticate('facebook'));
+router.get('/facebook', passport.authenticate('facebook', { scope: ['user_birthday', 'email'] }));
 
 router.get('/twitter/callback', passport.authenticate('twitter',
   { successRedirect: '/', failureRedirect: '/auth/signin' }
