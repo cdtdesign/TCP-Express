@@ -94,7 +94,7 @@ passport.use(new LocalStrategy({
 		clientID			: config.facebook.key,
 		clientSecret	: config.facebook.secret,
 		callbackURL	 : 'http://beta-express.travelingchildrenproject.com/auth/facebook/callback',
-		profileFields : ['id', 'first_name', 'last_name', 'gender', 'user_birthday', 'email', 'photos']
+		profileFields : ['id', 'first_name', 'last_name', 'gender', 'birthday', 'email', 'photos']
 	}, function(accessToken, refreshToken, profile, done) {
 
 		User.findOne({provider_id: profile.id}, function(err, user) {
