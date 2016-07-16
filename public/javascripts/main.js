@@ -127,9 +127,9 @@ ga('send', 'pageview');
 
 
 // Removal of Facebook's #_=_
-// if (window.location.hash && window.location.hash == '#_=_') {
-//   window.location.hash = '';
-// }
+if (window.location.hash && window.location.hash == '#_=_') {
+  window.location.hash = '';
+}
 
 // https://github.com/drublic/css-modal/blob/master/README.md#events
 $(document).on('cssmodal:show', function (e) {
