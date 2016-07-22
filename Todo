@@ -23,7 +23,7 @@ X Create/Update/Delete Passport Profile: Allow users to change their info in the
 X Create multiple fields for child names (Child 1, Child 2 and have an + button to dynamically add more Child fields)
 - Incorporate BLACKLISTED words so that inappropriate posts are flagged and/or filtered out in Journey Blog posts
 - Google Places getDetails 'More Details' info into view
-- !!!Google Places show marker once your location is found --->
+- !!!Setup Let's Encrypt, then in Google Places show marker once your location is found --->
 - Google Places PriceLevel fallback for when there are no results
 
 Other Stuff:

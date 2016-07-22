@@ -113,7 +113,7 @@
                     <li class="share-with-tumblr share-button">
                       <a><i class="fa fa-tumblr-square"></i> Tumblr</a></li>
                     <li class="share-with-envelope">
-                      <a><i class="fa fa-envelope-square"></i> Email</a></li>
+                      <a href="mailto:?subject=TC%20Journey%20To%20{{journey.title | url_encode}}&body="><i class="fa fa-envelope-square"></i> Email</a></li>
                   </ul>
                 </div>
               </span>
@@ -140,5 +140,9 @@
 
 
     {% include "./footer.html" %}
+
+    {% block extra_scripts %}
+    <script src="/javascripts/blog.js"></script>
+    {% endblock %}
 
 {% endblock %}
