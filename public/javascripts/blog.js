@@ -13,7 +13,7 @@ $(document).ready(function () {
         journey_uuid = $(this).parents('.grid-post').data('journey-uuid');
         title = $(this).parents('.grid-post').children('.blogTitle').text();
         creator = $(this).parents('.grid-post').children(':last-of-type').children('.jp_fname_date').children('em').children('a').text().trim();
-        header_image = $(this).parents('.grid-post').children('.jp_img').children('img').attr('src');
+        header_image = $(this).parents('.grid-post').children('.blogImg').children('img').attr('src');
         description = $(this).parents('.grid-post').children(':last-of-type').children('.jp_body').text().trim();
         return FB.ui({
           method: 'feed',
