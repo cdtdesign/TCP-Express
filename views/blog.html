@@ -86,7 +86,7 @@
           {% for journey in journeys %}
           <!-- <div class="one column"> -->
 
-            <div class="grid-post">
+            <div class="grid-post" data-journey-uuid="{{journey._id}}">
               <p class="blogTitle">TC Journey to {{ journey.title }}</p>
               {% if journey.header_image_filename !== NULL %}
               <img src="images/journey-images/{{ journey.header_image_filename }}" class="blogImg">
