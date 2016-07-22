@@ -12,9 +12,9 @@ $(document).ready(function () {
         var creator, description, header_image, journey_uuid, title;
         journey_uuid = $(this).parents('.grid-post').data('journey-uuid');
         title = $(this).parents('.grid-post').children('.blogTitle').text();
-        creator = $(this).parents('.grid-post').children(':last-of-type').children('.jp_fname_date').children('em').children('a').text().trim();
+        creator = $(this).parents('.grid-post').children(':last-of-type').children('.blogTraveler').children('em').children('a').text().trim();
         header_image = $(this).parents('.grid-post').children('.blogImg').children('img').attr('src');
-        description = $(this).parents('.grid-post').children(':last-of-type').children('.jp_body').text().trim();
+        description = $(this).parents('.grid-post').children(':last-of-type').children('.blogBody').text().trim();
         return FB.ui({
           method: 'feed',
           link: 'travelingchildrenproject.com/journeys#' + journey_uuid,
