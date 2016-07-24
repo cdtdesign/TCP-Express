@@ -4,12 +4,13 @@ var Journey = require('../models/journey');
 var multer = require('multer');
 var appRootPath = require('app-root-path');
 var BitlyAPI = require("node-bitlyapi");
+var config = require('../config');
 var Bitly = new BitlyAPI({
-	client_id: process.env.BITLY_CLIENT_ID,
-	client_secret: process.env.BITLY_CLIENT_SECRET
+	client_id: config.key,
+	client_secret: config.secret
 });
 
-Bitly.setAccessToken(process.env.BITLY_ACCESS_TOKEN);
+Bitly.setAccessToken(config.token);
 
 // var crypto = require('crypto');
 // var mime = require('node-mime');
@@ -60,8 +61,8 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
     console.log('process.env.BITLY_ACCESS_TOKEN', process.env.BITLY_ACCESS_TOKEN);
     console.log('process.env.BITLY_CLIENT_SECRET', process.env.BITLY_CLIENT_SECRET);
     console.log('results:', results);
-    console.log('typeof results:', typeof results);
-  	newJourney.shortlink = results.url;
+    var parsedResults = JSON.parse(results);
+  	newJourney.shortlink = parsedResults.url;
   });
 
   newJourney.save(function (err) {
