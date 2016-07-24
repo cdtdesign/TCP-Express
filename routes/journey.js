@@ -3,6 +3,13 @@ var router = express.Router();
 var Journey = require('../models/journey');
 var multer = require('multer');
 var appRootPath = require('app-root-path');
+var BitlyAPI = require("node-bitlyapi");
+var Bitly = new BitlyAPI({
+	client_id: process.env.BITLY_CLIENT_ID,
+	client_secret: process.env.BITLY_CLIENT_SECRET
+});
+
+Bitly.setAccessToken(process.env.BITLY_ACCESS_TOKEN);
 
 // var crypto = require('crypto');
 // var mime = require('node-mime');
@@ -44,6 +51,14 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
     header_image_filename: req.file.filename,
     tags: req.body.tags
   });
+
+  Bitly.shorten({
+    longUrl:"http://beta-express.travelingchildrenproject.com/images/journey-images/" + newJourney.header_image_filename,
+    domain: "tcp.fyi"
+  }, function(err, results) {
+  	newJourney.shortlink = results.url;
+  });
+
   newJourney.save(function (err) {
     if (err) throw err;
     res.redirect ('/journeyblog');

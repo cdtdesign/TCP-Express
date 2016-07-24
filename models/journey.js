@@ -21,6 +21,7 @@ var journeySchema = new Schema({
   header_image_filename: String,
   users_who_like: Array,
   tags: String,
+	shortlink: String,
   deleted_at: String,
   created_at: {
 		type: Date,
