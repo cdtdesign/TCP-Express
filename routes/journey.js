@@ -57,10 +57,7 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
     longUrl:"http://beta-express.travelingchildrenproject.com/images/journey-images/" + req.file.filename,
     domain: "tcp.fyi"
   }, function(err, results) {
-    console.log('process.env.BITLY_CLIENT_ID', process.env.BITLY_CLIENT_ID);
-    console.log('process.env.BITLY_ACCESS_TOKEN', process.env.BITLY_ACCESS_TOKEN);
-    console.log('process.env.BITLY_CLIENT_SECRET', process.env.BITLY_CLIENT_SECRET);
-    console.log('results:', results);
+    console.log('Results:', results);
     var parsedResults = JSON.parse(results);
   	newJourney.shortlink = parsedResults.url;
   });
