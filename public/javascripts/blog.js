@@ -13,7 +13,7 @@ $(document).ready(function () {
         journey_uuid = $(this).parents('.grid-post').data('journey-uuid');
         title = $(this).parents('.grid-post').children('.blogTitle').text();
         creator = $(this).parents('.grid-post').find('.blogTraveler').text();
-        header_image = $(this).parents('.grid-post').find('.blogImg').attr('src');
+        header_image = "http://travelingchildrenproject.com" + $(this).parents('.grid-post').find('.blogImg').attr('src');
         description = $(this).parents('.grid-post').find('.blogBody').text();
         return FB.ui({
           method: 'feed',
