@@ -21,7 +21,7 @@ $(document).ready(function () {
           link: 'travelingchildrenproject.com/journeys#' + journey_uuid,
           name: title,
           description: description,
-          picture: 'http://travelingchildrenproject.com' + header_image
+          picture: header_image
         });
       });
     });
