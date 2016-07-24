@@ -27,4 +27,29 @@ $(document).ready(function () {
     });
   });
 
+  var popupPreferences = 'height=440';
+  popupPreferences += ',';
+  popupPreferences += 'width=560';
+  popupPreferences += ',';
+  popupPreferences += 'top=' + ((screen.height / 2) - (600 / 2));
+  popupPreferences += ',';
+  popupPreferences += 'left=' + ((screen.width / 2) - (560 / 2));
+
+  // Twitter Share
+
+  $('.share-with-twitter').click(function() {
+    var journey_uuid = $(this).parents('.grid-post').data('journey-uuid');
+
+    var twitter_url = 'https://twitter.com/share?';
+    twitter_url += 'text=Check+out+this+journey+at+TCP%21';
+    twitter_url += '&';
+    twitter_url += 'url=http%3A%2F%2Ftravelingchildrenproject.com%2Fjourneys%23' + journey_uuid;
+    twitter_url += '&';
+    twitter_url += 'hashtags=TravelingChildrenProject,TCPJourneys';
+    twitter_url += '&';
+    twitter_url += 'via=travelingchildrenproject';
+
+    return window.open($(this).data('sharing-url'), 'Tweet About This Journey', popupPreferences);
+  });
+
 });
