@@ -14,7 +14,6 @@ $(document).ready(function () {
         title = $(this).parents('.grid-post').children('.blogTitle').text();
         creator = $(this).parents('.grid-post').find('.blogTraveler').text();
         header_image = "http://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
-        console.log(header_image);
         description = $(this).parents('.grid-post').find('.blogBody').text();
         return FB.ui({
           method: 'feed',
@@ -38,6 +37,13 @@ $(document).ready(function () {
   // Twitter Share
 
   $('.share-with-twitter').click(function() {
+    var title = $(this).parents('.grid-post').children('.blogTitle').text();
+    var description = $(this).parents('.grid-post').find('.blogBody').text();
+    var header_image = "http://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
+    $('[name="twitter:title"]').attr('content', title);
+    $('[name="twitter:description"]').attr('content', description);
+    $('[name="twitter:image"]').attr('content', header_image);
+
     var journey_uuid = $(this).parents('.grid-post').data('journey-uuid');
 
     var twitter_url = 'https://twitter.com/share?';
