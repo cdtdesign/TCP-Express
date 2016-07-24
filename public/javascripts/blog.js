@@ -47,7 +47,7 @@ $(document).ready(function () {
     var journey_uuid = $(this).parents('.grid-post').data('journey-uuid');
 
     var twitter_url = 'https://twitter.com/share?';
-    twitter_url += 'text=Check+out+my' + encodeURI(title) + '%21';
+    twitter_url += 'text=I+Just+Took+a+' + encodeURI(title) + '%21';
     twitter_url += '&';
     twitter_url += 'url=http%3A%2F%2Ftravelingchildrenproject.com%2Fjourneys%23' + journey_uuid;
     twitter_url += '&';
