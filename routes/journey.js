@@ -53,9 +53,14 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
   });
 
   Bitly.shorten({
-    longUrl:"http://beta-express.travelingchildrenproject.com/images/journey-images/" + newJourney.header_image_filename,
+    longUrl:"http://beta-express.travelingchildrenproject.com/images/journey-images/" + req.file.filename,
     domain: "tcp.fyi"
   }, function(err, results) {
+    console.log('process.env.BITLY_CLIENT_ID', process.env.BITLY_CLIENT_ID);
+    console.log('process.env.BITLY_ACCESS_TOKEN', process.env.BITLY_ACCESS_TOKEN);
+    console.log('process.env.BITLY_CLIENT_SECRET', process.env.BITLY_CLIENT_SECRET);
+    console.log('results:', results);
+    console.log('typeof results:', typeof results);
   	newJourney.shortlink = results.url;
   });
 
