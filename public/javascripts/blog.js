@@ -49,7 +49,7 @@ $(document).ready(function () {
     twitter_url += '&';
     twitter_url += 'via=travelingchildrenproject';
 
-    return window.open($(this).data('sharing-url'), 'Tweet About This Journey', popupPreferences);
+    return window.open(twitter_url, 'Tweet About This Journey', popupPreferences);
   });
 
 });
