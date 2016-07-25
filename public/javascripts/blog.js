@@ -67,7 +67,7 @@ $(document).ready(function () {
       return PinUtils.pinOne({
         media: header_image,
         url: journey_uuid,
-        description: title + ' '+ tags + ' #TravelingChildrenProject #TCPJourneys';
+        description: title + ' '+ tags + ' #TravelingChildrenProject #TCPJourneys'
       });
     });
   });
