@@ -59,6 +59,8 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
 		photoShortlink = parsedResults.url;
 	});
 
+	console.log('photoShortlink:', photoShortlink);
+
   var newJourney = new Journey({
     passport_id: req.user.passport_id,
     traveler_name: req.user.traveler_name,
@@ -67,7 +69,7 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
     body: req.body.body,
     header_image_filename: req.file.filename,
     tags: req.body.tags,
-		shortlink: photoShortlink
+		shortlink: 'photoShortlink'
   });
 
   newJourney.save(function (err) {
