@@ -60,7 +60,7 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
 	}).then(function (results) {
 		console.log('Results:', results);
 		var parsedResults = JSON.parse(results);
-		photoShortlink = parsedResults.url;
+		photoShortlink = parsedResults.data.url;
 
 		console.log('photoShortlink:', photoShortlink);
 
