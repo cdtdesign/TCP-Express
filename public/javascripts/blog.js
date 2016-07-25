@@ -80,7 +80,7 @@ $(document).ready(function () {
     var title = $(this).parents('.grid-post').children('.blogTitle').text();
     var shortlink = $(this).parents('.grid-post').data('shortlink');
     postLink = 'https://www.tumblr.com/share?';
-    postLink += 'shareSource=legacy';
+    // postLink += 'shareSource=legacy';
     postLink += '&';
     postLink += 'cononicalUrl=' + encodeURIComponent('http://beta-express.travelingchildrenproject.com/journeyblog');
     postLink += '&';
