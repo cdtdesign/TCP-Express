@@ -47,7 +47,7 @@ $(document).ready(function () {
     var journey_uuid = $(this).parents('.grid-post').data('journey-uuid');
 
     var twitter_url = 'https://twitter.com/share?';
-    twitter_url += 'text=I+Just+Took+a+' + encodeURI(title) + '%21+' + encodeURI(shortlink);
+    twitter_url += 'text=' + encodeURI(title) + '%21+' + encodeURI(shortlink);
     twitter_url += '&';
     twitter_url += 'url=tcp.fyi/jrnyblg';
     twitter_url += '&';
