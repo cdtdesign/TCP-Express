@@ -66,11 +66,11 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
     console.log('Results:', results);
     var parsedResults = JSON.parse(results);
   	newJourney.shortlink = parsedResults.url;
-  });
 
-  newJourney.save(function (err) {
-    if (err) throw err;
-    res.redirect ('/journeyblog');
+		newJourney.save(function (err) {
+	    if (err) throw err;
+	    res.redirect ('/journeyblog');
+	  });
   });
 });
 
