@@ -73,4 +73,28 @@ $(document).ready(function () {
       });
     });
   });
+
+  // Tumblr
+  return $('.share-with-tumblr').click(function() {
+    var postLink;
+    var title = $(this).parents('.grid-post').children('.blogTitle').text();
+    postLink = 'https://www.tumblr.com/share?';
+    postLink += 'shareSource=legacy';
+    postLink += '&';
+    postLink += 'cononicalUrl=' + encodeURIComponent('http://beta-express.travelingchildrenproject.com/journeyblog');
+    postLink += '&';
+    postLink += 'posttype=link';
+    postLink += '&';
+    postLink += 'tags=TravelingChildrenProject,TCPJourneys';
+    postLink += '&';
+    postLink += 'content=' + encodeURIComponent('http://beta-express.travelingchildrenproject.com/');
+    postLink += '&';
+    postLink += 'caption=' + encodeURI(title);
+    postLink += '&';
+    postLink += 'show-via=travelingchildrenproject';
+    return window.open(postLink, 'Post This Journey to Tumblr', popupPreferences);
+  });
+});
+
+
 });
