@@ -3,14 +3,16 @@ var router = express.Router();
 var Journey = require('../models/journey');
 var multer = require('multer');
 var appRootPath = require('app-root-path');
+var mime = require('mime-types');
+var uuid = require('node-uuid');
 var BitlyAPI = require("node-bitlyapi");
 var config = require('../config');
 var Bitly = new BitlyAPI({
-	client_id: config.key,
-	client_secret: config.secret
+	client_id: config.bitly.key,
+	client_secret: config.bitly.secret
 });
 
-Bitly.setAccessToken(config.token);
+Bitly.setAccessToken(config.bitly.token);
 
 // var crypto = require('crypto');
 // var mime = require('node-mime');
@@ -32,8 +34,10 @@ var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, appRootPath + '/public/images/journey-images');
     },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now());
+		filename: function (req, file, cb) {
+	    var journeyPhotoFilename = uuid.v1() + '.' + mime.extension(file.mimetype);
+
+			cb(null, journeyPhotoFilename);
   }
 });
 
@@ -53,8 +57,10 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
     tags: req.body.tags
   });
 
+  console.log('header_image_filename:', newJourney.header_image_filename);
+
   Bitly.shorten({
-    longUrl:"http://beta-express.travelingchildrenproject.com/images/journey-images/" + req.file.filename,
+    longUrl:"http://beta-express.travelingchildrenproject.com/images/journey-images/" + newJourney.header_image_filename,
     domain: "tcp.fyi"
   }, function(err, results) {
     console.log('Results:', results);
