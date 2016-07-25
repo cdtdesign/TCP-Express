@@ -95,6 +95,3 @@ $(document).ready(function () {
     return window.open(postLink, 'Post This Journey to Tumblr', popupPreferences);
   });
 });
-
-
-});
