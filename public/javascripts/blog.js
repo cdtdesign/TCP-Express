@@ -47,11 +47,11 @@ $(document).ready(function () {
     var twitter_url = 'https://twitter.com/share?';
     twitter_url += 'text=I+Just+Took+a+' + encodeURI(title) + '%21+' + encodeURI(shortlink) + '+' + encodeURI(tags);
     twitter_url += '&';
-    twitter_url += 'url=http%3A%2F%2Ftravelingchildrenproject.com%2Fjourneys%23' + journey_uuid;
-    twitter_url += '&';
     twitter_url += 'hashtags=TravelingChildrenProject,TCPJourneys';
     twitter_url += '&';
     twitter_url += 'via=travelingchildrenproject';
+
+    console.log('twitter_url:', twitter_url);
 
     return window.open(twitter_url, 'Tweet About This Journey', popupPreferences);
   });
