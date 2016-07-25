@@ -14,9 +14,6 @@ $(document).ready(function () {
         creator = $(this).parents('.grid-post').find('.blogTraveler').text();
         header_image = "http://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
         description = $(this).parents('.grid-post').find('.blogBody').text();
-
-        console.log('journey-uuid:', journey-uuid);
-
         return FB.ui({
           method: 'feed',
           link: 'tcp.fyi/jrnyblg#' + journey_uuid,
