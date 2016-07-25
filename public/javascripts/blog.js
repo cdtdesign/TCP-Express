@@ -68,4 +68,5 @@ $(document).ready(function () {
         description: description
       });
     });
+  });
 });
