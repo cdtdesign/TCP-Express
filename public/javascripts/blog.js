@@ -78,16 +78,17 @@ $(document).ready(function () {
   return $('.share-with-tumblr').click(function() {
     var postLink;
     var title = $(this).parents('.grid-post').children('.blogTitle').text();
+    var shortlink = $(this).parents('.grid-post').data('shortlink');
     postLink = 'https://www.tumblr.com/share?';
     postLink += 'shareSource=legacy';
     postLink += '&';
     postLink += 'cononicalUrl=' + encodeURIComponent('http://beta-express.travelingchildrenproject.com/journeyblog');
     postLink += '&';
-    postLink += 'posttype=link';
+    postLink += 'posttype=photo';
     postLink += '&';
     postLink += 'tags=TravelingChildrenProject,TCPJourneys';
     postLink += '&';
-    postLink += 'content=' + encodeURIComponent('http://beta-express.travelingchildrenproject.com/');
+    postLink += 'content=' + encodeURIComponent(shortlink);
     postLink += '&';
     postLink += 'caption=' + encodeURI(title);
     postLink += '&';
