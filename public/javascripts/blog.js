@@ -39,15 +39,13 @@ $(document).ready(function () {
   $('.share-with-twitter').click(function() {
     var title = $(this).parents('.grid-post').children('.blogTitle').text();
     var description = $(this).parents('.grid-post').find('.blogBody').text();
+    var shortlink = $(this).parents('.grid-post').data('shortlink');
     var header_image = "http://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
-    $('[name="twitter:title"]').attr('content', title);
-    $('[name="twitter:description"]').attr('content', description);
-    $('[name="twitter:image"]').attr('content', header_image);
 
     var journey_uuid = $(this).parents('.grid-post').data('journey-uuid');
 
     var twitter_url = 'https://twitter.com/share?';
-    twitter_url += 'text=I+Just+Took+a+' + encodeURI(title) + '%21';
+    twitter_url += 'text=I+Just+Took+a+' + encodeURI(title) + '%21+' + encodeURI(shortlink);
     twitter_url += '&';
     twitter_url += 'url=http%3A%2F%2Ftravelingchildrenproject.com%2Fjourneys%23' + journey_uuid;
     twitter_url += '&';
