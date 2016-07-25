@@ -47,6 +47,8 @@ $(document).ready(function () {
     var twitter_url = 'https://twitter.com/share?';
     twitter_url += 'text=I+Just+Took+a+' + encodeURI(title) + '%21+' + encodeURI(shortlink);
     twitter_url += '&';
+    twitter_url += 'url=http://beta-express.TravelingChildrenProject.com/blog';
+    twitter_url += '&';
     twitter_url += 'hashtags=TravelingChildrenProject,TCPJourneys';
     twitter_url += '&';
     twitter_url += 'via=travelingchildrenproject';
