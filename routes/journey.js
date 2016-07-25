@@ -53,6 +53,7 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
 		longUrl:"http://beta-express.travelingchildrenproject.com/images/journey-images/" + req.file.filename,
 		domain: "tcp.fyi"
 	}, function(err, results) {
+		if (err) throw err;
 		console.log('Results:', results);
 		var parsedResults = JSON.parse(results);
 		photoShortlink = parsedResults.url;
