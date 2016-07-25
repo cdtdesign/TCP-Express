@@ -17,7 +17,7 @@ $(document).ready(function () {
         description = $(this).parents('.grid-post').find('.blogBody').text();
         return FB.ui({
           method: 'feed',
-          link: 'travelingchildrenproject.com/journeys#' + journey_uuid,
+          link: 'tcp.fyi/jrnyblg#' + journey_uuid,
           name: title,
           description: description,
           picture: header_image
