@@ -35,7 +35,6 @@ $(document).ready(function () {
   popupPreferences += 'left=' + ((screen.width / 2) - (560 / 2));
 
   // Twitter Share
-
   $('.share-with-twitter').click(function() {
     var title = $(this).parents('.grid-post').children('.blogTitle').text();
     var description = $(this).parents('.grid-post').find('.blogBody').text();
@@ -56,4 +55,17 @@ $(document).ready(function () {
     return window.open(twitter_url, 'Tweet About This Journey', popupPreferences);
   });
 
+  // Pinterest
+  $.getScript('//assets.pinterest.com/js/pinit.js', function() {
+    $('.share-with-pinterest').click(function() {
+      var journey_uuid = "http://beta-express.travelingchildrenproject.com/blog#" +  $(this).parents('.grid-post').data('journey-uuid');
+      var header_image = "http://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
+      var description = $(this).parents('.grid-post').find('.blogBody').text();
+
+      return PinUtils.pinOne({
+        media: header_image,
+        url: journey_uuid,
+        description: description
+      });
+    });
 });
