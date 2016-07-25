@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  console.log('Got it!');
 
   // Facebook Share
   $.getScript('http://connect.facebook.net/en_US/sdk.js', function() {
