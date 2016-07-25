@@ -48,34 +48,38 @@ var upload = multer({ storage: storage });
 router.post('/create', upload.single('header_image'), function(req, res, next) {
   console.log('req.file:', JSON.stringify(req.file));
 
-	var photoShortlink;
-	Bitly.shorten({
-		longUrl:"http://beta-express.travelingchildrenproject.com/images/journey-images/" + req.file.filename,
-		domain: "tcp.fyi"
-	}, function(err, results) {
-		if (err) throw err;
+	new Promise(function (fulfill, reject) {
+		var photoShortlink;
+		Bitly.shorten({
+			longUrl:"http://beta-express.travelingchildrenproject.com/images/journey-images/" + req.file.filename,
+			domain: "tcp.fyi"
+		}, function (err, results) {
+			if (err) reject(err);
+			fulfill(results);
+		});
+	}).then(function (results) {
 		console.log('Results:', results);
 		var parsedResults = JSON.parse(results);
 		photoShortlink = parsedResults.url;
+
+		console.log('photoShortlink:', photoShortlink);
+
+	  var newJourney = new Journey({
+	    passport_id: req.user.passport_id,
+	    traveler_name: req.user.traveler_name,
+	    title: req.body.title,
+	    date: req.body.date,
+	    body: req.body.body,
+	    header_image_filename: req.file.filename,
+	    tags: req.body.tags,
+			shortlink: photoShortlink
+	  });
+
+	  newJourney.save(function (err) {
+	    if (err) throw err;
+	    res.redirect ('/journeyblog');
+	  });
 	});
-
-	console.log('photoShortlink:', photoShortlink);
-
-  var newJourney = new Journey({
-    passport_id: req.user.passport_id,
-    traveler_name: req.user.traveler_name,
-    title: req.body.title,
-    date: req.body.date,
-    body: req.body.body,
-    header_image_filename: req.file.filename,
-    tags: req.body.tags,
-		shortlink: 'photoShortlink'
-  });
-
-  newJourney.save(function (err) {
-    if (err) throw err;
-    res.redirect ('/journeyblog');
-  });
 });
 
 router.get('/get/:journey_id', function (req, res, next) {
