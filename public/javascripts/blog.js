@@ -60,12 +60,12 @@ $(document).ready(function () {
     $('.share-with-pinterest').click(function() {
       var journey_uuid = "http://beta-express.travelingchildrenproject.com/blog#" +  $(this).parents('.grid-post').data('journey-uuid');
       var header_image = "http://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
-      var description = $(this).parents('.grid-post').find('.blogBody').text();
+      var title = $(this).parents('.grid-post').children('.blogTitle').text();
 
       return PinUtils.pinOne({
         media: header_image,
         url: journey_uuid,
-        description: description
+        description: title
       });
     });
   });
