@@ -62,11 +62,11 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
 		var parsedResults = JSON.parse(results);
 		photoShortlink = parsedResults.data.url;
 
-		console.log('photoShortlink:', photoShortlink);
+		console.log('req.body:', req.body);
 
 	  var newJourney = new Journey({
 	    passport_id: req.user.passport_id,
-	    traveler_name: req.user.traveler_name,
+	    traveler_name: req.body.currentTraveler,
 	    title: req.body.title,
 	    date: req.body.date,
 	    body: req.body.body,

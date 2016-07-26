@@ -33,7 +33,7 @@
         <form class="journeyForm" id="journey-form" method="POST" action="/journey/create" enctype="multipart/form-data"></form>
         <label for="current_traveler">Which traveler went on this journey?
         </label>
-        <select name="currentTraveler" id="current_traveler">
+        <select form="journey-form" name="currentTraveler" id="current_traveler">
           <option value="{{ user.first_name }}" >{{ user.first_name }}</option>
           {% for traveler in user.travelers %}
             <option value="{{ traveler.name }}" >{{ traveler.name }}</option>
