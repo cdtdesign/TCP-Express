@@ -51,7 +51,7 @@ $(document).ready(function () {
     twitter_url += '&';
     twitter_url += 'url=tcp.fyi/jrnyblg';
     twitter_url += '&';
-    twitter_url += 'hashtags=TravelingChildrenProject,TCPJourneys';
+    twitter_url += 'hashtags=' + tags.replace(/#/g, '').replace(/\s+/g, ',') + 'TravelingChildrenProject,TCPJourneys';
     twitter_url += '&';
     twitter_url += 'via=travelingchildrenproject';
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
     var title = $(this).parents('.grid-post').children('.blogTitle').text();
     var shortlink = $(this).parents('.grid-post').data('shortlink');
     postLink = 'https://www.tumblr.com/share?';
-    // postLink += 'shareSource=legacy';
+    postLink += 'shareSource=legacy';
     postLink += '&';
     postLink += 'cononicalUrl=' + encodeURIComponent('http://beta-express.travelingchildrenproject.com/journeyblog');
     postLink += '&';

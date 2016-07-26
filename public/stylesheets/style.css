@@ -1646,8 +1646,8 @@ div.faBlogPost i.fa .fa-close {
 }
 
 div.bpDropup{
-    width: 120px;
-    height: 175px;
+    width: 12rem;
+    height: 14rem;
     margin: 0px;
     padding: 10px;
     position: absolute;
@@ -1815,6 +1815,11 @@ only screen and (max-width: 760px),
   border-radius: 5px;
   color: #3a2417;
 }
+
+.grid-post:target {
+  box-shadow: 0px 0px 25px 10px white;
+}
+
 
 /*.grid-search {
   margin: 10px;

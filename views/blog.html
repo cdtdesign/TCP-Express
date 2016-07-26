@@ -86,7 +86,7 @@
           {% for journey in journeys %}
           <!-- <div class="one column"> -->
 
-            <div class="grid-post" data-journey-uuid="{{journey._id}}" data-shortlink="{{journey.shortlink}}">
+            <div class="grid-post" id="{{journey.passport_id}}" data-journey-uuid="{{journey.passport_id}}" data-shortlink="{{journey.shortlink}}">
               <p class="blogTitle">TC Journey to {{ journey.title }}</p>
               {% if journey.header_image_filename !== NULL %}
               <img src="images/journey-images/{{ journey.header_image_filename }}" class="blogImg">
@@ -110,10 +110,10 @@
                       <a><i class="fa fa-twitter-square"></i> Twitter</a></li>
                     <li class="share-with-pinterest share-button">
                       <a><i class="fa fa-pinterest-square"></i> Pinterest</a></li>
-                    <li class="share-with-tumblr share-button">
-                      <a><i class="fa fa-tumblr-square"></i> Tumblr</a></li>
+                    <!-- <li class="share-with-tumblr share-button">
+                      <a><i class="fa fa-tumblr-square"></i> Tumblr</a></li> -->
                     <li class="share-with-envelope">
-                      <a href="mailto:?subject=TC%20Journey%20To%20{{journey.title | url_encode}}&body="><i class="fa fa-envelope-square"></i> Email</a></li>
+                      <a href="mailto:?subject=TC%20Journey%20To%20{{journey.title | url_encode}}&body=%0D%0A%0D%0A{{journey.shortlink}}%20{{journey.tags}}"><i class="fa fa-envelope-square"></i> Email</a></li>
                   </ul>
                 </div>
               </span>
