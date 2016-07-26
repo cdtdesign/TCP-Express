@@ -51,7 +51,7 @@ $(document).ready(function () {
     twitter_url += '&';
     twitter_url += 'url=tcp.fyi/jrnyblg';
     twitter_url += '&';
-    twitter_url += 'hashtags=' + tags.replace(/#/g, '').replace(/\s+/g, ',') + 'TravelingChildrenProject,TCPJourneys';
+    twitter_url += 'hashtags=' + tags.replace(/#/g, '').replace(/\s+/g, ',') + ',TravelingChildrenProject,TCPJourneys';
     twitter_url += '&';
     twitter_url += 'via=travelingchildrenproject';
 
