@@ -32,7 +32,7 @@ X Show/Hide social menu in Journey Blog post
 X Correct commas being added to username in My Profile when changing parent's DOB
 X Journey blog social sharing
 - Journey blog likes
-- Facebook & Twitter profile info to TCP database
+- Facebook & Twitter profile info to TCP database: http://graph.facebook.com/<username or userid>/picture?height=480&width=480
 - Checkout Facebook's profile pic for the larger resolution image
 - Profile pic aspect ratio
 X Move signoutBtn in navbar to the right
