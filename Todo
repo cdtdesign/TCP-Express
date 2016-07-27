@@ -30,13 +30,14 @@ Other Stuff:
 X NPM Install PrettyJSON !!!
 X Show/Hide social menu in Journey Blog post
 X Correct commas being added to username in My Profile when changing parent's DOB
-- !!!Journey blog social sharing: 2) Create Twitter custom hashtags; 3) Locate/highlight journey post using ID  
+X Journey blog social sharing
 - Journey blog likes
+- Facebook & Twitter profile info to TCP database
+- Checkout Facebook's profile pic for the larger resolution image
 - Profile pic aspect ratio
 X Move signoutBtn in navbar to the right
 - In Edit Passport Profile link edit button to route
 - Add a search filter to the travelers column in Edit Passport Profile???
-- Checkout Facebook's profile pic for the larger resolution image
 X Hash passwords in Travelers table (bcrypt)
 - Validate all forms
 - Secure with https (SSL certificate): https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04

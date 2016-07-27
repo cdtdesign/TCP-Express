@@ -94,8 +94,10 @@ passport.use(new LocalStrategy({
 		clientID			: config.facebook.key,
 		clientSecret	: config.facebook.secret,
 		callbackURL	 : 'http://beta-express.travelingchildrenproject.com/auth/facebook/callback',
-		profileFields : ['id', 'first_name', 'last_name', 'gender', 'birthday', 'email', 'photos']
+		profileFields : ['id', 'first_name', 'last_name', 'gender', 'birthday', 'email', 'picture']
 	}, function(accessToken, refreshToken, profile, done) {
+
+		console.log('profile:', JSON.stringify(profile));
 
 		User.findOne({provider_id: profile.id}, function(err, user) {
 			if(err) throw(err);
@@ -105,7 +107,7 @@ passport.use(new LocalStrategy({
 				provider_id	: profile.id,
 				provider		 : profile.provider,
 				name				 : profile.displayName,
-				photo				: profile.photos[0].value
+				photo				: profile.picture[0].value
 			});
 			newUser.save(function(err) {
 				if(err) throw err;
