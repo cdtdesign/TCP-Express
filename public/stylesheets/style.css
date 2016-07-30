@@ -1619,6 +1619,11 @@ div.faBlogPost i.fa {
   padding: 6px;
 }
 
+div.faBlogPost i.fa.fa-send {
+  color: #ffc233;
+  padding-top: 15px
+}
+
 div.faBlogPost i.fa :hover {
   color: #ee6730;
 }
