@@ -118,7 +118,7 @@
                 </div>
               </span>
                 <a class="like-button" title="Like">
-                  <i class="fa fa-heart"></i>
+                  <i class="fa fa-heart {{journey.passport_id | userLikes}}"></i>
                 </a>
                 {% if user.passport_id == journey.passport_id %}
                 <a href="#modal-text/{{ String(journey._id) }}#update" title="Edit">

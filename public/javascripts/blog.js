@@ -97,4 +97,5 @@ $(document).ready(function () {
     postLink += 'show-via=travelingchildrenproject';
     return window.open(postLink, 'Post This Journey to Tumblr', popupPreferences);
   });
+
 });

@@ -2,7 +2,7 @@ Bugs:
 X Any signin not using traveler_name or first_name (basically using the "elseif" part of conditional) has access to Edit/Delete on Journey posts :(
 - Sponsor add text/logo not responsive
 X Missing extensions on journey header_image
-- Date in Journey blog post update mismatch
+X Date in Journey blog post update mismatch
 X Change directory header_image and profile pics save to
 X header_image doesn't write to Staging because of absolute path on line 23 of journey.js, it needs to change dynamically
 X Create avatar.jpg and place in 'profile-images'
@@ -37,7 +37,7 @@ X Journey blog social sharing
 - Profile pic aspect ratio
 X Move signoutBtn in navbar to the right
 - In Edit Passport Profile link edit button to route
-- Add a search filter to the travelers column in Edit Passport Profile???
+X Add a search filter to the travelers column in Edit Passport Profile???
 X Hash passwords in Travelers table (bcrypt)
 - Validate all forms
 - Secure with https (SSL certificate): https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
