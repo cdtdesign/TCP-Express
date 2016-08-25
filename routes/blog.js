@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
   if (req.user) {
     swig.setFilter('userLikes', function(journeyPassportID) {
-      if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
+      if (req.user.journeys_liked.indexOf(journeyPassportID) != 0) {
         return 'liked';
       }
     });
