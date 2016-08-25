@@ -8,11 +8,11 @@ var swig = require('swig');
 router.get('/', function(req, res, next) {
 
   if (req.user) {
-    // swig.setFilter('userLikes', function(journeyPassportID) {
-    //   if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
-    //     return 'liked';
-    //   }
-    // });
+    swig.setFilter('userLikes', function(journeyPassportID) {
+      if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
+        return 'liked';
+      }
+    });
 
     Journey.find({}).sort('-created_at').exec(function (err, journeys) {
       if (err) throw err;
