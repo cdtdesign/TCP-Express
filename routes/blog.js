@@ -8,7 +8,9 @@ var swig = require('swig');
 router.get('/', function(req, res, next) {
 
   if (req.user) {
+    console.log('What is journeyPassportID?', journeyPassportID);
     swig.setFilter('userLikes', function(journeyPassportID) {
+      console.log('What is journeyPassportID?', journeyPassportID);
       if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
         return 'liked';
       }
