@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
   if (req.user) {
     swig.setFilter('userLikes', function(journeyPassportID) {
       if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
+        console.log('What is journeyPassportID?', journeyPassportID);
         return 'liked';
       }
     });
