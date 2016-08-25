@@ -7,12 +7,12 @@ var swig = require('swig');
 /* GET blog page. */
 router.get('/', function(req, res, next) {
 
+  console.log('What is journeyPassportID?', journeyPassportID);
   if (req.user) {
     swig.setFilter('userLikes', function(journeyPassportID) {
       if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
         return 'liked';
       }
-      console.log('What is journeyPassportID?', journeyPassportID);
     });
 
     Journey.find({}).sort('-created_at').exec(function (err, journeys) {
