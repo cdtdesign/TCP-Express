@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Journey = require('../models/journey.js');
+var Traveler = require('../models/traveler.js');
 var moment = require('moment');
 var swig = require('swig');
 console.log('What is journeyPassportID?');
@@ -8,7 +9,7 @@ console.log('What is journeyPassportID?');
 router.get('/', function(req, res, next) {
   if (req.user) {
     swig.setFilter('userLikes', function(journeyPassportID) {
-      console.log('What is users_who_like', users_who_like);
+      console.log('What is journeys_liked', journeys_liked);
       if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
         return 'liked';
       }
