@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var Journey = require('../models/journey.js');
-var Traveler = require('../models/traveler.js');
 var moment = require('moment');
 var swig = require('swig');
 console.log('What is journeyPassportID?');
