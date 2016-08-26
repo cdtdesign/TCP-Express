@@ -3,17 +3,15 @@ var router = express.Router();
 var Journey = require('../models/journey.js');
 var moment = require('moment');
 var swig = require('swig');
-
+console.log('What is journeyPassportID?');
 /* GET blog page. */
 router.get('/', function(req, res, next) {
-
   if (req.user) {
-    console.log('What is journeyPassportID?', journeyPassportID);
     swig.setFilter('userLikes', function(journeyPassportID) {
-      console.log('What is journeyPassportID?', journeyPassportID);
-      if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
-        return 'liked';
-      }
+      console.log('What is journeyPassportID?');
+      // if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
+      //   return 'liked';
+      // }
     });
 
     Journey.find({}).sort('-created_at').exec(function (err, journeys) {
