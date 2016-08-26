@@ -9,9 +9,9 @@ router.get('/', function(req, res, next) {
   if (req.user) {
     swig.setFilter('userLikes', function(journeyPassportID) {
       console.log('What is journeyPassportID?');
-      // if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
-      //   return 'liked';
-      // }
+      if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
+        return 'liked';
+      }
     });
 
     Journey.find({}).sort('-created_at').exec(function (err, journeys) {
