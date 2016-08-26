@@ -25,7 +25,6 @@ var userSchema = new Schema({
     photo : String,
   }],
   email : String,
-  journeys_liked: Array,
 	createdAt	 : {type: Date, default: Date.now}
 });
 
