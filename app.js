@@ -67,10 +67,10 @@ app.use(methodOverride());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(function (req, res, next) {
-  app.locals.user = req.user;
-  next();
-});
+// app.use(function (req, res, next) {
+//   app.locals.user = req.user;
+//   next();
+// });
 
 app.use('/', routes);
 app.use('/auth', auth);
@@ -87,7 +87,6 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-
 if ('development' == app.get('env')) {
   app.use(errorHandler());
 }

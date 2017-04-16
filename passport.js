@@ -16,6 +16,7 @@ module.exports = function(passport) {
 
 // Serialize user
 passport.serializeUser(function(user, done) {
+	app.locals.user = user;
 	done(null, user);
 });
 
