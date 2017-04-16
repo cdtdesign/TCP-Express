@@ -110,7 +110,7 @@ passport.use(new LocalStrategy({
 			});
 
 			// Optional properties
-			if (profile.picture[0]) {
+			if (profile.picture && profile.picture.length > 0) {
 				newUser.photo = profile.picture[0].value;
 			}
 
