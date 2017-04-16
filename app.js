@@ -8,7 +8,7 @@ var child_process = require("child_process");
 var cookieParser = require('cookie-parser');
 var app = express();
 var router = express.Router();
-var session = require('express-session');
+var session = require('cookie-session');
 var methodOverride = require('method-override');
 var errorHandler = require('errorhandler');
 
