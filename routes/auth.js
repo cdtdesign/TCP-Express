@@ -30,7 +30,7 @@ router.post('/signup', passport.authenticate('local',
 router.get('/signout', function(req, res){
   if (req.user) {
     req.logout();
-    req.session.destroy();
+    // req.session.destroy();
   }
   res.redirect('/');
 });
