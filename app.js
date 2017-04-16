@@ -67,10 +67,12 @@ app.use(methodOverride());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use(function (req, res, next) {
-//   app.locals.user = req.user;
-//   next();
-// });
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  console.log('req.user:', req.user);
+  console.log('res.locals.user:', res.locals.user);
+  next();
+});
 
 app.use('/', routes);
 app.use('/auth', auth);
