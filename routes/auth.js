@@ -9,7 +9,6 @@ router.get('/', function(req, res) {
 });
 
 router.get('/signin', function(req, res) {
-  console.log('flash(\'error\'):', flash('error'));
   res.render('signin', {message: req.flash('error')});
 });
 

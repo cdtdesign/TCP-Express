@@ -46,8 +46,6 @@ var upload = multer({ storage: storage });
 
 /* GET journey */
 router.post('/create', upload.single('header_image'), function(req, res, next) {
-  console.log('req.file:', JSON.stringify(req.file));
-
 	new Promise(function (fulfill, reject) {
 		var photoShortlink;
 		Bitly.shorten({
@@ -58,11 +56,8 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
 			fulfill(results);
 		});
 	}).then(function (results) {
-		console.log('Results:', results);
 		var parsedResults = JSON.parse(results);
 		photoShortlink = parsedResults.data.url;
-
-		console.log('req.body:', req.body);
 
 	  var newJourney = new Journey({
 	    passport_id: req.user.passport_id,
@@ -100,9 +95,8 @@ router.post('/edit', upload.single('header_image'), function (req, res, next) {
     tags: req.body.tags
   }}, function (err) {
     if (err) throw err;
-    console.log('req.file:', req.file);
+
     if (req.file) {
-      console.log('Should have updated the file');
       // We have an image
       Journey.findOneAndUpdate({_id: req.body.journeyId}, {$set: {
         header_image_filename: req.file.filename
@@ -119,8 +113,7 @@ router.post('/edit', upload.single('header_image'), function (req, res, next) {
 });
 
 router.get('/delete/:journey_id', function (req, res, next) {
-  console.log('req.params:', req.params);
-  console.log('req.user.passport_id:', req.user.passport_id);
+
   Journey.find({_id: req.params.journey_id}, function (err, currentJourney) {
     if (err) throw err;
     if (req.user.passport_id == currentJourney[0].passport_id) {

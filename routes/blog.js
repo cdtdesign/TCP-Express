@@ -3,12 +3,11 @@ var router = express.Router();
 var Journey = require('../models/journey.js');
 var moment = require('moment');
 var swig = require('swig');
-console.log('What is journeyPassportID?');
+
 /* GET blog page. */
 router.get('/', function(req, res, next) {
   if (req.user) {
     swig.setFilter('userLikes', function(journeyPassportID) {
-      // console.log('What is journeys_liked', journeys_liked);
       // if (req.user.journeys_liked.indexOf(journeyPassportID) != -1) {
       //   return 'liked';
       // }
@@ -19,12 +18,8 @@ router.get('/', function(req, res, next) {
 
       for (var i=0; i<journeys.length; i++) {
         journeys[i].friendlyDate = moment(journeys[i].date).fromNow();
-
-        console.log('journeys[i].date:', JSON.stringify(journeys[i].date));
-        console.log('journeys[i].friendlyDate', journeys[i].friendlyDate);
       }
-      console.log('req.user.passport_id', req.user.passport_id);
-      console.log('journeys:', JSON.stringify(journeys));
+
       res.render('blog', {
         "journeys": journeys
       });
@@ -33,6 +28,5 @@ router.get('/', function(req, res, next) {
     res.redirect('/');
   }
 });
-
 
 module.exports = router;

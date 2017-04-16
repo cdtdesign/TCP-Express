@@ -15,8 +15,6 @@ $(document).ready(function () {
         header_image = "http://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
         description = $(this).parents('.grid-post').find('.blogBody').text();
 
-        console.log('journey_uuid:', journey_uuid);
-
         return FB.ui({
           method: 'feed',
           link: 'tcp.fyi/jrnyblg#' + journey_uuid,
@@ -54,8 +52,6 @@ $(document).ready(function () {
     twitter_url += 'hashtags=' + tags.replace(/#/g, '').replace(/\s+/g, ',') + ',TravelingChildrenProject,TCPJourneys';
     twitter_url += '&';
     twitter_url += 'via=travelingchildrenproject';
-
-    console.log('twitter_url:', twitter_url);
 
     return window.open(twitter_url, 'Tweet About This Journey', popupPreferences);
   });

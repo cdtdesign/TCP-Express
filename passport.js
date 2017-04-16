@@ -55,8 +55,6 @@ passport.use(new LocalStrategy({
 			if (user) {
 				return done(null, user);
 			}
-			console.log('user:', user);
-			console.log('typeof user:', typeof user);
 			return done(null, false,  { message: 'You don\'t have an account.' });
     });
   }
@@ -96,9 +94,6 @@ passport.use(new LocalStrategy({
 		callbackURL	 : 'http://beta-express.travelingchildrenproject.com/auth/facebook/callback',
 		profileFields : ['id', 'first_name', 'last_name', 'gender', 'birthday', 'email', 'picture']
 	}, function(accessToken, refreshToken, profile, done) {
-
-		console.log('profile:', JSON.stringify(profile));
-
 		User.findOne({provider_id: profile.id}, function(err, user) {
 			if(err) throw(err);
 			if(!err && user!= null) return done(null, user);
