@@ -104,16 +104,20 @@ passport.use(new LocalStrategy({
 			if(!err && user!= null) return done(null, user);
 
 			var newUser = new User({
-				provider_id	: profile.id,
-				provider		 : profile.provider,
-				name				 : profile.displayName,
-				photo				: profile.picture[0].value
+				provider_id: profile.id,
+				provider	 : profile.provider,
+				name			 : profile.displayName
 			});
+
+			// Optional properties
+			if (profile.picture[0]) {
+				newUser.photo = profile.picture[0].value;
+			}
+
 			newUser.save(function(err) {
 				if(err) throw err;
 				done(null, newUser);
 			});
 		});
 	}));
-
 };
