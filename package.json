@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "app-root-path": "^1.0.0",
-    "browser-sync": "^2.12.3",
+    "browser-sync": "^2.18.8",
     "connect": "^3.4.1",
     "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
