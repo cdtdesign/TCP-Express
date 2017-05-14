@@ -63,16 +63,22 @@ router.get('/facebook/callback', passport.authenticate('facebook', {
 
 // iOS: Native
 router.post('/iOS/signup', function (req, res, next) {
-  passport.authenticate('local', function (err, user, info) {
+  req.isAPI = true;
+
+  passport.authenticate('local', {
+    session: false
+  }, function (err, user, info) {
+    console.log(err, user, info);
+
     if (err) {
-      res.json({
+      return res.json({
         "success": false,
         "error": err
       });
     }
 
     if (!user) {
-      res.json({
+      return res.json({
         "success": false,
         "user": null
       });
@@ -83,7 +89,7 @@ router.post('/iOS/signup', function (req, res, next) {
         return next(err);
       }
 
-      res.json({
+      return res.json({
         "success": true,
         "user": user
       });

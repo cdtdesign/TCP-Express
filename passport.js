@@ -31,7 +31,7 @@ passport.use(new LocalStrategy({
 }, function(req, username, password, done) {
     User.findOne({ username: username }, function (err, user) {
       if (err) { throw(err); }
-      if (!user && req.route.path == '/signup') {
+      if (!user && req.route.path == '/signup' || req.isAPI) {
         // Create new user object if it does NOT exit
   			var newUser = new User({
   				provider_id: 0,
