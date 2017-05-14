@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
 
+// Web: Native
 router.get('/', function(req, res) {
   res.render('index');
 });
@@ -22,30 +23,72 @@ router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
 
-router.post('/signup', passport.authenticate('local',
-{ successRedirect: '/', failureRedirect: '/auth/signup' }));
+router.post('/signup', passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/auth/signup'
+}));
 
-
-router.get('/signout', function(req, res){
+router.get('/signout', function(req, res) {
   if (req.user) {
     req.logout();
-    // req.session.destroy();
   }
   res.redirect('/');
 });
 
-router.get('/profile', function(req, res){
-    res.render('profile');
-  });
+router.get('/profile', function(req, res) {
+  res.render('profile');
+});
 
+// Web: Twitter
 router.get('/twitter', passport.authenticate('twitter'));
-router.get('/facebook', passport.authenticate('facebook', { scope: ['user_birthday', 'email'] }));
 
-router.get('/twitter/callback', passport.authenticate('twitter',
-  { successRedirect: '/', failureRedirect: '/auth/signin' }
+// Web: Facebook
+router.get('/facebook', passport.authenticate('facebook', {
+  scope: [
+    'user_birthday',
+    'email'
+  ]
+}));
+
+router.get('/twitter/callback', passport.authenticate('twitter', {
+    successRedirect: '/',
+    failureRedirect: '/auth/signin'
+  }
 ));
-router.get('/facebook/callback', passport.authenticate('facebook',
-  { successRedirect: '/', failureRedirect: '/auth/signin' }
+router.get('/facebook/callback', passport.authenticate('facebook', {
+    successRedirect: '/',
+    failureRedirect: '/auth/signin'
+  }
 ));
+
+// iOS: Native
+router.post('/iOS/signup', function (req, res, next) {
+  passport.authenticate('local', function (err, user, info) {
+    if (err) {
+      res.json({
+        "success": false,
+        "error": err
+      });
+    }
+
+    if (!user) {
+      res.json({
+        "success": false,
+        "user": null
+      });
+    }
+
+    req.logIn(user, function (err) {
+      if (err) {
+        return next(err);
+      }
+
+      res.json({
+        "success": true,
+        "user": user
+      });
+    });
+  })(req, res, next);
+});
 
 module.exports = router;

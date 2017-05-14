@@ -5,7 +5,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var Journey = require('../models/journey');
 
-router.get('/journeys', function (req, res) {
+router.post('/journeys', function (req, res) {
   // Send over some journeys from the database
   Journey
     .find(function (err, journeys) {
@@ -18,6 +18,7 @@ router.get('/journeys', function (req, res) {
       '_id': 1,
       'passport_id': 1,
       'title': 1,
+      'body': 1,
       'traveler_name': 1
     });
 });
