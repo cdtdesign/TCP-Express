@@ -62,14 +62,18 @@ router.get('/facebook/callback', passport.authenticate('facebook', {
 ));
 
 // iOS: Native
+router.post('/iOS/signin', function (req, res, next) {
+  req.isAPI = true;
+
+  passport.authenticate('local', function (err, user, info) {
+    console.log(err, user, info);
+  });
+});
+
 router.post('/iOS/signup', function (req, res, next) {
   req.isAPI = true;
 
-  passport.authenticate('local', {
-    session: false
-  }, function (err, user, info) {
-    console.log(err, user, info);
-
+  passport.authenticate('local', function (err, user, info) {
     if (err) {
       return res.json({
         "success": false,
@@ -85,13 +89,16 @@ router.post('/iOS/signup', function (req, res, next) {
     }
 
     req.logIn(user, function (err) {
-      if (err) {
-        return next(err);
-      }
+      if (err) return next(err);
 
       return res.json({
         "success": true,
-        "user": user
+        "user": {
+          "id": user._id,
+          "email": user.email,
+          "firstName": user.first_name,
+          "lastName": user.last_name
+        }
       });
     });
   })(req, res, next);
