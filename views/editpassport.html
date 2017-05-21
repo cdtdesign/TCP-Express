@@ -1,18 +1,13 @@
 {% extends "./layout.html" %}
-
 {% set title = "Edit Passport Profile" %}
 
 {% block content %}
-
 <!-- .container is main centered wrapper -->
-
   <header>
-
     {% include "./navbar.html" %}
-
     <article class="container">
       <div class="myPassport editPassport row mobile-wide" style="min-height:500px;">
-        <div class="six columns">
+        <div class="six columns parentColumn">
           <div class="passportPicDiv">
             {% if user.photo and user.provider_id == "0" %}
               <img class="passportPic" src="/images/profile-images/{{user.photo}}" alt="Parent Pic">
@@ -69,14 +64,14 @@
                   <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
                 <a>Change</a>
               </div>
-              <select form="editPassportProfile" name="gender">
+              <select form="editPassportProfile" name="travelers[{{user.travelers.length + 1}}][gender]">
                 <option value="Female" {% if traveler.gender == 'Female' %}selected{% endif %}>Female</option>
                 <option value="Male" {% if traveler.gender == 'Male' %}selected{% endif %}>Male</option>
               </select>
-              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="name">
+              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="travelers[{{user.travelers.length + 1}}]['name']">
               <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
-              <input form="editPassportProfile" placeholder="Birthday" type="date" name="birthday" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
-              <input form="editPassportProfile" type="file" name="profile_img_upload">
+              <input form="editPassportProfile" placeholder="Birthday" type="date" name="travelers[{{user.travelers.length + 1}}]['birthday']"><span>DOB: </span>
+              <input form="editPassportProfile" type="file" name="travelers[{{user.travelers.length + 1}}]:profile_img_upload">
             </div>
           </div>
       </div><!-- /.row -->
@@ -88,13 +83,9 @@
         </footer>
       </div>
     </article><!-- /.containter -->
-
   </header><!-- /HEADER -->
 
-
-
-    {% include "./footer.html" %}
-
+  {% include "./footer.html" %}
 {% endblock %}
 
 {% block extra_scripts %}

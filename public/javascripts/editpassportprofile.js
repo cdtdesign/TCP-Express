@@ -27,8 +27,8 @@ $(document).ready(function () {
   attachTravelerMinusButton();
 
   // Choose Profile Image link
-  $('.passportPicDiv a').click(function () {
-  	$('[name="profile_img_upload"]').click();
+  $('.parentColumn .passportPicDiv a').click(function (e) {
+  	$('.parentColumn [name="profile_img_upload"]').click();
   });
 
   $('.travelerEdit a').click(function (e) {

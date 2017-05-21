@@ -16,6 +16,7 @@ var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     var splitFilename = file.fieldname.split(':');
     var saveDirectory;
+
     if (splitFilename.length == 2) {
       // It's a traveler image
       saveDirectory = '/public/images/traveler-images/';
@@ -65,7 +66,6 @@ router.get('/edit', function(req, res, next) {
 
 /* POST editpassport page */
 router.post('/edit', upload.any(), function(req, res) {
-  console.log(JSON.stringify(req.body));
   User.find({_id: req.user._id}, function (err, user) {
     if (err) throw err;
     var user = user[0];
@@ -94,6 +94,19 @@ router.post('/edit', upload.any(), function(req, res) {
       user.travelers[i].photo = travelerImageFilenames[traveler.passport_id];
     }
 
+    console.log(req.body);
+    
+    // for (var i = 0; i < req.body.travelers.length; i++) {
+    //   var traveler = req.body.travelers[i];
+    //   console.log(traveler);
+    //   // var travelerID = traveler[];
+    //
+    //   user.travelers[travelerID].name = traveler[':name'];
+    //   user.travelers[travelerID].gender = traveler[':gender'];
+    //   user.travelers[travelerID].birthday = traveler[':birthday'];
+    //   user.travelers[travelerID].photo = traveler[':profile_img_upload'];
+    // }
+
     user.save(function () {
       User.find({_id: req.user._id}, function (err, user) {
         if (err) throw err;
@@ -107,7 +120,6 @@ router.post('/edit', upload.any(), function(req, res) {
       });
     });
   });
-
 });
 
 router.get('/delete', function(req, res, next) {
