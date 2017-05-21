@@ -1,5 +1,6 @@
 {
 	"undefined": "localhost/passport",
 	"dev": "localhost/passport",
+	"development": "localhost/passport",
 	"prod": "localhost/passport"
 }
