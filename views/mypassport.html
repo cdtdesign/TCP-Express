@@ -1,15 +1,10 @@
 {% extends "./layout.html" %}
-
 {% set title = "Passport Profile" %}
 
 {% block content %}
-
 <!-- .container is main centered wrapper -->
-
   <header>
-
     {% include "./navbar.html" %}
-
     <article class="container">
       <div class="row mobile-wide" style="min-height:500px;">
         <div class="myPassport">
@@ -52,12 +47,12 @@
                   <span><b>Birthday: </b>{{ traveler.birthday | friendlyDate }}</span><br />
                   <span><b>Gender: </b>{{ traveler.gender }}</span><br />
                 </p>
-            </div><!-- /.travler -->
+            </div><!-- /.traveler -->
               {% endfor %}
             </div>
             <div class="passportFooter">
               <hr class="bpDivider">
-              <a href="#" title="Edit Passport">
+              <a href="/mypassport/edit" title="Edit Passport">
                 <i class="fa fa-pencil passportEditButton" style="font-size:3rem;"></i>
               </a>
               <a href="/mypassport/delete/{{ user.passport_id }}" title="Delete Passport!!" class="passportDeleteButton">
@@ -67,15 +62,10 @@
         </div>
       </div><!-- /.row -->
     </article><!-- /.containter -->
-
   </header><!-- /HEADER -->
 
-
-
-    {% include "./footer.html" %}
-
+  {% include "./footer.html" %}
 {% endblock %}
 
 {% block extra_scripts %}
-
 {% endblock %}

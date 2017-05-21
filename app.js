@@ -16,6 +16,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var User = require ('./models/user');
 
+var api = require('./routes/API');
 var routes = require('./routes/index');
 var auth = require('./routes/auth');
 var blog = require('./routes/blog');
@@ -73,6 +74,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', routes);
+app.use('/api', api);
 app.use('/auth', auth);
 app.use('/journeyblog', blog);
 app.use('/journey', journey);
