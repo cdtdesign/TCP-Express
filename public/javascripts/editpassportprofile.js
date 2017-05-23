@@ -6,10 +6,22 @@ $(document).ready(function () {
   // Add Traveler to Passport Profile
   function attachTravelerAdditionButton() {
   	$('.addTravelerButton').click(function (e) {
+      // Clone the traveler where the user clicked the add button
   		var emptyTraveler = $(e.currentTarget).closest('.travelerEdit').clone();
+
+      // Figure out what the next traveler index should be
+      var travelerIndex = $(e.currentTarget).parent().data('traveler-index') + 1;
+
+      // Update the index on the new traveler node
+      emptyTraveler.data('whyyy', 'travelerIndex');
+
   		$(e.currentTarget).parent().after(emptyTraveler);
   		emptyTraveler.children('input').val("");
   		emptyTraveler.find('img').attr('src', '/images/profile-images/avatar.jpg');
+
+      // Update the indices on the 'input's
+      emptyTraveler.children('.traveler-first-name').attr('name', 'travelers[' + travelerIndex + '][name]');
+
   		attachTravelerAdditionButton();
   		attachTravelerMinusButton();
   	});

@@ -21,7 +21,7 @@
             <h5 class="large textOrg">Edit Passport Profile</h5><br />
             <form id="editPassportProfile" class="editPassportProfile" method="post" enctype="multipart/form-data"></form>
             <label>Parent / Guardian / Educator: </label>
-            <input value="{{ user.first_name }}" form="editPassportProfile" placeholder="First Name" type="text" name="first_name">
+            <input value="{{ user.first_name }}" form="editPassportProfile" placeholder="First Name" class="traveler-first-name" type="text" name="first_name">
             <input value="{{ user.last_name }}" form="editPassportProfile" placeholder="Last Name" type="text" name="last_name">
             <select form="editPassportProfile" name="parent_gender">
               <option value="Female" {% if traveler.parent_gender == 'Female' %}selected{% endif %}>Female</option>
@@ -42,7 +42,7 @@
 
             <!-- Existing travelers -->
             {% for traveler in user.travelers %}
-              <div class="travelerEdit">
+              <div class="travelerEdit" data-traveler-index="{{loop.index0}}">
                 <div>
                   {% if traveler.photo %}
                     <img src="/images/traveler-images/{{traveler.photo}}" alt="Traveler Pic">
@@ -63,7 +63,7 @@
             {% endfor %}
 
             <!-- Extra empty one for additional travelers -->
-            <div class="travelerEdit">
+            <div class="travelerEdit" data-traveler-index="{{user.travelers.length}}">
               <div>
                 <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
                 <a>Change</a>
@@ -72,7 +72,7 @@
                 <option value="Female">Female</option>
                 <option value="Male">Male</option>
               </select>
-              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="travelers[{{user.travelers.length}}][name]">
+              <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" class="traveler-first-name" type="text" name="travelers[{{user.travelers.length}}][name]">
               <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
               <input form="editPassportProfile" placeholder="Birthday" type="date" name="travelers[{{user.travelers.length}}][birthday]"><span>DOB: </span>
               <input form="editPassportProfile" type="file" name="travelers[{{user.travelers.length}}]:profile_img_upload">
