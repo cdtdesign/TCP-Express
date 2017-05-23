@@ -20,7 +20,7 @@ $(document).ready(function () {
   function attachTravelerMinusButton() {
   	$('.deleteTravelerButton').click(function (e) {
   		if (confirm('Are you sure you want to delete this traveler?')) {
-  			$(e.currentTarget).parent().hide();
+  			$(e.currentTarget).parent().remove();
   		}
   	});
   }
@@ -36,14 +36,14 @@ $(document).ready(function () {
   });
 
   //Preview image before uploaded in My Passport Profile
-  $('.editPassport input[type="file"]').change(function(inputEvent){
-  if (inputEvent.currentTarget.files && inputEvent.currentTarget.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      $(inputEvent.currentTarget).parent().find('img').attr('src', e.target.result);
+  $('.editPassport input[type="file"]').change(function (inputEvent) {
+    if (inputEvent.currentTarget.files && inputEvent.currentTarget.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $(inputEvent.currentTarget).parent().find('img').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(inputEvent.currentTarget.files[0]);
     }
-    reader.readAsDataURL(inputEvent.currentTarget.files[0]);
-  }
   });
 
   //Confirm exiting My Passport Profile

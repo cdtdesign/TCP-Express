@@ -44,7 +44,7 @@ var storage = multer.diskStorage({
   }
 });
 
-var upload = multer({ storage: storage });
+var upload = multer({storage: storage});
 
 /* GET mypassport page. */
 router.get('/', function(req, res, next) {
@@ -57,11 +57,15 @@ router.get('/', function(req, res, next) {
 
 /* GET editpassport page. */
 router.get('/edit', function(req, res, next) {
-  swig.setFilter('dateFormat', function (input) {
-    var date = new Date(input);
-    return date.getFullYear() + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + ("0" + (date.getDate() + 1)).slice(-2);
-  });
-  res.render('editpassport');
+  if (req.user) {
+    swig.setFilter('dateFormat', function (input) {
+      var date = new Date(input);
+      return date.getFullYear() + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + ("0" + (date.getDate() + 1)).slice(-2);
+    });
+    res.render('editpassport');
+  } else {
+    res.redirect('/');
+  }
 });
 
 /* POST editpassport page */
@@ -86,32 +90,32 @@ router.post('/edit', upload.any(), function(req, res) {
     }
 
     // Travelers info
-    for (var i = 0; i < req.user.travelers.length; i++) {
-      var traveler = req.user.travelers[i];
-      user.travelers[i].name = req.body["name:" + traveler.passport_id];
-      user.travelers[i].gender = req.body["gender:" + traveler.passport_id];
-      user.travelers[i].birthday = req.body["birthday:" + traveler.passport_id];
-      user.travelers[i].photo = travelerImageFilenames[traveler.passport_id];
+    console.log(req.body);
+
+    user.travelers = [];
+
+    for (var i = 0; i < req.body.travelers.length; i++) {
+      var traveler = req.body.travelers[i];
+
+      console.log('traveler:', traveler);
+
+      if (traveler != undefined && traveler.name != "" && traveler.birthday != "") {
+        user.travelers[i] = {
+          "name": traveler.name,
+          "birthday": traveler.birthday,
+          "gender": traveler.gender,
+          "photo": travelerImageFilenames[traveler.passport_id]
+        };
+      }
     }
 
-    console.log(req.body);
-    
-    // for (var i = 0; i < req.body.travelers.length; i++) {
-    //   var traveler = req.body.travelers[i];
-    //   console.log(traveler);
-    //   // var travelerID = traveler[];
-    //
-    //   user.travelers[travelerID].name = traveler[':name'];
-    //   user.travelers[travelerID].gender = traveler[':gender'];
-    //   user.travelers[travelerID].birthday = traveler[':birthday'];
-    //   user.travelers[travelerID].photo = traveler[':profile_img_upload'];
-    // }
-
+    // Save it all to the database
     user.save(function () {
       User.find({_id: req.user._id}, function (err, user) {
         if (err) throw err;
         var user = user[0];
 
+        // Reload the user data in the session
         req.login(user, function (err) {
           if (err) throw err;
           res.locals.user = user;

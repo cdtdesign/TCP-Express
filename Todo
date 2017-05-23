@@ -38,7 +38,7 @@ X Journey blog social sharing
 X Move signoutBtn in navbar to the right
 X In Edit Passport Profile link edit button to route
 X Add a search filter to the travelers column in Edit Passport Profile???
-X Hash passwords in Travelers table (bcrypt)
+- Hash passwords in Travelers table (bcrypt)
 - Validate all forms
 - Secure with https (SSL certificate): https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
 X Disable Journey Blog link in navbar securely and properly.
