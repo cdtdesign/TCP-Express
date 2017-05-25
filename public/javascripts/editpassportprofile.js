@@ -13,11 +13,10 @@ $(document).ready(function () {
     $('.travelers .travelerEdit').each(function (index, traveler) {
       var traveler = $(traveler);
 
-      traveler
-        .attr('data-traveler-index', index)
-        .children('.traveler-first-name').attr('name', 'travelers[' + index + '][name]')
-        .children('.traveler-birthday').attr('name', 'travelers[' + index + '][birthday]')
-        .children('.traveler-gender').attr('name', 'travelers[' + index + '][gender]');
+      traveler.attr('data-traveler-index', index);
+      traveler.children('.traveler-first-name').attr('name', 'travelers[' + index + '][name]');
+      traveler.children('.traveler-birthday').attr('name', 'travelers[' + index + '][birthday]');
+      traveler.children('.traveler-gender').attr('name', 'travelers[' + index + '][gender]');
     });
   }
 
