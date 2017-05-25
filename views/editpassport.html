@@ -51,13 +51,13 @@
                   {% endif %}
                   <a>Change</a>
                 </div>
-                <select form="editPassportProfile" name="travelers[{{loop.index0}}][gender]">
+                <select form="editPassportProfile" class="traveler-gender" name="travelers[{{loop.index0}}][gender]">
                   <option value="Female" {% if traveler.gender == 'Female' %}selected{% endif %}>Female</option>
                   <option value="Male" {% if traveler.gender == 'Male' %}selected{% endif %}>Male</option>
                 </select>
-                <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" name="travelers[{{loop.index0}}][name]">
+                <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" class="traveler-first-name" name="travelers[{{loop.index0}}][name]">
                 <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
-                <input form="editPassportProfile" placeholder="Birthday" type="date" name="travelers[{{loop.index0}}][birthday]" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
+                <input form="editPassportProfile" placeholder="Birthday" type="date" class="traveler-birthday" name="travelers[{{loop.index0}}][birthday]" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
                 <input form="editPassportProfile" type="file" name="travelers[{{loop.index0}}][profile_img_upload]">
               </div>
             {% endfor %}
@@ -68,13 +68,13 @@
                 <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
                 <a>Change</a>
               </div>
-              <select form="editPassportProfile" name="travelers[{{user.travelers.length}}][gender]">
+              <select form="editPassportProfile" class="traveler-gender" name="travelers[{{user.travelers.length}}][gender]">
                 <option value="Female">Female</option>
                 <option value="Male">Male</option>
               </select>
               <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" class="traveler-first-name" type="text" name="travelers[{{user.travelers.length}}][name]">
               <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
-              <input form="editPassportProfile" placeholder="Birthday" type="date" name="travelers[{{user.travelers.length}}][birthday]"><span>DOB: </span>
+              <input form="editPassportProfile" placeholder="Birthday" type="date" class="traveler-birthday" name="travelers[{{user.travelers.length}}][birthday]"><span>DOB: </span>
               <input form="editPassportProfile" type="file" name="travelers[{{user.travelers.length}}]:profile_img_upload">
             </div>
           </div>

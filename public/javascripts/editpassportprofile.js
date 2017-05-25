@@ -4,39 +4,66 @@ $(document).ready(function () {
   });
 
   // Add Traveler to Passport Profile
-  function attachTravelerAdditionButton() {
-  	$('.addTravelerButton').click(function (e) {
-      // Clone the traveler where the user clicked the add button
-  		var emptyTraveler = $(e.currentTarget).closest('.travelerEdit').clone();
+	$('.addTravelerButton').click(function (e) {
+    addEmptyTraveler($(e.currentTarget).parent('.travelerEdit'));
+	});
 
-      // Figure out what the next traveler index should be
-      var travelerIndex = $(e.currentTarget).parent().data('traveler-index') + 1;
+  // Update the indices for all the travelers
+  function updateTravelerIndices() {
+    $('.travelers .travelerEdit').each(function (index, traveler) {
+      var traveler = $(traveler);
 
-      // Update the index on the new traveler node
-      emptyTraveler.data('whyyy', 'travelerIndex');
-
-  		$(e.currentTarget).parent().after(emptyTraveler);
-  		emptyTraveler.children('input').val("");
-  		emptyTraveler.find('img').attr('src', '/images/profile-images/avatar.jpg');
-
-      // Update the indices on the 'input's
-      emptyTraveler.children('.traveler-first-name').attr('name', 'travelers[' + travelerIndex + '][name]');
-
-  		attachTravelerAdditionButton();
-  		attachTravelerMinusButton();
-  	});
+      traveler
+        .attr('data-traveler-index', index)
+        .children('.traveler-first-name').attr('name', 'travelers[' + index + '][name]')
+        .children('.traveler-birthday').attr('name', 'travelers[' + index + '][birthday]')
+        .children('.traveler-gender').attr('name', 'travelers[' + index + '][gender]');
+    });
   }
-  attachTravelerAdditionButton();
 
-  // Minus Traveler from Passport Profile
-  function attachTravelerMinusButton() {
-  	$('.deleteTravelerButton').click(function (e) {
-  		if (confirm('Are you sure you want to delete this traveler?')) {
-  			$(e.currentTarget).parent().remove();
-  		}
+  // Add a new set of traveler fields
+  function addEmptyTraveler(afterTraveler) {
+    // Clone the traveler where the user clicked the add button
+    var emptyTraveler = $(afterTraveler).closest('.travelerEdit').clone();
+
+    // Figure out what the next traveler index should be
+    var travelerIndex = $(afterTraveler).parent().data('traveler-index') + 1;
+
+    // Update the index on the new traveler node
+    emptyTraveler.attr('data-traveler-index', $(afterTraveler).parent().data('traveler-index') + 1);
+
+    // Add the new traveler after the one that was clicked
+    $(afterTraveler).after(emptyTraveler);
+
+    // Reset all the data for the new traveler
+    emptyTraveler.children('input').val("");
+    emptyTraveler.find('img').attr('src', '/images/profile-images/avatar.jpg');
+
+    // Attach handlers for adding more travelers and deleting this one
+    emptyTraveler.children('.deleteTravelerButton').click(function (e) {
+      deleteTraveler(emptyTraveler);
+    });
+
+    emptyTraveler.children('.addTravelerButton').click(function (e) {
+      addEmptyTraveler(emptyTraveler);
   	});
+
+    updateTravelerIndices();
   }
-  attachTravelerMinusButton();
+
+  // Remove a traveler
+  function deleteTraveler(traveler) {
+    if (confirm('Are you sure you want to delete this traveler?')) {
+			$(traveler).remove();
+		}
+
+    updateTravelerIndices();
+  }
+
+  // Remove travelers from Passport Profile when you click the minus button
+	$('.deleteTravelerButton').click(function (e) {
+    deleteTraveler($(e.currentTarget).parent());
+	});
 
   // Choose Profile Image link
   $('.parentColumn .passportPicDiv a').click(function (e) {
@@ -77,5 +104,4 @@ $(document).ready(function () {
   $('.profile-update-button').click(function () {
   	window.onbeforeunload = null;
   });
-
 });
