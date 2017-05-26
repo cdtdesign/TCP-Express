@@ -17,14 +17,14 @@
             <h6 class="textOrg">Contact Us</h6>
 
             <!-- CONTACT FORM -->
-            <form class="border">
+            <form action="/contact" method="get" class="border">
               <div class="row mobile-wide" style="margin-left:0rem;">
                 <div class="columns u-full-width">
-                  <input class="u-full-width" type="text" placeholder="Your Name" id="contactName">
-                  <input class="u-full-width" type="email" placeholder="Your Email" id="contactEmail">
-                  <input class="u-full-width" type="text" placeholder="Subject" id="contactSubject">
-                  <textarea class="u-full-width" placeholder="Message…" id="contactMessage"></textarea>
-                  <input class="button tallBtn button-primary u-full-width" type="submit" value="SEND">
+                  <input name="yourname" class="u-full-width" type="text" placeholder="Your Name" id="contactName">
+                  <input name="youremail" class="u-full-width" type="email" placeholder="Your Email" id="contactEmail">
+                  <input name="subject" class="u-full-width" type="text" placeholder="Subject" id="contactSubject">
+                  <textarea name="message" class="u-full-width" placeholder="Message…" id="contactMessage"></textarea>
+                  <input class="button tallBtn button-primary u-full-width" type="submit" value="Submit">
                 </div>
               </div>
             </form>
