@@ -334,6 +334,10 @@ a:hover {
   padding: 6rem 6rem 0rem 6rem;
 }
 
+.profiler img.passportPic {
+  margin-right: 0;
+}
+
 .travelers img {
   width: 13%;
   position: absolute;
