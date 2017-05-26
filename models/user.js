@@ -13,6 +13,7 @@ var userSchema = new Schema({
   },
 	provider_id: String,
 	photo: String,
+  has_local_photo: Boolean,
   password: String,
   first_name: String,
   last_name: String,

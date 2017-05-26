@@ -70,7 +70,7 @@ $(document).ready(function () {
   });
 
   $('.travelerEdit a').click(function (e) {
-  	$(e.target).parents('.travelerEdit').children('[type="file"]').click();
+  	$(e.currentTarget).parents('.travelerEdit').children('.traveler-photo-field').click();
   });
 
   //Preview image before uploaded in My Passport Profile

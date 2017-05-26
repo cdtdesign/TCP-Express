@@ -9,7 +9,7 @@
       <div class="myPassport editPassport row mobile-wide" style="min-height:500px;">
         <div class="six columns parentColumn">
           <div class="passportPicDiv">
-            {% if user.photo and user.provider_id == "0" %}
+            {% if user.photo and user.provider_id == "0" or user.has_local_photo == true %}
               <img class="passportPic" src="/images/profile-images/{{user.photo}}" alt="Parent Pic">
             {% elseif user.photo and user.provider_id != "0" %}
               <img class="passportPic" src="{{user.photo}}" alt="Parent Pic">
@@ -58,7 +58,7 @@
                 <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" type="text" class="traveler-first-name" name="travelers[{{loop.index0}}][name]">
                 <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
                 <input form="editPassportProfile" placeholder="Birthday" type="date" class="traveler-birthday" name="travelers[{{loop.index0}}][birthday]" value="{{ traveler.birthday | dateFormat }}"><span>DOB: </span>
-                <input form="editPassportProfile" type="file" name="travelers[{{loop.index0}}][profile_img_upload]">
+                <input form="editPassportProfile" type="file" name="travelers[{{loop.index0}}][profile_img_upload]" class="traveler-photo-field">
               </div>
             {% endfor %}
 
@@ -75,7 +75,7 @@
               <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" class="traveler-first-name" type="text" name="travelers[{{user.travelers.length}}][name]">
               <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
               <input form="editPassportProfile" placeholder="Birthday" type="date" class="traveler-birthday" name="travelers[{{user.travelers.length}}][birthday]"><span>DOB: </span>
-              <input form="editPassportProfile" type="file" name="travelers[{{user.travelers.length}}]:profile_img_upload">
+              <input form="editPassportProfile" type="file"  class="traveler-photo-field" name="travelers[{{user.travelers.length}}]:profile_img_upload">
             </div>
           </div>
       </div><!-- /.row -->

@@ -14,10 +14,9 @@ var travelerImageFilenames = {};
 /* Multer to change profile images */
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    var splitFilename = file.fieldname.split(':');
     var saveDirectory;
 
-    if (splitFilename.length == 2) {
+    if (file.fieldname.indexOf('travelers') != -1) {
       // It's a traveler image
       saveDirectory = '/public/images/traveler-images/';
     } else {
@@ -29,12 +28,11 @@ var storage = multer.diskStorage({
   filename: function (req, file, cb) {
     var profilePhotoFilename = uuid.v1() + '.' + mime.extension(file.mimetype);
 
-    var splitFilename = file.fieldname.split(':');
-    if (splitFilename.length == 2) {
+    if (file.fieldname.indexOf('travelers') != -1) {
       // It's a travelers' photo; Remember the
       // filename for this traveler for
       // later insertion to the database
-      travelerImageFilenames[splitFilename[1]] = profilePhotoFilename;
+      travelerImageFilenames[file.fieldname] = profilePhotoFilename;
     } else {
       // It's a parent, so we'll save
       // their filename for later
@@ -85,26 +83,26 @@ router.post('/edit', upload.any(), function(req, res) {
     user.address_city = req.body.address_city;
     user.address_state = req.body.address_state;
     user.address_zip = req.body.address_zip;
+
     if (parentImageFilename) {
       user.photo = parentImageFilename;
+      user.has_local_photo = true;
     }
 
     // Travelers info
-    console.log(req.body);
-
     user.travelers = [];
 
     for (var i = 0; i < req.body.travelers.length; i++) {
       var traveler = req.body.travelers[i];
 
-      console.log('traveler:', traveler);
-
       if (traveler != undefined && traveler.name != "" && traveler.birthday != "") {
+        console.log('travelerImageFilenames:', travelerImageFilenames);
+
         user.travelers[i] = {
           "name": traveler.name,
           "birthday": traveler.birthday,
           "gender": traveler.gender,
-          "photo": travelerImageFilenames[traveler.passport_id]
+          "photo": travelerImageFilenames['travelers[' + i + '][profile_img_upload]']
         };
       }
     }
