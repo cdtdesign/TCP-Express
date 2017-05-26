@@ -433,6 +433,44 @@ img.passportPic {
   display: none;
 }
 
+.traveler {
+  position: relative;
+}
+
+.mypassport-travelers .traveler {
+  clear: both;
+  display: table;
+  padding: 2.5% 0;
+}
+
+.mypassport-travelers .traveler-photo-container,
+.mypassport-travelers p {
+  vertical-align: middle;
+}
+
+.mypassport-travelers .traveler-photo-container {
+  border: 6px solid #E8C874;
+  border-radius: 100rem;
+  display: table-cell;
+  position: relative;
+  height: 90px;
+  width: 90px;
+}
+
+.mypassport-travelers .traveler-photo {
+  border-radius: 100rem;
+  display: table;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.mypassport-travelers p {
+  display: table-cell;
+  padding-left: 5%;
+  width: 75%;
+}
+
 .travelerEdit input[type="file"]{
   display: none;
 }
@@ -528,6 +566,10 @@ div.myPassport i.fa:hover {
     bottom: 86px;
     right: 0;
     overflow: hidden;
+}
+
+.myPassportMyPassport::after {
+  content: none;
 }
 
 /*------------- TOOLTIPS -------------*/

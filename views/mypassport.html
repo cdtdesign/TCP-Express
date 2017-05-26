@@ -7,7 +7,7 @@
     {% include "./navbar.html" %}
     <article class="container">
       <div class="row mobile-wide" style="min-height:500px;">
-        <div class="myPassport">
+        <div class="myPassport myPassportMyPassport">
           <div class="profiler">
             {% if user.photo and user.provider_id == "0" or user.has_local_photo == true %}
               <img class="passportPic" src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
@@ -34,14 +34,16 @@
                  {% endif %}
               </p>
             </div><!-- ./profiler -->
-            <div class="travelers">
+            <div class="mypassport-travelers travelers">
               {% for traveler in user.travelers %}
               <div class="traveler">
-                {% if traveler.photo %}
-                  <img src="/images/traveler-images/{{traveler.photo}}" alt="Traveler Pic">
-                {% else %}
-                  <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
-                {% endif %}
+                <div class="traveler-photo-container">
+                  {% if traveler.photo %}
+                    <img src="/images/traveler-images/{{traveler.photo}}" class="traveler-photo" alt="Traveler Pic">
+                  {% else %}
+                    <img src="/images/profile-images/avatar.jpg" class="traveler-photo" alt="Traveler Pic">
+                  {% endif %}
+                </div> <!-- .traveler-photo-container -->
                 <p>
                   <span><b>First Name: </b>{{ traveler.name }}</span><br />
                   <span><b>Birthday: </b>{{ traveler.birthday | friendlyDate }}</span><br />
