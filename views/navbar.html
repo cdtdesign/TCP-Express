@@ -23,7 +23,7 @@
             {% else %}
               <a href="/mypassport"><strong><span class="navTraveler">Traveler</span></strong></a>
             {% endif %}
-            {% if user.photo and user.provider_id == "0" %}
+            {% if user.photo and user.provider_id == "0" or user.has_local_photo == true %}
               <img class="travelerPic" src="/images/profile-images/{{user.photo}}">
             {% elseif user.photo and user.provider_id != "0" %}
               <img class="travelerPic" src="{{user.photo}}">
@@ -77,7 +77,7 @@
             {% else %}
               <a href="/mypassport"><strong><span class="navTraveler">Traveler</span></strong></a>
             {% endif %}
-            {% if user.photo and user.provider_id == "0" %}
+            {% if user.photo and user.provider_id == "0" or user.has_local_photo == true %}
               <img class="travelerPic" src="/images/profile-images/{{user.photo}}">
             {% elseif user.photo and user.provider_id != "0" %}
               <img class="travelerPic" src="{{user.photo}}">

@@ -9,7 +9,7 @@
       <div class="row mobile-wide" style="min-height:500px;">
         <div class="myPassport">
           <div class="profiler">
-            {% if user.photo and user.provider_id == "0" %}
+            {% if user.photo and user.provider_id == "0" or user.has_local_photo == true %}
               <img class="passportPic" src="/images/profile-images/{{user.photo}}" alt="Traveler Pic">
             {% elseif user.photo and user.provider_id != "0" %}
               <img class="passportPic" src="{{user.photo}}" alt="Traveler Pic">
