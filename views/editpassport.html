@@ -44,11 +44,13 @@
             {% for traveler in user.travelers %}
               <div class="travelerEdit" data-traveler-index="{{loop.index0}}">
                 <div>
-                  {% if traveler.photo %}
-                    <img src="/images/traveler-images/{{traveler.photo}}" alt="Traveler Pic">
-                  {% else %}
-                    <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
-                  {% endif %}
+                  <div class="travelerPhotoContainer">
+                    {% if traveler.photo %}
+                      <img src="/images/traveler-images/{{traveler.photo}}" alt="Traveler Pic">
+                    {% else %}
+                      <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
+                    {% endif %}
+                  </div> <!-- .travelerPhotoContainer -->
                   <a>Change</a>
                 </div>
                 <select form="editPassportProfile" class="traveler-gender" name="travelers[{{loop.index0}}][gender]">
@@ -65,7 +67,9 @@
             <!-- Extra empty one for additional travelers -->
             <div class="travelerEdit" data-traveler-index="{{user.travelers.length}}">
               <div>
-                <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
+                <div class="travelerPhotoContainer">
+                  <img src="/images/profile-images/avatar.jpg" alt="Traveler Pic">
+                </div> <!-- .travelerPhotoContainer -->
                 <a>Change</a>
               </div>
               <select form="editPassportProfile" class="traveler-gender" name="travelers[{{user.travelers.length}}][gender]">

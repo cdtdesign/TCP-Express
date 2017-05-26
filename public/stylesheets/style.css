@@ -336,12 +336,8 @@ a:hover {
 
 .travelers img {
   width: 13%;
-  border-radius: 100rem;
-  position: relative;
+  position: absolute;
   top: 0;
-  left: 0;
-  margin-right: 2%;
-  float: left;
 }
 
 .editPassport {
@@ -449,11 +445,9 @@ img.passportPic {
 }
 
 .travelerEdit img {
-  width: 100%;
   border-radius: 100rem;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .travelerEdit span {
@@ -503,7 +497,7 @@ div.myPassport i.fa:hover {
   position: relative;
 }
 
-.travelerEdit div {
+.travelerEdit > div {
   width: 20%;
   position: absolute;
   top: 0;
@@ -518,10 +512,6 @@ div.myPassport i.fa:hover {
   padding-right: 8%;
   padding-left: 8%;
   border-top: 1px solid #fbd163;
-}
-
-.travelers div:last-of-type {
-  margin-bottom: 30%;
 }
 
 .myPassport::after {
@@ -620,13 +610,35 @@ span.navTraveler {
   vertical-align: middle;
 }
 
-.travelerPic {
-  width: 15%;
-  margin-left: 5px;
-  display: inline-block;
-  vertical-align: middle;
-  border-radius: 25px;
+.travelerPicContainer,
+.travelerPhotoContainer {
   background-color: #ee6730;
+  border-radius: 100rem;
+  display: inline-block;
+  height: 0;
+  margin-left: 5px;
+  overflow: hidden;
+  padding-bottom: 15%;
+  position: relative;
+  vertical-align: middle;
+  width: 15%;
+}
+
+.travelerPicContainer img {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.travelerPhotoContainer {
+  margin-left: 0;
+  margin-bottom: 15%;
+  padding-bottom: 100%;
+  width: 100%;
 }
 
 nav {
