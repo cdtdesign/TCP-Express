@@ -101,9 +101,13 @@ router.post('/edit', upload.any(), function(req, res) {
         user.travelers[i] = {
           "name": traveler.name,
           "birthday": traveler.birthday,
-          "gender": traveler.gender,
-          "photo": travelerImageFilenames['travelers[' + i + '][profile_img_upload]']
+          "gender": traveler.gender
         };
+
+        var travelerPhotoFilename = travelerImageFilenames['travelers[' + i + '][profile_img_upload]'];
+        if (travelerPhotoFilename) {
+          user.travelers[i]["photo"] = travelerPhotoFilename;
+        }
       }
     }
 
