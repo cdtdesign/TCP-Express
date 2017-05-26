@@ -75,7 +75,7 @@
               <input form="editPassportProfile" value="{{ traveler.name }}" placeholder="First Name" class="traveler-first-name" type="text" name="travelers[{{user.travelers.length}}][name]">
               <i class="fa fa-plus-circle addTravelerButton" aria-hidden="true"></i><i class="fa fa-minus-circle deleteTravelerButton" aria-hidden="true"></i>
               <input form="editPassportProfile" placeholder="Birthday" type="date" class="traveler-birthday" name="travelers[{{user.travelers.length}}][birthday]"><span>DOB: </span>
-              <input form="editPassportProfile" type="file"  class="traveler-photo-field" name="travelers[{{user.travelers.length}}]:profile_img_upload">
+              <input form="editPassportProfile" type="file" class="traveler-photo-field" name="travelers[{{user.travelers.length}}][profile_img_upload]">
             </div>
           </div>
       </div><!-- /.row -->

@@ -17,6 +17,7 @@ $(document).ready(function () {
       traveler.children('.traveler-first-name').attr('name', 'travelers[' + index + '][name]');
       traveler.children('.traveler-birthday').attr('name', 'travelers[' + index + '][birthday]');
       traveler.children('.traveler-gender').attr('name', 'travelers[' + index + '][gender]');
+      traveler.children('.traveler-photo-field').attr('name', 'travelers[' + index + '][profile_img_upload]');
     });
   }
 
@@ -34,6 +35,11 @@ $(document).ready(function () {
     // Add the new traveler after the one that was clicked
     $(afterTraveler).after(emptyTraveler);
 
+    // Attach the photo link listener
+    emptyTraveler.find('a').click(function (e) {
+    	$(e.currentTarget).parents('.travelerEdit').children('.traveler-photo-field').click();
+    });
+
     // Reset all the data for the new traveler
     emptyTraveler.children('input').val("");
     emptyTraveler.find('img').attr('src', '/images/profile-images/avatar.jpg');
@@ -47,6 +53,7 @@ $(document).ready(function () {
       addEmptyTraveler(emptyTraveler);
   	});
 
+    attachFilePreviewListener();
     updateTravelerIndices();
   }
 
@@ -74,15 +81,18 @@ $(document).ready(function () {
   });
 
   //Preview image before uploaded in My Passport Profile
-  $('.editPassport input[type="file"]').change(function (inputEvent) {
-    if (inputEvent.currentTarget.files && inputEvent.currentTarget.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        $(inputEvent.currentTarget).parent().find('img').attr('src', e.target.result);
+  function attachFilePreviewListener() {
+    $('.editPassport input[type="file"]').change(function (inputEvent) {
+      if (inputEvent.currentTarget.files && inputEvent.currentTarget.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $(inputEvent.currentTarget).parent().find('img').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(inputEvent.currentTarget.files[0]);
       }
-      reader.readAsDataURL(inputEvent.currentTarget.files[0]);
-    }
-  });
+    });
+  }
+  attachFilePreviewListener();
 
   //Confirm exiting My Passport Profile
   function goodbye(e) {
