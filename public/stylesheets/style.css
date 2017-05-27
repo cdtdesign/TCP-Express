@@ -328,7 +328,7 @@ a:hover {
   color: #ee6730;
 }
 
-.fa {
+.fa-heart, .fa-pencil, .fa-close, .fa-envelope-square, .fa-pinterest-square, .fa-twitter-square, .fa-facebook-square {
   color: #ffc233;
 }
 
