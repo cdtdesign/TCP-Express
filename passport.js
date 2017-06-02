@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 var config = require('./config');
+var bcrypt = require('bcrypt');
 
 // Strategies
 var LocalStrategy = require('passport-local').Strategy;
@@ -30,47 +31,61 @@ module.exports = function (passport) {
 			// create an account either at '/auth/signup' or via the API
 			// create a new passport profile for them
 	    if (!user && req.route.path == '/signup' || req.isAPI) {
-	      // Match all the data from the submitted form to the 'user' schema
+				// Match all the data from the submitted form to the 'user' schema
 				var newUser = new User({
 					provider_id: 0,
 					provider: 'local',
-					password: password,
 					username: username,
 					first_name: req.body.first_name,
 					last_name: req.body.last_name,
 					traveler_name: req.body.traveler_name,
-	        email: req.body.username
+					email: req.body.username
 				});
 
-				// Save the new user object to the database
-				newUser.save(function (err) {
-					if(err) throw err;
+				// Salt and hash the password
+				bcrypt.genSalt(10, function (err, salt) {
+					if (err) return next(err);
+
+					bcrypt.hash(password, salt, function (err, hashedPassword) {
+						newUser.password = hashedPassword;
+
+						// Save the new user object to the database
+						newUser.save(function (err) {
+							if (err) throw err;
+						});
+					});
 				});
 
 				// All done
 				return done(null, newUser);
 	    }
 
-			// If there was a user in the database and the provided
-			// password doesn't match don't return the user — Just
-			// tell the client the password didn't match
-	    if (user && !user.validPassword(password)) {
-	      return done(null, false, {
-					message: 'Incorrect password.'
-				});
-	    }
-
-			// If there's a user object in the
-			// database already just return it
+			// If there was a user in the database check the password. If it
+			// matches we'll return the traveler object from the database and
+			// if it's incorrect we'll tell the client it's the wrong password
+			//
+			// !user.validPassword(password) ??? Note: Not sure what this is.
 			if (user) {
-				return done(null, user);
-			}
+				bcrypt.compare(password, user.password, function (err, passwordMatches) {
+					if (err) return done(err);
 
-			// If the user isn't trying to create an account and the credentials
-			// they provided didn't match let them know they don't have an account
-			return done(null, false, {
-				message: 'You don\'t have an account.'
-			});
+					console.log('passwordMatches:', passwordMatches);
+
+					if (passwordMatches) {
+						return done(null, user);
+					} else {
+						return done(null, false, {
+							message: 'Incorrect password.'
+						});
+					}
+				});
+			} else {
+				// If the user isn't trying to create an account and they're not
+				// already in the database tell them they don't have an account
+				return done(null, false, {
+					message: 'You don\'t have an account.'
+				});
+			}
 	  });
 	}));
 
