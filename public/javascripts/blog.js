@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   // Facebook Share
-  $.getScript('http://connect.facebook.net/en_US/sdk.js', function() {
+  $.getScript('https://connect.facebook.net/en_US/sdk.js', function() {
     FB.init({
       appId: '1660831194160373',
       version: 'v2.5'
@@ -12,7 +12,7 @@ $(document).ready(function () {
         journey_uuid = $(this).parents('.grid-post').data('journey-uuid');
         title = $(this).parents('.grid-post').children('.blogTitle').text();
         creator = $(this).parents('.grid-post').find('.blogTraveler').text();
-        header_image = "http://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
+        header_image = "https://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
         description = $(this).parents('.grid-post').find('.blogBody').text();
 
         return FB.ui({
@@ -39,7 +39,7 @@ $(document).ready(function () {
     var title = $(this).parents('.grid-post').children('.blogTitle').text();
     var description = $(this).parents('.grid-post').find('.blogBody').text();
     var shortlink = $(this).parents('.grid-post').data('shortlink');
-    var header_image = "http://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
+    var header_image = "https://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
     var tags = $(this).parents('.grid-post').find('.blogHash').text();
 
     var journey_uuid = $(this).parents('.grid-post').data('journey-uuid');
@@ -59,8 +59,8 @@ $(document).ready(function () {
   // Pinterest
   $.getScript('//assets.pinterest.com/js/pinit.js', function() {
     $('.share-with-pinterest').click(function() {
-      var journey_uuid = "http://beta-express.travelingchildrenproject.com/blog#" +  $(this).parents('.grid-post').data('journey-uuid');
-      var header_image = "http://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
+      var journey_uuid = "https://beta-express.travelingchildrenproject.com/blog#" +  $(this).parents('.grid-post').data('journey-uuid');
+      var header_image = "https://beta-express.travelingchildrenproject.com/" + $(this).parents('.grid-post').find('.blogImg').attr('src');
       var title = $(this).parents('.grid-post').children('.blogTitle').text();
       var tags = $(this).parents('.grid-post').find('.blogHash').text();
 
@@ -80,7 +80,7 @@ $(document).ready(function () {
     postLink = 'https://www.tumblr.com/share?';
     postLink += 'shareSource=legacy';
     postLink += '&';
-    postLink += 'cononicalUrl=' + encodeURIComponent('http://beta-express.travelingchildrenproject.com/journeyblog');
+    postLink += 'cononicalUrl=' + encodeURIComponent('https://beta-express.travelingchildrenproject.com/journeyblog');
     postLink += '&';
     postLink += 'posttype=photo';
     postLink += '&';

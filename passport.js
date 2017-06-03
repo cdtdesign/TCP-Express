@@ -78,7 +78,7 @@ module.exports = function (passport) {
 	passport.use(new TwitterStrategy({
 		consumerKey: config.twitter.key,
 		consumerSecret: config.twitter.secret,
-		callbackURL: 'http://beta-express.travelingchildrenproject.com/auth/twitter/callback'
+		callbackURL: 'https://beta-express.travelingchildrenproject.com/auth/twitter/callback'
 	}, function (accessToken, refreshToken, profile, done) {
 
 		User.findOne({provider_id: profile.id}, function (err, user) {
@@ -105,7 +105,7 @@ module.exports = function (passport) {
 	passport.use(new FacebookStrategy({
 		clientID: config.facebook.key,
 		clientSecret: config.facebook.secret,
-		callbackURL: 'http://beta-express.travelingchildrenproject.com/auth/facebook/callback',
+		callbackURL: 'https://beta-express.travelingchildrenproject.com/auth/facebook/callback',
 		profileFields: [
 			'id',
 			'first_name',
