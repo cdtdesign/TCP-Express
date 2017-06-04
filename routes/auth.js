@@ -3,6 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
+var User = require ('../models/user');
 
 // Web: Native
 router.get('/', function(req, res) {
@@ -62,28 +63,6 @@ router.get('/facebook/callback', passport.authenticate('facebook', {
 ));
 
 // iOS: Native
-// router.post('/iOS/signin', function (req, res, next) {
-//   req.isAPI = true;
-//
-//   console.log('req.body:', req.body);
-//
-//   console.log('authenticating...');
-//   passport.authenticate('local', function (err) {
-//     if (err) throw err;
-//
-//     console.log('done authenticating');
-//
-//     // if (err) next(err);
-//     //
-//     // console.log('user:', user);
-//     // console.log('info:', info);
-//     //
-//     // res.json({
-//     //   "hello": "world!!!"
-//     // });
-//   });
-// });
-
 router.post('/iOS/signin', passport.authenticate('local'), function (req, res) {
   res.json({
     "user": req.user
@@ -93,35 +72,31 @@ router.post('/iOS/signin', passport.authenticate('local'), function (req, res) {
 router.post('/iOS/signup', function (req, res, next) {
   req.isAPI = true;
 
-  passport.authenticate('local', function (err, user, info) {
-    if (err) {
-      return res.json({
-        "success": false,
-        "error": err
+  // Tell the app if there's already a user with the email address provided
+  User.count({
+    username: req.body.username
+  }, function (err, count) {
+    if (count > 0) {
+      // There's already a user with the email address provided
+      return res.status(409).json({
+        "message": "Someone is already using the provided email address."
       });
+    } else {
+      // Nobody has created an account with the provided
+      // email address yet, so we'll make one now
+      passport.authenticate('local', function (err, user, info) {
+        if (err) throw err;
+
+        req.logIn(user, function (err) {
+          if (err) throw err;
+
+          return res.json({
+            "user": req.user
+          });
+        });
+      })(req, res, next);
     }
-
-    if (!user) {
-      return res.json({
-        "success": false,
-        "user": null
-      });
-    }
-
-    req.logIn(user, function (err) {
-      if (err) return next(err);
-
-      return res.json({
-        "success": true,
-        "user": {
-          "id": user._id,
-          "email": user.email,
-          "firstName": user.first_name,
-          "lastName": user.last_name
-        }
-      });
-    });
-  })(req, res, next);
+  });
 });
 
 module.exports = router;

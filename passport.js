@@ -56,12 +56,6 @@ module.exports = function (passport) {
 					});
 				});
 
-				bcrypt.genSalt(10, function (err, salt) {
-					bcrypt.hash(password, salt, function (err, hashedPassword) {
-						console.log(hashedPassword);
-					});
-				});
-
 				// All done
 				return done(null, newUser);
 	    }
