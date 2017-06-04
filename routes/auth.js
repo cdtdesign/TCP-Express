@@ -62,11 +62,31 @@ router.get('/facebook/callback', passport.authenticate('facebook', {
 ));
 
 // iOS: Native
-router.post('/iOS/signin', function (req, res, next) {
-  req.isAPI = true;
+// router.post('/iOS/signin', function (req, res, next) {
+//   req.isAPI = true;
+//
+//   console.log('req.body:', req.body);
+//
+//   console.log('authenticating...');
+//   passport.authenticate('local', function (err) {
+//     if (err) throw err;
+//
+//     console.log('done authenticating');
+//
+//     // if (err) next(err);
+//     //
+//     // console.log('user:', user);
+//     // console.log('info:', info);
+//     //
+//     // res.json({
+//     //   "hello": "world!!!"
+//     // });
+//   });
+// });
 
-  passport.authenticate('local', function (err, user, info) {
-    console.log(err, user, info);
+router.post('/iOS/signin', passport.authenticate('local'), function (req, res) {
+  res.json({
+    "user": req.user
   });
 });
 
