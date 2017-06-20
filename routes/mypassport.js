@@ -96,8 +96,6 @@ router.post('/edit', upload.any(), function(req, res) {
       var traveler = req.body.travelers[i];
 
       if (traveler != undefined && traveler.name != "" && traveler.birthday != "") {
-        console.log('travelerImageFilenames:', travelerImageFilenames);
-
         user.travelers[i] = {
           "name": traveler.name,
           "birthday": traveler.birthday,

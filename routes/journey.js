@@ -49,7 +49,7 @@ router.post('/create', upload.single('header_image'), function(req, res, next) {
 	new Promise(function (fulfill, reject) {
 		var photoShortlink;
 		Bitly.shorten({
-			longUrl:"https://beta-express.travelingchildrenproject.com/images/journey-images/" + req.file.filename,
+			longUrl:"https://travelingchildrenproject.com/images/journey-images/" + req.file.filename,
 			domain: "tcp.fyi"
 		}, function (err, results) {
 			if (err) reject(err);
