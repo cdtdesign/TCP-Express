@@ -87,6 +87,9 @@ router.post('/iOS/signup', function (req, res, next) {
       passport.authenticate('local', function (err, user, info) {
         if (err) throw err;
 
+        user.pin_code = req.body.pin_code;
+
+        // Log the user in now that they have an account
         req.logIn(user, function (err) {
           if (err) throw err;
 
