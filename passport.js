@@ -39,14 +39,14 @@ module.exports = function (passport) {
 					first_name: req.body.first_name,
 					last_name: req.body.last_name,
 					traveler_name: req.body.traveler_name,
-					email: req.body.username
+					email: req.body.username,
 				});
 
 				// Salt and hash the password
-				bcrypt.genSalt(10, function (err, salt) {
+				bcrypt.genSaltSync(10, function (err, salt) {
 					if (err) return next(err);
 
-					bcrypt.hash(password, salt, function (err, hashedPassword) {
+					bcrypt.hashSync(password, salt, function (err, hashedPassword) {
 						newUser.password = hashedPassword;
 
 						// Save the new user object to the database

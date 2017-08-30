@@ -15,6 +15,7 @@ gulp.task('dev', ['default'], function () {
   // Run Browser-Sync
   browserSync.init(["views/***", "public/***"], {
     proxy: 'localhost:9000',
-    browser: "Google Chrome"
+    browser: "Google Chrome",
+    open: false
   });
 });

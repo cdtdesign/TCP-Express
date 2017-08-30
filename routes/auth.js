@@ -3,7 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
-var User = require ('../models/user');
+var User = require('../models/user');
 
 // Web: Native
 router.get('/', function(req, res) {
@@ -85,16 +85,15 @@ router.post('/iOS/signup', function (req, res, next) {
       // Nobody has created an account with the provided
       // email address yet, so we'll make one now
       passport.authenticate('local', function (err, user, info) {
-        if (err) throw err;
-
-        user.pin_code = req.body.pin_code;
+        if (err) return next(err);
 
         // Log the user in now that they have an account
         req.logIn(user, function (err) {
           if (err) throw err;
 
-          return res.json({
-            "user": req.user
+          User.findOne({'username': 'Alexander2475914@gmail.com'}, 'password', function (err, password) {
+            console.log('password:', password);
+            res.json({'user': user});
           });
         });
       })(req, res, next);
