@@ -64,6 +64,7 @@ router.get('/facebook/callback', passport.authenticate('facebook', {
 
 // iOS: Native
 router.post('/iOS/signin', passport.authenticate('local'), function (req, res) {
+  console.log('req.user:', req.user);
   res.json({
     "user": req.user
   });
@@ -92,7 +93,6 @@ router.post('/iOS/signup', function (req, res, next) {
           if (err) throw err;
 
           User.findOne({'username': 'Alexander2475914@gmail.com'}, 'password', function (err, password) {
-            console.log('password:', password);
             res.json({'user': user});
           });
         });
