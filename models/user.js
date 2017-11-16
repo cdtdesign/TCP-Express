@@ -15,6 +15,7 @@ var userSchema = new Schema({
 	photo: String,
   has_local_photo: Boolean,
   password: String,
+  pin_code: Number,
   first_name: String,
   last_name: String,
   parent_birthday: Date,

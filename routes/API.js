@@ -19,7 +19,8 @@ router.post('/journeys', function (req, res) {
       'passport_id': 1,
       'title': 1,
       'body': 1,
-      'traveler_name': 1
+      'traveler_name': 1,
+      'password': 1
     });
 });
 

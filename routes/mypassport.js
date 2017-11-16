@@ -79,10 +79,16 @@ router.post('/edit', upload.any(), function(req, res) {
     user.email = req.body.email;
     user.address_tel = req.body.address_tel;
     user.parent_birthday = req.body.parent_birthday;
-    user.address_street = req.body.address_street;
-    user.address_city = req.body.address_city;
-    user.address_state = req.body.address_state;
-    user.address_zip = req.body.address_zip;
+    user.address.street = req.body.address_street;
+    user.address.city = req.body.address_city;
+    user.address.state = req.body.address_state;
+    user.address.zip = req.body.address_zip;
+
+    // Strip the phone number to digits
+    req.body.address_tel = req.body.address_tel.replace(/\D/g, '');
+    req.body.address_tel = req.body.address_tel.substring(req.body.address_tel.length - 10);
+    req.body.address_tel = '(' + req.body.address_tel.substring(0, 3) + ') ' + req.body.address_tel.substring(3, 6) + ' - ' + req.body.address_tel.substring(6, 10);
+    user.address.phone = req.body.address_tel;
 
     if (parentImageFilename) {
       user.photo = parentImageFilename;

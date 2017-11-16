@@ -23,6 +23,12 @@ var travelerSchema = new Schema({
   zip: Number,
   phone: Number,
   journeys_liked: Array,
+  currently_reading: {
+    title: String,
+    author: String,
+    began_reading: Date,
+    minutes: Number
+  }
   suspended: Boolean,
   deleted_at: String,
   created_at: String,
