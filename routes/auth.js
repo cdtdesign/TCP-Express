@@ -3,10 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
-<<<<<<< HEAD
-=======
 var User = require('../models/user');
->>>>>>> 2e591a6bd2c9bde574b424309b660d9f02921ca3
 
 // Web: Native
 router.get('/', function(req, res) {
@@ -66,18 +63,11 @@ router.get('/facebook/callback', passport.authenticate('facebook', {
 ));
 
 // iOS: Native
-<<<<<<< HEAD
 router.post('/iOS/signin', function (req, res, next) {
   req.isAPI = true;
 
   passport.authenticate('local', function (err, user, info) {
     console.log(err, user, info);
-=======
-router.post('/iOS/signin', passport.authenticate('local'), function (req, res) {
-  console.log('req.user:', req.user);
-  res.json({
-    "user": req.user
->>>>>>> 2e591a6bd2c9bde574b424309b660d9f02921ca3
   });
 });
 
@@ -90,8 +80,6 @@ router.post('/iOS/signup', function (req, res, next) {
         "success": false,
         "error": err
       });
-<<<<<<< HEAD
-=======
     } else {
       // Nobody has created an account with the provided
       // email address yet, so we'll make one now
@@ -107,7 +95,6 @@ router.post('/iOS/signup', function (req, res, next) {
           });
         });
       })(req, res, next);
->>>>>>> 2e591a6bd2c9bde574b424309b660d9f02921ca3
     }
 
     if (!user) {
