@@ -74,7 +74,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', routes);
-app.use('/api', api);
+app.use('/API', api);
 app.use('/auth', auth);
 app.use('/journeyblog', blog);
 app.use('/journey', journey);
