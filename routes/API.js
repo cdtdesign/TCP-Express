@@ -20,22 +20,25 @@ router.post('/iOS/auth/signin', function (req, res, next) {
       req.logIn(user, function (err) {
         if (err) return next(err);
 
-        return res.json({
-          "user": {
-            "id": user._id || '',
-            "first_name": user.first_name || '',
-            "last_name": user.last_name || '',
-            "email": user.email || '',
-            "password": user.password || '',
-            "parent_gender": user.parent_gender || '',
-            "address": {
-              "phone": user.address.phone || '',
-              "street": user.address.street || '',
-              "city": user.address.city || '',
-              "state": user.address.state || '',
-              "zip": user.address.zip || ''
+        User.findOne({'email': req.body.username}, function (err, userData) {
+          return res.json({
+            "user": {
+              "id": userData._id || '',
+              "passport_id": userData.passport_id || '',
+              "first_name": userData.first_name || '',
+              "last_name": userData.last_name || '',
+              "email": userData.username || '',
+              "password": userData.password || '',
+              "parent_gender": userData.parent_gender || '',
+              "address": {
+                "phone": userData.address.phone || '',
+                "street": userData.address.street || '',
+                "city": userData.address.city || '',
+                "state": userData.address.state || '',
+                "zip": userData.address.zip || ''
+              }
             }
-          }
+          });
         });
       });
     }
@@ -96,21 +99,38 @@ router.post('/iOS/auth/signup', function (req, res, next) {
 // Journeys
 router.post('/iOS/journeys', function (req, res) {
   // Send over some journeys from the database
-  Journey
-    .find(function (err, journeys) {
-      if (err) throw err;
+  Journey.find(function (err, journeys) {
+    if (err) throw err;
+    res.send(journeys);
+  })
+  .limit(30)
+  .select({
+    '_id': 1,
+    'passport_id': 1,
+    'title': 1,
+    'body': 1,
+    'traveler_name': 1,
+    'password': 1
+  });
+});
 
-      res.send(journeys);
-    })
-    .limit(30)
-    .select({
-      '_id': 1,
-      'passport_id': 1,
-      'title': 1,
-      'body': 1,
-      'traveler_name': 1,
-      'password': 1
-    });
+router.post('/iOS/journeys/created', function (req, res) {
+  // Send journeys created by the traveler
+  Journey.find(function (err, journeys) {
+    if (err) throw err;
+    res.send(journeys);
+  })
+  .where('passport_id')
+  .equals(req.body.passport_id)
+  .limit(30)
+  .select({
+    '_id': 1,
+    'passport_id': 1,
+    'title': 1,
+    'body': 1,
+    'traveler_name': 1,
+    'password': 1
+  });
 });
 
 module.exports = router;

@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
+  passport_id: String,
   username: String,
 	name: String,
   address: {
