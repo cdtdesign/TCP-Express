@@ -266,6 +266,11 @@
     "parent_birthday": null,
     "photo": null,
     "suspended": false,
+    "liked_journeys": [
+      "ObjectId(\"5b21276532c6b32163de6180\")",
+      "ObjectId(\"5b21276532c6b32163de617a\")",
+      "ObjectId(\"5b21276532c6b32163de6178\")"
+    ],
     "deleted_at": null,
     "created_at": null,
     "updated_at": null

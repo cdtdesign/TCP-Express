@@ -20,6 +20,7 @@ var userSchema = new Schema({
   first_name: String,
   last_name: String,
   parent_birthday: Date,
+  liked_journeys: [String],
   travelers: [{
     passport_id: String,
     name: String,

@@ -5,6 +5,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var Journey = require('../models/journey');
 var User = require('../models/user');
+var ObjectID = require('mongoose').Types.ObjectId;
 
 // Auth
 router.post('/iOS/auth/signin', function (req, res, next) {
@@ -116,10 +117,7 @@ router.post('/iOS/journeys', function (req, res) {
 
 router.post('/iOS/journeys/created', function (req, res) {
   // Send journeys created by the traveler
-  Journey.find(function (err, journeys) {
-    if (err) throw err;
-    res.send(journeys);
-  })
+  Journey.find()
   .where('passport_id')
   .equals(req.body.passport_id)
   .limit(30)
@@ -130,6 +128,39 @@ router.post('/iOS/journeys/created', function (req, res) {
     'body': 1,
     'traveler_name': 1,
     'password': 1
+  })
+  .exec(function (err, journeys) {
+    if (err) throw err;
+    res.send(journeys);
+  });
+});
+
+router.post('/iOS/journeys/liked', function (req, res) {
+  // Send journeys liked by the traveler
+  User.findOne({"passport_id": req.body.passport_id}, function (err, user) {
+    // Convert liked Journey ID strings to ObjectID types
+    var likedJourneyIDs = [];
+    for (var i = 0; i < user.liked_journeys.length; i++) {
+      likedJourneyIDs.push(new ObjectID(user.liked_journeys[i]));
+    }
+
+    // Return the liked journeys by the ObjectID's
+    Journey.find()
+    .where('_id')
+    .in(likedJourneyIDs)
+    .select({
+      '_id': 1,
+      'passport_id': 1,
+      'title': 1,
+      'body': 1,
+      'traveler_name': 1,
+      'password': 1
+    })
+    .exec(function (err, journeys) {
+      if (err) throw err;
+      console.log(journeys);
+      res.send(journeys);
+    });
   });
 });
 
