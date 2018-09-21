@@ -27,6 +27,10 @@ var userSchema = new Schema({
     gender: String,
     birthday: Date,
     photo: String,
+    currently_reading: [{
+      title: String,
+      author: String
+    }]
   }],
   email: String,
 	createdAt: {

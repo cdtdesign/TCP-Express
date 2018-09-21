@@ -108,8 +108,10 @@ router.post('/iOS/journeys', function (req, res) {
   .select({
     '_id': 1,
     'passport_id': 1,
+    'header_image_filename': 1,
     'title': 1,
     'body': 1,
+    'tags': 1,
     'traveler_name': 1,
     'password': 1
   });
@@ -158,7 +160,6 @@ router.post('/iOS/journeys/liked', function (req, res) {
     })
     .exec(function (err, journeys) {
       if (err) throw err;
-      console.log(journeys);
       res.send(journeys);
     });
   });

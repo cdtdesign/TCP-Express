@@ -266,6 +266,65 @@
     "parent_birthday": null,
     "photo": null,
     "suspended": false,
+    "travelers" : [ 
+        {
+            "passport_id" : "001",
+            "name" : "Christian",
+            "birthday" : "2016-08-31T04:00:00.000Z",
+            "gender" : "Male"
+        },
+        {
+            "passport_id" : "002",
+            "currently_reading" : [{
+              "title": "Harry Potter: Chamber of Secrets #1",
+              "author": "J.K. Rowling #1"
+            }],
+            "name" : "Alexander",
+            "birthday" : "1995-12-27T04:00:00.000Z",
+            "gender" : "Male"
+        },
+        {
+            "passport_id" : "003",
+            "name" : "Pig",
+            "currently_reading" : [{
+              "title": "Harry Potter: Chamber of Secrets #2",
+              "author": "J.K. Rowling #2"
+
+            }],
+            "birthday" : "1998-12-05T04:00:00.000Z",
+            "gender" : "Male"
+        },
+        {
+            "passport_id" : "004",
+            "name" : "Elizabeth",
+            "birthday" : "2001-10-30T04:00:00.000Z",
+            "gender" : "Female"
+        },
+        {
+            "passport_id" : "005",
+            "name" : "Christian",
+            "birthday" : "2016-08-31T04:00:00.000Z",
+            "gender" : "Male"
+        },
+        {
+            "passport_id" : "006",
+            "name" : "Alexander",
+            "birthday" : "1995-12-27T04:00:00.000Z",
+            "gender" : "Male"
+        },
+        {
+            "passport_id" : "007",
+            "name" : "Jupiter",
+            "birthday" : "1998-12-05T04:00:00.000Z",
+            "gender" : "Male"
+        },
+        {
+            "passport_id" : "008",
+            "name" : "Italy",
+            "birthday" : "2001-10-30T04:00:00.000Z",
+            "gender" : "Female"
+        }
+    ],
     "liked_journeys": [
       "ObjectId(\"5b21276532c6b32163de6180\")",
       "ObjectId(\"5b21276532c6b32163de617a\")",
